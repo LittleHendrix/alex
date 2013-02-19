@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<map>
+  <item key="L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvdWkvanF1ZXJ5LmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L3VpL2pzb24yLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL05hbWVzcGFjZU1hbmFnZXIuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24valF1ZXJ5L2pxdWVyeS5jb29raWUuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvdWkvanF1ZXJ5dWkuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24vVW1icmFjb1V0aWxzLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL2pRdWVyeS9qcXVlcnkuYmEtYmJxLm1pbi5qczsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC9BcHBsaWNhdGlvbi9VbWJyYWNvQXBwbGljYXRpb25BY3Rpb25zLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL0hpc3RvcnlNYW5hZ2VyLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL1VtYnJhY29DbGllbnRNYW5hZ2VyLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L3VpL2RlZmF1bHQuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvbW9kYWwvanF1ZXJ5LnNpbXBsZW1vZGFsLjEuNC4xLmN1c3RvbS5qczsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC9BcHBsaWNhdGlvbi9KUXVlcnkvanF1ZXJ5Lm1ldGFkYXRhLm1pbi5qczsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC9tb2RhbC9tb2RhbC5qczsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC9UcmVlL2pxdWVyeS50cmVlLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L1RyZWUvTm9kZURlZmluaXRpb24uanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvVHJlZS9qcXVlcnkudHJlZS5jaGVja2JveC5qczsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC9UcmVlL2pxdWVyeS50cmVlLmNvbnRleHRtZW51LmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L1RyZWUvVW1icmFjb0NvbnRleHQuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvVHJlZS9VbWJyYWNvVHJlZS5qczsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC9zY3JvbGxpbmdtZW51L2phdmFzY3JpcHQuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvcGFuZWwvamF2YXNjcmlwdC5qczsvYWxleC5sb2NhbC91bWJyYWNvL1NlYXJjaC9xdWlja1NlYXJjaC5qczsvYWxleC5sb2NhbC91bWJyYWNvL2pzL2d1aUZ1bmN0aW9ucy5qczsvYWxleC5sb2NhbC91bWJyYWNvL2pzL1VtYnJhY29TcGVlY2hCdWJibGVCYWNrZW5kLmpzOy9hbGV4LmxvY2FsL3VtYnJhY28vanMvbGFuZ3VhZ2UuYXNweDsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC91aS9qUXVlcnlXcmVzaXplLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL0pRdWVyeS9qcXVlcnkuYXV0b2NvbXBsZXRlLmpzOw" file="C:\Websites\alex\App_Data\TEMP\ClientDependency\1_2a347067ad8b4947b0123428b8fa3508.cdJ" compression="gzip" version="1">
+    <files>
+      <file name="/alex.local/umbraco_client/ui/jquery.js" />
+      <file name="/alex.local/umbraco_client/ui/json2.js" />
+      <file name="/alex.local/umbraco_client/Application/NamespaceManager.js" />
+      <file name="/alex.local/umbraco_client/Application/jQuery/jquery.cookie.js" />
+      <file name="/alex.local/umbraco_client/ui/jqueryui.js" />
+      <file name="/alex.local/umbraco_client/Application/UmbracoUtils.js" />
+      <file name="/alex.local/umbraco_client/Application/jQuery/jquery.ba-bbq.min.js" />
+      <file name="/alex.local/umbraco_client/Application/UmbracoApplicationActions.js" />
+      <file name="/alex.local/umbraco_client/Application/HistoryManager.js" />
+      <file name="/alex.local/umbraco_client/Application/UmbracoClientManager.js" />
+      <file name="/alex.local/umbraco_client/ui/default.js" />
+      <file name="/alex.local/umbraco_client/modal/jquery.simplemodal.1.4.1.custom.js" />
+      <file name="/alex.local/umbraco_client/Application/JQuery/jquery.metadata.min.js" />
+      <file name="/alex.local/umbraco_client/modal/modal.js" />
+      <file name="/alex.local/umbraco_client/Tree/jquery.tree.js" />
+      <file name="/alex.local/umbraco_client/Tree/NodeDefinition.js" />
+      <file name="/alex.local/umbraco_client/Tree/jquery.tree.checkbox.js" />
+      <file name="/alex.local/umbraco_client/Tree/jquery.tree.contextmenu.js" />
+      <file name="/alex.local/umbraco_client/Tree/UmbracoContext.js" />
+      <file name="/alex.local/umbraco_client/Tree/UmbracoTree.js" />
+      <file name="/alex.local/umbraco_client/scrollingmenu/javascript.js" />
+      <file name="/alex.local/umbraco_client/panel/javascript.js" />
+      <file name="/alex.local/umbraco/Search/quickSearch.js" />
+      <file name="/alex.local/umbraco/js/guiFunctions.js" />
+      <file name="/alex.local/umbraco/js/UmbracoSpeechBubbleBackend.js" />
+      <file name="/alex.local/umbraco/js/language.aspx" />
+      <file name="/alex.local/umbraco_client/ui/jQueryWresize.js" />
+      <file name="/alex.local/umbraco_client/Application/JQuery/jquery.autocomplete.js" />
+    </files>
+  </item>
+  <item key="L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvVHJlZS90cmVlSWNvbnMuY3NzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L1RyZWUvbWVudUljb25zLmNzczsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC9UcmVlL1RoZW1lcy91bWJyYWNvL3N0eWxlLmNzczsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC9wYW5lbC9zdHlsZS5jc3M7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvc2Nyb2xsaW5nbWVudS9zdHlsZS5jc3M7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvbW9kYWwvc3R5bGUuY3NzOy9hbGV4LmxvY2FsL3VtYnJhY28vY3NzL3VtYnJhY29HdWkuY3NzOw" file="C:\Websites\alex\App_Data\TEMP\ClientDependency\1_3bf8d8a7b1fd4b8b84df7e8461da1f4d.cdC" compression="gzip" version="1">
+    <files>
+      <file name="/alex.local/umbraco_client/Tree/treeIcons.css" />
+      <file name="/alex.local/umbraco_client/Tree/menuIcons.css" />
+      <file name="/alex.local/umbraco_client/Tree/Themes/umbraco/style.css" />
+      <file name="/alex.local/umbraco_client/panel/style.css" />
+      <file name="/alex.local/umbraco_client/scrollingmenu/style.css" />
+      <file name="/alex.local/umbraco_client/modal/style.css" />
+      <file name="/alex.local/umbraco/css/umbracoGui.css" />
+    </files>
+  </item>
+  <item key="L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvcHJvcGVydHlwYW5lL3N0eWxlLmNzczsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC9wYW5lbC9zdHlsZS5jc3M7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvdGFidmlldy9zdHlsZS5jc3M7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvdWkvZGVmYXVsdC5jc3M7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvbW9kYWwvc3R5bGUuY3NzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L3Njcm9sbGluZ21lbnUvc3R5bGUuY3NzOw" file="C:\Websites\alex\App_Data\TEMP\ClientDependency\1_aed82f014051486e940e3d52a897d57f.cdC" compression="gzip" version="1">
+    <files>
+      <file name="/alex.local/umbraco_client/propertypane/style.css" />
+      <file name="/alex.local/umbraco_client/panel/style.css" />
+      <file name="/alex.local/umbraco_client/tabview/style.css" />
+      <file name="/alex.local/umbraco_client/ui/default.css" />
+      <file name="/alex.local/umbraco_client/modal/style.css" />
+      <file name="/alex.local/umbraco_client/scrollingmenu/style.css" />
+    </files>
+  </item>
+  <item key="L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvdWkvanF1ZXJ5LmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL05hbWVzcGFjZU1hbmFnZXIuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvdWkvYmFzZTIuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24valF1ZXJ5L2pxdWVyeS5jb29raWUuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvdWkvanF1ZXJ5dWkuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24vVW1icmFjb1V0aWxzLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL1VtYnJhY29BcHBsaWNhdGlvbkFjdGlvbnMuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24vVW1icmFjb0NsaWVudE1hbmFnZXIuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24valF1ZXJ5L2pxdWVyeS5ob3RrZXlzLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L3VpL2RlZmF1bHQuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvbW9kYWwvbW9kYWwuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvcGFzc3dvcmRTdHJlbmd0aC9wYXNzd29yZHN0cmVuZ3RoLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L3RhYnZpZXcvamF2YXNjcmlwdC5qczsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC9wYW5lbC9qYXZhc2NyaXB0LmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L3Njcm9sbGluZ21lbnUvamF2YXNjcmlwdC5qczsvYWxleC5sb2NhbC91bWJyYWNvL2Rhc2hib2FyZC9zY3JpcHRzL2pxdWVyeS5qZmVlZC5wYWNrLmpzOw" file="C:\Websites\alex\App_Data\TEMP\ClientDependency\1_bfe2891a2770456aad4de825ae8bd744.cdJ" compression="gzip" version="1">
+    <files>
+      <file name="/alex.local/umbraco_client/ui/jquery.js" />
+      <file name="/alex.local/umbraco_client/Application/NamespaceManager.js" />
+      <file name="/alex.local/umbraco_client/ui/base2.js" />
+      <file name="/alex.local/umbraco_client/Application/jQuery/jquery.cookie.js" />
+      <file name="/alex.local/umbraco_client/ui/jqueryui.js" />
+      <file name="/alex.local/umbraco_client/Application/UmbracoUtils.js" />
+      <file name="/alex.local/umbraco_client/Application/UmbracoApplicationActions.js" />
+      <file name="/alex.local/umbraco_client/Application/UmbracoClientManager.js" />
+      <file name="/alex.local/umbraco_client/Application/jQuery/jquery.hotkeys.js" />
+      <file name="/alex.local/umbraco_client/ui/default.js" />
+      <file name="/alex.local/umbraco_client/modal/modal.js" />
+      <file name="/alex.local/umbraco_client/passwordStrength/passwordstrength.js" />
+      <file name="/alex.local/umbraco_client/tabview/javascript.js" />
+      <file name="/alex.local/umbraco_client/panel/javascript.js" />
+      <file name="/alex.local/umbraco_client/scrollingmenu/javascript.js" />
+      <file name="/alex.local/umbraco/dashboard/scripts/jquery.jfeed.pack.js" />
+    </files>
+  </item>
+  <item key="L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvdWkvanF1ZXJ5LmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL05hbWVzcGFjZU1hbmFnZXIuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvdWkvYmFzZTIuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24valF1ZXJ5L2pxdWVyeS5jb29raWUuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvdWkvanF1ZXJ5dWkuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24vVW1icmFjb1V0aWxzLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL1VtYnJhY29BcHBsaWNhdGlvbkFjdGlvbnMuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24vVW1icmFjb0NsaWVudE1hbmFnZXIuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24valF1ZXJ5L2pxdWVyeS5ob3RrZXlzLmpzOy9hbGV4LmxvY2FsL3VtYnJhY29fY2xpZW50L3VpL2RlZmF1bHQuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvbW9kYWwvbW9kYWwuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvcGFuZWwvamF2YXNjcmlwdC5qczsvYWxleC5sb2NhbC91bWJyYWNvX2NsaWVudC90YWJ2aWV3L2phdmFzY3JpcHQuanM7L2FsZXgubG9jYWwvdW1icmFjb19jbGllbnQvc2Nyb2xsaW5nbWVudS9qYXZhc2NyaXB0LmpzOy9hbGV4LmxvY2FsL3VtYnJhY28vZGFzaGJvYXJkL3NjcmlwdHMvanF1ZXJ5LmpmZWVkLnBhY2suanM7" file="C:\Websites\alex\App_Data\TEMP\ClientDependency\1_b5558abe41a84b75b67b93d25161376c.cdJ" compression="gzip" version="1">
+    <files>
+      <file name="/alex.local/umbraco_client/ui/jquery.js" />
+      <file name="/alex.local/umbraco_client/Application/NamespaceManager.js" />
+      <file name="/alex.local/umbraco_client/ui/base2.js" />
+      <file name="/alex.local/umbraco_client/Application/jQuery/jquery.cookie.js" />
+      <file name="/alex.local/umbraco_client/ui/jqueryui.js" />
+      <file name="/alex.local/umbraco_client/Application/UmbracoUtils.js" />
+      <file name="/alex.local/umbraco_client/Application/UmbracoApplicationActions.js" />
+      <file name="/alex.local/umbraco_client/Application/UmbracoClientManager.js" />
+      <file name="/alex.local/umbraco_client/Application/jQuery/jquery.hotkeys.js" />
+      <file name="/alex.local/umbraco_client/ui/default.js" />
+      <file name="/alex.local/umbraco_client/modal/modal.js" />
+      <file name="/alex.local/umbraco_client/panel/javascript.js" />
+      <file name="/alex.local/umbraco_client/tabview/javascript.js" />
+      <file name="/alex.local/umbraco_client/scrollingmenu/javascript.js" />
+      <file name="/alex.local/umbraco/dashboard/scripts/jquery.jfeed.pack.js" />
+    </files>
+  </item>
+</map>

@@ -1,0 +1,398 @@
+2013-02-19 09:29:32,539 [15] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-02-19 09:29:32,757 [15] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-02-19 09:29:32,789 [15] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 30ms)
+2013-02-19 09:29:33,844 [15] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1025ms)
+2013-02-19 09:29:33,864 [15] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 6ms)
+2013-02-19 09:29:34,157 [15] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 3ms)
+2013-02-19 09:29:34,159 [15] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 1ms)
+2013-02-19 09:29:34,366 [15] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 8 (took 3ms)
+2013-02-19 09:29:34,898 [15] ERROR Umbraco.Core.PluginManager - [Thread 1] Error creating type umbraco.presentation.umbraco.Search.ExamineEvents
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'Examine.ExamineManager' threw an exception. ---> System.Configuration.ConfigurationErrorsException: Object reference not set to an instance of an object. (C:\Websites\alex\config\ExamineSettings.config line 12) ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at UmbracoExamine.DataServices.UmbracoContentService.GetAllUserPropertyNames()
+   at UmbracoExamine.Config.IndexSetExtensions.ToIndexCriteria(IndexSet set, IDataService svc)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.Initialize(String name, NameValueCollection config)
+   at UmbracoExamine.BaseUmbracoIndexer.Initialize(String name, NameValueCollection config)
+   at UmbracoExamine.UmbracoContentIndexer.Initialize(String name, NameValueCollection config)
+   at System.Web.Configuration.ProvidersHelper.InstantiateProvider(ProviderSettings providerSettings, Type providerType)
+   --- End of inner exception stack trace ---
+   at System.Web.Configuration.ProvidersHelper.InstantiateProvider(ProviderSettings providerSettings, Type providerType)
+   at System.Web.Configuration.ProvidersHelper.InstantiateProviders(ProviderSettingsCollection configProviders, ProviderCollection providers, Type providerType)
+   at Examine.ExamineManager.LoadProviders()
+   at Examine.ExamineManager..cctor()
+   --- End of inner exception stack trace ---
+   at UmbracoExamine.UmbracoEventManager..ctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Umbraco.Core.PluginManager.CreateInstances[T](IEnumerable`1 types, Boolean throwException)
+2013-02-19 09:29:34,905 [15] ERROR Umbraco.Core.PluginManager - [Thread 1] Error creating type UmbracoExamine.UmbracoEventManager
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'Examine.ExamineManager' threw an exception. ---> System.Configuration.ConfigurationErrorsException: Object reference not set to an instance of an object. (C:\Websites\alex\config\ExamineSettings.config line 12) ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at UmbracoExamine.DataServices.UmbracoContentService.GetAllUserPropertyNames()
+   at UmbracoExamine.Config.IndexSetExtensions.ToIndexCriteria(IndexSet set, IDataService svc)
+   at Examine.LuceneEngine.Providers.LuceneIndexer.Initialize(String name, NameValueCollection config)
+   at UmbracoExamine.BaseUmbracoIndexer.Initialize(String name, NameValueCollection config)
+   at UmbracoExamine.UmbracoContentIndexer.Initialize(String name, NameValueCollection config)
+   at System.Web.Configuration.ProvidersHelper.InstantiateProvider(ProviderSettings providerSettings, Type providerType)
+   --- End of inner exception stack trace ---
+   at System.Web.Configuration.ProvidersHelper.InstantiateProvider(ProviderSettings providerSettings, Type providerType)
+   at System.Web.Configuration.ProvidersHelper.InstantiateProviders(ProviderSettingsCollection configProviders, ProviderCollection providers, Type providerType)
+   at Examine.ExamineManager.LoadProviders()
+   at Examine.ExamineManager..cctor()
+   --- End of inner exception stack trace ---
+   at UmbracoExamine.UmbracoEventManager..ctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Umbraco.Core.PluginManager.CreateInstances[T](IEnumerable`1 types, Boolean throwException)
+2013-02-19 09:29:34,910 [15] INFO  Umbraco.Core.ApplicationContext - [Thread 1] CurrentVersion different from configStatus: '4.11.4',''
+2013-02-19 09:29:34,915 [15] INFO  Umbraco.Core.ApplicationContext - [Thread 1] CurrentVersion different from configStatus: '4.11.4',''
+2013-02-19 09:29:35,286 [15] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 2730ms)
+2013-02-19 09:29:37,175 [15] INFO  Umbraco.Core.ApplicationContext - [Thread 6] CurrentVersion different from configStatus: '4.11.4',''
+2013-02-19 09:29:37,178 [15] WARN  Umbraco.Web.UmbracoModule - [Thread 6] Umbraco is not configured
+2013-02-19 09:29:51,277 [18] INFO  Umbraco.Core.CoreBootManager - [Thread 17] Umbraco application starting
+2013-02-19 09:29:51,307 [18] INFO  Umbraco.Core.PluginManager - [Thread 17] Determining hash of code files on disk
+2013-02-19 09:29:51,313 [18] INFO  Umbraco.Core.PluginManager - [Thread 17] Hash determined (took 5ms)
+2013-02-19 09:29:51,341 [18] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 20ms)
+2013-02-19 09:29:51,347 [18] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 1ms)
+2013-02-19 09:30:01,464 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 8] Error executing query insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+SqlCE4Umbraco.SqlCeProviderException: Error running NonQuery: 
+SQL Statement:
+insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+2013-02-19 09:30:01,465 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 17] Error executing query SELECT id, createDate, trashed, parentId, nodeObjectType, nodeUser, level, path, sortOrder, uniqueID, text,
+                masterContentType,Alias,icon,thumbnail,description,
+                templateNodeId, IsDefault
+            FROM umbracoNode 
+            INNER JOIN cmsContentType ON umbracoNode.id = cmsContentType.nodeId
+            LEFT OUTER JOIN cmsDocumentType ON cmsContentType.nodeId = cmsDocumentType.contentTypeNodeId
+            WHERE nodeObjectType = @nodeObjectType
+SqlCE4Umbraco.SqlCeProviderException: Error running Reader: 
+SQL Statement:
+SELECT id, createDate, trashed, parentId, nodeObjectType, nodeUser, level, path, sortOrder, uniqueID, text,                 masterContentType,Alias,icon,thumbnail,description,                 templateNodeId, IsDefault             FROM umbracoNode              INNER JOIN cmsContentType ON umbracoNode.id = cmsContentType.nodeId             LEFT OUTER JOIN cmsDocumentType ON cmsContentType.nodeId = cmsDocumentType.contentTypeNodeId             WHERE nodeObjectType = @nodeObjectType
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCEHelper.ExecuteReader(String commandText, SqlCeParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+2013-02-19 09:30:01,465 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 5] Error executing query insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+SqlCE4Umbraco.SqlCeProviderException: Error running NonQuery: 
+SQL Statement:
+insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+2013-02-19 09:30:01,464 [15] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 6] Error executing query delete from umbracoLog where datestamp < @oldestPermittedLogEntry and logHeader in ('open','system')
+SqlCE4Umbraco.SqlCeProviderException: Error running NonQuery: 
+SQL Statement:
+delete from umbracoLog where datestamp < @oldestPermittedLogEntry and logHeader in ('open','system')
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+2013-02-19 09:30:01,509 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 5] Error executing query insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+SqlCE4Umbraco.SqlCeProviderException: Error running NonQuery: 
+SQL Statement:
+insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+2013-02-19 09:30:01,509 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 17] Error executing query select umbracoNode.id, umbracoNode.parentId, umbracoNode.sortOrder, cmsContentXml.xml from umbracoNode 
+inner join cmsContentXml on cmsContentXml.nodeId = umbracoNode.id and umbracoNode.nodeObjectType = @type
+inner join cmsDocument on cmsDocument.nodeId = umbracoNode.id
+where cmsDocument.published = 1 
+order by umbracoNode.level, umbracoNode.sortOrder
+SqlCE4Umbraco.SqlCeProviderException: Error running Reader: 
+SQL Statement:
+select umbracoNode.id, umbracoNode.parentId, umbracoNode.sortOrder, cmsContentXml.xml from umbracoNode  inner join cmsContentXml on cmsContentXml.nodeId = umbracoNode.id and umbracoNode.nodeObjectType = @type inner join cmsDocument on cmsDocument.nodeId = umbracoNode.id where cmsDocument.published = 1  order by umbracoNode.level, umbracoNode.sortOrder
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCEHelper.ExecuteReader(String commandText, SqlCeParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+2013-02-19 09:30:01,510 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 8] Error executing query insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+SqlCE4Umbraco.SqlCeProviderException: Error running NonQuery: 
+SQL Statement:
+insert into umbracoLog (userId, nodeId, logHeader, logComment) values (@userId, @nodeId, @logHeader, @comment)
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+2013-02-19 09:30:01,514 [18] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 1ms)
+2013-02-19 09:30:01,515 [18] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2013-02-19 09:30:01,521 [18] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 8 (took 0ms)
+2013-02-19 09:30:01,561 [15] INFO  Umbraco.Web.UmbracoApplication - [Thread 6] Application shutdown. Reason: ConfigurationChange
+2013-02-19 09:30:01,564 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 17] Error executing query select distinct alias from cmsPropertyType order by alias
+SqlCE4Umbraco.SqlCeProviderException: Error running Reader: 
+SQL Statement:
+select distinct alias from cmsPropertyType order by alias
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCEHelper.ExecuteReader(String commandText, SqlCeParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+2013-02-19 09:30:01,569 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 17] Error executing query select distinct alias from cmsPropertyType order by alias
+SqlCE4Umbraco.SqlCeProviderException: Error running Reader: 
+SQL Statement:
+select distinct alias from cmsPropertyType order by alias
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCEHelper.ExecuteReader(String commandText, SqlCeParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+2013-02-19 09:30:01,580 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 17] Error executing query select distinct alias from cmsPropertyType order by alias
+SqlCE4Umbraco.SqlCeProviderException: Error running Reader: 
+SQL Statement:
+select distinct alias from cmsPropertyType order by alias
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCEHelper.ExecuteReader(String commandText, SqlCeParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+2013-02-19 09:30:02,098 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 17] Error executing query select 
+	            umbracoNode.id, umbracoNode.uniqueId, umbracoNode.level, 
+	            umbracoNode.parentId, umbracoNode.path, umbracoNode.sortOrder, umbracoNode.createDate, 
+	            umbracoNode.nodeUser, umbracoNode.text, 
+	            cmsMember.Email, cmsMember.LoginName, cmsMember.Password
+            from umbracoNode 
+            inner join cmsContent on cmsContent.nodeId = umbracoNode.id
+            inner join cmsMember on  cmsMember.nodeId = cmsContent.nodeId
+			where umbracoNode.nodeObjectType = @nodeObjectType AND 1=1			
+			order by umbracoNode.text
+SqlCE4Umbraco.SqlCeProviderException: Error running Reader: 
+SQL Statement:
+select  	            umbracoNode.id, umbracoNode.uniqueId, umbracoNode.level,  	            umbracoNode.parentId, umbracoNode.path, umbracoNode.sortOrder, umbracoNode.createDate,  	            umbracoNode.nodeUser, umbracoNode.text,  	            cmsMember.Email, cmsMember.LoginName, cmsMember.Password             from umbracoNode              inner join cmsContent on cmsContent.nodeId = umbracoNode.id             inner join cmsMember on  cmsMember.nodeId = cmsContent.nodeId 			where umbracoNode.nodeObjectType = @nodeObjectType AND 1=1			 			order by umbracoNode.text
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCEHelper.ExecuteReader(String commandText, SqlCeParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+2013-02-19 09:30:02,099 [18] ERROR Umbraco.Core.PluginManager - [Thread 17] Error creating type umbraco.presentation.umbraco.Search.ExamineEvents
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'Examine.ExamineManager' threw an exception. ---> umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> SqlCE4Umbraco.SqlCeProviderException: Error running Reader: 
+SQL Statement:
+select  	            umbracoNode.id, umbracoNode.uniqueId, umbracoNode.level,  	            umbracoNode.parentId, umbracoNode.path, umbracoNode.sortOrder, umbracoNode.createDate,  	            umbracoNode.nodeUser, umbracoNode.text,  	            cmsMember.Email, cmsMember.LoginName, cmsMember.Password             from umbracoNode              inner join cmsContent on cmsContent.nodeId = umbracoNode.id             inner join cmsMember on  cmsMember.nodeId = cmsContent.nodeId 			where umbracoNode.nodeObjectType = @nodeObjectType AND 1=1			 			order by umbracoNode.text
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCEHelper.ExecuteReader(String commandText, SqlCeParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.member.Member.GetAllAsList()
+   at UmbracoExamine.UmbracoMemberIndexer.GetXDocument(String xPath, String type)
+   at UmbracoExamine.BaseUmbracoIndexer.AddNodesToIndex(String xPath, String type)
+   at UmbracoExamine.BaseUmbracoIndexer.PerformIndexAll(String type)
+   at UmbracoExamine.BaseUmbracoIndexer.PerformIndexRebuild()
+   at Examine.ExamineManager.LoadProviders()
+   at Examine.ExamineManager..cctor()
+   --- End of inner exception stack trace ---
+   at umbraco.presentation.umbraco.Search.ExamineEvents..ctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Umbraco.Core.PluginManager.CreateInstances[T](IEnumerable`1 types, Boolean throwException)
+2013-02-19 09:30:02,105 [18] ERROR Umbraco.Core.PluginManager - [Thread 17] Error creating type UmbracoExamine.UmbracoEventManager
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: The type initializer for 'Examine.ExamineManager' threw an exception. ---> umbraco.DataLayer.SqlHelperException: Umbraco Exception (DataLayer): SQL helper exception in ExecuteReader ---> SqlCE4Umbraco.SqlCeProviderException: Error running Reader: 
+SQL Statement:
+select  	            umbracoNode.id, umbracoNode.uniqueId, umbracoNode.level,  	            umbracoNode.parentId, umbracoNode.path, umbracoNode.sortOrder, umbracoNode.createDate,  	            umbracoNode.nodeUser, umbracoNode.text,  	            cmsMember.Email, cmsMember.LoginName, cmsMember.Password             from umbracoNode              inner join cmsContent on cmsContent.nodeId = umbracoNode.id             inner join cmsMember on  cmsMember.nodeId = cmsContent.nodeId 			where umbracoNode.nodeObjectType = @nodeObjectType AND 1=1			 			order by umbracoNode.text
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be found. Check the path to the database. [ Data Source = C:\Websites\alex\App_Data\Umbraco.sdf ]
+   at System.Data.SqlServerCe.SqlCeConnection.Open(Boolean silent)
+   at System.Data.SqlServerCe.SqlCeConnection.Open()
+   at SQLCE4Umbraco.SqlCeContextGuardian.ensureOpenBackgroundConnection(String connectionString)
+   at SQLCE4Umbraco.SqlCeContextGuardian.Open(String connectionString)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCEHelper.ExecuteReader(String commandText, SqlCeParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   --- End of inner exception stack trace ---
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+   at umbraco.cms.businesslogic.member.Member.GetAllAsList()
+   at UmbracoExamine.UmbracoMemberIndexer.GetXDocument(String xPath, String type)
+   at UmbracoExamine.BaseUmbracoIndexer.AddNodesToIndex(String xPath, String type)
+   at UmbracoExamine.BaseUmbracoIndexer.PerformIndexAll(String type)
+   at UmbracoExamine.BaseUmbracoIndexer.PerformIndexRebuild()
+   at Examine.ExamineManager.LoadProviders()
+   at Examine.ExamineManager..cctor()
+   --- End of inner exception stack trace ---
+   at UmbracoExamine.UmbracoEventManager..ctor()
+   --- End of inner exception stack trace ---
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   at System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   at System.Activator.CreateInstance(Type type)
+   at Umbraco.Core.PluginManager.CreateInstances[T](IEnumerable`1 types, Boolean throwException)
+2013-02-19 09:30:02,111 [18] INFO  Umbraco.Core.ApplicationContext - [Thread 17] CurrentVersion different from configStatus: '4.11.4',''
+2013-02-19 09:30:02,116 [18] INFO  Umbraco.Core.ApplicationContext - [Thread 17] CurrentVersion different from configStatus: '4.11.4',''
+2013-02-19 09:30:02,132 [18] INFO  Umbraco.Core.CoreBootManager - [Thread 17] Umbraco application startup complete (took 10847ms)
+2013-02-19 09:30:02,748 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 5] Error executing query SELECT CONSTRAINT_NAME FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS LEFT OUTER JOIN umbracoApp ON appAlias = appAlias WHERE CONSTRAINT_NAME = 'FK_umbracoUser2app_umbracoApp'
+SqlCE4Umbraco.SqlCeProviderException: Error running Reader: 
+SQL Statement:
+SELECT CONSTRAINT_NAME FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS LEFT OUTER JOIN umbracoApp ON appAlias = appAlias WHERE CONSTRAINT_NAME = 'FK_umbracoUser2app_umbracoApp'
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The specified table does not exist. [ umbracoApp ]
+   at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.CompileQueryPlan()
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCEHelper.ExecuteReader(String commandText, SqlCeParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+2013-02-19 09:30:02,804 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 5] Error executing query SELECT id FROM umbracoNode WHERE id = -21
+SqlCE4Umbraco.SqlCeProviderException: Error running Reader: 
+SQL Statement:
+SELECT id FROM umbracoNode WHERE id = -21
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The specified table does not exist. [ umbracoNode ]
+   at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.CompileQueryPlan()
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCEHelper.ExecuteReader(String commandText, SqlCeParameter[] parameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
+2013-02-19 09:30:02,812 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 5] Error executing query SELECT action FROM umbracoAppTree
+SqlCE4Umbraco.SqlCeProviderException: Error running NonQuery: 
+SQL Statement:
+SELECT action FROM umbracoAppTree
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The specified table does not exist. [ umbracoAppTree ]
+   at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.CompileQueryPlan()
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteNonQuery()
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+2013-02-19 09:30:02,813 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 5] Error executing query SELECT description FROM cmsContentType
+SqlCE4Umbraco.SqlCeProviderException: Error running NonQuery: 
+SQL Statement:
+SELECT description FROM cmsContentType
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The specified table does not exist. [ cmsContentType ]
+   at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.CompileQueryPlan()
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteNonQuery()
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+2013-02-19 09:30:02,814 [18] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlServerCe.SqlCeParameter, System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91]] - [Thread 5] Error executing query SELECT id FROM sysobjects
+SqlCE4Umbraco.SqlCeProviderException: Error running NonQuery: 
+SQL Statement:
+SELECT id FROM sysobjects
+
+Exception:
+System.Data.SqlServerCe.SqlCeException (0x80004005): The specified table does not exist. [ sysobjects ]
+   at System.Data.SqlServerCe.SqlCeCommand.ProcessResults(Int32 hr)
+   at System.Data.SqlServerCe.SqlCeCommand.CompileQueryPlan()
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteCommand(CommandBehavior behavior, String method, ResultSetOptions options)
+   at System.Data.SqlServerCe.SqlCeCommand.ExecuteNonQuery()
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at SqlCE4Umbraco.SqlCeApplicationBlock.ExecuteNonQuery(String connectionString, CommandType commandType, String commandText, SqlCeParameter[] commandParameters)
+   at umbraco.DataLayer.SqlHelper`1.ExecuteNonQuery(String commandText, IParameter[] parameters)
+2013-02-19 09:32:31,575 [18] INFO  Umbraco.Web.UmbracoApplication - [Thread 14] Application shutdown. Reason: ConfigurationChange
+2013-02-19 09:32:31,666 [26] INFO  Umbraco.Core.CoreBootManager - [Thread 25] Umbraco application starting
+2013-02-19 09:32:31,694 [26] INFO  Umbraco.Core.PluginManager - [Thread 25] Determining hash of code files on disk
+2013-02-19 09:32:31,701 [26] INFO  Umbraco.Core.PluginManager - [Thread 25] Hash determined (took 5ms)
+2013-02-19 09:32:31,715 [26] INFO  Umbraco.Core.PluginManager - [Thread 25] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 7ms)
+2013-02-19 09:32:31,720 [26] INFO  Umbraco.Core.PluginManager - [Thread 25] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 0ms)
+2013-02-19 09:32:31,780 [26] INFO  Umbraco.Core.PluginManager - [Thread 25] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 1ms)
+2013-02-19 09:32:31,780 [26] INFO  Umbraco.Core.PluginManager - [Thread 25] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 0ms)
+2013-02-19 09:32:31,786 [26] INFO  Umbraco.Core.PluginManager - [Thread 25] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 8 (took 0ms)
+2013-02-19 09:32:32,139 [26] INFO  Umbraco.Core.PluginManager - [Thread 25] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 63ms)
+2013-02-19 09:32:32,157 [26] INFO  Umbraco.Core.PluginManager - [Thread 25] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 2ms)
+2013-02-19 09:32:32,215 [26] INFO  Umbraco.Core.CoreBootManager - [Thread 25] Umbraco application startup complete (took 541ms)
+2013-02-19 09:32:34,595 [26] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 4ms)
+2013-02-19 09:32:35,191 [26] INFO  Umbraco.Core.PluginManager - [Thread 5] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 2ms)
