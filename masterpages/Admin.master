@@ -1,0 +1,5 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/MemberSection.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderId="MemberArea" runat="server">
+	<!-- Insert "MemberArea" markup here -->
+</asp:Content>

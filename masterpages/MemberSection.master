@@ -1,0 +1,9 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderId="BodyContent" runat="server">
+	
+	<asp:ContentPlaceHolder Id="MemberArea" runat="server">
+		<!-- Insert default "MemberArea" markup here -->
+	</asp:ContentPlaceHolder>
+	
+</asp:Content>

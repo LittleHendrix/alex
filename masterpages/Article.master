@@ -1,0 +1,6 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.master" AutoEventWireup="true" %>
+
+<asp:Content ContentPlaceHolderId="BodyContent" runat="server">
+	<h1><umbraco:Item field="pageHeading" useIfEmpty="pageName" runat="server" /></h1>
+	<umbraco:Item field="bodyText" runat="server" />
+</asp:Content>
