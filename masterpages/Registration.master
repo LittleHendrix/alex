@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/MemberSection.master" AutoEventWireup="true" %>
+
+<asp:content ContentPlaceHolderId="MemberArea" runat="server">
+	
+	<script runat="server">
+	
+		protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
+		{
+			Roles.AddUserToRole(CreateUserWizard1.UserName, "SiteMembers");
+		}
+		
+		protected void CreateUserWizard1_ContinueButtonClick(object sender, EventArgs e)
+		{
+			if (!(Session["CreateUserReferrerUrl"] is String))
+			{
+				Session["CreateUserReferrerUrl"] = Request.UrlReferrer.ToString ();
+			}
+	
+			CreateUserWizard1.ContinueDestinationPageUrl =
+				(string)Session["CreateUserReferrerUrl"];
+		}
+	
+	</script>
+	
+	<form ID="Registration" runat="server">
+		<asp:createuserwizard  ID="CreateUserWizard1" OnContinueButtonClick="CreateUserWizard1_ContinueButtonClick" OnCreatedUser="CreateUserWizard1_CreatedUser" runat="server">
+			<WizardSteps>
+				<asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server"></asp:CreateUserWizardStep>
+				<asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server"></asp:CompleteWizardStep>
+			</WizardSteps>
+		</asp:createuserwizard>
+	</form>
+	
+</asp:content>
