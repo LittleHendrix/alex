@@ -26,11 +26,19 @@ $blood: #ad1e25;
 $spriteImg: "";
 
 .lt-ie9 {    
-    .row, .columns {
+    *, .row, .columns {
         // IE7 fix for
         // box-sizing: border-box;
         *behavior: url("/css/boxsizing.htc");
     }
+}
+::selection {
+    background-color: $blood;
+    color: $white;
+}
+::-moz-selection {
+    background-color: $blood;
+    color: $white;
 }
 .clearfix {
     @include myClearfix;
@@ -134,9 +142,13 @@ a#logo {
     }
     .arrow-holder {
         width: 65px;
+        @extend .noborder;
         &:hover .arrow-icon {
             background-color: $ink;
             background-color: rgba(49,54,60,.9);
+        }
+        &:active {
+            background-color: transparent;
         }
         &.disabled {
             .arrow-icon {
