@@ -1,0 +1,44 @@
+﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+@{
+    //Change mime type
+    umbraco.library.ChangeContentType("text/xml");
+
+    //Get the domain 
+    var siteURL = "http://" + Request.Url.Host;
+	var homenode = Model.AncestorOrSelf("Homepage");
+	var siteName = String.IsNullOrEmpty(homenode.siteName) ? "My" : homenode.siteName;
+	
+    //Get Macro Parameters
+    var rssTitle        = String.IsNullOrEmpty(Model.metaTitle) ? siteName + " RSS feed" : Model.metaTitle;
+    var rssDescription  = String.IsNullOrEmpty(Model.metaDescription) ? "Subscribe to my RSS feed" : Model.metaDescription;
+
+    //Get the latest createDate of all news items to use as the RSS feed updateDate
+    dynamic latestNodeUpdated = Model.Children.Where("visible").OrderBy("updateDate desc").First();
+} 
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+    xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns:rssdatehelper="urn:rssdatehelper">
+        <channel>
+            <title>@rssTitle</title>
+            <link>@siteURL</link>
+            <pubDate>@latestNodeUpdated.UpdateDate.ToString("r")</pubDate>
+            <generator>umbraco</generator>
+            <description>@rssDescription</description>
+            <language>en</language>
+            @{
+                foreach (var item in Model.Children.Where("Visible"))
+                {
+                    <item>
+                        <title>@item.Name</title>
+                        <link>@item.Url</link>
+                        <pubDate>@item.UpdateDate.ToString("r")</pubDate>
+                        <guid>@item.Url</guid>
+                        <content:encoded><![CDATA[ @(item.HasValue("bodyText") ? item.bodyText : "") ]]></content:encoded>
+                    </item>
+                }
+            }
+        </channel>
+</rss>

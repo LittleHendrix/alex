@@ -1,0 +1,11 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.master" AutoEventWireup="true" %>
+
+<asp:content ContentPlaceHolderId="BodyContent" runat="server">
+	
+	<!-- navigation here -->
+	
+	<asp:ContentPlaceHolder Id="SubContent" runat="server">
+		<!-- Insert default "SubContent" markup here -->
+	</asp:ContentPlaceHolder>
+	
+</asp:content>
