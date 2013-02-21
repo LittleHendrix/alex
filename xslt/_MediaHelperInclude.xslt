@@ -18,11 +18,12 @@
     <xsl:param name="width" />
     <xsl:param name="height" />
     <xsl:param name="compress" />
+    <xsl:param name="altImg" />
     <xsl:variable name="media" select="umbraco.library:GetMedia($mediaId,false)" />
     <xsl:variable name="alt" select="umbraco.library:Replace(umbraco.library:Replace(umbraco.library:Replace($media/@nodeName,'_',' '),'-',' '),'.jpg','')" />
     <xsl:choose>
       <xsl:when test="string($imgGen)='true'">
-        <img src="/ImageGen.ashx?image={$media/umbracoFile}&amp;width={$width}&amp;height={$height}&amp;compression={$compress}&amp;constrain=true" alt="{$alt}">
+        <img src="/ImageGen.ashx?image={$media/umbracoFile}&amp;width={$width}&amp;height={$height}&amp;compression={$compress}&amp;constrain=true&amp;altImage={$altImg}" alt="{$alt}">
 		  <xsl:attribute name="width">
 			  <xsl:choose>
 				  <xsl:when test="string($width)!=''">
@@ -79,10 +80,11 @@
     <xsl:param name="width" />
     <xsl:param name="height" />
     <xsl:param name="compress" />
+    <xsl:param name="altImg" />
     <xsl:variable name="alt" select="umbraco.library:Replace(umbraco.library:Replace(umbraco.library:Replace(@nodeName,'_',' '),'-',' '),'.jpg','')" />
     <xsl:choose>
       <xsl:when test="string($imgGen)='true'">
-        <img src="/ImageGen.ashx?image={umbracoFile}&amp;width={$width}&amp;height={$height}&amp;compression={$compress}&amp;constrain=true" alt="{$alt}">
+		  <img src="/ImageGen.ashx?image={umbracoFile}&amp;width={$width}&amp;height={$height}&amp;compression={$compress}&amp;constrain=true&amp;altImage={$altImg}" alt="{$alt}">
 		  <xsl:attribute name="width">
 			  <xsl:choose>
 				  <xsl:when test="string($width)!=''">
@@ -106,7 +108,28 @@
 		</img>
       </xsl:when>
       <xsl:otherwise>
-        <img src="{umbracoFile}" alt="{$alt}" />
+        <img src="{umbracoFile}" alt="{$alt}">
+		  <xsl:attribute name="width">
+			  <xsl:choose>
+				  <xsl:when test="string($width)!=''">
+					  <xsl:value-of select="$width" />
+				  </xsl:when>
+				  <xsl:otherwise>
+					  <xsl:value-of select="umbracoWidth" />
+				  </xsl:otherwise>
+			  </xsl:choose>
+		  </xsl:attribute>
+		  <xsl:attribute name="height">
+			  <xsl:choose>
+				  <xsl:when test="string($height)!=''">
+					  <xsl:value-of select="$height" />
+				  </xsl:when>
+				  <xsl:otherwise>
+					  <xsl:value-of select="umbracoHeight" />
+				  </xsl:otherwise>
+			  </xsl:choose>
+		  </xsl:attribute>
+		</img>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>

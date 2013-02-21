@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>placeholder-logo.png</originalFileName>
+    <size>1647</size>
+    <dateLastModified>Thu, 21 Feb 2013 08:55:50 GMT</dateLastModified>
+    <width>32</width>
+    <height>100</height>
+    <cachedImage>
+      <fileName>wwlw0e4x.png</fileName>
+      <dateCreated>Thu, 21 Feb 2013 15:55:16 GMT</dateCreated>
+      <dateLastAccessed>Thu, 21 Feb 2013 15:55:16 GMT</dateLastAccessed>
+      <imageFormat>png</imageFormat>
+      <rotate>0</rotate>
+      <flip />
+      <colorMode />
+      <crop />
+      <width>32</width>
+      <height>100</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+  <image>
+    <originalFileName>placeholder-lrg.png</originalFileName>
+    <size>18803</size>
+    <dateLastModified>Thu, 21 Feb 2013 08:55:50 GMT</dateLastModified>
+    <width>700</width>
+    <height>394</height>
+    <cachedImage>
+      <fileName>kcjatfkk.png</fileName>
+      <dateCreated>Thu, 21 Feb 2013 15:55:51 GMT</dateCreated>
+      <dateLastAccessed>Thu, 21 Feb 2013 15:55:51 GMT</dateLastAccessed>
+      <imageFormat>png</imageFormat>
+      <rotate>0</rotate>
+      <flip />
+      <colorMode />
+      <crop />
+      <width>700</width>
+      <height>394</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

@@ -9,7 +9,7 @@
     <cachedImage>
       <fileName>42jpfm4s.jpeg</fileName>
       <dateCreated>Thu, 21 Feb 2013 15:20:32 GMT</dateCreated>
-      <dateLastAccessed>Thu, 21 Feb 2013 15:34:34 GMT</dateLastAccessed>
+      <dateLastAccessed>Thu, 21 Feb 2013 15:58:15 GMT</dateLastAccessed>
       <imageFormat>jpeg</imageFormat>
       <compression>100</compression>
       <rotate>0</rotate>
@@ -43,6 +43,34 @@
       <borderColor>#000000</borderColor>
       <constrain>True</constrain>
       <pad>False</pad>
+    </cachedImage>
+    <cachedImage>
+      <fileName>0uaonux1.jpeg</fileName>
+      <dateCreated>Thu, 21 Feb 2013 15:47:59 GMT</dateCreated>
+      <dateLastAccessed>Thu, 21 Feb 2013 15:47:59 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>100</compression>
+      <rotate>0</rotate>
+      <flip />
+      <colorMode />
+      <crop />
+      <width>440</width>
+      <height>540</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+      <align>left</align>
+      <valign>middle</valign>
+      <overlayImages>
+        <overlayImage>
+          <filename>watermark.png</filename>
+          <size>3425</size>
+          <dateLastModified>Thu, 21 Feb 2013 08:55:50 GMT</dateLastModified>
+        </overlayImage>
+      </overlayImages>
     </cachedImage>
   </image>
 </imageIndex>
