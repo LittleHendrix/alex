@@ -4,12 +4,14 @@
 @import "compass/utilities";
 @import "normalize";
 
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700");
+
 @function black($opacity) {
 	@return rgba(0,0,0,$opacity)
 }
 
 @function white($opacity) {
-	@return rgba(0,0,0,$opacity)
+	@return rgba(255,255,255,$opacity)
 }
 
 @mixin box-emboss($opacity, $opacity2) {

@@ -20,6 +20,8 @@
 
 @import "touchcarousel";
 
+
+$ink: #31363c;
 $spriteImg: "";
 
 .lt-ie9 {    
@@ -44,15 +46,98 @@ div {
     *font-size: 0px;
     *line-height: 0px;
 }
-.wrapper {
-    padding: 25px 0;
-}
 header {
-    padding-left: 60px;
+    padding: 25px 0 25px 80px;
 }
 a#logo {
     @include imgRep(225,93,'/css/images/alexallan-logo.gif');
 }
+
+/******************************************************\
+ *
+ * HOMEPAGE CAROUSEL
+ *
+\******************************************************/
+
+#homepage-carousel {
+    width: 100%;
+    height: 570px; /* include the padding in this */
+    margin: 0;
+    padding: 15px 0;
+    background: lighten($ink, 75%);
+    overflow: hidden !important;
+    
+    .touchcarousel-wrapper {
+        overflow: visible;
+        margin-left: 80px;
+    }
+    .touchcarousel-item {
+        margin-right: 15px;		
+        background: #CCC;	
+        height: auto;
+        overflow: hidden;
+        &.last {
+            margin-right: 80px !important;
+        }
+        .overlay-txt {
+            position: absolute;
+            font-family: $headerFontFamily;
+            font-size: 23px;
+            padding: 15px;
+            bottom: -47px;
+            left: 0;
+            @include opacity(0);
+            @include transition(bottom 150ms ease-in-out, opacity 250ms ease-in-out);
+            background-color: $ink;
+            background-color: rgba(49,54,60,.8);
+            color: $white;
+        }
+        &:hover, a:hover {
+            .overlay-txt {
+                @include opacity(1);
+                bottom: 15px;
+            }
+        }
+    }
+    .arrow-icon {
+        background-color: lighten($ink,10%);
+        background-color: rgba(49,54,60,.7);
+        &.left {
+            left: 25px;
+        }
+        &.right {
+            right: 25px;
+        }
+    }
+    .arrow-holder {
+        width: 65px;
+        &:hover .arrow-icon {
+            background-color: $ink;
+            background-color: rgba(49,54,60,.9);
+        }
+        &.disabled {
+            .arrow-icon {
+                background-color: lighten($ink,60%);
+                background-color: rgba(49,54,60,.2);
+            }
+            &:hover .arrow-icon {
+                background-color: lighten($ink,55%);
+                background-color: rgba(49,54,60,.25);                
+            }
+        }
+    }
+    .scrollbar-holder {
+        bottom: 6px;
+        .scrollbar {
+            &.dark {
+                background-color: lighten($ink, 30%);
+                background-color: rgba(49,54,60,.7)
+            }
+        }
+    }
+}		
+
+
 // Custom responsive tweaks
 @media only screen and (min-width: 768px) {
     
