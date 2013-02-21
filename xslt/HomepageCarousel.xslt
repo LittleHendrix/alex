@@ -14,17 +14,20 @@
 
 <xsl:template match="/">
 
-    <xsl:variable name="media" select="$currentPage/homepageCarousel[not(@isDoc)]" />
+    <xsl:variable name="slideNodes" select="$currentPage/homepageCarousel[not(@isDoc)]" />
 	<xsl:variable name="autoPlay" select="$currentPage/autoPlay[not(@isDoc)]" />
 	<xsl:variable name="timeout" select="$currentPage/timeout[not(@isDoc)]" />
     
-    <xsl:if test="count($media//mediaItem) &gt; 0">
-		<div id="carousel-gallery" class="touchcarousel black-and-white">  
+	<xsl:if test="count($slideNodes//item[string(./carouselImage)!='']) &gt; 0">
+		<div id="homepage-carousel" class="touchcarousel black-and-white">  
 			<ul class="touchcarousel-container">
-				<xsl:for-each select="$media//mediaItem/Image[string(./umbracoFile)!='']">
-					<li class="touchcarousel-item">
-						<img src="{./umbracoFile}" alt="{@nodeName}" width="{./umbracoWidth}" height="{./umbracoHeight}" />
-					</li>
+				<xsl:for-each select="$slideNodes//item[string(./carouselImage)!='']">
+					<xsl:variable name="media" select="umbraco.library:GetMedia(./carouselImage,false)" />
+					<xsl:if test="$media[not(error)]">
+						<li class="touchcarousel-item">
+							<img src="{$media/umbracoFile}" alt="{$media/@nodeName}" width="{$media/umbracoWidth}" height="{$media/umbracoHeight}" />
+						</li>
+					</xsl:if>
 				</xsl:for-each>
 			</ul>		
 		</div>

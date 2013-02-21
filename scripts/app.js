@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#carousel-gallery').touchCarousel({
+    $('#homepage-carousel').touchCarousel({
         itemsPerPage: 1,				
         scrollbar: true,
         scrollbarAutoHide: true,

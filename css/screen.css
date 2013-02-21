@@ -1403,3 +1403,45 @@ a#logo {
   text-indent: -9999px;
   overflow: hidden;
 }
+
+/******************************************************\
+ *
+ * HOMEPAGE CAROUSEL
+ *
+\******************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000363}}
+#homepage-carousel {
+  width: 100%;
+  height: 540px;
+  margin: 0;
+  padding: 15px 0;
+  background: #EFEFEF;
+  overflow: hidden !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000371}}
+#homepage-carousel .touchcarousel-wrapper {
+  overflow: visible;
+  margin-left: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000375}}
+#homepage-carousel .touchcarousel-item {
+  margin-right: 15px;
+  background: #CCC;
+  height: 400px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000380}}
+#homepage-carousel .arrow-icon.left {
+  left: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000383}}
+#homepage-carousel .arrow-icon.right {
+  right: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000386}}
+#homepage-carousel .arrow-holder {
+  width: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000389}}
+#homepage-carousel .scrollbar-holder {
+  bottom: 6px;
+}
