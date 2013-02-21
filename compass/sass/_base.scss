@@ -115,8 +115,8 @@
 @mixin imgRep($w, $h, $src, $x: 0, $y: 0) {
     display: block;
     position: relative;
-    @if $w == "" { width: auto; } @else { width: $w; }
-    @if $h == "" { height: auto; } @else { height: $h; }
+    @if $w == "" { width: auto; } @else { width: $w+px; }
+    @if $h == "" { height: auto; } @else { height: $h+px; }
     background: url($src) no-repeat $x $y transparent;
     @include background-size(auto);
     border: 0;

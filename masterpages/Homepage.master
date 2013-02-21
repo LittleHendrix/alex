@@ -1,5 +1,5 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Master.master" AutoEventWireup="true" %>
+﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Submaster.master" AutoEventWireup="true" %>
 
-<asp:Content ContentPlaceHolderId="BodyContent" runat="server">
-	<!-- Insert "BodyContent" markup here -->
+<asp:Content ContentPlaceHolderId="SubContent" runat="server">
+	<umbraco:Macro Alias="HomepageCarousel" runat="server" />
 </asp:Content>
