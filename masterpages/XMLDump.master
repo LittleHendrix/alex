@@ -1,2 +1,2 @@
 ﻿<%@ Master Language="C#" MasterPageFile="/umbraco/masterpages/default.master" AutoEventWireup="true" %>
-<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server"><% Response.ContentType = "text/xml"; %><?xml version="1.0"?><umbraco:Macro Alias="XMLDump" runat="server"></umbraco:Macro></asp:Content>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderDefault" runat="server"><% Response.ContentType = "text/xml"; %><?xml version="1.0"?><umbraco:Macro Alias="_XMLDump" runat="server" /></asp:Content>

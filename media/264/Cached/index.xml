@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>alex_allan_sculpture-7_straight_cropped.jpg</originalFileName>
+    <size>51077</size>
+    <dateLastModified>Wed, 20 Feb 2013 17:17:01 GMT</dateLastModified>
+    <width>440</width>
+    <height>540</height>
+    <cachedImage>
+      <fileName>42jpfm4s.jpeg</fileName>
+      <dateCreated>Thu, 21 Feb 2013 15:20:32 GMT</dateCreated>
+      <dateLastAccessed>Thu, 21 Feb 2013 15:34:34 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>100</compression>
+      <rotate>0</rotate>
+      <flip />
+      <colorMode />
+      <crop />
+      <width>440</width>
+      <height>540</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+    <cachedImage>
+      <fileName>dc3wo1fk.jpeg</fileName>
+      <dateCreated>Thu, 21 Feb 2013 15:29:29 GMT</dateCreated>
+      <dateLastAccessed>Thu, 21 Feb 2013 15:29:29 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>100</compression>
+      <rotate>0</rotate>
+      <flip />
+      <colorMode />
+      <crop />
+      <width>300</width>
+      <height>368</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

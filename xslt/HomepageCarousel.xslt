@@ -42,14 +42,22 @@
 								<xsl:when test="string(./imageLink)!=''">
 									<xsl:variable name="href" select="umbraco.library:NiceUrl(./imageLink)" />
 									<a href="{$href}">
-										<img src="{$media/umbracoFile}" alt="{$media/@nodeName}" width="{$media/umbracoWidth}" height="{$media/umbracoHeight}" />
+										<xsl:apply-templates select="$media" mode="media">
+											<xsl:with-param name="imgGen">true</xsl:with-param>
+											<xsl:with-param name="height">540</xsl:with-param>
+											<xsl:with-param name="compress">100</xsl:with-param>
+										</xsl:apply-templates>
 										<xsl:if test="string(./overlayText)!=''">
 											<span class="overlay-txt"><xsl:value-of select="./overlayText" /></span>
 										</xsl:if>
 									</a>
 								</xsl:when>
 								<xsl:otherwise>
-									<img src="{$media/umbracoFile}" alt="{$media/@nodeName}" width="{$media/umbracoWidth}" height="{$media/umbracoHeight}" />
+									<xsl:apply-templates select="$media" mode="media">
+										<xsl:with-param name="imgGen">true</xsl:with-param>
+										<xsl:with-param name="height">540</xsl:with-param>
+										<xsl:with-param name="compress">100</xsl:with-param>
+									</xsl:apply-templates>
 									<xsl:if test="string(./overlayText)!=''">
 										<span class="overlay-txt"><xsl:value-of select="./overlayText" /></span>
 									</xsl:if>
@@ -108,4 +116,6 @@
     
 </xsl:template>
 
+<xsl:include href="_MediaHelperInclude.xslt" />
+		
 </xsl:stylesheet>
