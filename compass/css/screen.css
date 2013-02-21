@@ -71,7 +71,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /*
  * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000321}}
 article,
 aside,
 details,
@@ -89,7 +89,7 @@ summary {
 /*
  * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000331}}
 audio,
 canvas,
 video {
@@ -102,7 +102,7 @@ video {
  * Prevents modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000342}}
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -113,7 +113,7 @@ audio:not([controls]) {
  * and Safari 4.
  * Known issue: no IE 6 support.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000353}}
 [hidden] {
   display: none;
 }
@@ -127,7 +127,7 @@ audio:not([controls]) {
  * 2. Prevents iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000368}}
 html {
   font-size: 100%;
   /* 1 */
@@ -142,7 +142,7 @@ html {
  * Addresses `font-family` inconsistency between `textarea` and other form
  * elements.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000384}}
 html,
 button,
 input,
@@ -154,7 +154,7 @@ textarea {
 /*
  * Addresses margins handled incorrectly in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000392}}
 body {
   margin: 0;
   text-rendering: optimizeLegibility;
@@ -166,7 +166,7 @@ body {
 /*
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003105}}
 a:focus {
   outline: thin dotted;
 }
@@ -174,16 +174,21 @@ a:focus {
 /*
  * Improves readability when focused and also mouse hovered in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003114}}
 a:active,
 a:hover {
   outline: 0;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003118}}
+a:link {
+  -webkit-tap-highlight-color: #ad1e25;
+}
+
 /*
  * Remove the blue link image border in IE.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003126}}
 a img {
   border: none;
 }
@@ -196,37 +201,37 @@ a img {
  * Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5,
  * and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003140}}
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003145}}
 h2 {
   font-size: 1.5em;
   margin: 0.83em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003150}}
 h3 {
   font-size: 1.17em;
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003151}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003155}}
 h4 {
   font-size: 1em;
   margin: 1.33em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003160}}
 h5 {
   font-size: 0.83em;
   margin: 1.67em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003165}}
 h6 {
   font-size: 0.75em;
   margin: 2.33em 0;
@@ -235,7 +240,7 @@ h6 {
 /*
  * Addresses styling not present in IE 7/8/9, Safari 5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003174}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -243,13 +248,13 @@ abbr[title] {
 /*
  * Addresses style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003183}}
 b,
 strong {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003183}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003187}}
 blockquote {
   margin: 1em 40px;
 }
@@ -257,7 +262,7 @@ blockquote {
 /*
  * Addresses styling not present in Safari 5 and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003191}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003195}}
 dfn {
   font-style: italic;
 }
@@ -265,7 +270,7 @@ dfn {
 /*
  * Addresses styling not present in IE 6/7/8/9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003199}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003203}}
 mark {
   background: #ff0;
   color: #000;
@@ -274,7 +279,7 @@ mark {
 /*
  * Addresses margins set differently in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003209}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003213}}
 p,
 pre {
   margin: 1em 0;
@@ -283,20 +288,20 @@ pre {
 /*
  * Corrects font family set oddly in IE 6, Safari 4/5, and Chrome.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003224}}
 code,
 kbd,
 pre,
 samp {
   font-family: monospace, serif;
-  _font-family: "courier new", monospace;
+  _font-family: 'courier new', monospace;
   font-size: 1em;
 }
 
 /*
  * Improves readability of pre-formatted text in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003234}}
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -306,7 +311,7 @@ pre {
 /*
  * Addresses CSS quotes not supported in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003240}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003244}}
 q {
   quotes: none;
 }
@@ -314,7 +319,7 @@ q {
 /*
  * Addresses `quotes` property not supported in Safari 4.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003249}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003253}}
 q:before,
 q:after {
   content: '';
@@ -324,7 +329,7 @@ q:after {
 /*
  * Addresses inconsistent and variable font size in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003258}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003262}}
 small {
   font-size: 80%;
 }
@@ -332,7 +337,7 @@ small {
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003267}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003271}}
 sub,
 sup {
   font-size: 75%;
@@ -341,12 +346,12 @@ sup {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003274}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003278}}
 sup {
   top: -0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003278}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003282}}
 sub {
   bottom: -0.25em;
 }
@@ -357,7 +362,7 @@ sub {
 /*
  * Addresses margins set differently in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003293}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003297}}
 dl,
 menu,
 ol,
@@ -365,7 +370,7 @@ ul {
   margin: 1em 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003297}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003301}}
 dd {
   margin: 0 0 0 40px;
 }
@@ -373,7 +378,7 @@ dd {
 /*
  * Addresses paddings set differently in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003307}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003311}}
 menu,
 ol,
 ul {
@@ -383,7 +388,7 @@ ul {
 /*
  * Corrects list images handled incorrectly in IE 7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003320}}
 nav ul,
 nav ol {
   list-style: none;
@@ -397,7 +402,7 @@ nav ol {
  * 1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3.
  * 2. Improves image quality when scaled in IE 7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003334}}
 img {
   border: 0;
   /* 1 */
@@ -408,7 +413,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE 9.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003339}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003343}}
 svg:not(:root) {
   overflow: hidden;
 }
@@ -419,7 +424,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003355}}
 figure {
   margin: 0;
 }
@@ -430,7 +435,7 @@ figure {
 /*
  * Corrects margin displayed oddly in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003367}}
 form {
   margin: 0;
 }
@@ -438,9 +443,9 @@ form {
 /*
  * Define consistent border, margin, and padding.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003375}}
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -450,7 +455,7 @@ fieldset {
  * 2. Corrects text not wrapping in Firefox 3.
  * 3. Corrects alignment displayed oddly in IE 6/7.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003387}}
 legend {
   border: 0;
   /* 1 */
@@ -467,7 +472,7 @@ legend {
  *    and Chrome.
  * 3. Improves appearance and consistency in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003400}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003404}}
 button,
 input,
 select,
@@ -486,7 +491,7 @@ textarea {
  * Addresses Firefox 3+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003413}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003417}}
 button,
 input {
   line-height: normal;
@@ -501,7 +506,7 @@ input {
  * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003430}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003434}}
 button,
 html input[type="button"],
 input[type="reset"],
@@ -517,7 +522,7 @@ input[type="submit"] {
 /*
  * Re-set default cursor for disabled elements.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003441}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003445}}
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -529,7 +534,7 @@ input[disabled] {
  * 3. Removes excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003453}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003457}}
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -547,7 +552,7 @@ input[type="radio"] {
  * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003466}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003470}}
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -561,7 +566,7 @@ input[type="search"] {
  * Removes inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003479}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003483}}
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -570,7 +575,7 @@ input[type="search"]::-webkit-search-decoration {
 /*
  * Removes inner padding and border in Firefox 3+.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003488}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003492}}
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -581,7 +586,7 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE 6/7/8/9.
  * 2. Improves readability and alignment in all browsers.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003498}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003502}}
 textarea {
   overflow: auto;
   /* 1 */
@@ -595,7 +600,7 @@ textarea {
 /*
  * Remove most spacing between table cells.
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_normalize\.scss}line{font-family:\00003511}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003515}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -804,7 +809,7 @@ h6 {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000334}}
 hr {
-  border: solid #dddddd;
+  border: solid #ddd;
   border-width: 1px 0 0;
   clear: both;
   margin: 22px 0 21px;
@@ -915,7 +920,7 @@ blockquote, blockquote p {
 blockquote {
   margin: 0 0 17px;
   padding: 9px 20px 0 19px;
-  border-left: 1px solid #dddddd;
+  border-left: 1px solid #ddd;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000371}}
 blockquote cite {
@@ -937,7 +942,7 @@ abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
   color: #626262;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   cursor: help;
 }
 
@@ -992,7 +997,7 @@ abbr {
   /* Don't show links for images, or javascript/internal links */
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000393}}
   pre, blockquote {
-    border: 1px solid #999999;
+    border: 1px solid #999;
     page-break-inside: avoid;
   }
 
@@ -1066,7 +1071,7 @@ abbr {
 *  1. Main containers (carousel size, background)
 *
 \******************************************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000324}}
 .touchcarousel {
   position: relative;
   width: 600px;
@@ -1122,7 +1127,7 @@ abbr {
   *
   \******************************************************/
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000332}}
 .touchcarousel .touchcarousel-container {
   position: relative;
   margin: 0;
@@ -1130,14 +1135,14 @@ abbr {
   list-style: none;
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000340}}
 .touchcarousel .touchcarousel-wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000353}}
 .touchcarousel .touchcarousel-item {
   /* use margin-right for spacing between items */
   margin: 0 0 0 0;
@@ -1145,22 +1150,22 @@ abbr {
   float: left;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000359}}
 .touchcarousel .touchcarousel-item.last {
   /* Last carousel item  */
   margin-right: 0 !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000363}}
 .touchcarousel .touchcarousel-item a {
   position: relative;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000367}}
 .touchcarousel .touchcarousel-item img {
   /* bypass extra spacing caused by inline-block */
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000380}}
 .touchcarousel .arrow-holder {
   height: 100%;
   width: 45px;
@@ -1170,23 +1175,23 @@ abbr {
   cursor: pointer;
   z-index: 25;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000389}}
 .touchcarousel .arrow-holder.left {
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000392}}
 .touchcarousel .arrow-holder.right {
   right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000395}}
 .touchcarousel .arrow-holder.disabled {
   cursor: default;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000397}}
 .touchcarousel .arrow-holder.disabled .arrow-icon {
   cursor: default;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003104}}
 .touchcarousel .arrow-icon {
   width: 45px;
   height: 90px;
@@ -1195,7 +1200,7 @@ abbr {
   position: absolute;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003123}}
 .touchcarousel .tc-paging-container {
   width: 100%;
   overflow: hidden;
@@ -1203,19 +1208,19 @@ abbr {
   margin-top: -20px;
   z-index: 25;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003130}}
 .touchcarousel .tc-paging-centerer {
   float: left;
   position: relative;
   left: 50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003135}}
 .touchcarousel .tc-paging-centerer-inside {
   float: left;
   position: relative;
   left: -50%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003141}}
 .touchcarousel .tc-paging-item {
   float: left;
   cursor: pointer;
@@ -1223,7 +1228,7 @@ abbr {
   display: block;
   text-indent: -9999px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003157}}
 .touchcarousel .scrollbar-holder {
   position: absolute;
   z-index: 30;
@@ -1233,36 +1238,36 @@ abbr {
   height: 4px;
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003166}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003166}}
 .touchcarousel .scrollbar {
   position: absolute;
   left: 0;
   height: 4px;
   bottom: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003172}}
 .touchcarousel .scrollbar.dark {
   background-color: #828282;
   background-color: rgba(0, 0, 0, 0.5);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003176}}
 .touchcarousel .scrollbar.light {
   background-color: #d2d2d2;
   background-color: rgba(255, 255, 255, 0.5);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003189}}
 .touchcarousel .grab-cursor {
   cursor: url(/css/images/touchcarousel/grab.png) 8 8, move;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003190}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003190}}
 .touchcarousel .grabbing-cursor {
   cursor: url(/css/images/touchcarousel/grabbing.png) 8 8, move;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003193}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003193}}
 .touchcarousel .auto-cursor {
   cursor: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003213}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003213}}
 .touchcarousel.black-and-white .arrow-icon {
   width: 30px;
   height: 30px;
@@ -1278,27 +1283,27 @@ abbr {
   -webkit-opacity: 0.8;
   opacity: 0.8;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003233}}
 .touchcarousel.black-and-white .arrow-holder {
   width: 35px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003236}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003236}}
 .touchcarousel.black-and-white .arrow-holder:active .arrow-icon {
   -moz-opacity: 0.7 !important;
   -webkit-opacity: 0.7 !important;
   opacity: 0.7 !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003243}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003243}}
 .touchcarousel.black-and-white .arrow-holder .arrow-icon.left {
   left: 10px;
   background-position: -2px -6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003247}}
 .touchcarousel.black-and-white .arrow-holder .arrow-icon.right {
   right: 10px;
   background-position: -175px -6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003253}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003253}}
 .touchcarousel.black-and-white .arrow-holder:hover .arrow-icon {
   background-color: #1e1e1e;
   background-color: rgba(0, 0, 0, 0.7);
@@ -1306,24 +1311,24 @@ abbr {
   -webkit-opacity: 1;
   opacity: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003263}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003263}}
 .touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.left {
   background-position: -39px -6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003266}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003266}}
 .touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.right {
   background-position: -138px -6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003269}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003269}}
 .touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.left, .touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.right {
   background-color: #c8c8c8;
   background-color: rgba(0, 0, 0, 0.3);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003284}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003284}}
 .touchcarousel .tc-paging-container {
   margin-top: -22px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003287}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003287}}
 .touchcarousel .tc-paging-item {
   background-image: url("/css/images/touchcarousel/sprite.png");
   background-repeat: no-repeat;
@@ -1331,15 +1336,15 @@ abbr {
   width: 16px;
   height: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003294}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003294}}
 .touchcarousel .tc-paging-item.current {
   background-position: -95px -22px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003297}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003297}}
 .touchcarousel .tc-paging-container {
   margin-top: -25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003300}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003300}}
 .touchcarousel .tc-paging-centerer-inside {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -1349,21 +1354,21 @@ abbr {
   padding: 2px 4px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000329}}
 .lt-ie9 .row, .lt-ie9 .columns {
   *behavior: url("/css/boxsizing.htc");
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000335}}
 .clearfix {
   *zoom: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_base\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_base\.scss}line{font-family:\0000369}}
 .clearfix:before, .clearfix:after {
   content: "";
   display: table;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/_base\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_base\.scss}line{font-family:\0000373}}
 .clearfix:after {
   height: 0;
   clear: both;
@@ -1371,30 +1376,48 @@ abbr {
   visibility: hidden;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000338}}
 div {
   position: relative;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000341}}
 .noborder {
   border-color: transparent !important;
   border-style: none !important;
   border-width: 0 !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000346}}
 .btn-notxt {
   *font-size: 0px;
   *line-height: 0px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000350}}
+a {
+  border-bottom: 1px dotted #bdc2c9;
+  border-bottom-color: rgba(49, 54, 60, 0.25);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000354}}
+a:focus, a:hover {
+  border-bottom: 1px dotted #858f9b;
+  border-bottom-color: rgba(49, 54, 60, 0.5);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000358}}
+a:active {
+  background: #ad1e25;
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000362}}
 header {
   padding: 25px 0 25px 80px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000365}}
 a#logo {
   display: block;
   position: relative;
@@ -1411,98 +1434,123 @@ a#logo {
   overflow: hidden;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000368}}
+.copyrights {
+  padding: 15px 0 18px 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000370}}
+.copyrights p {
+  margin: 0;
+  font-family: "Open Sans Condensed", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
 /******************************************************\
  *
  * HOMEPAGE CAROUSEL
  *
 \******************************************************/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000382}}
 #homepage-carousel {
   width: 100%;
   height: 570px;
   /* include the padding in this */
   margin: 0;
   padding: 15px 0;
-  background: #f5f6f7;
+  background-color: #f5f6f7;
+  background-color: rgba(49, 54, 60, 0.05);
   overflow: hidden !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000391}}
 #homepage-carousel .touchcarousel-wrapper {
   overflow: visible;
   margin-left: 80px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000395}}
 #homepage-carousel .touchcarousel-item {
   margin-right: 15px;
   background: #CCC;
   height: auto;
   overflow: hidden;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003100}}
 #homepage-carousel .touchcarousel-item.last {
   margin-right: 80px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003103}}
 #homepage-carousel .touchcarousel-item .overlay-txt {
+  display: block;
+  position: relative;
+  width: auto;
+  height: auto;
+  background: url("/css/images/peek-sml.png") no-repeat 15px 50% transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
+  border: 0;
+  text-shadow: none;
+  text-indent: -9999px;
+  overflow: hidden;
   position: absolute;
   font-family: "Open Sans Condensed", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 23px;
-  padding: 15px;
+  text-indent: 0;
+  padding: 15px 15px 15px 60px;
   bottom: -47px;
   left: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
-  -webkit-transition: bottom 150ms ease-in-out, opacity 250ms ease-in-out;
-  -moz-transition: bottom 150ms ease-in-out, opacity 250ms ease-in-out;
-  -o-transition: bottom 150ms ease-in-out, opacity 250ms ease-in-out;
-  transition: bottom 150ms ease-in-out, opacity 250ms ease-in-out;
+  -webkit-transition: bottom 125ms ease-in-out, opacity 250ms ease-in-out;
+  -moz-transition: bottom 125ms ease-in-out, opacity 250ms ease-in-out;
+  -o-transition: bottom 125ms ease-in-out, opacity 250ms ease-in-out;
+  transition: bottom 125ms ease-in-out, opacity 250ms ease-in-out;
   background-color: #31363c;
   background-color: rgba(49, 54, 60, 0.8);
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003119}}
 #homepage-carousel .touchcarousel-item:hover .overlay-txt, #homepage-carousel .touchcarousel-item a:hover .overlay-txt {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   bottom: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003125}}
 #homepage-carousel .arrow-icon {
   background-color: #484f58;
   background-color: rgba(49, 54, 60, 0.7);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003128}}
 #homepage-carousel .arrow-icon.left {
   left: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003131}}
 #homepage-carousel .arrow-icon.right {
   right: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003135}}
 #homepage-carousel .arrow-holder {
   width: 65px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003137}}
 #homepage-carousel .arrow-holder:hover .arrow-icon {
   background-color: #31363c;
   background-color: rgba(49, 54, 60, 0.9);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003142}}
 #homepage-carousel .arrow-holder.disabled .arrow-icon {
   background-color: #cbcfd4;
   background-color: rgba(49, 54, 60, 0.2);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003146}}
 #homepage-carousel .arrow-holder.disabled:hover .arrow-icon {
   background-color: #bdc2c9;
   background-color: rgba(49, 54, 60, 0.25);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\00003129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003152}}
 #homepage-carousel .scrollbar-holder {
   bottom: 6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Websites\/alex\/compass\/sass\/screen\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003155}}
 #homepage-carousel .scrollbar-holder .scrollbar.dark {
   background-color: #768290;
   background-color: rgba(49, 54, 60, 0.7);

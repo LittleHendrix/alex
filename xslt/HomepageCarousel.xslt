@@ -35,6 +35,7 @@
 		<div id="homepage-carousel" class="touchcarousel black-and-white">  
 			<ul class="touchcarousel-container">
 				<xsl:for-each select="$slideNodes//item[string(./carouselImage)!='']">
+					<xsl:sort select="@id" data-type="number" order="ascending" />
 					<xsl:variable name="media" select="umbraco.library:GetMedia(./carouselImage,false)" />
 					<xsl:if test="$media[not(error)]">
 						<li class="touchcarousel-item">

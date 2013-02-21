@@ -22,6 +22,7 @@
 
 
 $ink: #31363c;
+$blood: #ad1e25;
 $spriteImg: "";
 
 .lt-ie9 {    
@@ -46,11 +47,30 @@ div {
     *font-size: 0px;
     *line-height: 0px;
 }
+a {
+    border-bottom: 1px dotted lighten($ink,55%);
+    border-bottom-color: rgba(49,54,60,.25);
+}
+a:focus, a:hover {
+    border-bottom: 1px dotted lighten($ink,35%);
+    border-bottom-color: rgba(49,54,60,.5);    
+}
+a:active {
+    background: $blood;
+    color: $white;
+}
 header {
     padding: 25px 0 25px 80px;
 }
 a#logo {
     @include imgRep(225,93,'/css/images/alexallan-logo.gif');
+}
+.copyrights {
+    padding: 15px 0 18px 80px;
+    p {
+        margin: 0;
+        font-family: $headerFontFamily;
+    }
 }
 
 /******************************************************\
@@ -64,7 +84,8 @@ a#logo {
     height: 570px; /* include the padding in this */
     margin: 0;
     padding: 15px 0;
-    background: lighten($ink, 75%);
+    background-color: lighten($ink, 75%);
+    background-color: rgba(49,54,60,.05);
     overflow: hidden !important;
     
     .touchcarousel-wrapper {
@@ -80,14 +101,16 @@ a#logo {
             margin-right: 80px !important;
         }
         .overlay-txt {
+            @include imgRep('','','/css/images/peek-sml.png',15px,50%);
             position: absolute;
             font-family: $headerFontFamily;
             font-size: 23px;
-            padding: 15px;
+            text-indent: 0;
+            padding: 15px 15px 15px 60px;
             bottom: -47px;
             left: 0;
             @include opacity(0);
-            @include transition(bottom 150ms ease-in-out, opacity 250ms ease-in-out);
+            @include transition(bottom 125ms ease-in-out, opacity 250ms ease-in-out);
             background-color: $ink;
             background-color: rgba(49,54,60,.8);
             color: $white;
