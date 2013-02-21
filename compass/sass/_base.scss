@@ -9,7 +9,7 @@
 }
 
 @function white($opacity) {
-	@return rgba(0,0,0,$opacity)
+	@return rgba(255,255,255,$opacity)
 }
 
 @mixin box-emboss($opacity, $opacity2) {

@@ -1,0 +1,17 @@
+{
+  "insertOutput": 0, 
+  "keyboard_shortcut": "", 
+  "name": "CSS deploy", 
+  "parseRegex": "", 
+  "operateOnSelection": 0, 
+  "value": [
+    "XCOPY \"%p\\Compass\\css\\*\" \"%p\\css\" /Y /S /I"
+  ], 
+  "cwd": "%p", 
+  "env": "", 
+  "doNotOpenOutputWindow": 0, 
+  "showParsedOutputList": 0, 
+  "type": "command", 
+  "parseOutput": 0, 
+  "runIn": "command-output-window"
+}

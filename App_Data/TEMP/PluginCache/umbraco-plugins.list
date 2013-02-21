@@ -17,9 +17,9 @@
     <add type="umbraco.presentation.nodeFactory.UmbracoSiteMapProviderAccessUpdate, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.EnsureSystemPathsApplicationStartupHandler, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.umbraco.Search.ExamineEvents, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
-    <add type="DigibizAdvancedMediaPicker.DAMP_ApplicationBase, DigibizAdvancedMediaPicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.4780.19120, Culture=neutral, PublicKeyToken=null" />
     <add type="UmbracoExamine.UmbracoEventManager, UmbracoExamine, Version=0.1.42.2941, Culture=neutral, PublicKeyToken=null" />
+    <add type="DigibizAdvancedMediaPicker.DAMP_ApplicationBase, DigibizAdvancedMediaPicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.IApplication" resolutionType="FindTypesWithAttribute">
     <add type="umbraco.businesslogic.ContentApplicationDefinition, businesslogic, Version=1.0.4780.19110, Culture=neutral, PublicKeyToken=null" />
@@ -63,8 +63,7 @@
     <add type="umbraco.ActionHandlers.umbEnsureUniqueName, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.ITree" resolutionType="FindAllTypes">
-    <add type="Our.Umbraco.Tree.RobotsTxt.RobotsTxtTree, Our.Umbraco.Tree.RobotsTxt, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Our.Umbraco.Tree.Config.LoadConfigFiles, Our.Umbraco.Tree.Config, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="DigibizTree.Picker.DigibizMediaTree, DigibizTree, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.loadDLRScripts, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.loadRelationTypes, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.cms.presentation.Trees.MediaRecycleBin, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
@@ -99,10 +98,11 @@
     <add type="umbraco.cms.presentation.Trees.LegacyTree, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.cms.presentation.Trees.UserPermissions, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.cms.presentation.Trees.UserTypes, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
-    <add type="DigibizTree.Picker.DigibizMediaTree, DigibizTree, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null" />
-    <add type="Our.Umbraco.Tree.UserControls.loadUserControlFiles, Our.Umbraco.Tree.UserControls, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.Tree.Config.LoadConfigFiles, Our.Umbraco.Tree.Config, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredContentTree, umbraco.editorControls, Version=1.0.4780.19120, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredMediaTree, umbraco.editorControls, Version=1.0.4780.19120, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.Tree.UserControls.loadUserControlFiles, Our.Umbraco.Tree.UserControls, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.Tree.RobotsTxt.RobotsTxtTree, Our.Umbraco.Tree.RobotsTxt, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.IPackageAction" resolutionType="FindAllTypes">
     <add type="umbraco.cms.businesslogic.packager.standardPackageActions.addApplicationTree, cms, Version=1.0.4780.19110, Culture=neutral, PublicKeyToken=null" />
@@ -138,8 +138,6 @@
     <add type="PackageActionsContrib.AddScheduledTask, PackageActionsContrib, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.IDataType" resolutionType="FindAllTypes">
-    <add type="Our.Umbraco.GoogleMaps.DataTypes.SingleLocation.SingleLocationDataType, Our.Umbraco.GoogleMaps, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="DigibizAdvancedMediaPicker.DAMP_DataType, DigibizAdvancedMediaPicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uTube.Core.DataTypes.YouTubeSingleVideo.YTSV_DataType, uTube.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uTube.Core.DataTypes.YouTubeUploader.YTU_DataType, uTube.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uTube.Core.DataTypes.YouTubeVideoPicker.YTVP_DataType, uTube.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
@@ -178,6 +176,8 @@
     <add type="umbraco.editorControls.XPathCheckBoxList.XPathCheckBoxListDataType, umbraco.editorControls, Version=1.0.4780.19120, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.XPathDropDownList.XPathDropDownListDataType, umbraco.editorControls, Version=1.0.4780.19120, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.yesno.YesNoDataType, umbraco.editorControls, Version=1.0.4780.19120, Culture=neutral, PublicKeyToken=null" />
+    <add type="DigibizAdvancedMediaPicker.DAMP_DataType, DigibizAdvancedMediaPicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.GoogleMaps.DataTypes.SingleLocation.SingleLocationDataType, Our.Umbraco.GoogleMaps, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Web.BaseRest.RestExtensionAttribute" resolutionType="FindAttributedTypes">
     <add type="Umbraco.Web.WebServices.FolderBrowserService, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
@@ -190,8 +190,8 @@
     <add type="umbraco.cms.businesslogic.media.UmbracoImageMediaFactory, cms, Version=1.0.4780.19110, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.cms.businesslogic.macro.IMacroEngine" resolutionType="FindAllTypes">
-    <add type="umbraco.MacroEngines.RazorMacroEngine, umbraco.MacroEngines, Version=1.0.4780.19121, Culture=neutral, PublicKeyToken=null" />
     <add type="Umbraco.Web.Macros.PartialViewMacroEngine, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.MacroEngines.RazorMacroEngine, umbraco.MacroEngines, Version=1.0.4780.19121, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.MacroEngines.IRazorDataTypeModel" resolutionType="FindTypesWithAttribute">
     <add type="umbraco.MacroEngines.RazorDataTypeModels.HtmlStringDataTypeModel, umbraco.MacroEngines, Version=1.0.4780.19121, Culture=neutral, PublicKeyToken=null" />
