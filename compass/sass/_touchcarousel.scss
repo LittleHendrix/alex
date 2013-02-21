@@ -83,10 +83,16 @@ $sprite: '/css/images/touchcarousel/sprite.png';
         &.right {
             right: 0;
         }
+        &.disabled {
+            cursor: default;
+            .arrow-icon {
+                cursor: default;
+            }
+        }
     }
     
     /* arrow icons */
-    .arrow-icon{		
+    .arrow-icon {		
         width: 45px;
         height: 90px;
         top:50%;
@@ -97,12 +103,6 @@ $sprite: '/css/images/touchcarousel/sprite.png';
         &.left {}
         &.right {}
         &:hover .arrow-icon {}
-        &.disabled {
-            cursor: default;
-            .arrow-icon {
-                cursor: default;
-            }
-        }
     }
 
 /******************************************************\

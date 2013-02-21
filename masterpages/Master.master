@@ -37,14 +37,12 @@
 	<script>window.jQuery || document.write('<script src="/scripts/libs/jquery-1.9.1.min.js"><\/script>')</script>
 </head>
 <body id='<umbraco:Item field="nodeTypeAlias" runat="server" />'>
-	<div class="wrapper">
-		<header>
-			<a href="/" id="logo">Homepage</a>
-		</header>
-		<asp:ContentPlaceHolder Id="BodyContent" runat="server">
-			<!-- Insert default "BodyContent" markup here -->
-		</asp:ContentPlaceHolder>
-	</div><!--/wrapper -->
+	<header>
+		<a href="/" id="logo">Homepage</a>
+	</header>
+	<asp:ContentPlaceHolder Id="BodyContent" runat="server">
+		<!-- Insert default "BodyContent" markup here -->
+	</asp:ContentPlaceHolder>
 	<script src="/scripts/plugins/jquery.touchcarousel-1.2.min.js"></script>
 	<script src="/scripts/app.js"></script>
 </body>
