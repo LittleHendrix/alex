@@ -74,7 +74,30 @@ a#logo {
     .touchcarousel-item {
         margin-right: 15px;		
         background: #CCC;	
-        height: 400px;
+        height: auto;
+        overflow: hidden;
+        &.last {
+            margin-right: 80px !important;
+        }
+        .overlay-txt {
+            position: absolute;
+            font-family: $headerFontFamily;
+            font-size: 23px;
+            padding: 15px;
+            bottom: -47px;
+            left: 0;
+            @include opacity(0);
+            @include transition(bottom 150ms ease-in-out, opacity 250ms ease-in-out);
+            background-color: $ink;
+            background-color: rgba(49,54,60,.8);
+            color: $white;
+        }
+        &:hover, a:hover {
+            .overlay-txt {
+                @include opacity(1);
+                bottom: 15px;
+            }
+        }
     }
     .arrow-icon {
         background-color: lighten($ink,10%);

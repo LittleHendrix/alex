@@ -228,3 +228,7 @@ System.Web.HttpUnhandledException (0x80004005): Exception of type 'System.Web.Ht
 2013-02-21 10:15:24,024 [23] INFO  Umbraco.Core.PluginManager - [Thread 32] Completed resolution of types of umbraco.interfaces.IDataType, found 80 (took 0ms)
 2013-02-21 10:24:35,133 [23] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 3ms)
 2013-02-21 10:24:35,510 [23] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 3ms)
+2013-02-21 12:04:50,710 [23] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of umbraco.interfaces.IDataType, found 80 (took 0ms)
+2013-02-21 12:05:29,024 [23] INFO  Umbraco.Core.PluginManager - [Thread 11] Completed resolution of types of umbraco.interfaces.IDataType, found 80 (took 0ms)
+2013-02-21 12:07:22,325 [23] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of umbraco.interfaces.IDataType, found 80 (took 0ms)
+2013-02-21 12:11:24,625 [23] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of umbraco.interfaces.IDataType, found 80 (took 0ms)

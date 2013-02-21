@@ -55,9 +55,18 @@ $sprite: '/css/images/touchcarousel/sprite.png';
         margin: 0 0 0 0;
         padding: 0;	
         float: left;
+        position: relative;
         &.last {
             /* Last carousel item  */
             margin-right: 0 !important;		
+        }
+        a {
+            position: relative;
+            display: block;
+        }
+        img {
+            /* bypass extra spacing caused by inline-block */
+            display: block;
         }
     }
 
