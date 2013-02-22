@@ -707,4 +707,26 @@
       <file name="/umbraco/js/umbracoCheckKeys.js" />
     </files>
   </item>
+  <item key="L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL05hbWVzcGFjZU1hbmFnZXIuanM7L3VtYnJhY29fY2xpZW50L3VpL2pxdWVyeS5qczsvdW1icmFjb19jbGllbnQvQ29kZU1pcnJvci9qcy9saWIvY29kZW1pcnJvci5qczsvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24valF1ZXJ5L2pxdWVyeS5jb29raWUuanM7L3VtYnJhY29fY2xpZW50L3VpL2Jhc2UyLmpzOy91bWJyYWNvX2NsaWVudC91aS9qcXVlcnl1aS5qczsvdW1icmFjb19jbGllbnQvQXBwbGljYXRpb24vVW1icmFjb1V0aWxzLmpzOy91bWJyYWNvX2NsaWVudC9BcHBsaWNhdGlvbi9VbWJyYWNvQXBwbGljYXRpb25BY3Rpb25zLmpzOy91bWJyYWNvX2NsaWVudC9Db2RlTWlycm9yL2pzL21vZGUvcmF6b3IvcmF6b3IuanM7L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL1VtYnJhY29DbGllbnRNYW5hZ2VyLmpzOy91bWJyYWNvX2NsaWVudC9BcHBsaWNhdGlvbi9qUXVlcnkvanF1ZXJ5LmhvdGtleXMuanM7L3VtYnJhY29fY2xpZW50L3VpL2RlZmF1bHQuanM7L3VtYnJhY29fY2xpZW50L21vZGFsL21vZGFsLmpzOy91bWJyYWNvX2NsaWVudC9zY3JvbGxpbmdtZW51L2phdmFzY3JpcHQuanM7L3VtYnJhY29fY2xpZW50L3BhbmVsL2phdmFzY3JpcHQuanM7L3VtYnJhY29fY2xpZW50L0NvZGVBcmVhL2phdmFzY3JpcHQuanM7L3VtYnJhY29fY2xpZW50L0NvZGVBcmVhL1VtYnJhY29FZGl0b3IuanM7L3VtYnJhY29fY2xpZW50L0FwcGxpY2F0aW9uL2pRdWVyeS9qcXVlcnktZmllbGRzZWxlY3Rpb24uanM7" file="C:\Websites\alex\App_Data\TEMP\ClientDependency\1_aeea16e648b94993bd7d5d288d62363a.cdJ" compression="gzip" version="1">
+    <files>
+      <file name="/umbraco_client/Application/NamespaceManager.js" />
+      <file name="/umbraco_client/ui/jquery.js" />
+      <file name="/umbraco_client/CodeMirror/js/lib/codemirror.js" />
+      <file name="/umbraco_client/Application/jQuery/jquery.cookie.js" />
+      <file name="/umbraco_client/ui/base2.js" />
+      <file name="/umbraco_client/ui/jqueryui.js" />
+      <file name="/umbraco_client/Application/UmbracoUtils.js" />
+      <file name="/umbraco_client/Application/UmbracoApplicationActions.js" />
+      <file name="/umbraco_client/CodeMirror/js/mode/razor/razor.js" />
+      <file name="/umbraco_client/Application/UmbracoClientManager.js" />
+      <file name="/umbraco_client/Application/jQuery/jquery.hotkeys.js" />
+      <file name="/umbraco_client/ui/default.js" />
+      <file name="/umbraco_client/modal/modal.js" />
+      <file name="/umbraco_client/scrollingmenu/javascript.js" />
+      <file name="/umbraco_client/panel/javascript.js" />
+      <file name="/umbraco_client/CodeArea/javascript.js" />
+      <file name="/umbraco_client/CodeArea/UmbracoEditor.js" />
+      <file name="/umbraco_client/Application/jQuery/jquery-fieldselection.js" />
+    </files>
+  </item>
 </map>
