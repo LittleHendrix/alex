@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>alex_allan_sculpture-63.jpg</originalFileName>
+    <size>77633</size>
+    <dateLastModified>Wed, 20 Feb 2013 17:17:01 GMT</dateLastModified>
+    <width>810</width>
+    <height>540</height>
+    <cachedImage>
+      <fileName>i1sz3jlk.jpeg</fileName>
+      <dateCreated>Fri, 22 Feb 2013 09:42:38 GMT</dateCreated>
+      <dateLastAccessed>Fri, 22 Feb 2013 10:38:45 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>100</compression>
+      <rotate>0</rotate>
+      <flip />
+      <colorMode />
+      <crop />
+      <width>800</width>
+      <height>533</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>alex_allan_sculpture-7_straight_cropped.jpg</originalFileName>
+    <size>51077</size>
+    <dateLastModified>Wed, 20 Feb 2013 17:17:01 GMT</dateLastModified>
+    <width>440</width>
+    <height>540</height>
+    <cachedImage>
+      <fileName>kj4mus3s.jpeg</fileName>
+      <dateCreated>Fri, 22 Feb 2013 09:42:38 GMT</dateCreated>
+      <dateLastAccessed>Fri, 22 Feb 2013 10:38:45 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>100</compression>
+      <rotate>0</rotate>
+      <flip />
+      <colorMode />
+      <crop />
+      <width>440</width>
+      <height>540</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

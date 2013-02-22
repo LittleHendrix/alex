@@ -104,7 +104,7 @@
 					lockAxis: true,             // Allow dragging only on one direction
 					useWebkit3d: true,
 					onAnimStart: null,
-					onAnimComplete: function() { console.log('complete',this.getCurrentId()); },
+					onAnimComplete: null,
 					onDragStart:null,
 					onDragRelease: null
 				});
