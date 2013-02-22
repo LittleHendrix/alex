@@ -30,6 +30,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" media="screen and (resolution: 132dpi)" href="/css/images/ios/touch/apple-touch-icon-72x72-precomposed.png"><!-- iPad -->
 	<link rel="apple-touch-icon-precomposed" sizes="57x57" media="screen and (resolution: 163dpi)" href="/css/images/ios/touch/apple-touch-icon-57x57-precomposed.png"><!-- iPhone 3 -->
 	<link rel="shortcut icon" href="/favicon.ico" type="image/png" />
+	<umbraco:Macro Alias="CanonicalLink" runat="server" />
 	<umbraco:Macro Alias="RssLink" runat="server" />
 	<link rel="stylesheet" href="/css/screen.css?v=0.1" media="screen, projection">
 	<script src="/scripts/libs/modernizr.2.6.2.min.js"></script>

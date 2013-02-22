@@ -26,7 +26,7 @@ $blood: #ad1e25;
 $spriteImg: "";
 
 .lt-ie9 {    
-    *, .row, .columns {
+    *, *:before, *:after {
         // IE7 fix for
         // box-sizing: border-box;
         *behavior: url("/css/boxsizing.htc");
