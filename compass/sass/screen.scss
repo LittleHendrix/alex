@@ -67,12 +67,12 @@ a:active {
     background: $blood;
     color: $white;
 }
-header {
+#logo-wrapper {
     padding: 20px 0 15px 80px;
 }
 a#logo {
-    @include imgRep(231,98,'/css/images/alexallan-logo.gif');
-    @include image-2x(231,98,'/css/images/alexallan-logo-2x.gif');
+    @include imgRep('/css/images/alexallan-logo.gif',231,98);
+    @include image-2x('/css/images/alexallan-logo-x2.gif',231,98);
 }
 .copyrights {
     padding: 15px 0 0 80px;
@@ -110,7 +110,7 @@ a#logo {
             margin-right: 80px !important;
         }
         .overlay-txt {
-            @include imgRep('','','/css/images/peek-sml.png',15px,50%);
+            @include imgRep('/css/images/peek-sml.png','','',15px,50%);
             position: absolute;
             font-family: $headerFontFamily;
             font-size: 23px;
@@ -182,5 +182,11 @@ a#logo {
     
 }
 @media only screen and (max-width: 359px) {
-    
+    #logo-wrapper {
+        text-align: center;
+        padding-left: 0;
+        a#logo {
+            margin: auto;
+        }
+    }
 }

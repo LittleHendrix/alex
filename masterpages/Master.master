@@ -39,7 +39,9 @@
 </head>
 <body id='<umbraco:Item field="nodeTypeAlias" runat="server" />'>
 	<header>
-		<a href="/" id="logo">Homepage</a>
+		<div id="logo-wrapper">
+			<a href="/" id="logo">Homepage</a>
+		</div>
 	</header>
 	<asp:ContentPlaceHolder Id="BodyContent" runat="server">
 		<!-- Insert default "BodyContent" markup here -->
