@@ -11,17 +11,17 @@
     <add type="Umbraco.Web.Media.ImageUrlProviders.ImageUrlProvider, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.IApplicationStartupHandler" resolutionType="FindAllTypes">
-    <add type="Our.Umbraco.DocTypeFieldsets.Events.CreateFieldsets, Our.Umbraco.DocTypeFieldsets, Version=0.5.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Our.Umbraco.DocTypeFieldsets.Events.InjectEditorControls, Our.Umbraco.DocTypeFieldsets, Version=0.5.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.MultiPickerRelations.MultiPickerRelationsEventHandler, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.4780.19120, Culture=neutral, PublicKeyToken=null" />
     <add type="UmbracoExamine.UmbracoEventManager, UmbracoExamine, Version=0.1.42.2941, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.BusinessLogic.ApplicationRegistrar, businesslogic, Version=1.0.4780.19110, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.BusinessLogic.ApplicationTreeRegistrar, businesslogic, Version=1.0.4780.19110, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.MultiPickerRelations.MultiPickerRelationsEventHandler, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.LibraryCacheRefresher, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.nodeFactory.UmbracoSiteMapProviderAccessUpdate, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.EnsureSystemPathsApplicationStartupHandler, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.umbraco.Search.ExamineEvents, umbraco, Version=1.0.4780.19111, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.ApplicationRegistrar, businesslogic, Version=1.0.4780.19110, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.BusinessLogic.ApplicationTreeRegistrar, businesslogic, Version=1.0.4780.19110, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.DocTypeFieldsets.Events.CreateFieldsets, Our.Umbraco.DocTypeFieldsets, Version=0.5.1.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.DocTypeFieldsets.Events.InjectEditorControls, Our.Umbraco.DocTypeFieldsets, Version=0.5.1.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.IApplication" resolutionType="FindTypesWithAttribute">
     <add type="umbraco.businesslogic.ContentApplicationDefinition, businesslogic, Version=1.0.4780.19110, Culture=neutral, PublicKeyToken=null" />
