@@ -189,4 +189,20 @@ a#logo {
             margin: auto;
         }
     }
+    #homepage-carousel {
+        .touchcarousel-wrapper {
+            margin-left: 50px;
+        }
+        .arrow-holder {
+            width: 40px;
+        }
+        .arrow-icon {
+            &.left {
+                left: 5px;
+            }
+            &.right {
+                right: 5px;
+            }
+        }
+    }
 }
