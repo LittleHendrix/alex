@@ -4242,3 +4242,4 @@ System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be
 2013-02-23 19:11:50,675 [27] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.interfaces.IDataType, found 80 (took 15ms)
 2013-02-23 19:11:50,771 [27] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.interfaces.ITree, found 41 (took 9ms)
 2013-02-23 19:11:53,350 [27] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 119ms)
+2013-02-23 19:43:12,688 [27] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 31ms)

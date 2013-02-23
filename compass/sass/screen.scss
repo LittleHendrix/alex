@@ -68,10 +68,11 @@ a:active {
     color: $white;
 }
 header {
-    padding: 25px 0 25px 80px;
+    padding: 20px 0 15px 80px;
 }
 a#logo {
-    @include imgRep(225,93,'/css/images/alexallan-logo.gif');
+    @include imgRep(231,98,'/css/images/alexallan-logo.gif');
+    @include image-2x(231,98,'/css/images/alexallan-logo-2x.gif');
 }
 .copyrights {
     padding: 15px 0 0 80px;
