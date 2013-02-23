@@ -2,11 +2,11 @@
 @{
 	var homenode = Model.AncestorOrSelf("Homepage");
 	string[] ids = homenode.rssStartNode.ToString().Split(',');
-	
 	foreach(string id in ids)
 	{
 		var node = Library.NodeById(id);
+		var feedTitle = String.IsNullOrEmpty(node.metaTitle) ? node.Name : node.metaTitle;
         if (node.Id != 0) 
-		{<link rel="alternate" type="application/rss+xml" title="@node.metaTitle" href="@(node.Url)rss" />}
+		{<link rel="alternate" type="application/rss+xml" title="@feedTitle" href="@(node.Url)rss" />}
 	}
 }

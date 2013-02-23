@@ -1443,7 +1443,7 @@ a#logo {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000376}}
 .copyrights {
-  padding: 15px 0 18px 80px;
+  padding: 15px 0 0 80px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000378}}
 .copyrights p {

@@ -1,1 +1,1568 @@
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700");html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}html{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}/* normalize.css v1.0.1 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block;*display:inline;*zoom:1}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-font-smoothing:antialiased}html,button,input,select,textarea{font-family:sans-serif}body{margin:0;text-rendering:optimizeLegibility}a:focus{outline:thin dotted}a:active,a:hover{outline:0}a:link{-webkit-tap-highlight-color:#ad1e25}a img{border:none}h1{font-size:2em;margin:0.67em 0}h2{font-size:1.5em;margin:0.83em 0}h3{font-size:1.17em;margin:1em 0}h4{font-size:1em;margin:1.33em 0}h5{font-size:0.83em;margin:1.67em 0}h6{font-size:0.75em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}blockquote{margin:1em 40px}dfn{font-style:italic}mark{background:#ff0;color:#000}p,pre{margin:1em 0}code,kbd,pre,samp{font-family:monospace,serif;_font-family:"courier new",monospace;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:before,q:after{content:'';content:none}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}dl,menu,ol,ul{margin:1em 0}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}nav ul,nav ol{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}figure{margin:0}form{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:62.5%}body{background:#fff;font-family:"Open Sans","Seogo UI","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;font-weight:normal;font-style:normal;font-size:14px;line-height:1;color:#626262;position:relative;-webkit-font-smoothing:antialiased}a img{border:none}a{color:#2ba6cb;text-decoration:none;line-height:inherit}a:hover{color:#2795b6}a:focus{color:#2795b6}p a,p a:visited{line-height:inherit}.left{float:left}.right{float:right}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.hide{display:none}.hide-override{display:none !important}.highlight{background:#ff9}#googlemap img,object,embed{max-width:none}#map_canvas embed{max-width:none}#map_canvas img{max-width:none}#map_canvas object{max-width:none}figure{margin:0}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;font-size:14px;direction:ltr}p{font-family:inherit;font-weight:normal;font-size:14px;line-height:1.6;margin-bottom:17px}p.lead{font-size:17.5px;line-height:1.6;margin-bottom:17px}aside p{font-size:13px;line-height:1.35;font-style:italic}h1,h2,h3,h4,h5,h6{font-family:"Open Sans Condensed","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;font-weight:bold;font-style:normal;color:#626262;text-rendering:optimizeLegibility;line-height:1.1;margin-bottom:14px;margin-top:14px}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-size:60%;color:#afafaf;line-height:0}h1{font-size:44px}h2{font-size:37px}h3{font-size:27px}h4{font-size:23px}h5{font-size:17px}h6{font-size:14px}hr{border:solid #ddd;border-width:1px 0 0;clear:both;margin:22px 0 21px;height:0}.subheader{line-height:1.3;color:#afafaf;font-weight:300;margin-bottom:17px}em,i{font-style:italic;line-height:inherit}strong,b{font-weight:bold;line-height:inherit}small{font-size:60%;line-height:inherit}code{font-weight:bold;background:#ff9}ul,ol,dl{font-size:14px;line-height:1.6;margin-bottom:17px;list-style-position:outside}ul li ul,ul li ol{margin-left:20px;margin-bottom:0}ul.square,ul.circle,ul.disc{margin-left:17px}ul.square{list-style-type:square}ul.square li ul{list-style:inherit}ul.circle{list-style-type:circle}ul.circle li ul{list-style:inherit}ul.disc{list-style-type:disc}ul.disc li ul{list-style:inherit}ul.no-bullet{list-style:none}ul.large li{line-height:21px}ol{margin-left:20px}ol li ul,ol li ol{margin-left:20px;margin-bottom:0}blockquote,blockquote p{line-height:1.5;color:#afafaf}blockquote{margin:0 0 17px;padding:9px 20px 0 19px;border-left:1px solid #ddd}blockquote cite{display:block;font-size:13px;color:#959595}blockquote cite:before{content:"\2014 \0020"}blockquote cite a,blockquote cite a:visited{color:#959595}abbr,acronym{text-transform:uppercase;font-size:90%;color:#626262;border-bottom:1px solid #ddd;cursor:help}abbr{text-transform:none}.print-only{display:none !important}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important;filter:none !important;-ms-filter:none !important}a,a:visited{text-decoration:underline}a[href]:after{content:" (" attr(href) ")"}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h2,h3{page-break-after:avoid}.hide-on-print{display:none !important}.print-only{display:block !important}.hide-for-print{display:none !important}.show-for-print{display:inherit !important}}.touchcarousel{position:relative;width:600px;height:400px;overflow:hidden}.touchcarousel .touchcarousel-container{position:relative;margin:0;padding:0;list-style:none;left:0}.touchcarousel .touchcarousel-wrapper{position:relative;overflow:hidden;width:100%;height:100%}.touchcarousel .touchcarousel-item{margin:0 0 0 0;padding:0;float:left;position:relative}.touchcarousel .touchcarousel-item.last{margin-right:0 !important}.touchcarousel .touchcarousel-item a{position:relative;display:block}.touchcarousel .touchcarousel-item img{display:block}.touchcarousel .arrow-holder{height:100%;width:45px;position:absolute;top:0;display:block;cursor:pointer;z-index:25}.touchcarousel .arrow-holder.left{left:0}.touchcarousel .arrow-holder.right{right:0}.touchcarousel .arrow-holder.disabled{cursor:default}.touchcarousel .arrow-holder.disabled .arrow-icon{cursor:default}.touchcarousel .arrow-icon{width:45px;height:90px;top:50%;margin-top:-45px;position:absolute;cursor:pointer}.touchcarousel .tc-paging-container{width:100%;overflow:hidden;position:absolute;margin-top:-20px;z-index:25}.touchcarousel .tc-paging-centerer{float:left;position:relative;left:50%}.touchcarousel .tc-paging-centerer-inside{float:left;position:relative;left:-50%}.touchcarousel .tc-paging-item{float:left;cursor:pointer;position:relative;display:block;text-indent:-9999px}.touchcarousel .scrollbar-holder{position:absolute;z-index:30;left:6px;right:6px;bottom:5px;height:4px;overflow:hidden}.touchcarousel .scrollbar{position:absolute;left:0;height:4px;bottom:0px}.touchcarousel .scrollbar.dark{background-color:#828282;background-color:rgba(0,0,0,0.5)}.touchcarousel .scrollbar.light{background-color:#d2d2d2;background-color:rgba(255,255,255,0.5)}.touchcarousel .grab-cursor{cursor:url(/css/images/touchcarousel/grab.png) 8 8,move}.touchcarousel .grabbing-cursor{cursor:url(/css/images/touchcarousel/grabbing.png) 8 8,move}.touchcarousel .auto-cursor{cursor:auto}.touchcarousel.black-and-white .arrow-icon{width:30px;height:30px;margin-top:-15px;background-image:url("/css/images/touchcarousel/sprite.png");background-repeat:no-repeat;background-color:#323232;background-color:rgba(0,0,0,0.7);-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;-moz-opacity:0.8;-webkit-opacity:0.8;opacity:0.8}.touchcarousel.black-and-white .arrow-holder{width:35px}.touchcarousel.black-and-white .arrow-holder:active .arrow-icon{-moz-opacity:0.7 !important;-webkit-opacity:0.7 !important;opacity:0.7 !important}.touchcarousel.black-and-white .arrow-holder .arrow-icon.left{left:10px;background-position:-2px -6px}.touchcarousel.black-and-white .arrow-holder .arrow-icon.right{right:10px;background-position:-175px -6px}.touchcarousel.black-and-white .arrow-holder:hover .arrow-icon{background-color:#1e1e1e;background-color:rgba(0,0,0,0.7);-moz-opacity:1;-webkit-opacity:1;opacity:1}.touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.left{background-position:-39px -6px}.touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.right{background-position:-138px -6px}.touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.left,.touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.right{background-color:#c8c8c8;background-color:rgba(0,0,0,0.3)}.touchcarousel .tc-paging-container{margin-top:-22px}.touchcarousel .tc-paging-item{background-image:url("/css/images/touchcarousel/sprite.png");background-repeat:no-repeat;background-position:-95px -4px;width:16px;height:16px}.touchcarousel .tc-paging-item.current{background-position:-95px -22px}.touchcarousel .tc-paging-container{margin-top:-25px}.touchcarousel .tc-paging-centerer-inside{-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;background-color:#323232;background-color:rgba(0,0,0,0.6);padding:2px 4px}.lt-ie9 *,.lt-ie9 *:before,.lt-ie9 *:after{*behavior:url("/css/boxsizing.htc")}::selection{background-color:#ad1e25;color:#fff}::-moz-selection{background-color:#ad1e25;color:#fff}.clearfix{*zoom:1}.clearfix:before,.clearfix:after{content:"";display:table}.clearfix:after{height:0;clear:both;overflow:hidden;visibility:hidden}div{position:relative}.noborder,#homepage-carousel .arrow-holder{border-color:transparent !important;border-style:none !important;border-width:0 !important}.btn-notxt{*font-size:0px;*line-height:0px}a{border-bottom:1px dotted #bdc2c9;border-bottom-color:rgba(49,54,60,0.25)}a:focus,a:hover{border-bottom:1px dotted #858f9b;border-bottom-color:rgba(49,54,60,0.5)}a:active{background:#ad1e25;color:#fff}header{padding:25px 0 25px 80px}a#logo{display:block;position:relative;width:225px;height:93px;background:url("/css/images/alexallan-logo.gif") no-repeat 0 0 transparent;-webkit-background-size:auto;-moz-background-size:auto;-o-background-size:auto;background-size:auto;border:0;text-shadow:none;text-indent:-9999px;overflow:hidden}.copyrights{padding:15px 0 18px 80px}.copyrights p{margin:0;font-family:"Open Sans Condensed","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif}#homepage-carousel{width:100%;height:570px;margin:0;padding:15px 0;background-color:#f5f6f7;background-color:rgba(49,54,60,0.05);overflow:hidden !important}#homepage-carousel .touchcarousel-wrapper{overflow:visible;margin-left:80px}#homepage-carousel .touchcarousel-item{margin-right:15px;background:#CCC;height:auto;overflow:hidden}#homepage-carousel .touchcarousel-item.last{margin-right:80px !important}#homepage-carousel .touchcarousel-item .overlay-txt{display:block;position:relative;width:auto;height:auto;background:url("/css/images/peek-sml.png") no-repeat 15px 50% transparent;-webkit-background-size:auto;-moz-background-size:auto;-o-background-size:auto;background-size:auto;border:0;text-shadow:none;text-indent:-9999px;overflow:hidden;position:absolute;font-family:"Open Sans Condensed","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;font-size:23px;text-indent:0;padding:15px 15px 15px 60px;bottom:-47px;left:0;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);opacity:0;-webkit-transition:bottom 125ms ease-in-out,opacity 250ms ease-in-out;-moz-transition:bottom 125ms ease-in-out,opacity 250ms ease-in-out;-o-transition:bottom 125ms ease-in-out,opacity 250ms ease-in-out;transition:bottom 125ms ease-in-out,opacity 250ms ease-in-out;background-color:#31363c;background-color:rgba(49,54,60,0.8);color:#fff}#homepage-carousel .touchcarousel-item:hover .overlay-txt,#homepage-carousel .touchcarousel-item a:hover .overlay-txt{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);opacity:1;bottom:15px}#homepage-carousel .arrow-icon{background-color:#484f58;background-color:rgba(49,54,60,0.7)}#homepage-carousel .arrow-icon.left{left:25px}#homepage-carousel .arrow-icon.right{right:25px}#homepage-carousel .arrow-holder{width:65px}#homepage-carousel .arrow-holder:hover .arrow-icon{background-color:#31363c;background-color:rgba(49,54,60,0.9)}#homepage-carousel .arrow-holder:active{background-color:transparent}#homepage-carousel .arrow-holder.disabled .arrow-icon{background-color:#cbcfd4;background-color:rgba(49,54,60,0.2)}#homepage-carousel .arrow-holder.disabled:hover .arrow-icon{background-color:#bdc2c9;background-color:rgba(49,54,60,0.25)}#homepage-carousel .scrollbar-holder{bottom:6px}#homepage-carousel .scrollbar-holder .scrollbar.dark{background-color:#768290;background-color:rgba(49,54,60,0.7)}
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700");
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000317}}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000322}}
+html {
+  line-height: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000324}}
+ol, ul {
+  list-style: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000326}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000328}}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000330}}
+q, blockquote {
+  quotes: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003103}}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000332}}
+a img {
+  border: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003116}}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* normalize.css v1.0.1 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000321}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/*
+ * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000331}}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/*
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000342}}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/*
+ * Addresses styling for `hidden` attribute not present in IE 7/8/9, Firefox 3,
+ * and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000353}}
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000368}}
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Addresses `font-family` inconsistency between `textarea` and other form
+ * elements.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000384}}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+/*
+ * Addresses margins handled incorrectly in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\0000392}}
+body {
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses `outline` inconsistency between Chrome and other browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003105}}
+a:focus {
+  outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003114}}
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/*
+ * Remove the blue link image border in IE.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003126}}
+a img {
+  border: none;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses font sizes and margins set differently in IE 6/7.
+ * Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5,
+ * and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003140}}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003145}}
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003150}}
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003155}}
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003160}}
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003165}}
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+
+/*
+ * Addresses styling not present in IE 7/8/9, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003174}}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/*
+ * Addresses style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003183}}
+b,
+strong {
+  font-weight: bold;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003187}}
+blockquote {
+  margin: 1em 40px;
+}
+
+/*
+ * Addresses styling not present in Safari 5 and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003195}}
+dfn {
+  font-style: italic;
+}
+
+/*
+ * Addresses styling not present in IE 6/7/8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003203}}
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/*
+ * Addresses margins set differently in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003213}}
+p,
+pre {
+  margin: 1em 0;
+}
+
+/*
+ * Corrects font family set oddly in IE 6, Safari 4/5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003224}}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003234}}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/*
+ * Addresses CSS quotes not supported in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003244}}
+q {
+  quotes: none;
+}
+
+/*
+ * Addresses `quotes` property not supported in Safari 4.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003253}}
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/*
+ * Addresses inconsistent and variable font size in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003262}}
+small {
+  font-size: 80%;
+}
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003271}}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003278}}
+sup {
+  top: -0.5em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003282}}
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+/*
+ * Addresses margins set differently in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003297}}
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003301}}
+dd {
+  margin: 0 0 0 40px;
+}
+
+/*
+ * Addresses paddings set differently in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003311}}
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px;
+}
+
+/*
+ * Corrects list images handled incorrectly in IE 7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003320}}
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improves image quality when scaled in IE 7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003334}}
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/*
+ * Corrects overflow displayed oddly in IE 9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003343}}
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003355}}
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Corrects margin displayed oddly in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003367}}
+form {
+  margin: 0;
+}
+
+/*
+ * Define consistent border, margin, and padding.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003375}}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+ * 1. Corrects color not being inherited in IE 6/7/8/9.
+ * 2. Corrects text not wrapping in Firefox 3.
+ * 3. Corrects alignment displayed oddly in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003387}}
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/*
+ * 1. Corrects font size not being inherited in all browsers.
+ * 2. Addresses margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improves appearance and consistency in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003404}}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/*
+ * Addresses Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003417}}
+button,
+input {
+  line-height: normal;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003434}}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003445}}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to content-box in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ * 3. Removes excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003457}}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003470}}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003483}}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in Firefox 3+.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003492}}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003502}}
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_normalize\.scss}line{font-family:\00003515}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Requires: normalize.css */
+/* Global Reset & Standards ---------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\000035}}
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\000036}}
+html {
+  font-size: 62.5%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\000037}}
+body {
+  background: white;
+  font-family: "Open Sans", "Seogo UI", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1;
+  color: #626262;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links ---------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000311}}
+a img {
+  border: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000312}}
+a {
+  color: #2ba6cb;
+  text-decoration: none;
+  line-height: inherit;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000313}}
+a:hover {
+  color: #2795b6;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000314}}
+a:focus {
+  color: #2795b6;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000315}}
+p a, p a:visited {
+  line-height: inherit;
+}
+
+/* Misc ---------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000319}}
+.left {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000320}}
+.right {
+  float: right;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000321}}
+.text-left {
+  text-align: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000322}}
+.text-right {
+  text-align: right;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000323}}
+.text-center {
+  text-align: center;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000324}}
+.hide {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000325}}
+.hide-override {
+  display: none !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000326}}
+.highlight {
+  background: #ffff99;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000328}}
+#googlemap img, object, embed {
+  max-width: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000330}}
+#map_canvas embed {
+  max-width: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000331}}
+#map_canvas img {
+  max-width: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000332}}
+#map_canvas object {
+  max-width: none;
+}
+
+/* Reset for strange margins by default on <figure> elements */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_globals\.scss}line{font-family:\0000335}}
+figure {
+  margin: 0;
+}
+
+/* Base Type Styles Using Modular Scale ---------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\000033}}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  direction: ltr;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000310}}
+p {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 17px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000311}}
+p.lead {
+  font-size: 17.5px;
+  line-height: 1.6;
+  margin-bottom: 17px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000313}}
+aside p {
+  font-size: 13px;
+  line-height: 1.35;
+  font-style: italic;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000315}}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans Condensed", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #626262;
+  text-rendering: optimizeLegibility;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  margin-top: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000324}}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-size: 60%;
+  color: #afafaf;
+  line-height: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000327}}
+h1 {
+  font-size: 44px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000328}}
+h2 {
+  font-size: 37px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000329}}
+h3 {
+  font-size: 27px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000330}}
+h4 {
+  font-size: 23px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000331}}
+h5 {
+  font-size: 17px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000332}}
+h6 {
+  font-size: 14px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000334}}
+hr {
+  border: solid #ddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 22px 0 21px;
+  height: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000336}}
+.subheader {
+  line-height: 1.3;
+  color: #afafaf;
+  font-weight: 300;
+  margin-bottom: 17px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000338}}
+em, i {
+  font-style: italic;
+  line-height: inherit;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000339}}
+strong, b {
+  font-weight: bold;
+  line-height: inherit;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000340}}
+small {
+  font-size: 60%;
+  line-height: inherit;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000341}}
+code {
+  font-weight: bold;
+  background: #ffff99;
+}
+
+/* Lists ---------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000344}}
+ul, ol, dl {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 17px;
+  list-style-position: outside;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000347}}
+ul li ul, ul li ol {
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000349}}
+ul.square, ul.circle, ul.disc {
+  margin-left: 17px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000350}}
+ul.square {
+  list-style-type: square;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000351}}
+ul.square li ul {
+  list-style: inherit;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000353}}
+ul.circle {
+  list-style-type: circle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000354}}
+ul.circle li ul {
+  list-style: inherit;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000356}}
+ul.disc {
+  list-style-type: disc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000357}}
+ul.disc li ul {
+  list-style: inherit;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000359}}
+ul.no-bullet {
+  list-style: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000360}}
+ul.large li {
+  line-height: 21px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000362}}
+ol {
+  margin-left: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000364}}
+ol li ul, ol li ol {
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
+/* Blockquotes ---------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000369}}
+blockquote, blockquote p {
+  line-height: 1.5;
+  color: #afafaf;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000370}}
+blockquote {
+  margin: 0 0 17px;
+  padding: 9px 20px 0 19px;
+  border-left: 1px solid #ddd;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000371}}
+blockquote cite {
+  display: block;
+  font-size: 13px;
+  color: #959595;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000372}}
+blockquote cite:before {
+  content: "\2014 \0020";
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000373}}
+blockquote cite a, blockquote cite a:visited {
+  color: #959595;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000377}}
+abbr, acronym {
+  text-transform: uppercase;
+  font-size: 90%;
+  color: #626262;
+  border-bottom: 1px solid #ddd;
+  cursor: help;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000378}}
+abbr {
+  text-transform: none;
+}
+
+/*
+ * Print styles.
+ *
+ * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+ * Credit to Paul Irish and HTML5 Boilerplate (html5boilerplate.com)
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000386}}
+.print-only {
+  display: none !important;
+}
+
+@media print {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000388}}
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* Black prints faster: h5bp.com/s */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000389}}
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000390}}
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000391}}
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000392}}
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000393}}
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000394}}
+  thead {
+    display: table-header-group;
+  }
+
+  /* h5bp.com/t */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000395}}
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000396}}
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000398}}
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\0000399}}
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\00003100}}
+  .hide-on-print {
+    display: none !important;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\00003101}}
+  .print-only {
+    display: block !important;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\00003102}}
+  .hide-for-print {
+    display: none !important;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Ruby193\/lib\/ruby\/gems\/1\.9\.1\/gems\/zurb-foundation-3\.2\.5\/scss\/foundation\/common\/_typography\.scss}line{font-family:\00003103}}
+  .show-for-print {
+    display: inherit !important;
+  }
+}
+/******************************************************\
+*
+*  Base TouchCarousel stylesheet
+*   
+*  Contents:
+*
+*   1. Main containers
+*   2. Carousel items
+*   3. Arrows(direction) navigation
+*   4. Paging navigation
+*   5. Scrollbar
+*   6. Cursors
+*
+\******************************************************/
+/******************************************************\
+*
+*  1. Main containers (carousel size, background)
+*
+\******************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000324}}
+.touchcarousel {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  /* style is removed after carousel is inited, use !important if you want to keep it*/
+  overflow: hidden;
+  /******************************************************\
+  *
+  *  2. Carousel items (item styling, spacing between items)
+  *
+  \******************************************************/
+  /******************************************************\
+  *
+  *  3. Arrows(direction) navigation
+  *
+  \******************************************************/
+  /* arrow hitstate and icon holder */
+  /* arrow icons */
+  /******************************************************\
+  *
+  *  4. Paging navigation
+  *
+  \******************************************************/
+  /* Paging items */
+  /******************************************************\
+  *
+  *  5. Scrollbar
+  *
+  \******************************************************/
+  /******************************************************\
+  *
+  *  6. Cursors
+  *
+  \******************************************************/
+  /* IE and Opera use "move", FF uses -moz-grab */
+  /* Cursor that used when mouse drag is disabled */
+  /******************************************************\
+  *
+  *  Minimal Light Skin
+  *
+  *    1. Arrows(direction) navigation
+  *    2. Paging navigation
+  *
+  \******************************************************/
+  /******************************************************\
+  *
+  *  1. Arrows (direction) navigation
+  *
+  \******************************************************/
+  /******************************************************\
+  *
+  *  2. Paging navigation
+  *
+  \******************************************************/
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000332}}
+.touchcarousel .touchcarousel-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000340}}
+.touchcarousel .touchcarousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000353}}
+.touchcarousel .touchcarousel-item {
+  /* use margin-right for spacing between items */
+  margin: 0 0 0 0;
+  padding: 0;
+  float: left;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000359}}
+.touchcarousel .touchcarousel-item.last {
+  /* Last carousel item  */
+  margin-right: 0 !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000363}}
+.touchcarousel .touchcarousel-item a {
+  position: relative;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000367}}
+.touchcarousel .touchcarousel-item img {
+  /* bypass extra spacing caused by inline-block */
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000380}}
+.touchcarousel .arrow-holder {
+  height: 100%;
+  width: 45px;
+  position: absolute;
+  top: 0;
+  display: block;
+  cursor: pointer;
+  z-index: 25;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000389}}
+.touchcarousel .arrow-holder.left {
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000392}}
+.touchcarousel .arrow-holder.right {
+  right: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000395}}
+.touchcarousel .arrow-holder.disabled {
+  cursor: default;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\0000397}}
+.touchcarousel .arrow-holder.disabled .arrow-icon {
+  cursor: default;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003104}}
+.touchcarousel .arrow-icon {
+  width: 45px;
+  height: 90px;
+  top: 50%;
+  margin-top: -45px;
+  position: absolute;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003123}}
+.touchcarousel .tc-paging-container {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  margin-top: -20px;
+  z-index: 25;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003130}}
+.touchcarousel .tc-paging-centerer {
+  float: left;
+  position: relative;
+  left: 50%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003135}}
+.touchcarousel .tc-paging-centerer-inside {
+  float: left;
+  position: relative;
+  left: -50%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003141}}
+.touchcarousel .tc-paging-item {
+  float: left;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  text-indent: -9999px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003157}}
+.touchcarousel .scrollbar-holder {
+  position: absolute;
+  z-index: 30;
+  left: 6px;
+  right: 6px;
+  bottom: 5px;
+  height: 4px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003166}}
+.touchcarousel .scrollbar {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  bottom: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003172}}
+.touchcarousel .scrollbar.dark {
+  background-color: #828282;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003176}}
+.touchcarousel .scrollbar.light {
+  background-color: #d2d2d2;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003189}}
+.touchcarousel .grab-cursor {
+  cursor: url(/css/images/touchcarousel/grab.png) 8 8, move;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003190}}
+.touchcarousel .grabbing-cursor {
+  cursor: url(/css/images/touchcarousel/grabbing.png) 8 8, move;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003193}}
+.touchcarousel .auto-cursor {
+  cursor: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003213}}
+.touchcarousel.black-and-white .arrow-icon {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  background-image: url("/css/images/touchcarousel/sprite.png");
+  background-repeat: no-repeat;
+  background-color: #323232;
+  background-color: rgba(0, 0, 0, 0.7);
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-opacity: 0.8;
+  -webkit-opacity: 0.8;
+  opacity: 0.8;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003233}}
+.touchcarousel.black-and-white .arrow-holder {
+  width: 35px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003236}}
+.touchcarousel.black-and-white .arrow-holder:active .arrow-icon {
+  -moz-opacity: 0.7 !important;
+  -webkit-opacity: 0.7 !important;
+  opacity: 0.7 !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003243}}
+.touchcarousel.black-and-white .arrow-holder .arrow-icon.left {
+  left: 10px;
+  background-position: -2px -6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003247}}
+.touchcarousel.black-and-white .arrow-holder .arrow-icon.right {
+  right: 10px;
+  background-position: -175px -6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003253}}
+.touchcarousel.black-and-white .arrow-holder:hover .arrow-icon {
+  background-color: #1e1e1e;
+  background-color: rgba(0, 0, 0, 0.7);
+  -moz-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003263}}
+.touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.left {
+  background-position: -39px -6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003266}}
+.touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.right {
+  background-position: -138px -6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003269}}
+.touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.left, .touchcarousel.black-and-white .arrow-holder.disabled .arrow-icon.right {
+  background-color: #c8c8c8;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003284}}
+.touchcarousel .tc-paging-container {
+  margin-top: -22px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003287}}
+.touchcarousel .tc-paging-item {
+  background-image: url("/css/images/touchcarousel/sprite.png");
+  background-repeat: no-repeat;
+  background-position: -95px -4px;
+  width: 16px;
+  height: 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003294}}
+.touchcarousel .tc-paging-item.current {
+  background-position: -95px -22px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003297}}
+.touchcarousel .tc-paging-container {
+  margin-top: -25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_touchcarousel\.scss}line{font-family:\00003300}}
+.touchcarousel .tc-paging-centerer-inside {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #323232;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2px 4px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000329}}
+.lt-ie9 *, .lt-ie9 *:before, .lt-ie9 *:after {
+  *behavior: url("/css/boxsizing.htc");
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000335}}
+::selection {
+  background-color: #ad1e25;
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000339}}
+::-moz-selection {
+  background-color: #ad1e25;
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000343}}
+.clearfix {
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_base\.scss}line{font-family:\0000369}}
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/_base\.scss}line{font-family:\0000373}}
+.clearfix:after {
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000346}}
+div {
+  position: relative;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000349}}
+.noborder, #homepage-carousel .arrow-holder {
+  border-color: transparent !important;
+  border-style: none !important;
+  border-width: 0 !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000354}}
+.btn-notxt {
+  *font-size: 0px;
+  *line-height: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000358}}
+a {
+  border-bottom: 1px dotted #bdc2c9;
+  border-bottom-color: rgba(49, 54, 60, 0.25);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000362}}
+a:focus, a:hover {
+  border-bottom: 1px dotted #858f9b;
+  border-bottom-color: rgba(49, 54, 60, 0.5);
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000366}}
+a:active {
+  background: #ad1e25;
+  color: white;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000370}}
+header {
+  padding: 25px 0 25px 80px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000373}}
+a#logo {
+  display: block;
+  position: relative;
+  width: 225px;
+  height: 93px;
+  background: url("/css/images/alexallan-logo.gif") no-repeat 0 0 transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
+  border: 0;
+  text-shadow: none;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000376}}
+.copyrights {
+  padding: 15px 0 0 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000378}}
+.copyrights p {
+  margin: 0;
+  font-family: "Open Sans Condensed", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+/******************************************************\
+ *
+ * HOMEPAGE CAROUSEL
+ *
+\******************************************************/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000390}}
+#homepage-carousel {
+  width: 100%;
+  height: 570px;
+  /* include the padding in this */
+  margin: 0;
+  padding: 15px 0;
+  background-color: #f5f6f7;
+  background-color: rgba(49, 54, 60, 0.05);
+  overflow: hidden !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\0000399}}
+#homepage-carousel .touchcarousel-wrapper {
+  overflow: visible;
+  margin-left: 80px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003103}}
+#homepage-carousel .touchcarousel-item {
+  margin-right: 15px;
+  background: #CCC;
+  height: auto;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003108}}
+#homepage-carousel .touchcarousel-item.last {
+  margin-right: 80px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003111}}
+#homepage-carousel .touchcarousel-item .overlay-txt {
+  display: block;
+  position: relative;
+  width: auto;
+  height: auto;
+  background: url("/css/images/peek-sml.png") no-repeat 15px 50% transparent;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  -o-background-size: auto;
+  background-size: auto;
+  border: 0;
+  text-shadow: none;
+  text-indent: -9999px;
+  overflow: hidden;
+  position: absolute;
+  font-family: "Open Sans Condensed", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 23px;
+  text-indent: 0;
+  padding: 15px 15px 15px 60px;
+  bottom: -47px;
+  left: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: bottom 125ms ease-in-out, opacity 250ms ease-in-out;
+  -moz-transition: bottom 125ms ease-in-out, opacity 250ms ease-in-out;
+  -o-transition: bottom 125ms ease-in-out, opacity 250ms ease-in-out;
+  transition: bottom 125ms ease-in-out, opacity 250ms ease-in-out;
+  background-color: #31363c;
+  background-color: rgba(49, 54, 60, 0.8);
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003127}}
+#homepage-carousel .touchcarousel-item:hover .overlay-txt, #homepage-carousel .touchcarousel-item a:hover .overlay-txt {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  bottom: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003133}}
+#homepage-carousel .arrow-icon {
+  background-color: #484f58;
+  background-color: rgba(49, 54, 60, 0.7);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003136}}
+#homepage-carousel .arrow-icon.left {
+  left: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003139}}
+#homepage-carousel .arrow-icon.right {
+  right: 25px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003143}}
+#homepage-carousel .arrow-holder {
+  width: 65px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003146}}
+#homepage-carousel .arrow-holder:hover .arrow-icon {
+  background-color: #31363c;
+  background-color: rgba(49, 54, 60, 0.9);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003150}}
+#homepage-carousel .arrow-holder:active {
+  background-color: transparent;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003154}}
+#homepage-carousel .arrow-holder.disabled .arrow-icon {
+  background-color: #cbcfd4;
+  background-color: rgba(49, 54, 60, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003158}}
+#homepage-carousel .arrow-holder.disabled:hover .arrow-icon {
+  background-color: #bdc2c9;
+  background-color: rgba(49, 54, 60, 0.25);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003164}}
+#homepage-carousel .scrollbar-holder {
+  bottom: 6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/htdocs\/alexallan\/compass\/sass\/screen\.scss}line{font-family:\00003167}}
+#homepage-carousel .scrollbar-holder .scrollbar.dark {
+  background-color: #768290;
+  background-color: rgba(49, 54, 60, 0.7);
+}

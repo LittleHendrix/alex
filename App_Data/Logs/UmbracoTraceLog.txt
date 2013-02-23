@@ -4105,3 +4105,140 @@ System.Data.SqlServerCe.SqlCeException (0x80004005): The database file cannot be
 2013-02-23 16:10:52,821 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 1ms)
 2013-02-23 16:10:53,154 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.ITree, found 41 (took 1ms)
 2013-02-23 16:14:26,105 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.IDataType, found 80 (took 3ms)
+2013-02-23 17:48:18,114 [6] INFO  Umbraco.Web.UmbracoApplication - [Thread 12] Application shutdown. Reason: MaxRecompilationsReached
+2013-02-23 17:48:20,317 [11] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-02-23 17:48:20,440 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-02-23 17:48:20,451 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 9ms)
+2013-02-23 17:48:20,926 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 444ms)
+2013-02-23 17:48:20,945 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 12ms)
+2013-02-23 17:48:21,091 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 9ms)
+2013-02-23 17:48:21,101 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 9ms)
+2013-02-23 17:48:21,118 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 11 (took 8ms)
+2013-02-23 17:48:21,339 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 14ms)
+2013-02-23 17:48:21,442 [11] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 10ms)
+2013-02-23 17:48:21,523 [11] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 1159ms)
+2013-02-23 17:48:33,745 [11] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 13ms)
+2013-02-23 17:48:34,744 [11] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 14ms)
+2013-02-23 17:48:35,020 [11] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 79ms)
+2013-02-23 17:49:23,740 [11] INFO  Umbraco.Core.PluginManager - [Thread 20] Completed resolution of types of umbraco.interfaces.ITree, found 41 (took 25ms)
+2013-02-23 17:55:51,403 [11] INFO  Umbraco.Core.PluginManager - [Thread 21] Completed resolution of types of umbraco.interfaces.IDataType, found 80 (took 26ms)
+2013-02-23 17:55:52,464 [11] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 11ms)
+2013-02-23 18:00:12,677 [11] WARN  umbraco.macro - [Thread 19] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'MultiNodePicker'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:01:03,969 [11] WARN  umbraco.macro - [Thread 17] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'MultiNodePicker'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:01:30,141 [11] WARN  umbraco.macro - [Thread 18] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'MultiNodePicker'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:01:36,474 [11] WARN  umbraco.macro - [Thread 12] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'string' does not contain a definition for 'MultiNodePicker'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:02:11,898 [11] WARN  umbraco.macro - [Thread 18] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'MultiNodePicker'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:04:17,193 [11] INFO  Umbraco.Web.UmbracoApplication - [Thread 18] Application shutdown. Reason: MaxRecompilationsReached
+2013-02-23 18:04:21,360 [20] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-02-23 18:04:21,559 [20] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-02-23 18:04:21,655 [20] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 91ms)
+2013-02-23 18:04:22,613 [20] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 841ms)
+2013-02-23 18:04:22,705 [20] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 83ms)
+2013-02-23 18:04:25,596 [20] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 55ms)
+2013-02-23 18:04:25,682 [20] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 86ms)
+2013-02-23 18:04:25,789 [20] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 11 (took 96ms)
+2013-02-23 18:04:25,924 [20] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 101ms)
+2013-02-23 18:04:26,268 [20] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 152ms)
+2013-02-23 18:04:28,204 [20] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 6795ms)
+2013-02-23 18:04:32,286 [20] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 155ms)
+2013-02-23 18:04:35,768 [20] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 88ms)
+2013-02-23 18:04:36,906 [20] WARN  umbraco.macro - [Thread 17] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'MultiNodePicker'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:05:10,652 [20] WARN  umbraco.macro - [Thread 21] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'MultiNodePicker'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:06:55,897 [20] WARN  umbraco.macro - [Thread 21] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'MultiNodePicker'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:10:24,226 [20] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.interfaces.IDataType, found 80 (took 28ms)
+2013-02-23 18:10:24,273 [20] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.interfaces.ITree, found 41 (took 22ms)
+2013-02-23 18:10:27,113 [20] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 222ms)
+2013-02-23 18:10:43,217 [20] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 39ms)
+2013-02-23 18:15:25,887 [20] WARN  umbraco.macro - [Thread 19] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'MultiNodePicker'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:15:44,930 [20] WARN  umbraco.macro - [Thread 18] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'MultiNodePicker'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:16:19,736 [20] WARN  umbraco.macro - [Thread 17] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'nodeId'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:21:03,269 [20] WARN  umbraco.macro - [Thread 17] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'nodeId'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:21:17,740 [20] INFO  Umbraco.Web.UmbracoApplication - [Thread 21] Application shutdown. Reason: MaxRecompilationsReached
+2013-02-23 18:21:20,012 [6] INFO  Umbraco.Core.CoreBootManager - [Thread 8] Umbraco application starting
+2013-02-23 18:21:20,114 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Determining hash of code files on disk
+2013-02-23 18:21:20,130 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Hash determined (took 13ms)
+2013-02-23 18:21:20,539 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 370ms)
+2013-02-23 18:21:20,561 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 14ms)
+2013-02-23 18:21:20,746 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 14ms)
+2013-02-23 18:21:20,834 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 87ms)
+2013-02-23 18:21:20,858 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 11 (took 15ms)
+2013-02-23 18:21:20,895 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 20ms)
+2013-02-23 18:21:20,939 [6] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 13ms)
+2013-02-23 18:21:21,213 [6] INFO  Umbraco.Core.CoreBootManager - [Thread 8] Umbraco application startup complete (took 1171ms)
+2013-02-23 18:21:21,955 [6] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 14ms)
+2013-02-23 18:21:23,043 [6] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 10ms)
+2013-02-23 18:24:11,342 [6] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of umbraco.interfaces.IDataType, found 80 (took 13ms)
+2013-02-23 18:24:11,417 [6] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of umbraco.interfaces.ITree, found 41 (took 14ms)
+2013-02-23 18:24:13,926 [6] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 88ms)
+2013-02-23 18:26:00,225 [6] WARN  umbraco.macro - [Thread 19] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.DynamicXml' to 'string'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:28:23,444 [6] WARN  umbraco.macro - [Thread 18] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.DynamicXml' to 'string'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:37:30,916 [6] WARN  umbraco.macro - [Thread 11] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'First'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:48:29,886 [6] WARN  umbraco.macro - [Thread 21] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.DynamicMedia' to 'string'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:49:35,029 [6] INFO  Umbraco.Web.UmbracoApplication - [Thread 12] Application shutdown. Reason: MaxRecompilationsReached
+2013-02-23 18:49:39,463 [16] INFO  Umbraco.Core.CoreBootManager - [Thread 9] Umbraco application starting
+2013-02-23 18:49:39,625 [16] INFO  Umbraco.Core.PluginManager - [Thread 9] Determining hash of code files on disk
+2013-02-23 18:49:39,638 [16] INFO  Umbraco.Core.PluginManager - [Thread 9] Hash determined (took 10ms)
+2013-02-23 18:49:40,087 [16] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 407ms)
+2013-02-23 18:49:40,116 [16] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 18ms)
+2013-02-23 18:49:40,280 [16] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 16ms)
+2013-02-23 18:49:40,291 [16] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 11ms)
+2013-02-23 18:49:40,326 [16] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 11 (took 26ms)
+2013-02-23 18:49:40,557 [16] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 22ms)
+2013-02-23 18:49:40,607 [16] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 11ms)
+2013-02-23 18:49:40,710 [16] INFO  Umbraco.Core.CoreBootManager - [Thread 9] Umbraco application startup complete (took 1201ms)
+2013-02-23 18:49:41,622 [16] INFO  Umbraco.Core.PluginManager - [Thread 21] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 11ms)
+2013-02-23 18:49:42,772 [16] INFO  Umbraco.Core.PluginManager - [Thread 21] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 12ms)
+2013-02-23 18:49:43,630 [16] WARN  umbraco.macro - [Thread 21] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.DynamicMedia' to 'string'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:53:35,187 [16] WARN  umbraco.macro - [Thread 12] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.DynamicMedia' to 'string'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:55:50,076 [16] WARN  umbraco.macro - [Thread 17] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.DynamicMedia' to 'string'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:56:47,179 [16] WARN  umbraco.macro - [Thread 18] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'string' to 'int'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:57:23,566 [16] WARN  umbraco.macro - [Thread 18] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'string' to 'int'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 18:58:20,836 [16] WARN  umbraco.macro - [Thread 11] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.DynamicMedia' to 'string'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 19:00:33,142 [16] WARN  umbraco.macro - [Thread 19] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: System.Web.HttpCompileException (0x80004005): c:\htdocs\alexallan\macroScripts\Rss.cshtml(59): error CS1061: 'string' does not contain a definition for 'umbracoFile' and no extension method 'umbracoFile' accepting a first argument of type 'string' could be found (are you missing a using directive or an assembly reference?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 19:03:36,239 [16] WARN  umbraco.macro - [Thread 12] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.DynamicMedia' to 'string'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 19:04:41,751 [16] WARN  umbraco.macro - [Thread 18] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: System.Web.HttpCompileException (0x80004005): c:\htdocs\alexallan\macroScripts\Rss.cshtml(51): error CS1061: 'string' does not contain a definition for 'umbracoFile' and no extension method 'umbracoFile' accepting a first argument of type 'string' could be found (are you missing a using directive or an assembly reference?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 19:05:30,839 [16] WARN  umbraco.macro - [Thread 17] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: System.Web.HttpCompileException (0x80004005): c:\htdocs\alexallan\macroScripts\Rss.cshtml(51): error CS1061: 'string' does not contain a definition for 'UmbracoFile' and no extension method 'UmbracoFile' accepting a first argument of type 'string' could be found (are you missing a using directive or an assembly reference?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-02-23 19:08:23,136 [16] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 28ms)
+2013-02-23 19:11:17,178 [16] INFO  Umbraco.Web.UmbracoApplication - [Thread 17] Application shutdown. Reason: MaxRecompilationsReached
+2013-02-23 19:11:22,413 [27] INFO  Umbraco.Core.CoreBootManager - [Thread 9] Umbraco application starting
+2013-02-23 19:11:22,507 [27] INFO  Umbraco.Core.PluginManager - [Thread 9] Determining hash of code files on disk
+2013-02-23 19:11:22,518 [27] INFO  Umbraco.Core.PluginManager - [Thread 9] Hash determined (took 9ms)
+2013-02-23 19:11:22,999 [27] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 447ms)
+2013-02-23 19:11:23,018 [27] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 6ms)
+2013-02-23 19:11:23,187 [27] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 11ms)
+2013-02-23 19:11:23,198 [27] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 10ms)
+2013-02-23 19:11:23,225 [27] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 11 (took 13ms)
+2013-02-23 19:11:23,458 [27] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 16ms)
+2013-02-23 19:11:23,508 [27] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 15ms)
+2013-02-23 19:11:23,593 [27] INFO  Umbraco.Core.CoreBootManager - [Thread 9] Umbraco application startup complete (took 1165ms)
+2013-02-23 19:11:24,464 [27] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 9ms)
+2013-02-23 19:11:25,519 [27] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 11ms)
+2013-02-23 19:11:50,675 [27] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.interfaces.IDataType, found 80 (took 15ms)
+2013-02-23 19:11:50,771 [27] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.interfaces.ITree, found 41 (took 9ms)
+2013-02-23 19:11:53,350 [27] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 119ms)
