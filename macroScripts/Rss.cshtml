@@ -6,10 +6,11 @@
     //Get the domain 
     var siteURL = "http://" + Request.Url.Host;
 	var homenode = Model.AncestorOrSelf("Homepage");
-	var siteName = String.IsNullOrEmpty(homenode.siteName) ? "My" : homenode.siteName;
+	var siteName = String.IsNullOrEmpty(homenode.siteName) ? "Alex Allan" : homenode.siteName;
+	var siteLogo = siteURL + "/css/images/alexallan-logo.gif";
 	
     //Get Macro Parameters
-    var rssTitle        = String.IsNullOrEmpty(Model.metaTitle) ? siteName + " RSS feed" : Model.metaTitle;
+    var rssTitle        = String.IsNullOrEmpty(Model.metaTitle) ? siteName + " - " + Model.Name + " RSS feed" : siteName + " - " + Model.metaTitle + " RSS feed";
     var rssDescription  = String.IsNullOrEmpty(Model.metaDescription) ? "Subscribe to my RSS feed" : Model.metaDescription;
 
     //Get the latest createDate of all news items to use as the RSS feed updateDate
@@ -27,16 +28,36 @@
             <pubDate>@latestNodeUpdated.UpdateDate.ToString("r")</pubDate>
             <generator>umbraco</generator>
             <description>@rssDescription</description>
+			<image>
+				<url>@siteLogo</url>
+				<title>@siteName</title>
+				<link>@siteURL</link>
+			</image>
             <language>en</language>
             @{
                 foreach (var item in Model.Children.Where("Visible"))
                 {
+                    var imageId = "";
+                    var image = "";
+                    var content = item.HasValue("bodyText") ? item.bodyText : "";
+                    if (item.HasProperty("pageMedia") && item.GetProperty("pageMedia").Value != String.Empty)
+                    {
+                        foreach (dynamic media in item.pageMedia)
+                        {
+                            if (media.IsFirst())
+                            {
+                                imageId = media.InnerText; 
+                                image = Library.MediaById(imageId).UmbracoFile;
+                                content = @Html.Raw("<p><img src='" + image + "' /></p>" + content);
+                            }
+                        } 
+                    }                   
                     <item>
                         <title>@item.Name</title>
                         <link>@item.Url</link>
                         <pubDate>@item.UpdateDate.ToString("r")</pubDate>
                         <guid>@item.Url</guid>
-                        <content:encoded><![CDATA[ @(item.HasValue("bodyText") ? item.bodyText : "") ]]></content:encoded>
+                        <content:encoded><![CDATA[ @(content) ]]></content:encoded>
                     </item>
                 }
             }

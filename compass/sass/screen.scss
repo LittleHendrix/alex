@@ -33,11 +33,13 @@ $spriteImg: "";
     }
 }
 ::selection {
-    background-color: $blood;
+    background-color: lighten(desaturate($blood,20%),5%);
+    background-color: rgba(173,30,37,.9);
     color: $white;
 }
 ::-moz-selection {
-    background-color: $blood;
+    background-color: lighten(desaturate($blood,20%),5%);
+    background-color: rgba(173,30,37,.9);
     color: $white;
 }
 .clearfix {
@@ -61,20 +63,24 @@ a {
 }
 a:focus, a:hover {
     border-bottom: 1px dotted lighten($ink,35%);
-    border-bottom-color: rgba(49,54,60,.5);    
+    border-bottom-color: rgba(49,54,60,.5);   
 }
-a:active {
-    background: $blood;
+a:focus, a:active {
+    background-color: $blood;
     color: $white;
 }
-header {
-    padding: 25px 0 25px 80px;
+a:link {
+    //-webkit-tap-highlight-color: rgba(173,30,37,.9);
+}
+#logo-wrapper {
+    padding: 20px 0 15px 80px;
 }
 a#logo {
-    @include imgRep(225,93,'/css/images/alexallan-logo.gif');
+    @include imgRep("/css/images/alexallan-logo.gif",231px,98px);
+    @include image-2x("/css/images/alexallan-logo-x2.gif",231px,98px);
 }
-.copyrights {
-    padding: 15px 0 18px 80px;
+#copyrights {
+    padding: 15px 0 0 80px;
     p {
         margin: 0;
         font-family: $headerFontFamily;
@@ -101,15 +107,18 @@ a#logo {
         margin-left: 80px;
     }
     .touchcarousel-item {
-        margin-right: 15px;		
-        background: #CCC;	
-        height: auto;
+        margin-right: 15px;
+        background-color: lighten($ink,55%);
+        background-color: rgba(49,54,60,.25);
+        background-image: url("/css/images/placeholder-logo.png");
+        @include background(url("/css/images/placeholder-logo.png"),radial-gradient(50% 50%, lighten($ink,65%) 0px, lighten($ink,60%) 100%));
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        height: 540px;
         overflow: hidden;
-        &.last {
-            margin-right: 80px !important;
-        }
+        &.last {}
         .overlay-txt {
-            @include imgRep('','','/css/images/peek-sml.png',15px,50%);
+            @include imgRep("/css/images/peek-sml.png","","",15px,50%);
             position: absolute;
             font-family: $headerFontFamily;
             font-size: 23px;
@@ -149,16 +158,31 @@ a#logo {
         }
         &:active {
             background-color: transparent;
+            .arrow-icon {
+                background-color: lighten(desaturate($blood,20%),5%);
+                background-color: rgba(173,30,37,.9);
+            }
+        }
+        &:focus {
+            outline: none;
+            background-color: transparent;
+            .arrow-icon {
+                background-color: lighten(desaturate($blood,20%),5%);
+                background-color: rgba(173,30,37,.9);                
+            }
         }
         &.disabled {
             .arrow-icon {
                 background-color: lighten($ink,60%);
                 background-color: rgba(49,54,60,.2);
             }
-            &:hover .arrow-icon {
+            &:hover .arrow-icon, &:focus .arrow-icon {
                 background-color: lighten($ink,55%);
                 background-color: rgba(49,54,60,.25);                
             }
+        }
+        &:link {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
         }
     }
     .scrollbar-holder {
@@ -177,9 +201,56 @@ a#logo {
 @media only screen and (min-width: 768px) {
     
 }
-@media only screen and (max-width: 767px) {
-    
+@media only screen and (max-device-width: 767px) {
+    #homepage-carousel {
+        .touchcarousel-item {
+            @include background(url("/css/images/placeholder-logo.png"));
+            @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
+            background-color: rgba(49,54,60,.25);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+    }
 }
-@media only screen and (max-width: 359px) {
-    
+@media only screen and (max-device-width: 359px) {
+    #logo-wrapper {
+        text-align: center;
+        padding-left: 0;
+        a#logo {
+            margin: auto;
+        }
+    }
+    #homepage-carousel {
+        height: auto;
+        padding: 15px 10px;
+        .touchcarousel-wrapper {
+            margin-left: 40px;
+        }
+        .touchcarousel-item {
+            margin: 0 0 15px 0;
+            height: auto;
+            img {
+                width: 100%;
+                height: auto;
+            }
+            &:last-child {
+                margin: 0;
+            }
+        }
+        .arrow-holder {
+            width: 40px;
+        }
+        .arrow-icon {
+            &.left {
+                left: 5px;
+            }
+            &.right {
+                right: 5px;
+            }
+        }
+    }
+    #copyrights {
+        text-align: center;
+        padding: 25px 0;
+    }
 }
