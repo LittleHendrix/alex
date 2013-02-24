@@ -73,42 +73,44 @@
 		<script>
 		<![CDATA[
 			$(document).ready(function(){
-				
-				var timeout = ]]><xsl:value-of select="$timeout" /><![CDATA[,
-	   				speed = ]]><xsl:value-of select="$speed" /><![CDATA[,
-					width = ]]><xsl:value-of select="$cleanWidth" /><![CDATA[,
-					autoPlay = (]]><xsl:value-of select="$autoPlay" /><![CDATA[ == 1) ? true : false;
-				
-				$('#homepage-carousel').touchCarousel({
-					itemsPerPage: 1,
-					//itemsPerMove: 1,
-					snapToItems: false,
-					pagingNav: false,
-					pagingNavControls: false,
-					autoplay: autoPlay, 
-					autoplayDelay: timeout,	
-					autoplayStopAtAction: true,
-					scrollbar: true,
-					scrollbarAutoHide: true,
-					scrollbarTheme: "dark",
-					transitionSpeed: speed,
-					directionNav: true,
-					directionNavAutoHide: false,		
-					loopItems: true,            // Loop items (don't disable arrows on last slide and allow autoplay to loop)
-					keyboardNav: true,
-					dragUsingMouse: true,
-					scrollToLast: true,         // Last item ends at start of carousel wrapper
-					itemFallbackWidth: width,
-					baseMouseFriction: 0.0012,  // Container friction on desktop (higher friction - slower speed)
-					baseTouchFriction: 0.0008,  // Container friction on mobile
-					lockAxis: true,             // Allow dragging only on one direction
-					useWebkit3d: true,
-					onAnimStart: null,
-					onAnimComplete: null,
-					onDragStart:null,
-					onDragRelease: null
-				});
-				
+				var cssWidth = document.documentElement.clientWidth;
+   				var devideWidth = window.screen.width;
+				if (devideWidth > 359) {
+					var timeout = ]]><xsl:value-of select="$timeout" /><![CDATA[,
+						speed = ]]><xsl:value-of select="$speed" /><![CDATA[,
+						width = ]]><xsl:value-of select="$cleanWidth" /><![CDATA[,
+						autoPlay = (]]><xsl:value-of select="$autoPlay" /><![CDATA[ == 1) ? true : false;
+					
+					$('#homepage-carousel').touchCarousel({
+						itemsPerPage: 1,
+						//itemsPerMove: 1,
+						snapToItems: false,
+						pagingNav: false,
+						pagingNavControls: false,
+						autoplay: autoPlay, 
+						autoplayDelay: timeout,	
+						autoplayStopAtAction: true,
+						scrollbar: true,
+						scrollbarAutoHide: true,
+						scrollbarTheme: "dark",
+						transitionSpeed: speed,
+						directionNav: true,
+						directionNavAutoHide: false,		
+						loopItems: true,            // Loop items (don't disable arrows on last slide and allow autoplay to loop)
+						keyboardNav: true,
+						dragUsingMouse: true,
+						scrollToLast: true,         // Last item ends at start of carousel wrapper
+						itemFallbackWidth: width,
+						baseMouseFriction: 0.0012,  // Container friction on desktop (higher friction - slower speed)
+						baseTouchFriction: 0.0008,  // Container friction on mobile
+						lockAxis: true,             // Allow dragging only on one direction
+						useWebkit3d: true,
+						onAnimStart: null,
+						onAnimComplete: null,
+						onDragStart:null,
+						onDragRelease: null
+					});
+				}				
 			});
 		]]>
 		</script>
