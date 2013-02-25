@@ -9,7 +9,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title><umbraco:Item field="metaTitle" useIfEmpty="pageName" runat="server" /><umbraco:Item field="siteName" insertTextBefore="&nbsp;|&nbsp;" recursive="true" runat="server" /></title>
+	<title><umbraco:Item field="siteName" recursive="true" runat="server" /><umbraco:Item field="metaTitle" useIfEmpty="pageName" insertTextBefore="&nbsp;|&nbsp;" runat="server" /></title>
     <meta name="description" content='<umbraco:Item field="metaDescription" runat="server" />'>
     <meta name="keywords" content='<umbraco:Item field="metaKeywords" runat="server" />'>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -40,14 +40,14 @@
 <body id='<umbraco:Item field="nodeTypeAlias" runat="server" />' ontouchstart="">
 	<header>
 		<div id="logo-wrapper">
-			<a href="/" id="logo">Homepage</a>
+			<umbraco:Macro Alias="SiteLogo" runat="server" />
 		</div>
 	</header>
 	<asp:ContentPlaceHolder Id="BodyContent" runat="server">
 		<!-- Insert default "BodyContent" markup here -->
 	</asp:ContentPlaceHolder>
 	<div id="copyrights">
-		<p><a href="/">Alex Allan</a>. &copy; <%=umbraco.library.FormatDateTime(umbraco.library.CurrentDate(), "yyyy")%>. <a href='mailto:<umbraco:Item field="contactEmail" recursive="true" runat="server" />'><umbraco:Item field="contactEmail" recursive="true" runat="server" /></a></p>
+		<p><a href="/" data-title="Alex Allan">Alex Allan</a>. &copy; <%=umbraco.library.FormatDateTime(umbraco.library.CurrentDate(), "yyyy")%>. <a href='mailto:<umbraco:Item field="contactEmail" recursive="true" runat="server" />' data-title="Get in touch" class="mailto"><umbraco:Item field="contactEmail" recursive="true" runat="server" /></a></p>
 	</div>
 	<script src="/scripts/plugins/jquery.touchcarousel-1.2.min.js"></script>
 	<script src="/scripts/app.js"></script>
