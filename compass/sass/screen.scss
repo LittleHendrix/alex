@@ -126,25 +126,80 @@ a.mailto {
         height: 540px;
         overflow: hidden;
         &.last {}
-        .overlay-txt {
-            @include imgRep("/css/images/peek-sml.png","","",15px,50%);
-            position: absolute;
-            font-family: $headerFontFamily;
-            font-size: 23px;
-            text-indent: 0;
-            padding: 15px 15px 15px 60px;
-            bottom: -47px;
-            left: 0;
-            @include opacity(0);
-            @include transition(bottom 125ms ease-in-out, opacity 250ms ease-in-out);
-            background-color: $ink;
-            background-color: rgba(49,54,60,.8);
-            color: $white;
+        img {
+            display: block;
+            position: relative;
+            @include transition(all 0.2s linear);
         }
-        &:hover, a:hover {
-            .overlay-txt {
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-indent: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            @include opacity(0);
+            @include transition(all 0.4s ease-in-out);
+            background-color: $ink;
+            background-color: rgba(49,54,60,.9);
+            h2, p {                
+                position: relative;
+                color: $white;
+                text-align: center;
+            }
+            h2 {
+                text-transform: uppercase;
+                font-size: 23px;
+                padding: 14px;
+                margin: 37px 0 0 0;
+                text-shadow: 0px 1px 3px darken(desaturate($blood,20%),15%);
+                background-color: lighten(desaturate($blood,20%),5%);
+                background-color: rgba(173,30,37,.8);
+                @include translateY(-100px);
+                @include opacity(0);
+                @include transition(all 0.2s ease-in-out);
+            }
+            p {
+                padding: 59px 23px 23px;
+                @include translateY(25px);
+                @include opacity(0);
+                @include transition(all 0.2s linear);
+            }
+            a.peek {
+                @include imgRep("/css/images/peek-lrg.png",60px,32px,50%,0px);
+                @include image-2x("/css/images/peek-lrg-2x.png",60px,32px);
+                width: 100%;
+                position: absolute;
+                bottom: 44px;
+                @include opacity(0);
+                @include scale(1.1);
+                @include transition-property(opacity, transform);
+                @include transition-duration(0.4s);
+                @include transition-timing-function(ease-in-out);                
+            }
+        }
+        &:hover {
+            img {
+                @include scale(1.1);
+            }
+            .mask {
                 @include opacity(1);
-                bottom: 15px;
+                h2, p {
+                    @include opacity(1);
+                    @include translateY(0px);
+                }
+                p {
+                    @include transition-delay(0.1s);
+                }
+                a.peek {
+                    @include opacity(1);
+                    @include scale(1);
+                    @include transition-delay(0.2s);
+                    &:hover {
+                        background-position: 50% -32px;
+                    }
+                }
             }
         }
     }

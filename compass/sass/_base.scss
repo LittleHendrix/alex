@@ -52,7 +52,7 @@
 }
 
 // Specify hi-res background for retina displays
-@mixin image-2x($src, $w, $h) {
+@mixin image-2x($src, $w: "", $h: "") {
   @media (min--moz-device-pixel-ratio: 1.3),
          (-o-min-device-pixel-ratio: 2.6/2),
          (-webkit-min-device-pixel-ratio: 1.3),
@@ -116,7 +116,7 @@
     }
 }
 
-@mixin imgRep($src, $w, $h, $x: 0, $y: 0) {
+@mixin imgRep($src, $w: "", $h: "", $x: 0, $y: 0) {
     display: block;
     position: relative;
     @if $w == "" { width: auto; } @else { width: $w; }
