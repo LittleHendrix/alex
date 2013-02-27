@@ -179,29 +179,6 @@ a.mailto {
                 @include transition-timing-function(ease-in-out);                
             }
         }
-        &:hover {
-            img {
-                @include scale(1.1);
-            }
-            .mask {
-                @include opacity(1);
-                h2, p {
-                    @include opacity(1);
-                    @include translateY(0px);
-                }
-                p {
-                    @include transition-delay(0.1s);
-                }
-                a.peek {
-                    @include opacity(1);
-                    @include scale(1);
-                    @include transition-delay(0.2s);
-                    &:hover {
-                        background-position: 50% -32px;
-                    }
-                }
-            }
-        }
     }
     .arrow-icon {
         background-color: lighten($ink,10%);
@@ -258,6 +235,64 @@ a.mailto {
             }
         }
     }
+}
+.no-touch {
+    #homepage-carousel {
+        .touchcarousel-item {
+            &:hover {
+                img {
+                    @include scale(1.1);
+                }
+                .mask {
+                    @include opacity(1);
+                    h2, p {
+                        @include opacity(1);
+                        @include translateY(0px);
+                    }
+                    p {
+                        @include transition-delay(0.1s);
+                    }
+                    a.peek {
+                        @include opacity(1);
+                        @include scale(1);
+                        @include transition-delay(0.2s);
+                        &:hover {
+                            background-position: 50% -32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.touch {
+    #homepage-carousel {
+        .touchcarousel-item {
+            &.tapped {
+                img {
+                    @include scale(1.1);
+                }
+                .mask {
+                    @include opacity(1);
+                    h2, p {
+                        @include opacity(1);
+                        @include translateY(0px);
+                    }
+                    p {
+                        @include transition-delay(0.1s);
+                    }
+                    a.peek {
+                        @include opacity(1);
+                        @include scale(1);
+                        @include transition-delay(0.2s);
+                        &:hover {
+                            background-position: 50% -32px;
+                        }
+                    }
+                }
+            }
+        }
+    }    
 }
 
 // Custom responsive tweaks

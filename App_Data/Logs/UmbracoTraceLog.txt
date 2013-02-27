@@ -1,154 +1,75 @@
-2013-02-26 18:38:02,194 [30] INFO  Umbraco.Web.UmbracoApplication - [Thread 23] Application shutdown. Reason: BinDirChangeOrDirectoryRename
-2013-02-26 18:38:05,045 [16] INFO  Umbraco.Core.CoreBootManager - [Thread 8] Umbraco application starting
-2013-02-26 18:38:05,148 [16] INFO  Umbraco.Core.PluginManager - [Thread 8] Determining hash of code files on disk
-2013-02-26 18:38:05,163 [16] INFO  Umbraco.Core.PluginManager - [Thread 8] Hash determined (took 13ms)
-2013-02-26 18:38:05,466 [16] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 257ms)
-2013-02-26 18:38:05,511 [16] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 20ms)
-2013-02-26 18:38:05,713 [16] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 23ms)
-2013-02-26 18:38:05,740 [16] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 26ms)
-2013-02-26 18:38:05,778 [16] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 20ms)
-2013-02-26 18:38:05,838 [16] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 23ms)
-2013-02-26 18:38:05,929 [16] INFO  Umbraco.Core.PluginManager - [Thread 8] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 15ms)
-2013-02-26 18:38:06,274 [16] INFO  Umbraco.Core.CoreBootManager - [Thread 8] Umbraco application startup complete (took 1208ms)
-2013-02-26 18:38:09,315 [16] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 8ms)
-2013-02-26 18:38:09,348 [16] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 11ms)
-2013-02-26 18:38:11,434 [16] INFO  Umbraco.Web.UmbracoApplication - [Thread 27] Application shutdown. Reason: ConfigurationChange
-2013-02-26 18:38:12,278 [7] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
-2013-02-26 18:38:12,384 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
-2013-02-26 18:38:12,396 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 9ms)
-2013-02-26 18:38:12,870 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 435ms)
-2013-02-26 18:38:12,890 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 13ms)
-2013-02-26 18:38:13,033 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 11ms)
-2013-02-26 18:38:13,046 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 12ms)
-2013-02-26 18:38:13,066 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 11ms)
-2013-02-26 18:38:13,304 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 17ms)
-2013-02-26 18:38:13,356 [7] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 13ms)
-2013-02-26 18:38:13,435 [7] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 1141ms)
-2013-02-26 18:38:16,026 [7] INFO  Umbraco.Web.UmbracoApplication - [Thread 26] Application shutdown. Reason: ConfigurationChange
-2013-02-26 18:38:16,481 [17] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
-2013-02-26 18:38:16,573 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
-2013-02-26 18:38:16,584 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 9ms)
-2013-02-26 18:38:16,987 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 380ms)
-2013-02-26 18:38:17,009 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 13ms)
-2013-02-26 18:38:17,155 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 10ms)
-2013-02-26 18:38:17,166 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 10ms)
-2013-02-26 18:38:17,185 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 10ms)
-2013-02-26 18:38:17,226 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 20ms)
-2013-02-26 18:38:17,269 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 9ms)
-2013-02-26 18:38:17,521 [17] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 1027ms)
-2013-02-26 18:38:27,609 [17] INFO  Umbraco.Web.UmbracoApplication - [Thread 15] Application shutdown. Reason: ConfigurationChange
-2013-02-26 18:38:30,082 [17] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
-2013-02-26 18:38:30,182 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
-2013-02-26 18:38:30,193 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 9ms)
-2013-02-26 18:38:30,623 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 379ms)
-2013-02-26 18:38:30,646 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 16ms)
-2013-02-26 18:38:30,792 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 16ms)
-2013-02-26 18:38:30,801 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 8ms)
-2013-02-26 18:38:30,818 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 8ms)
-2013-02-26 18:38:31,071 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 16ms)
-2013-02-26 18:38:31,119 [17] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 12ms)
-2013-02-26 18:38:31,189 [17] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 1087ms)
-2013-02-26 18:38:32,308 [17] INFO  Umbraco.Core.PluginManager - [Thread 15] Completed resolution of types of umbraco.interfaces.ITree, found 42 (took 14ms)
-2013-02-26 18:38:32,419 [17] INFO  Umbraco.Core.PluginManager - [Thread 15] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 11ms)
-2013-02-26 18:38:38,899 [17] INFO  Umbraco.Core.PluginManager - [Thread 15] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 12ms)
-2013-02-26 18:43:26,146 [17] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
-2013-02-26 18:43:43,524 [17] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
-2013-02-26 18:47:04,892 [17] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
-2013-02-26 18:47:49,763 [17] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
-2013-02-26 18:48:17,995 [17] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
-2013-02-26 18:50:42,316 [17] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
-2013-02-26 18:52:00,536 [17] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
-2013-02-26 18:55:25,011 [17] INFO  Umbraco.Core.PluginManager - [Thread 38] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
-2013-02-26 18:55:29,388 [17] INFO  Umbraco.Core.PluginManager - [Thread 38] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
-2013-02-26 18:55:47,924 [17] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 38] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
-2013-02-26 18:55:47,924 [17] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 38] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
-2013-02-26 18:55:47,954 [17] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 38] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
-2013-02-26 18:57:49,491 [17] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 3] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
-2013-02-26 18:57:49,491 [17] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 3] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
-2013-02-26 18:57:49,491 [17] WARN  Umbraco.Web.Routing.NiceUrlProvider - [Thread 3] Couldn't find any page with nodeId=0. This is most likely caused by the page not being published.
-2013-02-26 19:04:13,988 [17] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of Umbraco.Web.BaseRest.RestExtensionAttribute, found 1 (took 248ms)
-2013-02-26 19:04:14,434 [17] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
-2013-02-26 19:06:12,746 [17] INFO  Umbraco.Core.PluginManager - [Thread 16] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 21ms)
-2013-02-26 19:09:43,757 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 38] Error executing query Select [value] from cmsDataTypeprevalues where id in ()
-System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near ')'.
-   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
-   at System.Data.SqlClient.SqlDataReader.get_MetaData()
-   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
-   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite)
-   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
-   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
-   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
-   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
-   at Microsoft.ApplicationBlocks.Data.SqlHelper.ExecuteReader(String connectionString, CommandType commandType, String commandText, SqlParameter[] commandParameters)
-   at umbraco.DataLayer.SqlHelpers.SqlServer.SqlServerHelper.ExecuteReader(String commandText, SqlParameter[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteReader(String commandText, IParameter[] parameters)
-ClientConnectionId:124f2317-4fa8-40a9-9b17-a02424479fdc
-2013-02-26 19:25:14,237 [17] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 13ms)
-2013-02-26 19:25:16,151 [17] INFO  Umbraco.Core.PluginManager - [Thread 24] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 13ms)
-2013-02-26 19:30:43,938 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 23] Error executing query select xml from cmsContentXml where nodeID = 1088
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 19:30:45,527 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 16] Error executing query select xml from cmsContentXml where nodeID = 1089
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 19:30:45,550 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 16] Error executing query select xml from cmsContentXml where nodeID = 1090
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 19:30:45,563 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 16] Error executing query select xml from cmsContentXml where nodeID = 1091
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 19:30:45,593 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 16] Error executing query select xml from cmsContentXml where nodeID = 1092
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 19:30:45,619 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 16] Error executing query select xml from cmsContentXml where nodeID = 1093
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 19:30:45,632 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 16] Error executing query select xml from cmsContentXml where nodeID = 1094
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 19:30:45,645 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 16] Error executing query select xml from cmsContentXml where nodeID = 1095
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 19:30:45,659 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 16] Error executing query select xml from cmsContentXml where nodeID = 1096
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 19:30:45,687 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 16] Error executing query select xml from cmsContentXml where nodeID = 1097
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 19:30:45,714 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 16] Error executing query select xml from cmsContentXml where nodeID = 1098
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 19:30:45,743 [17] ERROR umbraco.DataLayer.SqlHelper`1[[System.Data.SqlClient.SqlParameter, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] - [Thread 16] Error executing query select xml from cmsContentXml where nodeID = 1124
-System.ArgumentException: The query didn't return a value.
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, P[] parameters)
-   at umbraco.DataLayer.SqlHelper`1.ExecuteXmlReader(String commandText, IParameter[] parameters)
-2013-02-26 20:44:48,744 [17] INFO  Umbraco.Core.PluginManager - [Thread 26] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 3ms)
-2013-02-26 21:10:03,485 [17] INFO  Umbraco.Web.UmbracoApplication - [Thread 31] Application shutdown. Reason: HostingEnvironment
-2013-02-26 21:14:56,307 [5] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
-2013-02-26 21:14:56,661 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
-2013-02-26 21:14:56,679 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 18ms)
-2013-02-26 21:14:58,577 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1834ms)
-2013-02-26 21:14:58,698 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 17ms)
-2013-02-26 21:14:59,421 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 89ms)
-2013-02-26 21:14:59,533 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 111ms)
-2013-02-26 21:14:59,604 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 49ms)
-2013-02-26 21:15:00,249 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 80ms)
-2013-02-26 21:15:00,366 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 15ms)
-2013-02-26 21:15:00,603 [5] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 4268ms)
-2013-02-26 21:15:02,126 [5] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 160ms)
-2013-02-26 21:15:02,531 [5] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 11ms)
-2013-02-26 21:15:03,916 [5] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 135ms)
+2013-02-27 18:37:45,246 [5] INFO  Umbraco.Web.UmbracoApplication - [Thread 13] Application shutdown. Reason: ConfigurationChange
+2013-02-27 18:39:20,983 [23] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-02-27 18:39:21,154 [23] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-02-27 18:39:21,168 [23] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 11ms)
+2013-02-27 18:39:24,483 [23] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3292ms)
+2013-02-27 18:39:24,505 [23] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 14ms)
+2013-02-27 18:39:24,734 [23] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 80ms)
+2013-02-27 18:39:24,753 [23] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 19ms)
+2013-02-27 18:39:24,808 [23] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 34ms)
+2013-02-27 18:39:24,890 [23] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 26ms)
+2013-02-27 18:39:24,999 [23] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 15ms)
+2013-02-27 18:39:25,329 [23] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 4333ms)
+2013-02-27 18:39:26,500 [23] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 9ms)
+2013-02-27 18:39:26,830 [23] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 9ms)
+2013-02-27 18:39:27,044 [23] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 21ms)
+2013-02-27 18:47:20,788 [23] INFO  Umbraco.Web.UmbracoApplication - [Thread 13] Application shutdown. Reason: ConfigurationChange
+2013-02-27 18:47:33,364 [7] INFO  Umbraco.Core.CoreBootManager - [Thread 14] Umbraco application starting
+2013-02-27 18:47:33,454 [7] INFO  Umbraco.Core.PluginManager - [Thread 14] Determining hash of code files on disk
+2013-02-27 18:47:33,468 [7] INFO  Umbraco.Core.PluginManager - [Thread 14] Hash determined (took 10ms)
+2013-02-27 18:47:33,877 [7] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 377ms)
+2013-02-27 18:47:33,916 [7] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 12ms)
+2013-02-27 18:47:34,062 [7] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 16ms)
+2013-02-27 18:47:34,082 [7] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 19ms)
+2013-02-27 18:47:34,102 [7] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 10ms)
+2013-02-27 18:47:34,344 [7] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 17ms)
+2013-02-27 18:47:34,397 [7] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 12ms)
+2013-02-27 18:47:34,502 [7] INFO  Umbraco.Core.CoreBootManager - [Thread 14] Umbraco application startup complete (took 1120ms)
+2013-02-27 18:47:35,317 [7] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 9ms)
+2013-02-27 18:47:35,497 [7] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 9ms)
+2013-02-27 18:47:35,625 [7] INFO  Umbraco.Core.PluginManager - [Thread 17] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 21ms)
+2013-02-27 18:48:06,372 [7] INFO  Umbraco.Web.UmbracoApplication - [Thread 17] Application shutdown. Reason: ConfigurationChange
+2013-02-27 18:49:13,493 [10] INFO  Umbraco.Core.CoreBootManager - [Thread 14] Umbraco application starting
+2013-02-27 18:49:13,605 [10] INFO  Umbraco.Core.PluginManager - [Thread 14] Determining hash of code files on disk
+2013-02-27 18:49:13,622 [10] INFO  Umbraco.Core.PluginManager - [Thread 14] Hash determined (took 16ms)
+2013-02-27 18:49:14,086 [10] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 440ms)
+2013-02-27 18:49:14,115 [10] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 18ms)
+2013-02-27 18:49:14,253 [10] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 15ms)
+2013-02-27 18:49:14,261 [10] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 8ms)
+2013-02-27 18:49:14,278 [10] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 7ms)
+2013-02-27 18:49:14,540 [10] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 18ms)
+2013-02-27 18:49:14,601 [10] INFO  Umbraco.Core.PluginManager - [Thread 14] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 12ms)
+2013-02-27 18:49:14,672 [10] INFO  Umbraco.Core.CoreBootManager - [Thread 14] Umbraco application startup complete (took 1159ms)
+2013-02-27 18:49:15,620 [10] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 46ms)
+2013-02-27 18:49:15,937 [10] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 13ms)
+2013-02-27 18:49:16,097 [10] INFO  Umbraco.Core.PluginManager - [Thread 13] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 24ms)
+2013-02-27 18:57:51,439 [10] INFO  Umbraco.Web.UmbracoApplication - [Thread 13] Application shutdown. Reason: ConfigurationChange
+2013-02-27 20:51:42,505 [5] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-02-27 20:51:42,625 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-02-27 20:51:42,640 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 13ms)
+2013-02-27 20:51:43,529 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 857ms)
+2013-02-27 20:51:43,556 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 15ms)
+2013-02-27 20:51:43,794 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 14ms)
+2013-02-27 20:51:43,808 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 13ms)
+2013-02-27 20:51:43,829 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 12ms)
+2013-02-27 20:51:44,074 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 19ms)
+2013-02-27 20:51:44,118 [5] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 10ms)
+2013-02-27 20:51:44,209 [5] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 1689ms)
+2013-02-27 20:51:45,249 [5] INFO  Umbraco.Core.PluginManager - [Thread 6] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 9ms)
+2013-02-27 20:51:45,469 [5] INFO  Umbraco.Core.PluginManager - [Thread 6] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 8ms)
+2013-02-27 20:51:45,718 [5] INFO  Umbraco.Core.PluginManager - [Thread 6] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 28ms)
+2013-02-27 21:12:41,921 [5] INFO  Umbraco.Web.UmbracoApplication - [Thread 11] Application shutdown. Reason: HostingEnvironment
+2013-02-27 21:38:02,979 [6] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-02-27 21:38:03,148 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-02-27 21:38:03,206 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 56ms)
+2013-02-27 21:38:03,734 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 502ms)
+2013-02-27 21:38:03,757 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 13ms)
+2013-02-27 21:38:03,987 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 16ms)
+2013-02-27 21:38:04,002 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 15ms)
+2013-02-27 21:38:04,024 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 12ms)
+2013-02-27 21:38:04,275 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 17ms)
+2013-02-27 21:38:04,330 [6] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 15ms)
+2013-02-27 21:38:04,431 [6] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 1399ms)
+2013-02-27 21:38:08,102 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 9ms)
+2013-02-27 21:38:08,352 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 10ms)
+2013-02-27 21:38:08,571 [6] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.XsltExtensionAttribute, found 1 (took 24ms)
