@@ -58,15 +58,18 @@ div {
     *line-height: 0px;
 }
 a {
+    color: lighten(desaturate($blood,20%),5%);
     border-bottom: 1px dotted lighten($ink,55%);
     border-bottom-color: rgba(49,54,60,.25);
 }
 a:focus, a:hover {
-    border-bottom: 1px dotted lighten($ink,35%);
-    border-bottom-color: rgba(49,54,60,.5);   
+    border-bottom: 1px dotted lighten(desaturate($blood,20%),5%);
+    border-bottom-color: rgba(173,30,37,.9);
+    color: $blood;
 }
-a:focus, a:active {
-    background-color: $blood;
+a:active {
+    background-color: lighten(desaturate($blood,20%),5%);
+    background-color: rgba(173,30,37,.9);
     color: $white;
 }
 a:link {
@@ -74,8 +77,11 @@ a:link {
 }
 #logo-wrapper {
     padding: 20px 0 15px 80px;
+    h1 {
+        margin: 0;
+    }
 }
-a#logo {
+#logo {
     @include imgRep("/css/images/alexallan-logo.gif",231px,98px);
     @include image-2x("/css/images/alexallan-logo-x2.gif",231px,98px);
 }
@@ -85,6 +91,9 @@ a#logo {
         margin: 0;
         font-family: $headerFontFamily;
     }
+}
+a.mailto {
+    font-weight: bold;
 }
 
 /******************************************************\
@@ -117,25 +126,57 @@ a#logo {
         height: 540px;
         overflow: hidden;
         &.last {}
-        .overlay-txt {
-            @include imgRep("/css/images/peek-sml.png","","",15px,50%);
-            position: absolute;
-            font-family: $headerFontFamily;
-            font-size: 23px;
-            text-indent: 0;
-            padding: 15px 15px 15px 60px;
-            bottom: -47px;
-            left: 0;
-            @include opacity(0);
-            @include transition(bottom 125ms ease-in-out, opacity 250ms ease-in-out);
-            background-color: $ink;
-            background-color: rgba(49,54,60,.8);
-            color: $white;
+        img {
+            display: block;
+            position: relative;
+            @include transition(all 0.2s linear);
         }
-        &:hover, a:hover {
-            .overlay-txt {
-                @include opacity(1);
-                bottom: 15px;
+        .mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-indent: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            @include opacity(0);
+            @include transition(all 0.4s ease-in-out);
+            background-color: $ink;
+            background-color: rgba(49,54,60,.9);
+            h2, p {                
+                position: relative;
+                color: $white;
+                text-align: center;
+            }
+            h2 {
+                text-transform: uppercase;
+                font-size: 23px;
+                padding: 14px;
+                margin: 37px 0 0 0;
+                text-shadow: 0px 1px 3px darken(desaturate($blood,20%),15%);
+                background-color: lighten(desaturate($blood,20%),5%);
+                background-color: rgba(173,30,37,.8);
+                @include translateY(-100px);
+                @include opacity(0);
+                @include transition(all 0.2s ease-in-out);
+            }
+            p {
+                padding: 59px 23px 23px;
+                @include translateY(25px);
+                @include opacity(0);
+                @include transition(all 0.2s linear);
+            }
+            a.peek {
+                @include imgRep("/css/images/peek-lrg.png",60px,32px,50%,0px);
+                @include image-2x("/css/images/peek-lrg-2x.png",60px,32px);
+                width: 100%;
+                position: absolute;
+                bottom: 44px;
+                @include opacity(0);
+                @include scale(1.1);
+                @include transition-property(opacity, transform);
+                @include transition-duration(0.4s);
+                @include transition-timing-function(ease-in-out);                
             }
         }
     }
@@ -194,8 +235,65 @@ a#logo {
             }
         }
     }
-}		
-
+}
+.no-touch {
+    #homepage-carousel {
+        .touchcarousel-item {
+            &:hover {
+                img {
+                    @include scale(1.1);
+                }
+                .mask {
+                    @include opacity(1);
+                    h2, p {
+                        @include opacity(1);
+                        @include translateY(0px);
+                    }
+                    p {
+                        @include transition-delay(0.1s);
+                    }
+                    a.peek {
+                        @include opacity(1);
+                        @include scale(1);
+                        @include transition-delay(0.2s);
+                        &:hover {
+                            background-position: 50% -32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.touch {
+    #homepage-carousel {
+        .touchcarousel-item {
+            &.tapped {
+                img {
+                    @include scale(1.1);
+                }
+                .mask {
+                    @include opacity(1);
+                    h2, p {
+                        @include opacity(1);
+                        @include translateY(0px);
+                    }
+                    p {
+                        @include transition-delay(0.1s);
+                    }
+                    a.peek {
+                        @include opacity(1);
+                        @include scale(1);
+                        @include transition-delay(0.2s);
+                        &:hover {
+                            background-position: 50% -32px;
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
 
 // Custom responsive tweaks
 @media only screen and (min-width: 768px) {
@@ -216,7 +314,7 @@ a#logo {
     #logo-wrapper {
         text-align: center;
         padding-left: 0;
-        a#logo {
+        #logo {
             margin: auto;
         }
     }

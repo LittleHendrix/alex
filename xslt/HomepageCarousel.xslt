@@ -30,40 +30,41 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:variable>
+	
     
-	<xsl:if test="count($slideNodes//item[string(./carouselImage)!='']) &gt; 0">
+	<xsl:if test="count($slideNodes//nodeId[string(.)!='']) &gt; 0">
 		<div id="homepage-carousel" class="touchcarousel black-and-white">  
 			<ul class="touchcarousel-container">
-				<xsl:for-each select="$slideNodes//item[string(./carouselImage)!='']">
-					<xsl:sort select="@id" data-type="number" order="ascending" />
-					<xsl:variable name="media" select="umbraco.library:GetMedia(./carouselImage,false)" />
-					<xsl:if test="$media[not(error)]">
+				<xsl:for-each select="$slideNodes//nodeId[string(.)!='']">
+					<xsl:variable name="media" select="umbraco.library:GetXmlNodeById(.)" />
+					<xsl:if test="$media[not(error)] and string($media//umbracoFile)!=''">
 						<li class="touchcarousel-item">
-							<xsl:choose>
-								<xsl:when test="string(./imageLink)!=''">
-									<xsl:variable name="href" select="umbraco.library:NiceUrl(./imageLink)" />
-									<a href="{$href}">
-										<xsl:apply-templates select="$media" mode="media">
-											<xsl:with-param name="imgGen">true</xsl:with-param>
-											<xsl:with-param name="height">540</xsl:with-param>
-											<xsl:with-param name="compress">100</xsl:with-param>
-										</xsl:apply-templates>
-										<xsl:if test="string(./overlayText)!=''">
-											<span class="overlay-txt"><xsl:value-of select="./overlayText" /></span>
-										</xsl:if>
-									</a>
-								</xsl:when>
-								<xsl:otherwise>
-									<xsl:apply-templates select="$media" mode="media">
-										<xsl:with-param name="imgGen">true</xsl:with-param>
-										<xsl:with-param name="height">540</xsl:with-param>
-										<xsl:with-param name="compress">100</xsl:with-param>
-									</xsl:apply-templates>
-									<xsl:if test="string(./overlayText)!=''">
-										<span class="overlay-txt"><xsl:value-of select="./overlayText" /></span>
+							<xsl:apply-templates select="$media//Image" mode="media">
+								<xsl:with-param name="imgGen">true</xsl:with-param>
+								<xsl:with-param name="height">540</xsl:with-param>
+								<xsl:with-param name="compress">100</xsl:with-param>
+							</xsl:apply-templates>
+							<xsl:if test="string($media/slideHeading)!='' or string($media/slideContent)!=''">
+								<div class="mask">
+									<xsl:choose>
+										<xsl:when test="string($media/slideHeading)!=''">
+											<h2><xsl:value-of select="$media/slideHeading" /></h2>
+										</xsl:when>
+										<xsl:otherwise>
+											<h2><xsl:value-of select="umbraco.library:Replace($media/slideMedia//Image/@nodeName,'_',' ')" /></h2>
+										</xsl:otherwise>
+									</xsl:choose>
+									<xsl:if test="string($media/slideContent)!=''">
+										<p><xsl:value-of select="umbraco.library:ReplaceLineBreaks($media/slideContent)" disable-output-escaping="yes" /></p>
 									</xsl:if>
-								</xsl:otherwise>
-							</xsl:choose>
+									<xsl:if test="string($media/slideLink//url)!=''">
+										<a href="{$media/slideLink//url}" data-title="{$media/slideLink//link-title}" class="peek">
+											<xsl:if test="string($media/slideLink//new-window)!='False'"><xsl:attribute name="target">_blank</xsl:attribute></xsl:if>
+											View details
+										</a>
+									</xsl:if>
+								</div>
+							</xsl:if>
 						</li>
 					</xsl:if>
 				</xsl:for-each>
