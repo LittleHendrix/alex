@@ -1,5 +1,12 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Submaster.master" AutoEventWireup="true" %>
 
 <asp:Content ContentPlaceHolderId="SubContent" runat="server">
-	<!-- Insert "SubContent" markup here -->
+	<div id="map-wrap">
+		<div id="map_canvas" style="width: 100%; height: 100%"></div>
+		<umbraco:Macro Alias="ShowMap" runat="server"></umbraco:Macro>
+	</div>
+	<div class="map-overlay">
+		<umbraco:Macro Alias="SingleEvent" runat="server"></umbraco:Macro>
+		<umbraco:Macro Alias="ICalExportLink" runat="server"></umbraco:Macro>
+	</div>
 </asp:Content>
