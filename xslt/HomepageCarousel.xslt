@@ -42,7 +42,7 @@
 							<xsl:if test="string($media/slideHeading)!='' or string($media/slideContent)!='' or string($media/slideLink//url)!=''">
 								<xsl:attribute name="class">touchcarousel-item has-overlay</xsl:attribute>
 							</xsl:if>
-							<xsl:apply-templates select="$media//Image" mode="media">
+							<xsl:apply-templates select="$media//Image">
 								<xsl:with-param name="imgGen">true</xsl:with-param>
 								<xsl:with-param name="height">540</xsl:with-param>
 								<xsl:with-param name="compress">100</xsl:with-param>
@@ -123,6 +123,6 @@
     
 </xsl:template>
 
-<xsl:include href="_MediaHelperInclude.xslt" />
+<xsl:include href="_MediaHelper.xslt" />
 		
 </xsl:stylesheet>

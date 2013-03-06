@@ -1,6 +1,6 @@
 $(document).ready(function(){
     
-    var touchEnabled = document.documentElement.className.indexOf('no-touch') == '-1' ? true : false;
+    var touchEnabled = Modernizr.touch;
         
     if (touchEnabled) {
         var el = document.getElementsByClassName('touchcarousel-item'),

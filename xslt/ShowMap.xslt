@@ -24,6 +24,9 @@
 		<![CDATA[
 		
 		function initialize() {
+          
+          var touchEnabled = Modernizr.touch;
+          
           var myStyles = [
                   {
                     "stylers": [
@@ -59,7 +62,7 @@
               navigationControl: false,
               mapTypeControl: false,
               scaleControl: false,
-              streetViewControl: true,
+              streetViewControl: (touchEnabled) ? false : true,
               zoomControl: true,
               zoomControlOptions: {
                 position: google.maps.ControlPosition.TOP_RIGHT
