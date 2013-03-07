@@ -1,0 +1,22 @@
+<!ENTITY % development	"IGNORE">
+<!ENTITY % production	"INCLUDE">
+<![%development;[
+	<!-- Fake version of GetMedia for a File/Image -->
+	<!ENTITY GetMedia "document('media.xml', /)//*[not(self::Folder)][@id = current()]">
+
+	<!-- Fake version of GetMedia for a Folder -->
+	<!ENTITY GetMediaFolder "document('media.xml', /)//Folder[@id = current()]">
+
+	<!ENTITY nodes "document('content.xml', /)//*">
+]]>
+<![%production;[
+    <!ENTITY nbsp "&#x00A0;"> 
+    <!ENTITY hidden "umbracoNaviHide = 1">
+    <!ENTITY empty "not(normalize-space())">
+    <!ENTITY NiceUrl "umbraco.library:NiceUrl">
+	<!-- GetMedia for a File/Image -->
+	<!ENTITY GetMedia "umbraco.library:GetMedia(., false())">
+	<!-- GetMedia for a Folder -->
+	<!ENTITY GetMediaFolder "umbraco.library:GetMedia(., true())">
+	<!ENTITY nodes "$nodes">
+]]>

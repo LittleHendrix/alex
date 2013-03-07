@@ -43,6 +43,19 @@ $spriteImg: "";
     background-color: rgba(173,30,37,.9);
     color: $white;
 }
+::-webkit-scrollbar {
+    width: 4px;
+    background-color: $white;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(49,54,60,0.4);
+}
+::-webkit-scrollbar-track-piece {
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(49,54,60,0.9);
+    background-color: rgba(49,54,60,0.3);
+}
 .no-flicker {
     @include transform(translate3d(0, 0, 0));
 }
@@ -124,15 +137,16 @@ a.mailto {
             width: 100%;
             height: 100%;
             background-color: $white;
-            padding: 37px 23px 23px;
+            padding: 17px 23px 23px;
             header {
                 z-index: 10;
+                margin: 0 -23px;
             }
             h1 {
                 text-transform: uppercase;
                 font-size: 23px;
                 padding: 14px 23px;
-                margin: 0 -23px;
+                margin: 0;
                 color: $white;
                 text-shadow: 0px 1px 3px darken(desaturate($blood,20%),15%);
                 background-color: lighten(desaturate($blood,20%),5%);
@@ -149,25 +163,30 @@ a.mailto {
                 overflow: hidden;
                 background-color: $ink;
                 img {
-                    @include opacity(.65);
+                    @include opacity(.9);
                 }
             }
             .text-holder {
-                margin: 93px -23px 0;
+                margin: 113px -23px 0;
                 padding: 23px;
                 background: white(.8);
+                height: 357px;
+                overflow-y: auto;
                 z-index: 5;
             }
             time {
                 position: absolute;
                 left: 23px;
-                top: 131px;
+                top: 128px;
                 display: block;
                 z-index: 5;
                 p {
                     color: $white;
                     text-shadow: 0px 1px 3px darken(desaturate($ink,20%),15%);
                     margin: 0;
+                    padding: 0 2px;
+                    background-color: lighten($ink,10%);
+                    background-color: rgba(49,54,60,.7);
                     span {
                         font-weight: bold;
                     }
@@ -247,7 +266,7 @@ a.mailto {
                     padding: 59px 23px 23px;
                     @include translateY(25px);
                     @include opacity(0);
-                    @include transition(all 0.2s linear);
+                    @include transition(all 0.2s ease);
                 }
                 a.peek {
                     @include imgRep("/css/images/peek-lrg.png",60px,32px,50%,0px);
@@ -419,26 +438,68 @@ span#re-align {
     position: absolute;
     top: 0;
     left: 65px;
-    padding: 37px 23px 23px;
     width: 338px;
     height: 100%;
     background-color: $white;
     background-color: white(.9);
     @include box-shadow(0px 0px 17px -2px rgba(49,54,60,.3));
-    h1 {
-        margin-top: 0;
-        margin-bottom: 23px;
-        color: $blood;
-        text-shadow: 1px 1px 3px rgba(49,54,60,.3);
-    }
-    .event-details {
-        margin-bottom: 17px;
-        p {
-            margin: 0;
-            color: lighten($ink,25%);
+    article {
+        width: 100%;
+        height: 100%;
+        padding: 15px 23px 23px;
+        header {
+            z-index: 10;
+            margin: 0 -23px;
         }
-        span {
-            font-weight: bold;
+        h1 {
+            text-transform: uppercase;
+            font-size: 23px;
+            padding: 14px 23px;
+            margin: 0;
+            color: $white;
+            text-shadow: 0px 1px 3px darken(desaturate($blood,20%),15%);
+            background-color: lighten(desaturate($blood,20%),5%);
+            background-color: rgba(173,30,37,.9);
+        }
+        .img-holder {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 190px;
+            text-align: center;
+            z-index: 1;
+            overflow: hidden;
+            background-color: $ink;
+            img {
+                @include opacity(.9);
+            }
+        }
+        .text-holder {
+            margin: 115px -23px 0;
+            padding: 16px 23px 23px;
+            border-top: 7px solid white(.8);
+            height: 387px;
+            overflow-y: auto;
+            z-index: 5;
+        }
+        time {
+            position: absolute;
+            left: 23px;
+            top: 128px;
+            display: block;
+            z-index: 5;
+            p {
+                color: $white;
+                text-shadow: 0px 1px 3px darken(desaturate($ink,20%),15%);
+                margin: 0;
+                padding: 0 2px;
+                background-color: lighten($ink,10%);
+                background-color: rgba(49,54,60,.7);
+                span {
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
@@ -503,6 +564,30 @@ span#re-align {
             }
             &.right {
                 right: 5px;
+            }
+        }
+    }
+    #map-wrap {
+        height: auto;
+        background-image: none;
+        @include background(radial-gradient(50% 50%, lighten($ink,65%) 0px, lighten($ink,60%) 100%));
+        #map_canvas img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .map-overlay {
+        position: relative;
+        left: 0;
+        width: 100%;
+        article {
+            .img-holder {
+                img {
+                    width: 100%;
+                }
+            }
+            .text-holder {
+                height: auto;
             }
         }
     }

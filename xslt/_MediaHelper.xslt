@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE xsl:stylesheet [
-<!ENTITY nbsp "&#x00A0;">
-<!ENTITY GetMedia "umbraco.library:GetMedia(., false())">
-<!ENTITY GetMediaFolder "umbraco.library:GetMedia(., true())">
-<!ENTITY empty "not(normalize-space())">
+<!DOCTYPE xsl:stylesheet [ 
+<!ENTITY % entities SYSTEM "entities.ent">
+    %entities;
 ]>
 <xsl:stylesheet 
   version="1.0" 
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
   xmlns:msxml="urn:schemas-microsoft-com:xslt"
+  xmlns:msxsl="urn:schemas-microsoft-com:xslt"
   xmlns:umbraco.library="urn:umbraco.library" xmlns:Exslt.ExsltCommon="urn:Exslt.ExsltCommon" xmlns:Exslt.ExsltDatesAndTimes="urn:Exslt.ExsltDatesAndTimes" xmlns:Exslt.ExsltMath="urn:Exslt.ExsltMath" xmlns:Exslt.ExsltRegularExpressions="urn:Exslt.ExsltRegularExpressions" xmlns:Exslt.ExsltStrings="urn:Exslt.ExsltStrings" xmlns:Exslt.ExsltSets="urn:Exslt.ExsltSets" xmlns:umbraco.contour="urn:umbraco.contour" 
   exclude-result-prefixes="msxml umbraco.library Exslt.ExsltCommon Exslt.ExsltDatesAndTimes Exslt.ExsltMath Exslt.ExsltRegularExpressions Exslt.ExsltStrings Exslt.ExsltSets umbraco.contour ">
 
@@ -28,59 +27,36 @@
     <xsl:param name="imgGen" />
     <xsl:param name="width" />
     <xsl:param name="height" />
-    <xsl:param name="compress" />
+    <xsl:param name="compress" select="number(80)" />
     <xsl:param name="altImg" />
     <xsl:variable name="alt" select="umbraco.library:Replace(umbraco.library:Replace(umbraco.library:Replace(@nodeName,'_',' '),'-',' '),'.jpg','')" />
+	
     <xsl:choose>
-      <xsl:when test="string($imgGen)='true'">
-		  <img src="/ImageGen.ashx?image={umbracoFile}&amp;width={$width}&amp;height={$height}&amp;compression={$compress}&amp;constrain=true&amp;altImage={$altImg}" alt="{$alt}">
-		  <xsl:attribute name="width">
-			  <xsl:choose>
-				  <xsl:when test="string($width)!=''">
-					  <xsl:value-of select="$width" />
-				  </xsl:when>
-				  <xsl:otherwise>
-					  <xsl:value-of select="umbracoWidth" />
-				  </xsl:otherwise>
-			  </xsl:choose>
-		  </xsl:attribute>
-		  <xsl:attribute name="height">
-			  <xsl:choose>
-				  <xsl:when test="string($height)!=''">
-					  <xsl:value-of select="$height" />
-				  </xsl:when>
-				  <xsl:otherwise>
-					  <xsl:value-of select="umbracoHeight" />
-				  </xsl:otherwise>
-			  </xsl:choose>
-		  </xsl:attribute>
+      <xsl:when test="msxsl:node-set($imgGen)[not(&empty;)]">
+		<img>
+			<xsl:attribute name="src">
+				<xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="umbracoFile" />
+				<xsl:if test="msxsl:node-set($width)[not(&empty;)]"><xsl:text>&amp;width=</xsl:text><xsl:value-of select="$width" /></xsl:if>
+				<xsl:if test="msxsl:node-set($height)[not(&empty;)]"><xsl:text>&amp;height=</xsl:text><xsl:value-of select="$height" /></xsl:if>
+				<xsl:if test="msxsl:node-set($altImg)[not(&empty;)]"><xsl:text>&amp;altImage=</xsl:text><xsl:value-of select="$altImg" /></xsl:if>
+				<xsl:text>&amp;compression=</xsl:text><xsl:value-of select="$compress" />
+				<xsl:text>&amp;constrain=true</xsl:text>
+			</xsl:attribute>
+			<xsl:attribute name="alt"><xsl:value-of select="$alt" /></xsl:attribute>
+			<xsl:attribute name="width"><xsl:value-of select="msxsl:node-set($width)[not(&empty;)]|umbracoWidth" /></xsl:attribute>
+		  	<xsl:attribute name="height"><xsl:value-of select="msxsl:node-set($height)[not(&empty;)]|umbracoHeight" /></xsl:attribute>
 		</img>
       </xsl:when>
       <xsl:otherwise>
-        <img src="{umbracoFile}" alt="{$alt}">
-		  <xsl:attribute name="width">
-			  <xsl:choose>
-				  <xsl:when test="string($width)!=''">
-					  <xsl:value-of select="$width" />
-				  </xsl:when>
-				  <xsl:otherwise>
-					  <xsl:value-of select="umbracoWidth" />
-				  </xsl:otherwise>
-			  </xsl:choose>
-		  </xsl:attribute>
-		  <xsl:attribute name="height">
-			  <xsl:choose>
-				  <xsl:when test="string($height)!=''">
-					  <xsl:value-of select="$height" />
-				  </xsl:when>
-				  <xsl:otherwise>
-					  <xsl:value-of select="umbracoHeight" />
-				  </xsl:otherwise>
-			  </xsl:choose>
-		  </xsl:attribute>
+        <img>
+			<xsl:attribute name="src"><xsl:value-of select="umbracoFile" /></xsl:attribute>
+			<xsl:attribute name="alt"><xsl:value-of select="$alt" /></xsl:attribute>
+			<xsl:attribute name="width"><xsl:value-of select="msxsl:node-set($width)[not(&empty;)]|umbracoWidth" /></xsl:attribute>
+		  	<xsl:attribute name="height"><xsl:value-of select="msxsl:node-set($height)[not(&empty;)]|umbracoHeight" /></xsl:attribute>
 		</img>
       </xsl:otherwise>
     </xsl:choose>
+	
   </xsl:template>
 
   <!-- Video file -->

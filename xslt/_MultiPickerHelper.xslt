@@ -18,8 +18,8 @@
 		
 -->
 <!DOCTYPE xsl:stylesheet [ 
-<!ENTITY nbsp "&#x00A0;"> 
-<!ENTITY nodes "$nodes">
+<!ENTITY % entities SYSTEM "entities.ent">
+    %entities;
 ]>
 <xsl:stylesheet 
 	version="1.0" 

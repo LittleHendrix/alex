@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xsl:stylesheet [ 
-<!ENTITY nbsp "&#x00A0;"> 
-<!ENTITY hidden "umbracoNaviHide = 1">
-<!ENTITY empty "not(normalize-space())">
-<!ENTITY NiceUrl "umbraco.library:NiceUrl">
+<!ENTITY % entities SYSTEM "entities.ent">
+    %entities;
 ]>
 <xsl:stylesheet 
 	version="1.0" 
@@ -83,22 +81,43 @@
 			
 			<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
 				<div class="img-holder">
-					<xsl:apply-templates select="pageMedia//mediaItem[1]">
-						<xsl:with-param name="imgGen" select="true" />
-						<xsl:with-param name="width" select="338" />
-						<xsl:with-param name="compress" select="80" />
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Image">
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="compress">80</xsl:with-param>
 					</xsl:apply-templates>
 				</div>
 			</xsl:if>
 			
-			<time datetime="{(eventStartDate[not(&empty;)]|eventEndDate[not(&empty;)]|@createDate)[last()]}">
+			<xsl:variable name="startDate">
 				<xsl:choose>
-					<xsl:when test="oneDayEvent[text()='1']">
-						<p><xsl:apply-templates select="(eventStartDate[not(&empty;)]|eventEndDate[not(&empty;)]|@createDate)[last()]" mode="longDate" /></p>
+					<xsl:when test="eventStartDate[not(&empty;)]">
+						<xsl:apply-templates select="eventStartDate" mode="longDate" />
 					</xsl:when>
 					<xsl:otherwise>
-						<p><span>Debut: </span><xsl:apply-templates select="(eventStartDate[not(&empty;)]|@createDate)[last()]" mode="longDate" /></p>
-						<p><span>Finale: </span><xsl:apply-templates select="(eventEndDate[not(&empty;)]|eventStartDate[not(&empty;)]|@createDate)[last()]" mode="longDate" /></p>
+						<xsl:apply-templates select="@createDate" mode="longDate" />
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+			<xsl:variable name="endDate">
+				<xsl:choose>
+					<xsl:when test="eventEndDate[not(&empty;)]">
+						<xsl:apply-templates select="eventEndDate" mode="longDate" />
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="$startDate" />
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+			
+			<time datetime="{$startDate}">
+				<xsl:choose>
+					<xsl:when test="oneDayEvent[text()='1'] or $startDate = $endDate">
+						<p><xsl:value-of select="$endDate" /></p>
+					</xsl:when>
+					<xsl:otherwise>
+						<p><span>Debut: </span><xsl:value-of select="$startDate" /></p>
+						<p><span>Finale: </span><xsl:value-of select="$endDate" /></p>
 					</xsl:otherwise>
 				</xsl:choose>
 			</time>

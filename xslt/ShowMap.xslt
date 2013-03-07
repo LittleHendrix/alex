@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE xsl:stylesheet [ <!ENTITY nbsp "&#x00A0;"> ]>
+<!DOCTYPE xsl:stylesheet [ 
+<!ENTITY % entities SYSTEM "entities.ent">
+    %entities;
+]>
 <xsl:stylesheet 
   version="1.0" 
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
@@ -20,6 +23,9 @@
 	<xsl:variable name="mapLong" select="$mapData/value[position() = 2]" />
 	<xsl:variable name="mapZoom" select="$mapData/value[position() = 3]" />
 	
+	<div id="map-wrap">
+		<div id="map_canvas" style="width: 100%; height: 100%"></div>
+    </div>
 	<script>
 		<![CDATA[
 		
@@ -80,7 +86,7 @@
                   new google.maps.Size(30, 44),
                   // The origin for this image is 0,0.
                   new google.maps.Point(0,0),
-                  // The anchor for this image is the base of the flagpole at 21,57.
+                  // The anchor for this image is the base of the flagpole at 15,44.
                   new google.maps.Point(15, 44)
               ),
               shadow = new google.maps.MarkerImage(
@@ -116,11 +122,25 @@
 			document.body.appendChild(script);
 		}
 		
-		window.onload = loadScript;		
+        var deviceWidth = window.screen.width;
+        var mapWrap = document.getElementById('map-wrap');
+        
+        if (deviceWidth > 359) {
+          var bullseye = document.createElement("span");
+          bullseye.id = "re-align";
+          bullseye.innerHTML = "Go to event";
+          mapWrap.appendChild(bullseye); 
+          window.onload = loadScript;
+        } else {
+          var mapCanvas = document.getElementById('map_canvas');
+          var staticMapImg = document.createElement("img");
+          staticMapImg.src = "http://maps.googleapis.com/maps/api/staticmap?center=]]><xsl:value-of select="$mapLat" /><![CDATA[,]]><xsl:value-of select="$mapLong" /><![CDATA[&zoom=]]><xsl:value-of select="$mapZoom" /><![CDATA[&markers=color:red%7Clabel:A%7C]]><xsl:value-of select="$mapLat" /><![CDATA[,]]><xsl:value-of select="$mapLong" /><![CDATA[&format=png&sensor=false&key=AIzaSyAMaPZajy2bHYsLqcfZ_q-wbqYztpzWI00&size=320x480&maptype=roadmap&style=hue:0x31363c|saturation:-90&style=feature:landscape|element:geometry|visibility:off&style=feature:transit|element:geometry|visibility:simplified&style=feature:poi.business|visibility:off";
+          mapCanvas.appendChild(staticMapImg);
+        }
+        
 		
 		]]>
 	</script>
-    <span id="re-align">Go to event</span>
 </xsl:template>
 
 </xsl:stylesheet>
