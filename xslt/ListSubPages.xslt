@@ -18,13 +18,50 @@
 <xsl:variable name="timeout" select="$homeNode/timeout[not(@isDoc)]" />
 <xsl:variable name="speed" select="$homeNode/transitionSpeed[not(@isDoc)]" />
 <xsl:variable name="itemWidth" select="number(338)" />
+<xsl:variable name="nodeTypeId" select="/macro/nodeType" />
+		
+<xsl:variable name="nodeTypeAlias" select="local-name($currentPage/*[@isDoc and @nodeType = $nodeTypeId])" />
 		
 <xsl:template match="/">
-	<xsl:if test="count($currentPage/*[@isDoc and not(&hidden;)]) &gt; 0">
+	
+	<xsl:if test="count($currentPage/*[@isDoc and name()=$nodeTypeAlias and not(&hidden;)]) &gt; 0">
 		<ul class="touchcarousel-container">
-			<xsl:apply-templates select="$currentPage/*[@isDoc and not(&hidden;)]">					
-			<xsl:sort select="(eventEndDate[normalize-space()]|eventStartDate[normalize-space()]|postDate[normalize-space()]|@createDate)[last()]" data-type="number" order="descending" />
-			</xsl:apply-templates>
+			<xsl:choose>
+				<xsl:when test="$nodeTypeAlias = 'Event'">
+					<xsl:apply-templates select="$currentPage/Event[@isDoc and not(&hidden;)]">					
+					<xsl:sort select="(eventEndDate[not(&empty;)]|eventStartDate[not(&empty;)]|@createDate)[last()]" data-type="number" order="descending" />
+					</xsl:apply-templates>
+				</xsl:when>
+				<xsl:when test="$nodeTypeAlias = 'BlogPost'">
+					<xsl:apply-templates select="$currentPage/BlogPost[@isDoc and not(&hidden;)]">					
+					<xsl:sort select="(postDate[not(&empty;)]|@createDate)[last()]" data-type="number" order="descending" />
+					</xsl:apply-templates>
+				</xsl:when>
+				<xsl:when test="$nodeTypeAlias = 'Project'">
+					<xsl:apply-templates select="$currentPage/Project[@isDoc and not(&hidden;)]">					
+					<xsl:sort select="(commencementDate[not(&empty;)]|completionDate[not(&empty;)]|@createDate)[last()]" data-type="number" order="descending" />
+					</xsl:apply-templates>
+				</xsl:when>
+				<xsl:otherwise>
+					<li class="touchcarousel-item">
+						<section class="no-img">
+							<header><h1><xsl:value-of select="$currentPage/pageHeading[not(&empty;)]|$currentPage/@nodeName" /></h1></header>
+				
+							<div class="img-holder">
+								<xsl:comment>&nbsp;</xsl:comment>
+							</div>
+							
+							<time datetime="{$currentPage/@createDate}">
+								<p><span>Status: </span> 404... :-(</p>
+							</time>
+							
+							<div class="text-holder">
+								<p>Sorry, nothing has been published in the <strong>"<xsl:value-of select="$currentPage/@nodeName" />"</strong> section yet. Please come back soon for updates.</p>
+							</div>
+						</section>
+					</li>
+				</xsl:otherwise>
+			</xsl:choose>
 		</ul>
 		
 	<script>
@@ -51,7 +88,7 @@
 			transitionSpeed: speed,
 			directionNav: true,
 			directionNavAutoHide: false,		
-			loopItems: true,            // Loop items (don't disable arrows on last slide and allow autoplay to loop)
+			loopItems: false,            // Loop items (don't disable arrows on last slide and allow autoplay to loop)
 			keyboardNav: true,
 			dragUsingMouse: true,
 			scrollToLast: true,         // Last item ends at start of carousel wrapper
@@ -71,68 +108,6 @@
 	</script>
 		
 	</xsl:if>
-</xsl:template>
-		
-<xsl:template match="Event">
-	
-	<li class="touchcarousel-item">
-		<section>
-			<header><h1><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></h1></header>
-			
-			<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
-				<div class="img-holder">
-					<xsl:apply-templates select="pageMedia//mediaItem[1]/Image">
-						<xsl:with-param name="imgGen">true</xsl:with-param>
-						<xsl:with-param name="width">338</xsl:with-param>
-						<xsl:with-param name="compress">80</xsl:with-param>
-					</xsl:apply-templates>
-				</div>
-			</xsl:if>
-			
-			<xsl:variable name="startDate">
-				<xsl:choose>
-					<xsl:when test="eventStartDate[not(&empty;)]">
-						<xsl:apply-templates select="eventStartDate" mode="longDate" />
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:apply-templates select="@createDate" mode="longDate" />
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:variable>
-			<xsl:variable name="endDate">
-				<xsl:choose>
-					<xsl:when test="eventEndDate[not(&empty;)]">
-						<xsl:apply-templates select="eventEndDate" mode="longDate" />
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:value-of select="$startDate" />
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:variable>
-			
-			<time datetime="{$startDate}">
-				<xsl:choose>
-					<xsl:when test="oneDayEvent[text()='1'] or $startDate = $endDate">
-						<p><xsl:value-of select="$endDate" /></p>
-					</xsl:when>
-					<xsl:otherwise>
-						<p><span>Debut: </span><xsl:value-of select="$startDate" /></p>
-						<p><span>Finale: </span><xsl:value-of select="$endDate" /></p>
-					</xsl:otherwise>
-				</xsl:choose>
-			</time>
-			
-			<div class="text-holder">
-				<xsl:call-template name="firstWords">
-					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
-					<xsl:with-param name="WordCount" select="50" />
-					<xsl:with-param name="Ellipsis" select="'...'" />
-				</xsl:call-template>
-			<p><a href="{&NiceUrl;(@id)}">Read more</a></p>
-			</div>
-		</section>
-	</li>
-
 </xsl:template>
  
 <xsl:template name="for.loop">
@@ -169,15 +144,7 @@
 		</xsl:call-template>
 	</xsl:if>
 </xsl:template>
-
-<!-- :: Helper Templates :: -->
-		
-<xsl:template match="* | @*" mode="longDate">
-	<xsl:value-of select="umbraco.library:FormatDateTime(.,'dddd, dd MMMM - H:mm')" />
-</xsl:template>
-		
 <!-- :: Includes :: -->		
-<xsl:include href="_FirstWords.xslt" />
-<xsl:include href="_MediaHelper.xslt" />
+<xsl:include href="_SingleNode.xslt" />
 		
 </xsl:stylesheet>

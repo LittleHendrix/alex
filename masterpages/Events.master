@@ -2,6 +2,6 @@
 
 <asp:Content ContentPlaceHolderId="SubContent" runat="server">
 	<div id="content-carousel" class="touchcarousel black-and-white"> 
-		<umbraco:Macro Alias="ListSubPages" runat="server"></umbraco:Macro>
+		<umbraco:Macro nodeType="1078" Alias="ListSubPages" runat="server"></umbraco:Macro>
 	</div>
 </asp:Content>

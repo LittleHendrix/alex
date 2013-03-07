@@ -29,6 +29,7 @@
     <xsl:param name="height" />
     <xsl:param name="compress" select="number(80)" />
     <xsl:param name="altImg" />
+	<xsl:param name="allowUmbMeasure" />
     <xsl:variable name="alt" select="umbraco.library:Replace(umbraco.library:Replace(umbraco.library:Replace(@nodeName,'_',' '),'-',' '),'.jpg','')" />
 	
     <xsl:choose>
@@ -43,8 +44,10 @@
 				<xsl:text>&amp;constrain=true</xsl:text>
 			</xsl:attribute>
 			<xsl:attribute name="alt"><xsl:value-of select="$alt" /></xsl:attribute>
+			<xsl:if test="string($allowUmbMeasure)=''">
 			<xsl:attribute name="width"><xsl:value-of select="msxsl:node-set($width)[not(&empty;)]|umbracoWidth" /></xsl:attribute>
 		  	<xsl:attribute name="height"><xsl:value-of select="msxsl:node-set($height)[not(&empty;)]|umbracoHeight" /></xsl:attribute>
+			</xsl:if>
 		</img>
       </xsl:when>
       <xsl:otherwise>
