@@ -24,10 +24,15 @@
 	<xsl:variable name="mapZoom" select="$mapData/value[position() = 3]" />
 	
 	<div id="map-wrap">
-		<div id="map_canvas" style="width: 100%; height: 100%"></div>
-    </div>
-	
+		
 	<xsl:if test="string($mapData)!=''">
+		
+		<div id="map_canvas" style="width: 100%; height: 100%"></div>
+		<!--
+		<div id="static_map" style="display:none;">
+			<img src="http://maps.googleapis.com/maps/api/staticmap?center={$mapLat},{$mapLong}&amp;zoom={$mapZoom}&amp;size=320x320&amp;maptype=roadmap&amp;markers=color:red%7Clabel:A%7C{$mapLat},{$mapLong}&amp;key=AIzaSyAMaPZajy2bHYsLqcfZ_q-wbqYztpzWI00&amp;sensor=false" width="320" height="320" />
+		</div>
+		-->
 		
 	<script>
 		<![CDATA[
@@ -125,7 +130,8 @@
 			document.body.appendChild(script);
 		}
 		
-        var deviceWidth = window.screen.width;
+  		//var deviceWidth = document.documentElement.clientWidth; // debug
+  		var deviceWidth = window.screen.width; // live
         var mapWrap = document.getElementById('map-wrap');
         
         if (deviceWidth > 359) {
@@ -135,17 +141,15 @@
           mapWrap.appendChild(bullseye); 
           window.onload = loadScript;
         } else {
-          var mapCanvas = document.getElementById('map_canvas');
-          var staticMapImg = document.createElement("img");
-          staticMapImg.src = "http://maps.googleapis.com/maps/api/staticmap?center=]]><xsl:value-of select="$mapLat" /><![CDATA[,]]><xsl:value-of select="$mapLong" /><![CDATA[&zoom=]]><xsl:value-of select="$mapZoom" /><![CDATA[&markers=color:red%7Clabel:A%7C]]><xsl:value-of select="$mapLat" /><![CDATA[,]]><xsl:value-of select="$mapLong" /><![CDATA[&format=png&sensor=false&key=AIzaSyAMaPZajy2bHYsLqcfZ_q-wbqYztpzWI00&size=320x480&maptype=roadmap&style=hue:0x31363c|saturation:-90&style=feature:landscape|element:geometry|visibility:off&style=feature:transit|element:geometry|visibility:simplified&style=feature:poi.business|visibility:off";
-          mapCanvas.appendChild(staticMapImg);
+			//var staticMap = document.getElementById('static_map');
+			//staticMap.removeAttribute('style');
         }
-        
-		
 		]]>
 	</script>
 		
 	</xsl:if>
+		
+	</div>
 	
 </xsl:template>
 

@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<umbPackage>
+  <info>
+    <package>
+      <name>UComment</name>
+      <version>1.2</version>
+      <license url="http://www.opensource.org/licenses/mit-license.php">MIT license</license>
+      <url>http://www.umbraco.org</url>
+      <requirements>
+        <major>4</major>
+        <minor>7</minor>
+        <patch>0</patch>
+      </requirements>
+    </package>
+    <author>
+      <name>Tim Geyssens, Niels Hartvig, Per Ploug Hansen, Darren Ferguson</name>
+      <website>http://www.umbraco.org</website>
+    </author>
+    <readme><![CDATA[Standalone comment component (seperated from blog4umbraco) for umbraco.
+      
+      Copyright (c) 2010
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.]]></readme>
+  </info>
+  <Documents />
+  <DocumentTypes />
+  <Templates />
+  <Stylesheets />
+  <Macros>
+    <macro>
+      <name>UComment Form</name>
+      <alias>UCommentForm</alias>
+      <scriptType>/usercontrols/UComment/UCommentForm.ascx</scriptType>
+      <scriptAssembly>
+      </scriptAssembly>
+      <xslt>
+      </xslt>
+      <useInEditor>False</useInEditor>
+      <refreshRate>0</refreshRate>
+      <properties>
+        <property alias="RegisterScripts" show="True" name="RegisterScripts" propertyType="bool">
+        </property>
+      </properties>
+    </macro>
+    <macro>
+      <name>UComment List Comments</name>
+      <alias>UCommentListComments</alias>
+      <scriptType>
+      </scriptType>
+      <scriptAssembly>
+      </scriptAssembly>
+      <xslt>UCommentListComments.xslt</xslt>
+      <useInEditor>False</useInEditor>
+      <refreshRate>0</refreshRate>
+      <properties />
+    </macro>
+  </Macros>
+  <DictionaryItems />
+  <Languages />
+  <DataTypes />
+  <files>
+    <file>
+      <guid>052514dd-50ac-4236-9526-946709350818.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>Joel.Net.Akismet.dll</orgName>
+    </file>
+    <file>
+      <guid>c2585360-0325-4bbe-816a-2282cd8c2ecb.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>PackageActionsContrib.dll</orgName>
+    </file>
+    <file>
+      <guid>7adf0142-49b1-4f6c-b698-87b20fab8a36.dll</guid>
+      <orgPath>/bin</orgPath>
+      <orgName>UComment.dll</orgName>
+    </file>
+    <file>
+      <guid>907b0707-c690-4065-8480-1afa2bed19cc.js</guid>
+      <orgPath>/scripts/UComment</orgPath>
+      <orgName>jquery.form.js</orgName>
+    </file>
+    <file>
+      <guid>52b11afe-fc7e-4936-8051-682a55f4a879.js</guid>
+      <orgPath>/scripts/UComment</orgPath>
+      <orgName>jquery.metadata.js</orgName>
+    </file>
+    <file>
+      <guid>158292b3-6f85-4141-b34b-73ff4d834ae4.js</guid>
+      <orgPath>/scripts/UComment</orgPath>
+      <orgName>jquery.validate.min.js</orgName>
+    </file>
+    <file>
+      <guid>d4e71b10-6fb3-4708-afdb-0636e8c558df.config</guid>
+      <orgPath>/umbraco/plugins/UComment</orgPath>
+      <orgName>UComment.config</orgName>
+    </file>
+    <file>
+      <guid>3bb958be-0c08-45fe-a6e2-eded6cb596be.ascx</guid>
+      <orgPath>/usercontrols/UComment</orgPath>
+      <orgName>UCommentForm.ascx</orgName>
+    </file>
+    <file>
+      <guid>9c133424-aec4-4068-9aac-7efaa1d010d7.ascx</guid>
+      <orgPath>/usercontrols/UComment</orgPath>
+      <orgName>UCommentModeration.ascx</orgName>
+    </file>
+    <file>
+      <guid>53affe42-4b0a-48da-b631-b8e613840c60.xslt</guid>
+      <orgPath>/xslt</orgPath>
+      <orgName>UCommentListComments.xslt</orgName>
+    </file>
+  </files>
+  <Actions>
+    <Action runat="install" alias="addDashboardSection" dashboardAlias="Comments">
+      <section>
+        <areas>
+          <area>content</area>
+        </areas>
+        <tab caption="Comments">
+          <control>/usercontrols/UComment/UCommentModeration.ascx</control>
+        </tab>
+      </section>
+    </Action>
+    <Action runat="install" alias="ucomment_executeNonQuery">
+      <Sqlserver><![CDATA[      	
+      	CREATE TABLE [Comment](
+		      [id] [int] IDENTITY(1,1) NOT NULL,
+		      [mainid] [int] NOT NULL,
+		      [nodeid] [int] NOT NULL,
+		      [name] [nvarchar](250) NULL,
+		      [email] [nvarchar](250) NULL,
+		      [website] [nvarchar](250) NULL,
+		      [comment] [ntext] NULL,
+		      [spam] [bit] NULL,
+		      [ham] [bit] NULL,
+		      [created] [datetime] NULL
+	       CONSTRAINT [PK_Comment] PRIMARY KEY CLUSTERED 
+	      (
+		      [id] ASC
+	      ));
+	      ]]></Sqlserver>
+      <VistaDB><![CDATA[
+          CREATE TABLE [Comment]
+          (
+          [id] INT NOT NULL PRIMARY KEY,
+          [mainid] INT NOT NULL,
+          [nodeid] INT NOT NULL,
+          [name] NVARCHAR (250),
+          [email] NVARCHAR (250),
+          [website] NVARCHAR (250),
+          [comment] NTEXT,
+          [spam] BIT,
+          [ham] BIT,
+          [created] DATETIME
+          );
+
+          ALTER TABLE [Comment]
+          ALTER COLUMN [id] INT NOT NULL IDENTITY (1, 1);
+          ]]></VistaDB>
+      <MySQL><![CDATA[
+          CREATE TABLE Comment (
+          id INTEGER UNSIGNED DEFAULT NULL AUTO_INCREMENT,
+          mainid INTEGER UNSIGNED NOT NULL,
+          nodeid INTEGER UNSIGNED NOT NULL,
+          name VARCHAR(250),
+          email VARCHAR(250),
+          website VARCHAR(250),
+          comment TEXT,
+          spam BOOLEAN,
+          ham BOOLEAN,
+          created DATETIME,
+          PRIMARY KEY (id)
+          );
+          ]]></MySQL>
+    </Action>
+  </Actions>
+  <control />
+</umbPackage>

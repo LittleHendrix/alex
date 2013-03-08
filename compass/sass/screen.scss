@@ -294,7 +294,7 @@ a.mailto {
                 }
                 a.peek {
                     @include imgRep("/css/images/peek-lrg.png",60px,32px,50%,0px);
-                    @include image-2x("/css/images/peek-lrg-2x.png",60px,32px);
+                    @include image-2x("/css/images/peek-lrg-2x.png",60px,64px);
                     width: 100%;
                     position: absolute;
                     bottom: 44px;
@@ -445,6 +445,11 @@ a.mailto {
     @include background(url("/css/images/placeholder-logo.png"),radial-gradient(30% 20%, lighten($ink,65%) 0px, lighten($ink,55%) 540px));
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    #static_map {
+        display: none;
+        width: 0;
+        height: 0;
+    }
 }
 span#re-align {
     @include imgRep('/css/images/map-bullseye.png',25px,25px);
@@ -607,19 +612,30 @@ span#re-align {
         }
     }
     #map-wrap {
-        height: auto;
-        background-image: none;
-        background-color: lighten($ink,45%);
-        @include background(radial-gradient(35% 25%, lighten($ink,65%) 0px, lighten($ink,35%) 480px));
-        #map_canvas img {
+        @include background(none);
+        @include imgRep('/css/images/placeholder-logo-inverted.png',100%,320px,50%,50%);
+        @include image-2x("/css/images/placeholder-logo-inverted-2x.png",32px,100px);   
+        background-color: $ink;
+        text-align: center;
+        #static_map {
+            display: block !important;
             width: 100%;
-            height: auto;
+            height: 320px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            img {
+                position: relative;
+                left: -160px;
+                margin-left: 50%;
+            }
         }
     }
     .map-overlay {
         position: relative;
         left: 0;
         width: 100%;
+        @include box-shadow(none);
         article {
             .img-holder {
                 img {
