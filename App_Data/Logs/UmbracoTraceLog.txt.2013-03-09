@@ -1,0 +1,84 @@
+2013-03-09 17:30:58,513 [22] INFO  Umbraco.Web.UmbracoApplication - [Thread 9] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-03-09 17:32:37,087 [27] INFO  Umbraco.Core.CoreBootManager - [Thread 18] Umbraco application starting
+2013-03-09 17:32:37,197 [27] INFO  Umbraco.Core.PluginManager - [Thread 18] Determining hash of code files on disk
+2013-03-09 17:32:37,217 [27] INFO  Umbraco.Core.PluginManager - [Thread 18] Hash determined (took 18ms)
+2013-03-09 17:32:37,542 [27] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 297ms)
+2013-03-09 17:32:37,562 [27] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 12ms)
+2013-03-09 17:32:37,583 [27] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 12ms)
+2013-03-09 17:32:37,596 [27] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 12ms)
+2013-03-09 17:32:37,618 [27] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 10ms)
+2013-03-09 17:32:37,702 [27] INFO  Umbraco.Core.CoreBootManager - [Thread 18] Umbraco application startup complete (took 597ms)
+2013-03-09 17:32:37,745 [27] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 36ms)
+2013-03-09 17:32:37,895 [27] INFO  Umbraco.Core.PluginManager - [Thread 18] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 12ms)
+2013-03-09 17:32:42,363 [27] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 19ms)
+2013-03-09 17:32:42,624 [27] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.interfaces.ITree, found 42 (took 8ms)
+2013-03-09 17:33:57,109 [27] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 11ms)
+2013-03-09 17:34:08,975 [27] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 20ms)
+2013-03-09 17:34:11,429 [27] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 21ms)
+2013-03-09 17:34:11,674 [27] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.XsltExtensionAttribute, found 2 (took 27ms)
+2013-03-09 22:17:56,236 [27] INFO  Umbraco.Core.PluginManager - [Thread 12] Completed resolution of types of Umbraco.Web.BaseRest.RestExtensionAttribute, found 1 (took 56ms)
+2013-03-09 22:18:50,234 [27] INFO  Umbraco.Core.PluginManager - [Thread 22] Completed resolution of types of umbraco.cms.businesslogic.media.IMediaFactory, found 2 (took 11ms)
+2013-03-09 22:18:53,033 [27] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 22] Successful upload to parent ID: 1153
+2013-03-09 22:18:53,652 [27] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 20] Successful upload to parent ID: 1153
+2013-03-09 22:18:54,592 [27] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 19] Successful upload to parent ID: 1153
+2013-03-09 22:18:55,312 [27] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 24] Successful upload to parent ID: 1153
+2013-03-09 22:18:56,100 [27] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 24] Successful upload to parent ID: 1153
+2013-03-09 22:18:56,797 [27] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 24] Successful upload to parent ID: 1153
+2013-03-09 22:19:43,420 [27] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 8] Successful upload to parent ID: 1160
+2013-03-09 22:19:44,273 [27] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 8] Successful upload to parent ID: 1160
+2013-03-09 22:19:45,105 [27] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 8] Successful upload to parent ID: 1160
+2013-03-09 22:35:32,690 [27] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>[Thread 8] Error parsing XSLT file. Exception: System.Xml.Xsl.XslTransformException: Expression must evaluate to a node-set.
+   at System.Xml.Xsl.Runtime.XsltConvert.EnsureNodeSet(IList`1 listItems)
+   at <xsl:template match="/">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at Root(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at System.Xml.Xsl.XmlILCommand.Execute(Object defaultDocument, XmlResolver dataSources, XsltArgumentList argumentList, XmlWriter writer)
+   at System.Xml.Xsl.XslCompiledTransform.Transform(IXPathNavigable input, XsltArgumentList arguments, TextWriter results)
+   at umbraco.macro.GetXsltTransformResult(XmlDocument macroXML, XslCompiledTransform xslt, Dictionary`2 parameters)
+   at umbraco.macro.loadMacroXSLT(macro macro, MacroModel model, Hashtable pageElements)</format><args>{}</args></log4net.Error>
+2013-03-09 22:37:53,666 [27] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>[Thread 24] Error parsing XSLT file. Exception: System.Xml.Xsl.XslTransformException: Expression must evaluate to a node-set.
+   at System.Xml.Xsl.Runtime.XsltConvert.EnsureNodeSet(IList`1 listItems)
+   at <xsl:template match="/">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at Root(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at System.Xml.Xsl.XmlILCommand.Execute(Object defaultDocument, XmlResolver dataSources, XsltArgumentList argumentList, XmlWriter writer)
+   at System.Xml.Xsl.XslCompiledTransform.Transform(IXPathNavigable input, XsltArgumentList arguments, TextWriter results)
+   at umbraco.macro.GetXsltTransformResult(XmlDocument macroXML, XslCompiledTransform xslt, Dictionary`2 parameters)
+   at umbraco.macro.loadMacroXSLT(macro macro, MacroModel model, Hashtable pageElements)</format><args>{}</args></log4net.Error>
+2013-03-09 23:19:14,968 [27] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>[Thread 3] Error parsing XSLT file. Exception: System.OverflowException: Value was either too large or too small for an Int32.
+   at System.Convert.ToInt32(Double value)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Xml.Xsl.Runtime.XmlQueryRuntime.ChangeTypeXsltArgument(XmlQueryType xmlType, Object value, Type destinationType)
+   at System.Xml.Xsl.Runtime.XmlQueryContext.InvokeXsltLateBoundFunction(String name, String namespaceUri, IList`1[] args)
+   at <xsl:template match="Folder">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current)
+   at <xsl:template match="Project">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current)
+   at <xsl:template match="/">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at Root(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at System.Xml.Xsl.XmlILCommand.Execute(Object defaultDocument, XmlResolver dataSources, XsltArgumentList argumentList, XmlWriter writer)
+   at System.Xml.Xsl.XslCompiledTransform.Transform(IXPathNavigable input, XsltArgumentList arguments, TextWriter results)
+   at umbraco.macro.GetXsltTransformResult(XmlDocument macroXML, XslCompiledTransform xslt, Dictionary`2 parameters)
+   at umbraco.macro.loadMacroXSLT(macro macro, MacroModel model, Hashtable pageElements)</format><args>{}</args></log4net.Error>
+2013-03-09 23:23:58,720 [27] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>[Thread 3] Error parsing XSLT file. Exception: System.OverflowException: Value was either too large or too small for an Int32.
+   at System.Convert.ToInt32(Double value)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Xml.Xsl.Runtime.XmlQueryRuntime.ChangeTypeXsltArgument(XmlQueryType xmlType, Object value, Type destinationType)
+   at System.Xml.Xsl.Runtime.XmlQueryContext.InvokeXsltLateBoundFunction(String name, String namespaceUri, IList`1[] args)
+   at <xsl:template match="Folder">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current)
+   at <xsl:template match="Project">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current)
+   at <xsl:template match="/">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at Root(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at System.Xml.Xsl.XmlILCommand.Execute(Object defaultDocument, XmlResolver dataSources, XsltArgumentList argumentList, XmlWriter writer)
+   at System.Xml.Xsl.XslCompiledTransform.Transform(IXPathNavigable input, XsltArgumentList arguments, TextWriter results)
+   at umbraco.macro.GetXsltTransformResult(XmlDocument macroXML, XslCompiledTransform xslt, Dictionary`2 parameters)
+   at umbraco.macro.loadMacroXSLT(macro macro, MacroModel model, Hashtable pageElements)</format><args>{}</args></log4net.Error>
+2013-03-09 23:24:38,720 [27] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>[Thread 3] Error parsing XSLT file. Exception: System.OverflowException: Value was either too large or too small for an Int32.
+   at System.Convert.ToInt32(Double value)
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Xml.Xsl.Runtime.XmlQueryRuntime.ChangeTypeXsltArgument(XmlQueryType xmlType, Object value, Type destinationType)
+   at System.Xml.Xsl.Runtime.XmlQueryContext.InvokeXsltLateBoundFunction(String name, String namespaceUri, IList`1[] args)
+   at <xsl:template match="Folder">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current)
+   at <xsl:template match="Project">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current)
+   at <xsl:template match="/">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at Root(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at System.Xml.Xsl.XmlILCommand.Execute(Object defaultDocument, XmlResolver dataSources, XsltArgumentList argumentList, XmlWriter writer)
+   at System.Xml.Xsl.XslCompiledTransform.Transform(IXPathNavigable input, XsltArgumentList arguments, TextWriter results)
+   at umbraco.macro.GetXsltTransformResult(XmlDocument macroXML, XslCompiledTransform xslt, Dictionary`2 parameters)
+   at umbraco.macro.loadMacroXSLT(macro macro, MacroModel model, Hashtable pageElements)</format><args>{}</args></log4net.Error>

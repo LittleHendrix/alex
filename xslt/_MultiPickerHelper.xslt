@@ -50,6 +50,7 @@
 	<!-- We can't use position like this: $nodeIds[. current()/@id]/position(), so instead count the number of preceding siblings -->
 	<xsl:apply-templates select="&nodes;">
 		<xsl:sort select="count($nodeIds[. = current()/@id]/preceding-sibling::nodeId)" data-type="number" order="ascending" />
+		<xsl:with-param name="nodeIds"><xsl:copy-of select="$nodeIds" /></xsl:with-param>
 	</xsl:apply-templates>
 
 </xsl:template>

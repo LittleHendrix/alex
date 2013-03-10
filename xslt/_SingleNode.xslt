@@ -21,7 +21,7 @@
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
-			<header><h1><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></h1></header>
+			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
 
 			<div class="img-holder">
 				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
@@ -87,7 +87,7 @@
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
-			<header><h1><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></h1></header>
+			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
 
 			<div class="img-holder">
 				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
@@ -146,7 +146,7 @@
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
-			<header><h1><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></h1></header>
+			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
 
 			<div class="img-holder">
 				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
@@ -174,21 +174,22 @@
 						<xsl:apply-templates select="completionDate" mode="monthYear" />
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:value-of select="''" />
+						<xsl:apply-templates select="@createDate" mode="monthYear" />
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
 			<time datetime="{(completionDate[not(&empty;)]|@createDate)[last()]}">
-				<xsl:choose>
-					<xsl:when test="string($completeDate)!=''">
-						<p><span>Completed: </span><xsl:value-of select="$completeDate" /></p>
-					</xsl:when>
-					<xsl:otherwise>
-						<p><span>Completed: </span>Hmmm... when was it again?</p>
-					</xsl:otherwise>
-				</xsl:choose>
+				<xsl:if test="string($completeDate)!=''">
+					<p><span>Date: </span><xsl:value-of select="$completeDate" /></p>
+				</xsl:if>
 			</time>
-			
+			<xsl:if test="type[not(&empty;)]">
+				<div class="type">
+					<p><span>Type: </span>
+						<xsl:apply-templates select="type" mode="multipicker" />
+					</p>
+				</div>
+			</xsl:if>
 			<div class="text-holder">
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
@@ -209,9 +210,28 @@
 <xsl:template match="* | @*" mode="monthYear">
 	<xsl:value-of select="umbraco.library:FormatDateTime(.,'MMMM yyyy')" />
 </xsl:template>
+<xsl:template match="ProjectType">
+	<xsl:param name="nodeIds" />
+	<xsl:variable name="procedingNodeIds">
+		<xsl:for-each select="./preceding-sibling::ProjectType">
+			<xsl:value-of select="@id" />
+		</xsl:for-each>
+	</xsl:variable>
+	<xsl:variable name="hasProcedingNodes">
+		<xsl:for-each select="msxsl:node-set($nodeIds)/nodeId">
+			<xsl:if test="contains($procedingNodeIds,.)"><xsl:text>true</xsl:text></xsl:if>
+		</xsl:for-each>
+	</xsl:variable>
+	
+	<xsl:if test="contains($hasProcedingNodes,'true')">
+		<xsl:text>, </xsl:text>
+	</xsl:if>
+	<xsl:value-of select="@nodeName" />
+</xsl:template>
 		
 <!-- :: Includes :: -->		
 <xsl:include href="_FirstWords.xslt" />
 <xsl:include href="_MediaHelper.xslt" />
+<xsl:include href="_MultiPickerHelper.xslt" />
 
 </xsl:stylesheet>

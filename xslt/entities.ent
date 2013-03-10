@@ -11,7 +11,7 @@
 ]]>
 <![%production;[
     <!ENTITY nbsp "&#x00A0;"> 
-    <!ENTITY hidden "umbracoNaviHide = 1">
+    <!ENTITY hidden "@isDoc and umbracoNaviHide = 1">
     <!ENTITY empty "not(normalize-space())">
     <!ENTITY NiceUrl "umbraco.library:NiceUrl">
 	<!-- GetMedia for a File/Image -->

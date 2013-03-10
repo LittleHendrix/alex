@@ -57,6 +57,7 @@
 					<xsl:with-param name="imgGen">true</xsl:with-param>
 					<xsl:with-param name="width">338</xsl:with-param>
 					<xsl:with-param name="compress">100</xsl:with-param>
+					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
 				</xsl:apply-templates>
 			</xsl:if>
 			<xsl:comment>&nbsp;</xsl:comment>
