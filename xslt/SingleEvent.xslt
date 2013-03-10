@@ -81,6 +81,15 @@
 					<p><xsl:value-of select="umbraco.library:ReplaceLineBreaks(metaDescription)" disable-output-escaping="yes" /></p>
 				</xsl:otherwise>
 			</xsl:choose>
+				
+			<p id="ical_export">
+				<a>
+					<xsl:attribute name="href">
+						<xsl:value-of select="umbraco.library:NiceUrl($currentPage/@id)" /><xsl:text>?altTemplate=iCalExport</xsl:text>
+					</xsl:attribute>
+					Add to calendar (iCal)
+				</a>
+			</p>
 		</div>
 	</article>
 

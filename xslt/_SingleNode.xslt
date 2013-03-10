@@ -73,8 +73,8 @@
 					<xsl:with-param name="WordCount" select="50" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
-			<p><a href="{&NiceUrl;(@id)}" class="more">Read more</a></p>
 			</div>
+			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link evt">Read more</a></div>
 		</section>
 	</li>
 
@@ -121,8 +121,8 @@
 					<xsl:with-param name="WordCount" select="50" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
-			<p><a href="{&NiceUrl;(@id)}" class="more">Read more</a></p>
 			</div>
+			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link post">Read more</a></div>
 		</section>
 	</li>
 
@@ -130,9 +130,20 @@
 		
 <xsl:template match="Project">
 	
+	<xsl:variable name="hasMediaFolder">
+		<xsl:choose>
+			<xsl:when test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+				<xsl:value-of select="pageMedia//mediaItem[1]/Folder/@id" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="''" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+	
 	<li class="touchcarousel-item">
 		<section>
-			<xsl:if test="string(pageMedia//mediaItem[1]/Image)=''">
+			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
 			<header><h1><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></h1></header>
@@ -146,36 +157,34 @@
 						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
 					</xsl:apply-templates>
 				</xsl:if>
+				<xsl:if test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+						<xsl:with-param name="getFirstItem">true</xsl:with-param>
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
 			</div>
 			
-			<xsl:variable name="commenceDate">
-				<xsl:choose>
-					<xsl:when test="commencementDate[not(&empty;)]">
-						<xsl:apply-templates select="commencementDate" mode="longDate" />
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:apply-templates select="@createDate" mode="longDate" />
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:variable>
 			<xsl:variable name="completeDate">
 				<xsl:choose>
 					<xsl:when test="completionDate[not(&empty;)]">
-						<xsl:apply-templates select="completionDate" mode="longDate" />
+						<xsl:apply-templates select="completionDate" mode="monthYear" />
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:value-of select="$commenceDate" />
+						<xsl:value-of select="''" />
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			<time datetime="{(commencementDate[not(&empty;)]|completionDate[not(&empty;)]|@createDate)[last()]}">
+			<time datetime="{(completionDate[not(&empty;)]|@createDate)[last()]}">
 				<xsl:choose>
-					<xsl:when test="$commenceDate = $completeDate">
+					<xsl:when test="string($completeDate)!=''">
 						<p><span>Completed: </span><xsl:value-of select="$completeDate" /></p>
 					</xsl:when>
 					<xsl:otherwise>
-						<p><span>Started: </span><xsl:value-of select="$commenceDate" /></p>
-						<p><span>Completed: </span><xsl:value-of select="$completeDate" /></p>
+						<p><span>Completed: </span>Hmmm... when was it again?</p>
 					</xsl:otherwise>
 				</xsl:choose>
 			</time>
@@ -186,8 +195,8 @@
 					<xsl:with-param name="WordCount" select="50" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
-			<p><a href="{&NiceUrl;(@id)}" class="more">Read more</a></p>
 			</div>
+			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link proj">Read more</a></div>
 		</section>
 	</li>
 
@@ -196,6 +205,9 @@
 <!-- :: Helper Templates :: -->
 <xsl:template match="* | @*" mode="longDate">
 	<xsl:value-of select="umbraco.library:FormatDateTime(.,'ddd, dd MMMM yyyy - hh:mm tt')" />
+</xsl:template>
+<xsl:template match="* | @*" mode="monthYear">
+	<xsl:value-of select="umbraco.library:FormatDateTime(.,'MMMM yyyy')" />
 </xsl:template>
 		
 <!-- :: Includes :: -->		

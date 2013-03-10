@@ -90,15 +90,13 @@ div, section, header, footer, article, aside, time {
  *
 \******************************************************/
 a {
-    color: lighten(desaturate($blood,20%),5%);
+    color: $blood;
     border-bottom: 1px dotted lighten($ink,55%);
-    border-bottom-color: rgba($ink,.25);
     padding: 0 2px;
 }
 a:focus, a:hover {
-    border-bottom: 1px dotted lighten(desaturate($blood,20%),5%);
-    border-bottom-color: rgba($blood,.9);
-    color: $blood;
+    border-bottom: 1px dotted lighten(desaturate($blood,20%),15%);
+    color: lighten(desaturate($blood,10%),20%);
 }
 a:active {
     background-color: lighten(desaturate($blood,20%),5%);
@@ -128,7 +126,23 @@ a:link {
 a.mailto {
     font-weight: bold;
 }
-
+a.perma-link {
+    @include imgRep("/css/images/perma-link.png",100%,44px,50%,0px);
+    @include image-2x("/css/images/perma-link-2x.png",44px,44px);
+    @extend .noborder;
+    &:hover, &:focus, &:active {
+        background-position: 50% -44px;
+        background-color: transparent;
+    }
+    &.proj {
+        background-image: url("/css/images/proj-link.png");
+        @include image-2x("/css/images/proj-link-2x.png",44px,44px);
+    }
+    &.evt {
+        background-image: url("/css/images/evt-link.png");
+        @include image-2x("/css/images/evt-link-2x.png",44px,44px);
+    }
+}
 #content-wrap {
     width: 100%;
     height: auto;
@@ -156,7 +170,7 @@ a.mailto {
                 padding: 14px 23px;
                 margin: 0;
                 color: $white;
-                text-shadow: 0px 1px 3px darken(desaturate($blood,20%),15%);
+                text-shadow: 0px 1px 3px rgba($ink,0.9);
                 background-color: lighten(desaturate($blood,20%),5%);
                 background-color: rgba($blood,.9);
             }
@@ -177,7 +191,7 @@ a.mailto {
             }
             .text-holder {
                 margin: 113px -23px 0;
-                padding: 23px;
+                padding: 23px 23px 58px;
                 background: white(.8);
                 height: 357px;
                 overflow-y: auto;
@@ -204,12 +218,23 @@ a.mailto {
             }
             &.no-img {
                 h1 {
-                    @include box-shadow(lighten($ink,75%) 0px 1px 2px,rgba($ink,0.5) 0px 1px 4px 0px inset);
+                    @include box-shadow(lighten($ink,75%) 0px 1px 2px,rgba($ink,0.5) 0px -1px 11px -2px inset);
                 }
                 .img-holder {
                     background-color: lighten($ink,45%);
                     @include background(radial-gradient(35% 25%, lighten($ink,65%) 0px, lighten($ink,35%) 338px));
                 }
+            }
+            .sec-link {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                padding: 7px 0;
+                text-align: center;
+                background-color: $white;
+                background-color: rgba($white,0.6);
+                z-index: 10;
             }
         }
     }
@@ -243,6 +268,7 @@ a.mailto {
         overflow: hidden;
         @include perspective(1000);
         @include backface-visibility(hidden);
+        @include glass(-33deg);
         &.last {}
         img {
             @extend .valign-top;
@@ -279,7 +305,7 @@ a.mailto {
                     font-size: 23px;
                     padding: 14px;
                     margin: 37px 0 0 0;
-                    text-shadow: 0px 1px 3px darken(desaturate($blood,20%),15%);
+                    text-shadow: 0px 1px 3px rgba($ink,0.9);
                     background-color: lighten(desaturate($blood,20%),5%);
                     background-color: rgba($blood,.8);
                     @include translateY(-100px);
@@ -486,7 +512,7 @@ span#re-align {
             padding: 14px 23px;
             margin: 0;
             color: $white;
-            text-shadow: 0px 1px 3px darken(desaturate($blood,20%),15%);
+            text-shadow: 0px 1px 3px rgba($ink,0.9);
             background-color: lighten(desaturate($blood,20%),5%);
             background-color: rgba($blood,.9);
         }
@@ -538,7 +564,7 @@ span#re-align {
         }
         &.no-img {
             h1 {
-                @include box-shadow(lighten($ink,75%) 0px 1px 2px,rgba($ink,0.5) 0px 1px 4px 0px inset);
+                @include box-shadow(lighten($ink,75%) 0px 1px 2px,rgba($ink,0.5) 0px -1px 11px -2px inset);
             }
             .img-holder {
                 background-color: lighten($ink,45%);

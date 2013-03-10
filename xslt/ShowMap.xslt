@@ -99,9 +99,9 @@
               ),
               shadow = new google.maps.MarkerImage(
                   '/css/images/marker_shadow.png',
-                  new google.maps.Size(54, 44),
+                  new google.maps.Size(44, 44),
                   new google.maps.Point(0,0),
-                  new google.maps.Point(15, 44)
+                  new google.maps.Point(15, 38)
               );
           var marker = new google.maps.Marker({
               map: map,

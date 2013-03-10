@@ -6,6 +6,5 @@
 
 	<div class="map-overlay">
 		<umbraco:Macro Alias="SingleEvent" runat="server"></umbraco:Macro>
-		<umbraco:Macro Alias="ICalExportLink" runat="server"></umbraco:Macro>
 	</div>
 </asp:Content>

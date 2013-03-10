@@ -20,6 +20,40 @@
 	<xsl:variable name="mediaNode" select="&GetMedia;" />
 	<xsl:apply-templates select="$mediaNode[not(error)]" />
   </xsl:template>
+	  
+  <!-- Folder  -->
+  <xsl:template match="@*" mode="folder">
+	  <xsl:param name="getFirstItem" />
+	  <xsl:param name="imgGen" />
+	  <xsl:param name="width" />
+	  <xsl:param name="height" />
+	  <xsl:param name="compress" />
+	  <xsl:param name="allowUmbMeasure" />
+	  
+	  <xsl:variable name="folder" select="&GetMediaFolder;" />
+	  <xsl:if test="string($folder) != ''">
+		  <xsl:choose>
+			  <xsl:when test="string($getFirstItem)!=''">
+				  <xsl:apply-templates select="$folder/*[string(@id)!=''][1]">
+					  <xsl:with-param name="imgGen"><xsl:value-of select="$imgGen" /></xsl:with-param>
+					  <xsl:with-param name="width"><xsl:value-of select="$width" /></xsl:with-param>
+					  <xsl:with-param name="height"><xsl:value-of select="$height" /></xsl:with-param>
+					  <xsl:with-param name="compress"><xsl:value-of select="$compress" /></xsl:with-param>
+					  <xsl:with-param name="allowUmbMeasure"><xsl:value-of select="$allowUmbMeasure" /></xsl:with-param>
+				  </xsl:apply-templates>
+			  </xsl:when>
+			  <xsl:otherwise>
+				  <xsl:apply-templates select="$folder/*[string(@id)!='']">
+					  <xsl:with-param name="imgGen"><xsl:value-of select="$imgGen" /></xsl:with-param>
+					  <xsl:with-param name="width"><xsl:value-of select="$width" /></xsl:with-param>
+					  <xsl:with-param name="height"><xsl:value-of select="$height" /></xsl:with-param>
+					  <xsl:with-param name="compress"><xsl:value-of select="$compress" /></xsl:with-param>
+					  <xsl:with-param name="allowUmbMeasure"><xsl:value-of select="$allowUmbMeasure" /></xsl:with-param>
+				  </xsl:apply-templates>
+			  </xsl:otherwise>
+		  </xsl:choose>
+	  </xsl:if>
+  </xsl:template>
     
   <!-- Image file  -->
   <!-- e.g. Accepting param from DAMP Picker -->
@@ -65,7 +99,7 @@
   <!-- Video file -->
   <!-- Accepting param from DAMP Picker -->
   <!-- if passing param from Media Picker, call "umbraco.library:GetMedia()" first --> 
-  <xsl:template match="Video" mode="media">
+  <xsl:template match="Video">
     <xsl:param name="uniqueId" />
     <xsl:param name="width" />
     <xsl:param name="height" />
@@ -144,7 +178,7 @@
   <!-- PDF file, render link -->
   <!-- Accepting param from DAMP Picker -->
   <!-- if passing param from Media Picker, call "umbraco.library:GetMedia()" first --> 
-  <xsl:template match="File[umbracoExtension = 'pdf']" mode="media">
+  <xsl:template match="File[umbracoExtension = 'pdf']">
     <xsl:variable name="size">
       <xsl:choose>
         <xsl:when test="round(umbracoBytes div 1024) &lt; 1">
