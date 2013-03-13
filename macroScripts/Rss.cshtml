@@ -1,4 +1,5 @@
 ﻿@inherits umbraco.MacroEngines.DynamicNodeContext
+@using DigibizAdvancedMediaPicker;
 @{
     //Change mime type
     umbraco.library.ChangeContentType("text/xml");
@@ -35,23 +36,25 @@
 			</image>
             <language>en</language>
             @{
-                foreach (var item in Model.Children.Where("Visible"))
+                foreach (dynamic item in Model.Children.Where("Visible"))
                 {
                     var imageId = "";
                     var image = "";
                     var content = item.HasValue("bodyText") ? item.bodyText : "";
+					
                     if (item.HasProperty("pageMedia") && item.GetProperty("pageMedia").Value != String.Empty)
                     {
+						
+						@*
                         foreach (dynamic media in item.pageMedia)
                         {
                             if (media.IsFirst())
                             {
-                                imageId = media.InnerText; 
-                                image = Library.MediaById(imageId).UmbracoFile;
-                                content = @Html.Raw("<p><img src='" + image + "' /></p>" + content);
-                            }
-                        } 
-                    }                   
+                                content = @Html.Raw("<p><img src='"+media.umbracoFile+"' width='"+media.umbracoWidth+"' height='"+media.umbracoHeight+"' /></p>" + content);
+								
+                            } 
+                        } *@
+                    }                  
                     <item>
                         <title>@item.Name</title>
                         <link>@item.Url</link>

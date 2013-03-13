@@ -8,17 +8,31 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:msxml="urn:schemas-microsoft-com:xslt"
 	xmlns:msxsl="urn:schemas-microsoft-com:xslt"
+	xmlns:UCommentLibrary="urn:UCommentLibrary"
+	xmlns:TagsLib="urn:TagsLib"
 	xmlns:umbraco.library="urn:umbraco.library" xmlns:Exslt.ExsltCommon="urn:Exslt.ExsltCommon" xmlns:Exslt.ExsltDatesAndTimes="urn:Exslt.ExsltDatesAndTimes" xmlns:Exslt.ExsltMath="urn:Exslt.ExsltMath" xmlns:Exslt.ExsltRegularExpressions="urn:Exslt.ExsltRegularExpressions" xmlns:Exslt.ExsltStrings="urn:Exslt.ExsltStrings" xmlns:Exslt.ExsltSets="urn:Exslt.ExsltSets" xmlns:uTube.XSLT="urn:uTube.XSLT" xmlns:ucomponents.xml="urn:ucomponents.xml" xmlns:google.maps="urn:google.maps" 
-	exclude-result-prefixes="msxml umbraco.library Exslt.ExsltCommon Exslt.ExsltDatesAndTimes Exslt.ExsltMath Exslt.ExsltRegularExpressions Exslt.ExsltStrings Exslt.ExsltSets uTube.XSLT ucomponents.xml google.maps ">
+	exclude-result-prefixes="msxml umbraco.library UCommentLibrary TagsLib Exslt.ExsltCommon Exslt.ExsltDatesAndTimes Exslt.ExsltMath Exslt.ExsltRegularExpressions Exslt.ExsltStrings Exslt.ExsltSets uTube.XSLT ucomponents.xml google.maps ">
 
 
 <xsl:output method="html" indent="yes" omit-xml-declaration="yes"/>
 	
+	
 <xsl:template match="Event">
+	
+	<xsl:variable name="hasMediaFolder">
+		<xsl:choose>
+			<xsl:when test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+				<xsl:value-of select="pageMedia//mediaItem[1]/Folder/@id" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="''" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>	
 	
 	<li class="touchcarousel-item">
 		<section>
-			<xsl:if test="string(pageMedia//mediaItem[1]/Image)=''">
+			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
 			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
@@ -32,8 +46,16 @@
 						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
 					</xsl:apply-templates>
 				</xsl:if>
+				<xsl:if test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+						<xsl:with-param name="getFirstItem">true</xsl:with-param>
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
 			</div>
-			
 			<xsl:variable name="startDate">
 				<xsl:choose>
 					<xsl:when test="eventStartDate[not(&empty;)]">
@@ -81,10 +103,27 @@
 </xsl:template>
 		
 <xsl:template match="BlogPost">
+	<xsl:param name="tag" />
 	
+	<xsl:variable name="hasMediaFolder">
+		<xsl:choose>
+			<xsl:when test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+				<xsl:value-of select="pageMedia//mediaItem[1]/Folder/@id" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="''" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>	
+	
+	<xsl:choose>
+		<xsl:when test="string($tag)!=''">
+			<xsl:variable name="thisTag" select="Exslt.ExsltStrings:lowercase(tags)" />
+			<xsl:if test="tags[not(&empty;)] and contains(concat($thisTag,','),concat($tag,','))">
+				
 	<li class="touchcarousel-item">
 		<section>
-			<xsl:if test="string(pageMedia//mediaItem[1]/Image)=''">
+			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
 			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
@@ -98,15 +137,24 @@
 						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
 					</xsl:apply-templates>
 				</xsl:if>
+				<xsl:if test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+						<xsl:with-param name="getFirstItem">true</xsl:with-param>
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
 			</div>
 			
 			<xsl:variable name="postDate">
 				<xsl:choose>
 					<xsl:when test="postDate[not(&empty;)]">
-						<xsl:apply-templates select="postDate" mode="longDate" />
+						<xsl:apply-templates select="postDate" mode="longDateNoTime" />
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:apply-templates select="@createDate" mode="longDate" />
+						<xsl:apply-templates select="@createDate" mode="longDateNoTime" />
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
@@ -115,7 +163,39 @@
 				<p><span>Post on: </span><xsl:value-of select="$postDate" /></p>
 			</time>
 			
+			<div class="comments">
+				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode(@id)//comment)" />
+				<xsl:choose>
+					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
+						<p><a href="{&NiceUrl;(@id)}">Leave a comment</a></p>
+					</xsl:when>
+					<xsl:otherwise>
+						<p><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></p>
+					</xsl:otherwise>
+				</xsl:choose>
+			</div>
+			
 			<div class="text-holder">
+				
+				<div class="tags">
+					<xsl:if test="tags[not(&empty;)]">
+						<p><span>Tags: </span>
+							<xsl:for-each select="TagsLib:getTagsFromNode(@id)/tags/tag">
+								<xsl:variable name="cleanTag" select="Exslt.ExsltStrings:lowercase(.)" />
+								<xsl:choose>
+									<xsl:when test="contains($cleanTag,$tag)">
+										<span class="cur"><xsl:value-of select="." /></span>
+									</xsl:when>
+									<xsl:otherwise>
+										<a href="?tag={$cleanTag}"><xsl:value-of select="." /></a>
+										<xsl:if test="position() !=  last()"><xsl:text>, </xsl:text></xsl:if>
+									</xsl:otherwise>
+								</xsl:choose>
+							</xsl:for-each>
+						</p>
+					</xsl:if>
+				</div>
+				
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
 					<xsl:with-param name="WordCount" select="50" />
@@ -125,6 +205,93 @@
 			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link post">Read more</a></div>
 		</section>
 	</li>
+				
+			</xsl:if>
+			
+		</xsl:when>
+		<xsl:otherwise>
+			
+	<li class="touchcarousel-item">
+		<section>
+			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
+				<xsl:attribute name="class">no-img</xsl:attribute>
+			</xsl:if>
+			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
+
+			<div class="img-holder">
+				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Image">
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
+				<xsl:if test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+						<xsl:with-param name="getFirstItem">true</xsl:with-param>
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
+			</div>
+			
+			<xsl:variable name="postDate">
+				<xsl:choose>
+					<xsl:when test="postDate[not(&empty;)]">
+						<xsl:apply-templates select="postDate" mode="longDateNoTime" />
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:apply-templates select="@createDate" mode="longDateNoTime" />
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+			
+			<time datetime="{(postDate[not(&empty;)]|@createDate)[last()]}">
+				<p><span>Post on: </span><xsl:value-of select="$postDate" /></p>
+			</time>
+			
+			<div class="comments">
+				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode(@id)//comment)" />
+				<xsl:choose>
+					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
+						<p><a href="{&NiceUrl;(@id)}">Leave a comment</a></p>
+					</xsl:when>
+					<xsl:otherwise>
+						<p><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></p>
+					</xsl:otherwise>
+				</xsl:choose>
+			</div>
+			
+			<div class="text-holder">
+				
+				<div class="tags">
+					<xsl:if test="tags[not(&empty;)]">
+						<p><span>Tags: </span>
+							<xsl:for-each select="TagsLib:getTagsFromNode(@id)/tags/tag">
+								<xsl:variable name="cleanTag" select="Exslt.ExsltStrings:lowercase(.)" />
+								<a href="?tag={$cleanTag}"><xsl:value-of select="." /></a>
+								<xsl:if test="position() !=  last()"><xsl:text>, </xsl:text></xsl:if>
+							</xsl:for-each>
+						</p>
+					</xsl:if>
+					
+				</div>
+				
+				<xsl:call-template name="firstWords">
+					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
+					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="Ellipsis" select="'...'" />
+				</xsl:call-template>
+			</div>
+			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link post">Read more</a></div>
+		</section>
+	</li>
+		
+		</xsl:otherwise>
+	</xsl:choose>
 
 </xsl:template>	
 		
@@ -205,7 +372,17 @@
 
 <!-- :: Helper Templates :: -->
 <xsl:template match="* | @*" mode="longDate">
-	<xsl:value-of select="umbraco.library:FormatDateTime(.,'ddd, dd MMMM yyyy - hh:mm tt')" />
+	<xsl:variable name="endings" select="umbraco.library:Split('st,nd,rd,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,st,nd,rd,th,th,th,th,th,th,th,st',',')"/>
+	<xsl:variable name="pos" select="number(substring(.,9,2))" />
+	<!--
+	<xsl:value-of select="umbraco.library:FormatDateTime(.,'ddd, dd MMMM yyyy - H:mmtt')" />
+	-->
+	<xsl:value-of select="concat(umbraco.library:FormatDateTime(.,'ddd, d'),msxsl:node-set($endings)//value[$pos],umbraco.library:FormatDateTime(.,' MMMM yyyy - H:mmtt'))"/>
+</xsl:template>
+<xsl:template match="* | @*" mode="longDateNoTime">
+	<xsl:variable name="endings" select="umbraco.library:Split('st,nd,rd,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,st,nd,rd,th,th,th,th,th,th,th,st',',')"/>
+	<xsl:variable name="pos" select="number(substring(.,9,2))" />
+	<xsl:value-of select="concat(umbraco.library:FormatDateTime(.,'ddd, d'),msxsl:node-set($endings)//value[$pos],umbraco.library:FormatDateTime(.,' MMMM yyyy'))"/>
 </xsl:template>
 <xsl:template match="* | @*" mode="monthYear">
 	<xsl:value-of select="umbraco.library:FormatDateTime(.,'MMMM yyyy')" />

@@ -22,7 +22,19 @@
 
 </xsl:template>		
 
-<xsl:template match="Event">
+<xsl:template match="Event">	
+	
+	<xsl:variable name="hasMediaFolder">
+		<xsl:choose>
+			<xsl:when test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+				<xsl:value-of select="pageMedia//mediaItem[1]/Folder/@id" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="''" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>	
+	
 	<xsl:variable name="startDate">
 		<xsl:choose>
 			<xsl:when test="eventStartDate[not(&empty;)]">
@@ -45,7 +57,7 @@
 	</xsl:variable>
 	
 	<article>
-		<xsl:if test="string(pageMedia//mediaItem[1]/Image)=''">
+		<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 			<xsl:attribute name="class">no-img</xsl:attribute>
 		</xsl:if>
 		<header>
@@ -54,6 +66,15 @@
 		<div class="img-holder">
 			<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
 				<xsl:apply-templates select="pageMedia//mediaItem[1]/Image">
+					<xsl:with-param name="imgGen">true</xsl:with-param>
+					<xsl:with-param name="width">338</xsl:with-param>
+					<xsl:with-param name="compress">100</xsl:with-param>
+					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+				</xsl:apply-templates>
+			</xsl:if>
+			<xsl:if test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+				<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+					<xsl:with-param name="getFirstItem">true</xsl:with-param>
 					<xsl:with-param name="imgGen">true</xsl:with-param>
 					<xsl:with-param name="width">338</xsl:with-param>
 					<xsl:with-param name="compress">100</xsl:with-param>
@@ -82,7 +103,7 @@
 					<p><xsl:value-of select="umbraco.library:ReplaceLineBreaks(metaDescription)" disable-output-escaping="yes" /></p>
 				</xsl:otherwise>
 			</xsl:choose>
-				
+			
 			<p id="ical_export">
 				<a>
 					<xsl:attribute name="href">
@@ -91,14 +112,40 @@
 					Add to calendar (iCal)
 				</a>
 			</p>
+			
+			<div class="thumbs">
+			<xsl:apply-templates select="pageMedia//mediaItem/Image">
+				<xsl:with-param name="imgGen">true</xsl:with-param>
+				<xsl:with-param name="width">140</xsl:with-param>
+				<xsl:with-param name="compress">100</xsl:with-param>
+				<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+				<xsl:with-param name="getCrop">true</xsl:with-param>
+			</xsl:apply-templates>
+			
+			<xsl:if test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+				<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+					<xsl:with-param name="imgGen">true</xsl:with-param>
+					<xsl:with-param name="width">140</xsl:with-param>
+					<xsl:with-param name="compress">100</xsl:with-param>
+					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					<xsl:with-param name="getCrop">true</xsl:with-param>
+				</xsl:apply-templates>
+			</xsl:if>
+			</div>
+			
 		</div>
 	</article>
 
 </xsl:template>
 <!-- :: Helper Templates :: -->
-		
+
 <xsl:template match="* | @*" mode="longDate">
-	<xsl:value-of select="umbraco.library:FormatDateTime(.,'ddd, dd MMMM yyyy - hh:mm tt')" />
+	<xsl:variable name="endings" select="umbraco.library:Split('st,nd,rd,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,th,st,nd,rd,th,th,th,th,th,th,th,st',',')"/>
+	<xsl:variable name="pos" select="number(substring(.,9,2))" />
+	<!--
+	<xsl:value-of select="umbraco.library:FormatDateTime(.,'ddd, dd MMMM yyyy - H:mmtt')" />
+	-->
+	<xsl:value-of select="concat(umbraco.library:FormatDateTime(.,'ddd, d'),msxsl:node-set($endings)//value[$pos],umbraco.library:FormatDateTime(.,' MMMM yyyy - H:mmtt'))"/>
 </xsl:template>
 		
 <!-- :: Includes :: -->	

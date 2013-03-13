@@ -111,7 +111,7 @@ a.mailto {
 }
 a.perma-link {
     @include imgRep("/css/images/perma-link.png",100%,44px,50%,0px);
-    @include image-2x("/css/images/perma-link-2x.png",44px,44px);
+    @include image-2x("/css/images/perma-link-2x.png",44px,88px);
     @include noborder;
     &:hover, &:focus, &:active {
         background-position: 50% -44px;
@@ -120,11 +120,17 @@ a.perma-link {
     }
     &.proj {
         background-image: url("/css/images/proj-link.png");
-        @include image-2x("/css/images/proj-link-2x.png",44px,44px);
+        @include image-2x("/css/images/proj-link-2x.png",44px,88px);
     }
     &.evt {
         background-image: url("/css/images/evt-link.png");
-        @include image-2x("/css/images/evt-link-2x.png",44px,44px);
+        @include image-2x("/css/images/evt-link-2x.png",44px,88px);
+    }
+}
+.thumbs {
+    margin: 0 -3px;
+    img {
+        margin: 3px 2px;
     }
 }
 #content-wrap {
@@ -136,7 +142,7 @@ a.perma-link {
     background-color: rgba($ink,.05);
     overflow: hidden;
 }
-#content-carousel, #project-carousel {
+#content-carousel, #singleNode-carousel {
     .touchcarousel-item {
         width: 338px;
         section, article {
@@ -192,8 +198,35 @@ a.perma-link {
                 height: 357px;
                 overflow-y: auto;
                 z-index: 5;
+                .tags {
+                    font-family: $headerFontFamily;
+                    letter-spacing: 1px;
+                    padding: 0;
+                    span {
+                        font-weight: bold;
+                    }
+                    a {
+                        @include noborder;
+                        @include inlineb;
+                        &:hover, &:focus {
+                            color: $white;
+                            @include border-radius(3px);
+                            background-color: lighten(desaturate($blood,20%),5%);
+                            background-color: rgba($blood,.9);                            
+                        }
+                    }
+                    span.cur {
+                        font-weight: normal;
+                        padding: 0px 4px;
+                        color: $white;
+                        margin-right: 3px;
+                        @include border-radius(3px);
+                        background-color: lighten(desaturate($blood,20%),5%);
+                        background-color: rgba($blood,.9);
+                    }
+                }
             }
-            time, .type {
+            time, .type, .comments {
                 position: absolute;
                 left: 23px;
                 top: 128px;
@@ -212,9 +245,21 @@ a.perma-link {
                     span {
                         font-weight: bold;
                     }
+                    a {
+                        @include noborder;
+                        @include inlineb;
+                        color: $white;
+                        padding: 0;
+                        &:hover, &:focus {
+                            color: lighten(desaturate($blood,10%),20%);
+                        }
+                        &:active {
+                            background-color: transparent;
+                        }
+                    }
                 }
             }
-            .type {
+            .type, .comments {
                 top: 150px;                
             }
             &.no-img {
@@ -240,7 +285,7 @@ a.perma-link {
         }
     }
 }
-#project-carousel {
+#singleNode-carousel {
     .touchcarousel-item {
         width: auto;
         //@include glass();
@@ -280,7 +325,7 @@ a.perma-link {
  *
 \******************************************************/
 
-#homepage-carousel, #content-carousel, #project-carousel {
+#homepage-carousel, #content-carousel, #singleNode-carousel {
     width: 100%;
     height: 540px;
     overflow: hidden !important;
@@ -594,6 +639,7 @@ span#re-align {
             border-color: white(.8);
             height: 387px;
             overflow-y: auto;
+            overflow-x: hidden;
             z-index: 5;
         }
         time {
@@ -663,7 +709,7 @@ span#re-align {
             margin: auto;
         }
     }
-    #homepage-carousel, #content-carousel, #project-carousel {
+    #homepage-carousel, #content-carousel, #singleNode-carousel {
         height: auto;
         padding: 15px 10px;
         .touchcarousel-wrapper {

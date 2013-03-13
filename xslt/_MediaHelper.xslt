@@ -30,6 +30,7 @@
 	  <xsl:param name="compress" />
 	  <xsl:param name="allowUmbMeasure" />
 	  <xsl:param name="isSlide" />
+	  <xsl:param name="getCrop" />
 	  
 	  <xsl:variable name="folder" select="&GetMediaFolder;" />
 	  <xsl:if test="string($folder) != ''">
@@ -41,6 +42,7 @@
 					  <xsl:with-param name="height"><xsl:value-of select="$height" /></xsl:with-param>
 					  <xsl:with-param name="compress"><xsl:value-of select="$compress" /></xsl:with-param>
 					  <xsl:with-param name="allowUmbMeasure"><xsl:value-of select="$allowUmbMeasure" /></xsl:with-param>
+					  <xsl:with-param name="getCrop"><xsl:value-of select="$getCrop" /></xsl:with-param>
 				  </xsl:apply-templates>
 			  </xsl:when>
 			  <xsl:otherwise>
@@ -52,6 +54,7 @@
 					  <xsl:with-param name="compress"><xsl:value-of select="$compress" /></xsl:with-param>
 					  <xsl:with-param name="allowUmbMeasure"><xsl:value-of select="$allowUmbMeasure" /></xsl:with-param>
 					  <xsl:with-param name="isSlide"><xsl:value-of select="$isSlide" /></xsl:with-param>
+					  <xsl:with-param name="getCrop"><xsl:value-of select="$getCrop" /></xsl:with-param>
 				  </xsl:apply-templates>
 				  </xsl:for-each>
 			  </xsl:otherwise>
@@ -69,9 +72,22 @@
     <xsl:param name="altImg" />
 	<xsl:param name="allowUmbMeasure" />
 	<xsl:param name="isSlide" />
+	<xsl:param name="getCrop" />
 	  
     <xsl:variable name="alt" select="umbraco.library:Replace(umbraco.library:Replace(umbraco.library:Replace(@nodeName,'_',' '),'-',' '),'.jpg','')" />
 	
+	<xsl:variable name="src">
+		<xsl:choose>
+		<xsl:when test="string($getCrop)!='' and string(cropped//crop/@url)!=''">
+			<xsl:value-of select="cropped//crop/@url" />
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="umbracoFile" />
+		</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+	  
+	  
     <xsl:choose>
       <xsl:when test="msxsl:node-set($imgGen)[not(&empty;)]">
 		<xsl:choose>
@@ -79,7 +95,7 @@
 				<li class="touchcarousel-item">
 				<img>
 					<xsl:attribute name="src">
-						<xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="umbracoFile" />
+						<xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="$src" />
 						<xsl:if test="msxsl:node-set($width)[not(&empty;)]"><xsl:text>&amp;width=</xsl:text><xsl:value-of select="$width" /></xsl:if>
 						<xsl:if test="msxsl:node-set($height)[not(&empty;)]"><xsl:text>&amp;height=</xsl:text><xsl:value-of select="$height" /></xsl:if>
 						<xsl:if test="msxsl:node-set($altImg)[not(&empty;)]"><xsl:text>&amp;altImage=</xsl:text><xsl:value-of select="$altImg" /></xsl:if>
@@ -97,7 +113,7 @@
 		  	<xsl:otherwise>
 				<img>
 					<xsl:attribute name="src">
-						<xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="umbracoFile" />
+						<xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="$src" />
 						<xsl:if test="msxsl:node-set($width)[not(&empty;)]"><xsl:text>&amp;width=</xsl:text><xsl:value-of select="$width" /></xsl:if>
 						<xsl:if test="msxsl:node-set($height)[not(&empty;)]"><xsl:text>&amp;height=</xsl:text><xsl:value-of select="$height" /></xsl:if>
 						<xsl:if test="msxsl:node-set($altImg)[not(&empty;)]"><xsl:text>&amp;altImage=</xsl:text><xsl:value-of select="$altImg" /></xsl:if>
@@ -118,7 +134,7 @@
 			<xsl:when test="string($isSlide)!=''">
 				<li class="touchcarousel-item">
 					<img>
-						<xsl:attribute name="src"><xsl:value-of select="umbracoFile" /></xsl:attribute>
+						<xsl:attribute name="src"><xsl:value-of select="$src" /></xsl:attribute>
 						<xsl:attribute name="alt"><xsl:value-of select="$alt" /></xsl:attribute>
 						<xsl:attribute name="width"><xsl:value-of select="msxsl:node-set($width)[not(&empty;)]|umbracoWidth" /></xsl:attribute>
 						<xsl:attribute name="height"><xsl:value-of select="msxsl:node-set($height)[not(&empty;)]|umbracoHeight" /></xsl:attribute>
@@ -127,7 +143,7 @@
 			</xsl:when>
 			<xsl:otherwise>
 				<img>
-					<xsl:attribute name="src"><xsl:value-of select="umbracoFile" /></xsl:attribute>
+					<xsl:attribute name="src"><xsl:value-of select="$src" /></xsl:attribute>
 					<xsl:attribute name="alt"><xsl:value-of select="$alt" /></xsl:attribute>
 					<xsl:attribute name="width"><xsl:value-of select="msxsl:node-set($width)[not(&empty;)]|umbracoWidth" /></xsl:attribute>
 					<xsl:attribute name="height"><xsl:value-of select="msxsl:node-set($height)[not(&empty;)]|umbracoHeight" /></xsl:attribute>

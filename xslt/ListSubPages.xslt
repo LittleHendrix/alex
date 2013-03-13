@@ -7,8 +7,9 @@
 	version="1.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
 	xmlns:msxml="urn:schemas-microsoft-com:xslt"
+	xmlns:TagsLib="urn:TagsLib"
 	xmlns:umbraco.library="urn:umbraco.library" xmlns:Exslt.ExsltCommon="urn:Exslt.ExsltCommon" xmlns:Exslt.ExsltDatesAndTimes="urn:Exslt.ExsltDatesAndTimes" xmlns:Exslt.ExsltMath="urn:Exslt.ExsltMath" xmlns:Exslt.ExsltRegularExpressions="urn:Exslt.ExsltRegularExpressions" xmlns:Exslt.ExsltStrings="urn:Exslt.ExsltStrings" xmlns:Exslt.ExsltSets="urn:Exslt.ExsltSets" xmlns:uTube.XSLT="urn:uTube.XSLT" xmlns:google.maps="urn:google.maps" 
-	exclude-result-prefixes="msxml umbraco.library Exslt.ExsltCommon Exslt.ExsltDatesAndTimes Exslt.ExsltMath Exslt.ExsltRegularExpressions Exslt.ExsltStrings Exslt.ExsltSets uTube.XSLT google.maps ">
+	exclude-result-prefixes="msxml umbraco.library TagsLib Exslt.ExsltCommon Exslt.ExsltDatesAndTimes Exslt.ExsltMath Exslt.ExsltRegularExpressions Exslt.ExsltStrings Exslt.ExsltSets uTube.XSLT google.maps ">
 
 <xsl:output method="html" indent="yes" omit-xml-declaration="yes"/>
 
@@ -19,6 +20,7 @@
 <xsl:variable name="speed" select="$homeNode/transitionSpeed[not(@isDoc)]" />
 <xsl:variable name="itemWidth" select="number(338)" />
 <xsl:variable name="nodeTypeId" select="/macro/nodeType" />
+<xsl:variable name="tag" select="umbraco.library:RequestQueryString('tag')" />
 		
 <xsl:variable name="nodeTypeAlias" select="local-name($currentPage/*[@isDoc and @nodeType = $nodeTypeId])" />
 		
@@ -38,6 +40,7 @@
 					<xsl:apply-templates select="$currentPage/BlogPost[not(&hidden;)]">					
 						<xsl:sort select="umbraco.library:FormatDateTime(postDate[not(&empty;)],'yyyyMMddHmm')" data-type="number" order="descending" />
 						<xsl:sort select="umbraco.library:FormatDateTime(@createDate,'yyyyMMddHmm')" data-type="number" order="descending" />
+						<xsl:with-param name="tag"><xsl:value-of select="$tag" /></xsl:with-param>
 					</xsl:apply-templates>
 				</xsl:when>
 				<xsl:when test="$nodeTypeAlias = 'Project'">
@@ -92,7 +95,7 @@
 			transitionSpeed: speed,
 			directionNav: true,
 			directionNavAutoHide: false,		
-			loopItems: false,            // Loop items (don't disable arrows on last slide and allow autoplay to loop)
+			loopItems: true,            // Loop items (don't disable arrows on last slide and allow autoplay to loop)
 			keyboardNav: true,
 			dragUsingMouse: true,
 			scrollToLast: true,         // Last item ends at start of carousel wrapper

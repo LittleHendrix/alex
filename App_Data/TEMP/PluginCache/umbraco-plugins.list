@@ -11,18 +11,18 @@
     <add type="Umbraco.Web.Media.ImageUrlProviders.ImageUrlProvider, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.IApplicationStartupHandler" resolutionType="FindAllTypes">
-    <add type="uComponents.DataTypes.MultiPickerRelations.MultiPickerRelationsEventHandler, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Our.Umbraco.DocTypeFieldsets.Events.CreateFieldsets, Our.Umbraco.DocTypeFieldsets, Version=0.5.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Our.Umbraco.DocTypeFieldsets.Events.InjectEditorControls, Our.Umbraco.DocTypeFieldsets, Version=0.5.1.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="DigibizAdvancedMediaPicker.DAMP_ApplicationBase, DigibizAdvancedMediaPicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.LibraryCacheRefresher, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.nodeFactory.UmbracoSiteMapProviderAccessUpdate, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.EnsureSystemPathsApplicationStartupHandler, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.presentation.umbraco.Search.ExamineEvents, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.DocTypeFieldsets.Events.CreateFieldsets, Our.Umbraco.DocTypeFieldsets, Version=0.5.1.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.DocTypeFieldsets.Events.InjectEditorControls, Our.Umbraco.DocTypeFieldsets, Version=0.5.1.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="UmbracoExamine.UmbracoEventManager, UmbracoExamine, Version=0.1.42.2941, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.4807.33367, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationRegistrar, businesslogic, Version=1.0.4807.33358, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.BusinessLogic.ApplicationTreeRegistrar, businesslogic, Version=1.0.4807.33358, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.editorControls.PickerRelations.PickerRelationsEventHandler, umbraco.editorControls, Version=1.0.4807.33367, Culture=neutral, PublicKeyToken=null" />
-    <add type="UmbracoExamine.UmbracoEventManager, UmbracoExamine, Version=0.1.42.2941, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.MultiPickerRelations.MultiPickerRelationsEventHandler, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="DigibizAdvancedMediaPicker.DAMP_ApplicationBase, DigibizAdvancedMediaPicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.IApplication" resolutionType="FindTypesWithAttribute">
     <add type="umbraco.businesslogic.ContentApplicationDefinition, businesslogic, Version=1.0.4807.33358, Culture=neutral, PublicKeyToken=null" />
@@ -64,11 +64,13 @@
   </baseType>
   <baseType type="umbraco.cms.businesslogic.macro.IMacroEngine" resolutionType="FindAllTypes">
     <add type="Umbraco.Web.Macros.PartialViewMacroEngine, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.MacroEngines.RazorMacroEngine, umbraco.MacroEngines, Version=1.0.4807.33368, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.MacroEngines.StaticFileMacroEngine, uComponents.MacroEngines, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.MacroEngines.XsltMacroEngine, uComponents.MacroEngines, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.MacroEngines.RazorMacroEngine, umbraco.MacroEngines, Version=1.0.4807.33368, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.MacroEngines.IRazorDataTypeModel" resolutionType="FindTypesWithAttribute">
+    <add type="umbraco.MacroEngines.RazorDataTypeModels.HtmlStringDataTypeModel, umbraco.MacroEngines, Version=1.0.4807.33368, Culture=neutral, PublicKeyToken=null" />
+    <add type="umbraco.MacroEngines.RazorDataTypeModels.IntegerDataTypeModel, umbraco.MacroEngines, Version=1.0.4807.33368, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.CheckBoxTree.CheckBoxTreeModelBinder, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.CountryPicker.CountryPickerModelBinder, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.DataTypeGrid.ModelBinder, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
@@ -82,19 +84,15 @@
     <add type="uComponents.DataTypes.MultiNodeTreePicker.MultiNodeTreePickerModelBinder, uComponents.Legacy, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.MultipleTextstring.MultipleTextstringModelBinder, uComponents.Legacy, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.XPathCheckBoxList.XPathCheckBoxListModelBinder, uComponents.Legacy, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.MacroEngines.RazorDataTypeModels.HtmlStringDataTypeModel, umbraco.MacroEngines, Version=1.0.4807.33368, Culture=neutral, PublicKeyToken=null" />
-    <add type="umbraco.MacroEngines.RazorDataTypeModels.IntegerDataTypeModel, umbraco.MacroEngines, Version=1.0.4807.33368, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.XsltExtensionAttribute" resolutionType="FindAttributedTypes">
-    <add type="Our.Umbraco.GoogleMaps.Helpers.Library, Our.Umbraco.GoogleMaps, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="UComment.Library.XsltLibrary, UComment, Version=1.2.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.GoogleMaps.Helpers.Library, Our.Umbraco.GoogleMaps, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.BusinessLogic.Actions.IActionHandler" resolutionType="FindAllTypes">
     <add type="umbraco.ActionHandlers.umbEnsureUniqueName, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.ITree" resolutionType="FindAllTypes">
-    <add type="Our.Umbraco.Tree.Config.LoadConfigFiles, Our.Umbraco.Tree.Config, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="DigibizTree.Picker.DigibizMediaTree, DigibizTree, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.loadDLRScripts, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.loadRelationTypes, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.cms.presentation.Trees.MediaRecycleBin, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
@@ -129,45 +127,16 @@
     <add type="umbraco.cms.presentation.Trees.LegacyTree, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.cms.presentation.Trees.UserPermissions, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.cms.presentation.Trees.UserTypes, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />
+    <add type="DigibizTree.Picker.DigibizMediaTree, DigibizTree, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.Tree.Config.LoadConfigFiles, Our.Umbraco.Tree.Config, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredContentTree, umbraco.editorControls, Version=1.0.4807.33367, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.MultiNodeTreePicker.FilteredMediaTree, umbraco.editorControls, Version=1.0.4807.33367, Culture=neutral, PublicKeyToken=null" />
     <add type="Our.Umbraco.Tree.RobotsTxt.RobotsTxtTree, Our.Umbraco.Tree.RobotsTxt, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.Tree.UserControls.loadUserControlFiles, Our.Umbraco.Tree.UserControls, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.MultiNodeTreePicker.FilteredContentTree, uComponents.Legacy, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.MultiNodeTreePicker.FilteredMediaTree, uComponents.Legacy, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="Our.Umbraco.Tree.UserControls.loadUserControlFiles, Our.Umbraco.Tree.UserControls, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="umbraco.interfaces.IDataType" resolutionType="FindAllTypes">
-    <add type="Our.Umbraco.GoogleMaps.DataTypes.SingleLocation.SingleLocationDataType, Our.Umbraco.GoogleMaps, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.CharLimit.CharLimitDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.CheckBoxTree.CheckBoxTreeDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.CountryPicker.CountryPickerDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.DataTypeGrid.DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.DropdownCheckList.DDCList_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.ElasticTextBox.ETB_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.EnumCheckBoxList.EnumCheckBoxListDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.EnumDropDownList.EnumDropDownListDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.FileDropDownList.FileDropDownListDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.FilePicker.FP_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.IncrementalTextBox.IT_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.MultiPickerRelations.MultiPickerRelationsDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.MultipleDates.MD_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.MultiUrlPicker.MultiUrlPickerDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.Notes.NotesDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.PropertyPicker.PropertyPickerDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.RelationLinks.RelationLinksDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.RenderMacro.RenderMacroDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.Similarity.SimilarityDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.SqlAutoComplete.SqlAutoCompleteDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.SqlCheckBoxList.SqlCheckBoxListDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.SqlDropDownList.SqlDropDownListDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.SubTabs.SubTabsDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.TextImage.TextImageDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.TextstringArray.TextstringArrayDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.ToggleBox.TB_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.UrlPicker.UrlPickerDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.UserPicker.UserPickerDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uComponents.DataTypes.XPathAutoComplete.XPathAutoCompleteDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="DigibizAdvancedMediaPicker.DAMP_DataType, DigibizAdvancedMediaPicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.PickerRelations.PickerRelationsDataType, umbraco.editorControls, Version=1.0.4807.33367, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.checkboxlist.checkboxListDataType, umbraco.editorControls, Version=1.0.4807.33367, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.colorpicker.ColorPickerDataType, umbraco.editorControls, Version=1.0.4807.33367, Culture=neutral, PublicKeyToken=null" />
@@ -203,9 +172,36 @@
     <add type="umbraco.editorControls.XPathCheckBoxList.XPathCheckBoxListDataType, umbraco.editorControls, Version=1.0.4807.33367, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.XPathDropDownList.XPathDropDownListDataType, umbraco.editorControls, Version=1.0.4807.33367, Culture=neutral, PublicKeyToken=null" />
     <add type="umbraco.editorControls.yesno.YesNoDataType, umbraco.editorControls, Version=1.0.4807.33367, Culture=neutral, PublicKeyToken=null" />
-    <add type="uTube.Core.DataTypes.YouTubeSingleVideo.YTSV_DataType, uTube.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uTube.Core.DataTypes.YouTubeUploader.YTU_DataType, uTube.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
-    <add type="uTube.Core.DataTypes.YouTubeVideoPicker.YTVP_DataType, uTube.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.CharLimit.CharLimitDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.CheckBoxTree.CheckBoxTreeDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.CountryPicker.CountryPickerDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.DataTypeGrid.DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.DropdownCheckList.DDCList_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.ElasticTextBox.ETB_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.EnumCheckBoxList.EnumCheckBoxListDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.EnumDropDownList.EnumDropDownListDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.FileDropDownList.FileDropDownListDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.FilePicker.FP_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.IncrementalTextBox.IT_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.MultiPickerRelations.MultiPickerRelationsDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.MultipleDates.MD_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.MultiUrlPicker.MultiUrlPickerDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.Notes.NotesDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.PropertyPicker.PropertyPickerDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.RelationLinks.RelationLinksDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.RenderMacro.RenderMacroDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.Similarity.SimilarityDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.SqlAutoComplete.SqlAutoCompleteDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.SqlCheckBoxList.SqlCheckBoxListDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.SqlDropDownList.SqlDropDownListDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.SubTabs.SubTabsDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.TextImage.TextImageDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.TextstringArray.TextstringArrayDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.ToggleBox.TB_DataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.UrlPicker.UrlPickerDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.UserPicker.UserPickerDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uComponents.DataTypes.XPathAutoComplete.XPathAutoCompleteDataType, uComponents.DataTypes, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="DigibizAdvancedMediaPicker.DAMP_DataType, DigibizAdvancedMediaPicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.AutoComplete.AutoCompleteDataType, uComponents.Legacy, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.ImageDropdown.ID_DataType, uComponents.Legacy, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.JsonDropdown.JD_DataType, uComponents.Legacy, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
@@ -218,6 +214,10 @@
     <add type="uComponents.DataTypes.UniqueProperty.UniquePropertyDataType, uComponents.Legacy, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.XPathCheckBoxList.XPathCheckBoxListDataType, uComponents.Legacy, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
     <add type="uComponents.DataTypes.XPathDropDownList.XPathDropDownListDataType, uComponents.Legacy, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uTube.Core.DataTypes.YouTubeSingleVideo.YTSV_DataType, uTube.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uTube.Core.DataTypes.YouTubeUploader.YTU_DataType, uTube.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="uTube.Core.DataTypes.YouTubeVideoPicker.YTVP_DataType, uTube.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" />
+    <add type="Our.Umbraco.GoogleMaps.DataTypes.SingleLocation.SingleLocationDataType, Our.Umbraco.GoogleMaps, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </baseType>
   <baseType type="Umbraco.Web.BaseRest.RestExtensionAttribute" resolutionType="FindAttributedTypes">
     <add type="Umbraco.Web.WebServices.FolderBrowserService, umbraco, Version=1.0.4807.33359, Culture=neutral, PublicKeyToken=null" />

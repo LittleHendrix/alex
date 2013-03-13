@@ -1,0 +1,160 @@
+2013-03-11 18:12:23,458 [5] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of umbraco.XsltExtensionAttribute, found 2 (took 1ms)
+2013-03-11 18:13:24,600 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 13] Successful upload to parent ID: 1174
+2013-03-11 18:13:25,328 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 13] Successful upload to parent ID: 1174
+2013-03-11 18:13:25,946 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 19] Successful upload to parent ID: 1174
+2013-03-11 18:20:28,813 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 43] Successful upload to parent ID: 1179
+2013-03-11 18:20:29,767 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 43] Successful upload to parent ID: 1179
+2013-03-11 18:20:30,618 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 43] Successful upload to parent ID: 1179
+2013-03-11 18:20:31,951 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 43] Successful upload to parent ID: 1179
+2013-03-11 18:24:33,509 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 39] Successful upload to parent ID: 1185
+2013-03-11 18:24:34,336 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 39] Successful upload to parent ID: 1185
+2013-03-11 18:24:35,140 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 39] Successful upload to parent ID: 1185
+2013-03-11 18:26:57,307 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 42] Successful upload to parent ID: 1191
+2013-03-11 18:26:58,290 [5] INFO  umbraco.presentation.umbraco.webservices.MediaUploader - [Thread 42] Successful upload to parent ID: 1191
+2013-03-11 18:30:53,512 [5] WARN  umbraco.macro - [Thread 19] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.PropertyResult' to 'System.Collections.IEnumerable'. An explicit conversion exists (are you missing a cast?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:31:14,069 [5] WARN  umbraco.macro - [Thread 38] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.PropertyResult' to 'System.Collections.IEnumerable'. An explicit conversion exists (are you missing a cast?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:31:20,744 [5] WARN  umbraco.macro - [Thread 38] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.PropertyResult' to 'System.Collections.IEnumerable'. An explicit conversion exists (are you missing a cast?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:31:37,392 [5] WARN  umbraco.macro - [Thread 37] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.PropertyResult' to 'System.Collections.IEnumerable'. An explicit conversion exists (are you missing a cast?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:39:21,784 [5] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 1ms)
+2013-03-11 18:43:01,456 [5] INFO  Umbraco.Core.PluginManager - [Thread 39] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
+2013-03-11 18:44:39,534 [5] INFO  Umbraco.Core.PluginManager - [Thread 43] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 1ms)
+2013-03-11 18:44:42,237 [5] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 0ms)
+2013-03-11 18:48:57,808 [5] WARN  umbraco.macro - [Thread 19] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: System.InvalidOperationException: Sequence contains no elements
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:49:04,598 [5] WARN  umbraco.macro - [Thread 43] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.PropertyResult' to 'System.Collections.IEnumerable'. An explicit conversion exists (are you missing a cast?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:54:43,240 [5] WARN  umbraco.macro - [Thread 33] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.PropertyResult' does not contain a definition for 'DAMP'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:54:45,376 [5] WARN  umbraco.macro - [Thread 41] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.PropertyResult' does not contain a definition for 'DAMP'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:55:55,390 [5] WARN  umbraco.macro - [Thread 33] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.PropertyResult' does not contain a definition for 'DAMP'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:56:21,404 [5] WARN  umbraco.macro - [Thread 43] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.PropertyResult' does not contain a definition for 'DAMP'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:56:33,755 [5] INFO  Umbraco.Web.UmbracoApplication - [Thread 37] Application shutdown. Reason: MaxRecompilationsReached
+2013-03-11 18:56:36,448 [29] INFO  Umbraco.Core.CoreBootManager - [Thread 31] Umbraco application starting
+2013-03-11 18:56:36,580 [29] INFO  Umbraco.Core.PluginManager - [Thread 31] Determining hash of code files on disk
+2013-03-11 18:56:36,596 [29] INFO  Umbraco.Core.PluginManager - [Thread 31] Hash determined (took 14ms)
+2013-03-11 18:56:37,688 [29] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 1062ms)
+2013-03-11 18:56:37,707 [29] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 11ms)
+2013-03-11 18:56:37,730 [29] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 15ms)
+2013-03-11 18:56:37,742 [29] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 11ms)
+2013-03-11 18:56:37,765 [29] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 12ms)
+2013-03-11 18:56:37,830 [29] INFO  Umbraco.Core.CoreBootManager - [Thread 31] Umbraco application startup complete (took 1354ms)
+2013-03-11 18:56:38,177 [29] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 17ms)
+2013-03-11 18:56:38,233 [29] INFO  Umbraco.Core.PluginManager - [Thread 31] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 13ms)
+2013-03-11 18:56:39,438 [29] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 10ms)
+2013-03-11 18:56:41,508 [29] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 48ms)
+2013-03-11 18:56:42,092 [29] WARN  umbraco.macro - [Thread 19] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.PropertyResult' to 'System.Collections.IEnumerable'. An explicit conversion exists (are you missing a cast?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:57:38,227 [29] WARN  umbraco.macro - [Thread 41] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.PropertyResult' to 'System.Collections.IEnumerable'. An explicit conversion exists (are you missing a cast?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:58:11,363 [29] WARN  umbraco.macro - [Thread 33] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.PropertyResult' to 'System.Collections.IEnumerable'. An explicit conversion exists (are you missing a cast?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 18:58:45,597 [29] WARN  umbraco.macro - [Thread 41] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.PropertyResult' to 'System.Collections.IEnumerable'. An explicit conversion exists (are you missing a cast?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 19:02:22,481 [29] WARN  umbraco.macro - [Thread 19] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.PropertyResult' to 'string'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 19:02:59,438 [29] WARN  umbraco.macro - [Thread 19] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'umbraco.MacroEngines.PropertyResult' to 'System.Collections.IEnumerable'. An explicit conversion exists (are you missing a cast?)
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 19:04:57,447 [29] INFO  Umbraco.Web.UmbracoApplication - [Thread 42] Application shutdown. Reason: MaxRecompilationsReached
+2013-03-11 19:05:00,642 [27] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application starting
+2013-03-11 19:05:00,706 [27] INFO  Umbraco.Core.PluginManager - [Thread 1] Determining hash of code files on disk
+2013-03-11 19:05:00,718 [27] INFO  Umbraco.Core.PluginManager - [Thread 1] Hash determined (took 10ms)
+2013-03-11 19:05:01,164 [27] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 391ms)
+2013-03-11 19:05:01,189 [27] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 13ms)
+2013-03-11 19:05:01,214 [27] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 17ms)
+2013-03-11 19:05:01,227 [27] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 11ms)
+2013-03-11 19:05:01,254 [27] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 17ms)
+2013-03-11 19:05:01,325 [27] INFO  Umbraco.Core.CoreBootManager - [Thread 1] Umbraco application startup complete (took 670ms)
+2013-03-11 19:05:01,630 [27] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 16ms)
+2013-03-11 19:05:01,800 [27] INFO  Umbraco.Core.PluginManager - [Thread 1] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 11ms)
+2013-03-11 19:05:02,816 [27] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 78ms)
+2013-03-11 19:05:04,015 [27] INFO  Umbraco.Core.PluginManager - [Thread 33] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 12ms)
+2013-03-11 19:12:22,967 [27] WARN  umbraco.macro - [Thread 33] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'string' does not contain a definition for 'mediaItem'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 19:12:38,590 [27] WARN  umbraco.macro - [Thread 41] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'DAMP'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 19:13:58,229 [27] WARN  umbraco.macro - [Thread 19] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'string' does not contain a definition for 'mediaItem'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 19:14:08,610 [27] WARN  umbraco.macro - [Thread 19] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.DynamicXml' does not contain a definition for 'Image'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 19:17:32,507 [27] WARN  umbraco.macro - [Thread 38] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.PropertyResult' does not contain a definition for 'mediaItem'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 19:17:47,771 [27] WARN  umbraco.macro - [Thread 38] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.PropertyResult' does not contain a definition for 'DAMP'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 19:18:08,101 [27] WARN  umbraco.macro - [Thread 42] Error loading MacroEngine script (file: Rss.cshtml, Type: ''. Exception: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'umbraco.MacroEngines.PropertyResult' does not contain a definition for 'DAMP'
+   at umbraco.macro.renderMacro(Hashtable pageElements, Int32 pageId)
+2013-03-11 19:24:41,288 [27] INFO  Umbraco.Web.UmbracoApplication - [Thread 42] Application shutdown. Reason: MaxRecompilationsReached
+2013-03-11 19:24:43,847 [10] INFO  Umbraco.Core.CoreBootManager - [Thread 29] Umbraco application starting
+2013-03-11 19:24:43,942 [10] INFO  Umbraco.Core.PluginManager - [Thread 29] Determining hash of code files on disk
+2013-03-11 19:24:43,953 [10] INFO  Umbraco.Core.PluginManager - [Thread 29] Hash determined (took 9ms)
+2013-03-11 19:24:44,409 [10] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 420ms)
+2013-03-11 19:24:44,429 [10] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 12ms)
+2013-03-11 19:24:44,447 [10] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 12ms)
+2013-03-11 19:24:44,459 [10] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 11ms)
+2013-03-11 19:24:44,509 [10] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 12 (took 39ms)
+2013-03-11 19:24:44,582 [10] INFO  Umbraco.Core.CoreBootManager - [Thread 29] Umbraco application startup complete (took 716ms)
+2013-03-11 19:24:45,037 [10] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.interfaces.IApplication, found 7 (took 35ms)
+2013-03-11 19:24:45,109 [10] INFO  Umbraco.Core.PluginManager - [Thread 29] Completed resolution of types of umbraco.interfaces.ITree, found 27 (took 16ms)
+2013-03-11 19:24:46,199 [10] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.cms.businesslogic.macro.IMacroEngine, found 4 (took 15ms)
+2013-03-11 19:24:47,332 [10] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.MacroEngines.IRazorDataTypeModel, found 15 (took 45ms)
+2013-03-11 19:25:27,147 [10] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.interfaces.ITree, found 42 (took 10ms)
+2013-03-11 19:25:27,248 [10] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.BusinessLogic.Actions.IActionHandler, found 1 (took 15ms)
+2013-03-11 19:25:39,077 [10] INFO  Umbraco.Core.PluginManager - [Thread 38] Completed resolution of types of umbraco.interfaces.IDataType, found 81 (took 36ms)
+2013-03-11 19:26:57,395 [10] INFO  Umbraco.Core.PluginManager - [Thread 19] Completed resolution of types of umbraco.XsltExtensionAttribute, found 2 (took 25ms)
+2013-03-11 20:06:49,159 [10] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>[Thread 41] Error parsing XSLT file. Exception: System.Xml.Xsl.XslTransformException: Cannot find a script or an extension object associated with namespace 'urn:tagsLib'.
+   at System.Xml.Xsl.Runtime.XmlQueryContext.InvokeXsltLateBoundFunction(String name, String namespaceUri, IList`1[] args)
+   at <xsl:template name="compiler:generated"> (3)(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current, XPathNavigator postDate)
+   at <xsl:template match="BlogPost">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current)
+   at <xsl:template match="/">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at Root(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at System.Xml.Xsl.XmlILCommand.Execute(Object defaultDocument, XmlResolver dataSources, XsltArgumentList argumentList, XmlWriter writer)
+   at System.Xml.Xsl.XslCompiledTransform.Transform(IXPathNavigable input, XsltArgumentList arguments, TextWriter results)
+   at umbraco.macro.GetXsltTransformResult(XmlDocument macroXML, XslCompiledTransform xslt, Dictionary`2 parameters)
+   at umbraco.macro.loadMacroXSLT(macro macro, MacroModel model, Hashtable pageElements)</format><args>{}</args></log4net.Error>
+2013-03-11 22:11:30,626 [10] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>[Thread 43] Error parsing XSLT file. Exception: System.Xml.Xsl.XslTransformException: Cannot find a script or an extension object associated with namespace 'urn:tagsLib'.
+   at System.Xml.Xsl.Runtime.XmlQueryContext.InvokeXsltLateBoundFunction(String name, String namespaceUri, IList`1[] args)
+   at <xsl:template name="compiler:generated"> (3)(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current, XPathNavigator postDate)
+   at <xsl:template match="BlogPost">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current)
+   at <xsl:template match="/">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at Root(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at System.Xml.Xsl.XmlILCommand.Execute(Object defaultDocument, XmlResolver dataSources, XsltArgumentList argumentList, XmlWriter writer)
+   at System.Xml.Xsl.XslCompiledTransform.Transform(IXPathNavigable input, XsltArgumentList arguments, TextWriter results)
+   at umbraco.macro.GetXsltTransformResult(XmlDocument macroXML, XslCompiledTransform xslt, Dictionary`2 parameters)
+   at umbraco.macro.loadMacroXSLT(macro macro, MacroModel model, Hashtable pageElements)</format><args>{}</args></log4net.Error>
+2013-03-11 22:43:46,256 [10] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>[Thread 16] Error parsing XSLT file. Exception: System.Xml.Xsl.XslTransformException: Cannot find a script or an extension object associated with namespace 'urn:tagsLib'.
+   at System.Xml.Xsl.Runtime.XmlQueryContext.InvokeXsltLateBoundFunction(String name, String namespaceUri, IList`1[] args)
+   at <xsl:template name="compiler:generated"> (3)(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current, XPathNavigator postDate)
+   at <xsl:template match="BlogPost">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current)
+   at <xsl:template match="/">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at Root(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at System.Xml.Xsl.XmlILCommand.Execute(Object defaultDocument, XmlResolver dataSources, XsltArgumentList argumentList, XmlWriter writer)
+   at System.Xml.Xsl.XslCompiledTransform.Transform(IXPathNavigable input, XsltArgumentList arguments, TextWriter results)
+   at umbraco.macro.GetXsltTransformResult(XmlDocument macroXML, XslCompiledTransform xslt, Dictionary`2 parameters)
+   at umbraco.macro.loadMacroXSLT(macro macro, MacroModel model, Hashtable pageElements)</format><args>{}</args></log4net.Error>
+2013-03-11 22:44:19,377 [10] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>[Thread 7] Error parsing XSLT file. Exception: System.Xml.Xsl.XslTransformException: Cannot find a script or an extension object associated with namespace 'urn:tagsLib'.
+   at System.Xml.Xsl.Runtime.XmlQueryContext.InvokeXsltLateBoundFunction(String name, String namespaceUri, IList`1[] args)
+   at <xsl:template name="compiler:generated"> (3)(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current, XPathNavigator postDate)
+   at <xsl:template match="BlogPost">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current)
+   at <xsl:template match="/">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at Root(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at System.Xml.Xsl.XmlILCommand.Execute(Object defaultDocument, XmlResolver dataSources, XsltArgumentList argumentList, XmlWriter writer)
+   at System.Xml.Xsl.XslCompiledTransform.Transform(IXPathNavigable input, XsltArgumentList arguments, TextWriter results)
+   at umbraco.macro.GetXsltTransformResult(XmlDocument macroXML, XslCompiledTransform xslt, Dictionary`2 parameters)
+   at umbraco.macro.loadMacroXSLT(macro macro, MacroModel model, Hashtable pageElements)</format><args>{}</args></log4net.Error>
+2013-03-11 22:45:11,993 [10] WARN  umbraco.macro - <log4net.Error>Exception during StringFormat: Input string was not in a correct format. <format>[Thread 24] Error parsing XSLT file. Exception: System.Xml.Xsl.XslTransformException: Cannot find a script or an extension object associated with namespace 'urn:tagsLib'.
+   at System.Xml.Xsl.Runtime.XmlQueryContext.InvokeXsltLateBoundFunction(String name, String namespaceUri, IList`1[] args)
+   at <xsl:template name="compiler:generated"> (3)(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current, XPathNavigator postDate)
+   at <xsl:template match="BlogPost">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime, XPathNavigator {urn:schemas-microsoft-com:xslt-debug}current)
+   at <xsl:template match="/">(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at Root(XmlQueryRuntime {urn:schemas-microsoft-com:xslt-debug}runtime)
+   at System.Xml.Xsl.XmlILCommand.Execute(Object defaultDocument, XmlResolver dataSources, XsltArgumentList argumentList, XmlWriter writer)
+   at System.Xml.Xsl.XslCompiledTransform.Transform(IXPathNavigable input, XsltArgumentList arguments, TextWriter results)
+   at umbraco.macro.GetXsltTransformResult(XmlDocument macroXML, XslCompiledTransform xslt, Dictionary`2 parameters)
+   at umbraco.macro.loadMacroXSLT(macro macro, MacroModel model, Hashtable pageElements)</format><args>{}</args></log4net.Error>
+2013-03-11 22:48:35,497 [10] INFO  Umbraco.Core.PluginManager - [Thread 7] Completed resolution of types of umbraco.XsltExtensionAttribute, found 2 (took 0ms)

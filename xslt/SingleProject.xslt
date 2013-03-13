@@ -99,7 +99,7 @@
 			speed = ]]><xsl:value-of select="$speed" /><![CDATA[,
 			width = ]]><xsl:value-of select="$itemWidth" /><![CDATA[;
 
-		$('#project-carousel').touchCarousel({
+		$('#singleNode-carousel').touchCarousel({
 			itemsPerPage: 1,
 			//itemsPerMove: 1,
 			snapToItems: false,
