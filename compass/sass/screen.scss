@@ -23,6 +23,7 @@
 
 $ink: #31363c;
 $blood: #ad1e25;
+$gold: #ff8d00;
 $spriteImg: "";
 
 .lt-ie9 {    
@@ -34,46 +35,59 @@ $spriteImg: "";
 }
 ::selection {
     background-color: lighten(desaturate($blood,20%),5%);
-    background-color: rgba(173,30,37,.9);
+    background-color: rgba($blood,.9);
     color: $white;
 }
 ::-moz-selection {
     background-color: lighten(desaturate($blood,20%),5%);
-    background-color: rgba(173,30,37,.9);
+    background-color: rgba($blood,.9);
     color: $white;
+}
+::-webkit-scrollbar {
+    width: 4px;
+    background-color: $white;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba($ink,0.4);
+}
+::-webkit-scrollbar-track-piece {
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba($ink,0.9);
+    background-color: rgba($ink,0.3);
+}
+.no-flicker {
+    @include transform(translate3d(0, 0, 0));
 }
 .clearfix {
     @include myClearfix;
 }
-div {
+div, section, header, footer, article, aside, time {
     position: relative;
 }
-.noborder {
-    border-color: transparent !important;
-    border-style: none !important;
-    border-width: 0 !important;
-}
-.btn-notxt {
-    *font-size: 0px;
-    *line-height: 0px;
-}
+
+
+/******************************************************\
+ *
+ * GENERIC CONTENT
+ *
+\******************************************************/
 a {
-    color: lighten(desaturate($blood,20%),5%);
+    color: $blood;
     border-bottom: 1px dotted lighten($ink,55%);
-    border-bottom-color: rgba(49,54,60,.25);
+    padding: 0 2px;
 }
 a:focus, a:hover {
-    border-bottom: 1px dotted lighten(desaturate($blood,20%),5%);
-    border-bottom-color: rgba(173,30,37,.9);
-    color: $blood;
+    border-bottom: 1px dotted lighten(desaturate($blood,20%),15%);
+    color: lighten(desaturate($blood,10%),20%);
 }
 a:active {
     background-color: lighten(desaturate($blood,20%),5%);
-    background-color: rgba(173,30,37,.9);
+    background-color: rgba($blood,.9);
     color: $white;
 }
 a:link {
-    //-webkit-tap-highlight-color: rgba(173,30,37,.9);
+    //-webkit-tap-highlight-color: rgba($blood,.9);
 }
 #logo-wrapper {
     padding: 20px 0 15px 80px;
@@ -95,21 +109,227 @@ a:link {
 a.mailto {
     font-weight: bold;
 }
-
-/******************************************************\
- *
- * HOMEPAGE CAROUSEL
- *
-\******************************************************/
-
-#homepage-carousel {
+a.perma-link {
+    @include imgRep("/css/images/perma-link.png",100%,44px,50%,0px);
+    @include image-2x("/css/images/perma-link-2x.png",44px,88px);
+    @include noborder;
+    &:hover, &:focus, &:active {
+        background-position: 50% -44px;
+        background-color: transparent;
+        @include noborder;
+    }
+    &.proj {
+        background-image: url("/css/images/proj-link.png");
+        @include image-2x("/css/images/proj-link-2x.png",44px,88px);
+    }
+    &.evt {
+        background-image: url("/css/images/evt-link.png");
+        @include image-2x("/css/images/evt-link-2x.png",44px,88px);
+    }
+}
+.thumbs {
+    margin: 0 -3px;
+    img {
+        margin: 3px 2px;
+    }
+}
+#content-wrap {
     width: 100%;
-    height: 570px; /* include the padding in this */
+    height: auto;
     margin: 0;
     padding: 15px 0;
     background-color: lighten($ink, 75%);
-    background-color: rgba(49,54,60,.05);
+    background-color: rgba($ink,.05);
+    overflow: hidden;
+}
+#content-carousel, #singleNode-carousel {
+    .touchcarousel-item {
+        width: 338px;
+        section, article {
+            width: 100%;
+            height: 100%;
+            background-color: $white;
+            padding: 17px 23px 23px;
+            header {
+                z-index: 10;
+                margin: 0 -23px;
+            }
+            h1 {
+                text-transform: uppercase;
+                font-size: 23px;
+                padding: 14px 23px;
+                margin: 0;
+                color: $white;
+                text-shadow: 0px 1px 3px rgba($ink,0.75);
+                background-color: lighten(desaturate($blood,20%),5%);
+                background-color: rgba($blood,.9);
+                a {
+                    color: $white;
+                    text-shadow: 0px 1px 3px rgba($ink,0.75);
+                    @include noborder;
+                    &:hover, &:focus {
+                        @include noborder;
+                        text-shadow: 0px 1px 7px lighten($blood,50%), 0px -1px 0px rgba($ink,0.75);
+                    }
+                    &:active {
+                        background-color: transparent;
+                    }
+                }
+            }
+            .img-holder {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 190px;
+                text-align: center;
+                z-index: 1;
+                overflow: hidden;
+                background-color: $ink;
+                img {
+                    @include valign;
+                    @include opacity(.9);
+                }
+            }
+            .text-holder {
+                margin: 113px -23px 0;
+                padding: 23px 23px 58px;
+                background: white(.8);
+                height: 357px;
+                overflow-y: auto;
+                z-index: 5;
+                .tags {
+                    font-family: $headerFontFamily;
+                    letter-spacing: 1px;
+                    padding: 0;
+                    span {
+                        font-weight: bold;
+                    }
+                    a {
+                        @include noborder;
+                        @include inlineb;
+                        &:hover, &:focus {
+                            color: $white;
+                            @include border-radius(3px);
+                            background-color: lighten(desaturate($blood,20%),5%);
+                            background-color: rgba($blood,.9);                            
+                        }
+                    }
+                    span.cur {
+                        font-weight: normal;
+                        padding: 0px 4px;
+                        color: $white;
+                        margin-right: 3px;
+                        @include border-radius(3px);
+                        background-color: lighten(desaturate($blood,20%),5%);
+                        background-color: rgba($blood,.9);
+                    }
+                }
+            }
+            time, .type, .comments {
+                position: absolute;
+                left: 23px;
+                top: 128px;
+                display: block;
+                font-family: $headerFontFamily;
+                letter-spacing: 2px;
+                z-index: 5;
+                p {
+                    @include inlineb;
+                    color: $white;
+                    text-shadow: 0px 1px 3px rgba($ink,0.9);
+                    margin: 0;
+                    padding: 0 2px;
+                    background-color: lighten($ink,10%);
+                    background-color: rgba($ink,.7);
+                    span {
+                        font-weight: bold;
+                    }
+                    a {
+                        @include noborder;
+                        @include inlineb;
+                        color: $white;
+                        padding: 0;
+                        &:hover, &:focus {
+                            color: lighten(desaturate($blood,10%),20%);
+                        }
+                        &:active {
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+            .type, .comments {
+                top: 150px;                
+            }
+            &.no-img {
+                h1 {
+                    @include box-shadow(lighten($ink,75%) 0px 1px 2px,rgba($ink,0.5) 0px -1px 11px -2px inset);
+                }
+                .img-holder {
+                    background-color: lighten($ink,45%);
+                    @include background(radial-gradient(35% 25%, lighten($ink,65%) 0px, lighten($ink,35%) 338px));
+                }
+            }
+            .sec-link {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                padding: 7px 0;
+                text-align: center;
+                background-color: $white;
+                background-color: rgba($white,0.6);
+                z-index: 10;
+            }
+        }
+    }
+}
+#singleNode-carousel {
+    .touchcarousel-item {
+        width: auto;
+        //@include glass();
+    }
+    #article-slide {
+        width: 432px;
+        background: $white;
+        /*
+        &:after {
+            // disable overlay glass effect.
+            display: none;
+        }
+        */
+        .img-holder {
+            height: 159px;
+        }
+        .text-holder {
+            margin-top: 82px;
+            height: 388px;
+            padding: 16px 23px 23px;
+            border-top: 7px solid transparent;
+            border-color: white(.8);
+            background: transparent;
+        }
+        time {
+            top: 97px;
+        }
+        .type {
+            top: 119px;
+        }
+    }
+}
+
+/******************************************************\
+ *
+ * TOUCH CAROUSEL
+ *
+\******************************************************/
+
+#homepage-carousel, #content-carousel, #singleNode-carousel {
+    width: 100%;
+    height: 540px;
     overflow: hidden !important;
+    @include perspective(1000);
     
     .touchcarousel-wrapper {
         overflow: visible;
@@ -118,71 +338,101 @@ a.mailto {
     .touchcarousel-item {
         margin-right: 15px;
         background-color: lighten($ink,55%);
-        background-color: rgba(49,54,60,.25);
+        background-color: rgba($ink,.25);
         background-image: url("/css/images/placeholder-logo.png");
-        @include background(url("/css/images/placeholder-logo.png"),radial-gradient(50% 50%, lighten($ink,65%) 0px, lighten($ink,60%) 100%));
+        @include background(url("/css/images/placeholder-logo.png"),radial-gradient(30% 20%, lighten($ink,65%) 0px, lighten($ink,55%) 540px));
         background-position: 50% 50%;
         background-repeat: no-repeat;
         height: 540px;
         overflow: hidden;
+        @include perspective(1000);
+        @include backface-visibility(hidden);
         &.last {}
         img {
-            display: block;
-            position: relative;
-            @include transition(all 0.2s linear);
+            @include valign;
         }
-        .mask {
-            position: absolute;
-            top: 0;
-            left: 0;
-            text-indent: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            @include opacity(0);
-            @include transition(all 0.4s ease-in-out);
-            background-color: $ink;
-            background-color: rgba(49,54,60,.9);
-            h2, p {                
+        &.has-overlay {
+            img, .mask, .mask h2, .mask p, .mask a.peek {
+                @include transform-style(preserve-3d);
+                @include backface-visibility(hidden);
+            }
+            img {
+                display: block;
                 position: relative;
-                color: $white;
-                text-align: center;
-            }
-            h2 {
-                text-transform: uppercase;
-                font-size: 23px;
-                padding: 14px;
-                margin: 37px 0 0 0;
-                text-shadow: 0px 1px 3px darken(desaturate($blood,20%),15%);
-                background-color: lighten(desaturate($blood,20%),5%);
-                background-color: rgba(173,30,37,.8);
-                @include translateY(-100px);
-                @include opacity(0);
-                @include transition(all 0.2s ease-in-out);
-            }
-            p {
-                padding: 59px 23px 23px;
-                @include translateY(25px);
-                @include opacity(0);
                 @include transition(all 0.2s linear);
             }
-            a.peek {
-                @include imgRep("/css/images/peek-lrg.png",60px,32px,50%,0px);
-                @include image-2x("/css/images/peek-lrg-2x.png",60px,32px);
-                width: 100%;
+            .mask {
                 position: absolute;
-                bottom: 44px;
+                top: 0;
+                left: 0;
+                text-indent: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
                 @include opacity(0);
-                @include scale(1.1);
-                @include transition-property(opacity, transform);
-                @include transition-duration(0.4s);
-                @include transition-timing-function(ease-in-out);                
+                @include transition(all 0.4s ease-in-out);
+                background-color: $ink;
+                background-color: rgba($ink,.9);
+                h2, p {                
+                    position: relative;
+                    color: $white;
+                    text-align: center;
+                }
+                h2 {
+                    text-transform: uppercase;
+                    font-size: 23px;
+                    padding: 14px;
+                    margin: 37px 0 0 0;
+                    text-shadow: 0px 1px 3px rgba($ink,0.75);
+                    background-color: lighten(desaturate($blood,20%),5%);
+                    background-color: rgba($blood,.8);
+                    @include translateY(-100px);
+                    @include opacity(0);
+                    @include transition(all 0.2s ease-in-out);
+                    a {
+                        color: $white;
+                        text-shadow: 0px 1px 3px rgba($ink,0.75);
+                        @include noborder;
+                        &:hover, &:focus {
+                            @include noborder;
+                            text-shadow: 0px 1px 7px lighten($blood,50%), 0px -1px 0px rgba($ink,0.75);
+                        }
+                        &:active {
+                            background-color: transparent;
+                        }
+                    }
+                }
+                p {
+                    padding: 59px 23px 23px;
+                    @include translateY(25px);
+                    @include opacity(0);
+                    @include transition(all 0.2s ease);
+                }
+                a.peek {
+                    @include imgRep("/css/images/peek-lrg.png",60px,32px,50%,0px);
+                    @include image-2x("/css/images/peek-lrg-2x.png",60px,64px);
+                    width: 100%;
+                    position: absolute;
+                    bottom: 44px;
+                    @include noborder;
+                    @include opacity(0);
+                    @include scale(1.1);
+                    @include transition-property(opacity, transform);
+                    @include transition-duration(0.4s);
+                    @include transition-timing-function(ease-in-out);
+                    &:hover, &:focus {
+                        @include noborder;
+                    }
+                    &:active {
+                        background-color: transparent;
+                    }
+                }
             }
         }
     }
     .arrow-icon {
         background-color: lighten($ink,10%);
-        background-color: rgba(49,54,60,.7);
+        background-color: rgba($ink,.7);
         &.left {
             left: 25px;
         }
@@ -192,16 +442,16 @@ a.mailto {
     }
     .arrow-holder {
         width: 65px;
-        @extend .noborder;
+        @include noborder;
         &:hover .arrow-icon {
             background-color: $ink;
-            background-color: rgba(49,54,60,.9);
+            background-color: rgba($ink,.9);
         }
         &:active {
             background-color: transparent;
             .arrow-icon {
                 background-color: lighten(desaturate($blood,20%),5%);
-                background-color: rgba(173,30,37,.9);
+                background-color: rgba($blood,.9);
             }
         }
         &:focus {
@@ -209,17 +459,17 @@ a.mailto {
             background-color: transparent;
             .arrow-icon {
                 background-color: lighten(desaturate($blood,20%),5%);
-                background-color: rgba(173,30,37,.9);                
+                background-color: rgba($blood,.9);                
             }
         }
         &.disabled {
             .arrow-icon {
                 background-color: lighten($ink,60%);
-                background-color: rgba(49,54,60,.2);
+                background-color: rgba($ink,.2);
             }
             &:hover .arrow-icon, &:focus .arrow-icon {
                 background-color: lighten($ink,55%);
-                background-color: rgba(49,54,60,.25);                
+                background-color: rgba($ink,.25);                
             }
         }
         &:link {
@@ -231,7 +481,7 @@ a.mailto {
         .scrollbar {
             &.dark {
                 background-color: lighten($ink, 30%);
-                background-color: rgba(49,54,60,.7)
+                background-color: rgba($ink,.7)
             }
         }
     }
@@ -239,25 +489,27 @@ a.mailto {
 .no-touch {
     #homepage-carousel {
         .touchcarousel-item {
-            &:hover {
-                img {
-                    @include scale(1.1);
-                }
-                .mask {
-                    @include opacity(1);
-                    h2, p {
-                        @include opacity(1);
-                        @include translateY(0px);
+            &.has-overlay {
+                &:hover {
+                    img {
+                        @include scale(1.1);
                     }
-                    p {
-                        @include transition-delay(0.1s);
-                    }
-                    a.peek {
+                    .mask {
                         @include opacity(1);
-                        @include scale(1);
-                        @include transition-delay(0.2s);
-                        &:hover {
-                            background-position: 50% -32px;
+                        h2, p {
+                            @include opacity(1);
+                            @include translateY(0px);
+                        }
+                        p {
+                            @include transition-delay(0.1s);
+                        }
+                        a.peek {
+                            @include opacity(1);
+                            @include scale(1);
+                            @include transition-delay(0.2s);
+                            &:hover {
+                                background-position: 50% -32px;
+                            }
                         }
                     }
                 }
@@ -268,25 +520,27 @@ a.mailto {
 .touch {
     #homepage-carousel {
         .touchcarousel-item {
-            &.tapped {
-                img {
-                    @include scale(1.1);
-                }
-                .mask {
-                    @include opacity(1);
-                    h2, p {
-                        @include opacity(1);
-                        @include translateY(0px);
+            &.has-overlay {
+                &.tapped {
+                    img {
+                        @include scale(1.1);
                     }
-                    p {
-                        @include transition-delay(0.1s);
-                    }
-                    a.peek {
+                    .mask {
                         @include opacity(1);
-                        @include scale(1);
-                        @include transition-delay(0.2s);
-                        &:hover {
-                            background-position: 50% -32px;
+                        h2, p {
+                            @include opacity(1);
+                            @include translateY(0px);
+                        }
+                        p {
+                            @include transition-delay(0.1s);
+                        }
+                        a.peek {
+                            @include opacity(1);
+                            @include scale(1);
+                            @include transition-delay(0.2s);
+                            &:hover {
+                                background-position: 50% -32px;
+                            }
                         }
                     }
                 }
@@ -294,6 +548,133 @@ a.mailto {
         }
     }    
 }
+
+
+/******************************************************\
+ *
+ * EVENTS
+ *
+\******************************************************/
+#map-wrap {
+    height: 540px;
+    overflow: hidden;
+    border-top: 1px solid lighten($ink,65%);
+    border-bottom: 1px solid lighten($ink,65%);
+    border-top-color: rgba($ink,.1);
+    border-bottom-color: rgba(49,54,60,.1);
+    background-color: lighten($ink,55%);
+    background-color: rgba($ink,.25);
+    background-image: url("/css/images/placeholder-logo.png");
+    @include background(url("/css/images/placeholder-logo.png"),radial-gradient(30% 20%, lighten($ink,65%) 0px, lighten($ink,55%) 540px));
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    #static_map {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+}
+span#re-align {
+    @include imgRep('/css/images/map-bullseye.png',25px,25px);
+    position: absolute;
+    right: 9px;
+    top: 276px;
+    cursor: pointer;
+}
+.touch {
+    span#re-align {
+        top: 9px;
+    }
+}
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 65px;
+    width: 338px;
+    height: 100%;
+    background-color: $white;
+    background-color: white(.9);
+    @include box-shadow(rgba($ink,.7) 0px 0px 17px -2px);
+    article {
+        width: 100%;
+        height: 100%;
+        padding: 15px 23px 23px;
+        header {
+            z-index: 10;
+            margin: 0 -23px;
+        }
+        h1 {
+            text-transform: uppercase;
+            font-size: 23px;
+            padding: 14px 23px;
+            margin: 0;
+            color: $white;
+            text-shadow: 0px 1px 3px rgba($ink,0.75);
+            background-color: lighten(desaturate($blood,20%),5%);
+            background-color: rgba($blood,.9);
+        }
+        .img-holder {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 190px;
+            text-align: center;
+            z-index: 1;
+            overflow: hidden;
+            background-color: $ink;
+            &.no-img {
+                background-color: lighten($ink,45%);
+                @include background(radial-gradient(35% 25%, lighten($ink,65%) 0px, lighten($ink,35%) 338px));
+            }
+            img {
+                @include valign;
+                @include opacity(.9);
+            }
+        }
+        .text-holder {
+            margin: 115px -23px 0;
+            padding: 16px 23px 23px;
+            border-top: 7px solid transparent;
+            border-color: white(.8);
+            height: 387px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 5;
+        }
+        time {
+            position: absolute;
+            left: 23px;
+            top: 128px;
+            display: block;
+            font-family: $headerFontFamily;
+            letter-spacing: 2px;
+            z-index: 5;
+            p {
+                @include inlineb;
+                color: $white;
+                text-shadow: 0px 1px 3px rgba($ink,0.9);
+                margin: 0;
+                padding: 0 2px;
+                background-color: lighten($ink,10%);
+                background-color: rgba($ink,.7);
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+        &.no-img {
+            h1 {
+                @include box-shadow(lighten($ink,75%) 0px 1px 2px,rgba($ink,0.5) 0px -1px 11px -2px inset);
+            }
+            .img-holder {
+                background-color: lighten($ink,45%);
+                @include background(radial-gradient(35% 25%, lighten($ink,65%) 0px, lighten($ink,35%) 338px));
+            }
+        }
+    }
+}
+
 
 // Custom responsive tweaks
 @media only screen and (min-width: 768px) {
@@ -304,10 +685,20 @@ a.mailto {
         .touchcarousel-item {
             @include background(url("/css/images/placeholder-logo.png"));
             @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
-            background-color: rgba(49,54,60,.25);
+            background-color: rgba($ink,.25);
             background-position: 50% 50%;
             background-repeat: no-repeat;
         }
+    }
+    #map-wrap {
+        @include background(url("/css/images/placeholder-logo.png"));
+        @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
+        background-color: rgba($ink,.25);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+    span#re-align {
+        @include image-2x("/css/images/marker-bullseye-2x.png",25px,25px);        
     }
 }
 @media only screen and (max-device-width: 359px) {
@@ -318,7 +709,7 @@ a.mailto {
             margin: auto;
         }
     }
-    #homepage-carousel {
+    #homepage-carousel, #content-carousel, #singleNode-carousel {
         height: auto;
         padding: 15px 10px;
         .touchcarousel-wrapper {
@@ -335,6 +726,9 @@ a.mailto {
                 margin: 0;
             }
         }
+        #article-slide {
+            width: 100%;
+        }
         .arrow-holder {
             width: 40px;
         }
@@ -344,6 +738,42 @@ a.mailto {
             }
             &.right {
                 right: 5px;
+            }
+        }
+    }
+    #map-wrap {
+        @include background(none);
+        @include imgRep('/css/images/placeholder-logo-inverted.png',100%,320px,50%,50%);
+        @include image-2x("/css/images/placeholder-logo-inverted-2x.png",32px,100px);   
+        background-color: $ink;
+        text-align: center;
+        #static_map {
+            display: block !important;
+            width: 100%;
+            height: 320px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            img {
+                position: relative;
+                left: -160px;
+                margin-left: 50%;
+            }
+        }
+    }
+    .map-overlay {
+        position: relative;
+        left: 0;
+        width: 100%;
+        @include box-shadow(none);
+        article {
+            .img-holder {
+                img {
+                    width: 100%;
+                }
+            }
+            .text-holder {
+                height: auto;
             }
         }
     }

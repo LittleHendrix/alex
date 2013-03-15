@@ -4,7 +4,7 @@
 @import "compass/utilities";
 @import "normalize";
 
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700");
+$default-glass-angle: -45deg !default;
 
 @function black($opacity) {
 	@return rgba(0,0,0,$opacity)
@@ -80,6 +80,24 @@
   }
 }
 
+@mixin valign($pos: top) {
+	vertical-align: $pos;
+}
+@mixin inlineb {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+@mixin noborder {
+    border-color: transparent !important;
+    border-style: none !important;
+    border-width: 0 !important;
+}
+@mixin hideText {	
+    *font-size: 0px;
+    *line-height: 0px;
+}
+
 @mixin animation (
 	$name: none, // keyframename|none
 	$duration: 500ms, // time(default=0) 
@@ -132,4 +150,22 @@
 @mixin bkgSizeFix($src) {
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='[#{$src}]', sizingMethod='scale');
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='[#{$src}]', sizingMethod='scale')";
+}
+
+@mixin glass($deg: $default-glass-angle) {
+	&:after {
+		content: "";
+		position: absolute;
+		display: block;
+		overflow: hidden;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border: 1px solid transparent;
+		border-color: rgba(0, 0, 0, 0.1);
+		@include border-radius(0.2em);
+		@include box-shadow(rgba(255, 255, 255, 0.72) 0 0 2px inset, rgba(255, 255, 255, 0.4) 0 0 10px inset);
+		@include background(linear-gradient($deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0) 50.5%));
+	}
 }

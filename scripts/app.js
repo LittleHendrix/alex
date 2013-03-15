@@ -1,7 +1,7 @@
 $(document).ready(function(){
     
-    var touchEnabled = document.documentElement.className.indexOf('no-touch') == '-1' ? true : false;
-    
+    var touchEnabled = Modernizr.touch;
+        
     if (touchEnabled) {
         var el = document.getElementsByClassName('touchcarousel-item'),
             myTaps = [];
@@ -12,6 +12,9 @@ $(document).ready(function(){
                 $(this).toggleClass('tapped');
             }
         });
+        // remove the iCal link on event page as it's not supported on iOS devices
+        var iCalLnk = $('#ical_export');
+        iCalLnk.remove();
     }
     
 });

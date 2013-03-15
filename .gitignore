@@ -1,5 +1,7 @@
 .sass-cache
-
 .komodotools
-
 *.komodoproject
+App_Browsers
+App_Data
+App_Plugins
+aspnet_client

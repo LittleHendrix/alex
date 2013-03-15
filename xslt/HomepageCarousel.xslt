@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE xsl:stylesheet [ <!ENTITY nbsp "&#x00A0;"> ]>
+<!DOCTYPE xsl:stylesheet [ 
+<!ENTITY % entities SYSTEM "entities.ent">
+    %entities;
+]>
 <xsl:stylesheet 
 	version="1.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
@@ -35,29 +38,36 @@
 	<xsl:if test="count($slideNodes//nodeId[string(.)!='']) &gt; 0">
 		<div id="homepage-carousel" class="touchcarousel black-and-white">  
 			<ul class="touchcarousel-container">
-				<xsl:for-each select="$slideNodes//nodeId[string(.)!='']">
+				<xsl:for-each select="$slideNodes//nodeId[not(&empty;)]">
 					<xsl:variable name="media" select="umbraco.library:GetXmlNodeById(.)" />
-					<xsl:if test="$media[not(error)] and string($media//umbracoFile)!=''">
+					<xsl:if test="$media[not(error)] and $media//umbracoFile[not(&empty;)]">
 						<li class="touchcarousel-item">
-							<xsl:apply-templates select="$media//Image" mode="media">
+							<xsl:if test="media/slideHeading[not(&empty;)] or $media/slideContent[not(&empty;)] or $media/slideLink//url[not(&empty;)]">
+								<xsl:attribute name="class">touchcarousel-item has-overlay</xsl:attribute>
+							</xsl:if>
+							<xsl:apply-templates select="$media//Image">
 								<xsl:with-param name="imgGen">true</xsl:with-param>
 								<xsl:with-param name="height">540</xsl:with-param>
 								<xsl:with-param name="compress">100</xsl:with-param>
 							</xsl:apply-templates>
-							<xsl:if test="string($media/slideHeading)!='' or string($media/slideContent)!=''">
+							<xsl:if test="$media/slideHeading[not(&empty;)] or $media/slideContent[not(&empty;)] or $media/slideLink//url[not(&empty;)]">
 								<div class="mask">
 									<xsl:choose>
-										<xsl:when test="string($media/slideHeading)!=''">
-											<h2><xsl:value-of select="$media/slideHeading" /></h2>
+										<xsl:when test="$media/slideLink//url[not(&empty;)]">
+											<h2><a href="{$media/slideLink//url}" data-title="{$media/slideLink//link-title}">
+												<xsl:if test="string($media/slideLink//new-window)!='False'"><xsl:attribute name="target">_blank</xsl:attribute></xsl:if>
+												<xsl:value-of select="$media/slideHeading[not(&empty;)]|$media/@nodeName" />
+												</a>
+											</h2>
 										</xsl:when>
 										<xsl:otherwise>
-											<h2><xsl:value-of select="umbraco.library:Replace($media/slideMedia//Image/@nodeName,'_',' ')" /></h2>
+											<h2><xsl:value-of select="$media/slideHeading[not(&empty;)]|$media/@nodeName" /></h2>
 										</xsl:otherwise>
 									</xsl:choose>
-									<xsl:if test="string($media/slideContent)!=''">
+									<xsl:if test="$media/slideContent[not(&empty;)]">
 										<p><xsl:value-of select="umbraco.library:ReplaceLineBreaks($media/slideContent)" disable-output-escaping="yes" /></p>
 									</xsl:if>
-									<xsl:if test="string($media/slideLink//url)!=''">
+									<xsl:if test="$media/slideLink//url[not(&empty;)]">
 										<a href="{$media/slideLink//url}" data-title="{$media/slideLink//link-title}" class="peek">
 											<xsl:if test="string($media/slideLink//new-window)!='False'"><xsl:attribute name="target">_blank</xsl:attribute></xsl:if>
 											View details
@@ -120,6 +130,6 @@
     
 </xsl:template>
 
-<xsl:include href="_MediaHelperInclude.xslt" />
+<xsl:include href="_MediaHelper.xslt" />
 		
 </xsl:stylesheet>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>UCU-1_lrg.jpg</originalFileName>
+    <size>200873</size>
+    <dateLastModified>Mon, 11 Mar 2013 18:13:24 GMT</dateLastModified>
+    <width>400</width>
+    <height>600</height>
+    <cachedImage>
+      <fileName>j0fdvpcu.jpeg</fileName>
+      <dateCreated>Mon, 11 Mar 2013 18:18:54 GMT</dateCreated>
+      <dateLastAccessed>Mon, 11 Mar 2013 18:19:17 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>100</compression>
+      <rotate>0</rotate>
+      <flip />
+      <colorMode />
+      <crop />
+      <width>360</width>
+      <height>540</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

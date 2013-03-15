@@ -1,5 +1,9 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Submaster.master" AutoEventWireup="true" %>
 
 <asp:Content ContentPlaceHolderId="SubContent" runat="server">
-	<!-- Insert "SubContent" markup here -->
+	
+	<div id="singleNode-carousel" class="touchcarousel black-and-white"> 
+		<umbraco:Macro Alias="SingleProject" runat="server"></umbraco:Macro>
+	</div>
+	
 </asp:Content>
