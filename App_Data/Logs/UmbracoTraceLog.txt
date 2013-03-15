@@ -1,1 +1,0 @@
-2013-03-12 22:48:38,913 [10] INFO  Umbraco.Core.PluginManager - [Thread 23] Completed resolution of types of umbraco.XsltExtensionAttribute, found 2 (took 0ms)
