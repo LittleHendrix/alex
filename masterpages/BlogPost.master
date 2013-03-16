@@ -1,7 +1,56 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Submaster.master" AutoEventWireup="true" %>
 
 <asp:Content ContentPlaceHolderId="SubContent" runat="server">
-	<div id="singleNode-carousel" class="touchcarousel black-and-white"> 
-		<umbraco:Macro Alias="SinglePost" runat="server"></umbraco:Macro>
+	<div id="singleNode-carousel" class="touchcarousel black-and-white">
+		<ul class="touchcarousel-container">
+			<umbraco:Macro Alias="SinglePost" runat="server"></umbraco:Macro>
+		</ul>
 	</div>
+	
+	<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
+	<script>jQuery.validate || document.write('<script src="/scripts/UComment/jquery.validate.min.js"><\/script>')</script>
+	<script src="/scripts/UComment/jquery.form.js"></script>
+	<script src="/scripts/UComment/jquery.metadata.js"></script>
+	<script>
+	$(document).ready(function(){
+		var devideWidth = window.screen.width;
+		if (devideWidth > 359) {
+			var timeout = <umbraco:Item field="timeout" recursive="true" runat="server" />,
+			speed = <umbraco:Item field="transitionSpeed" recursive="true" runat="server" />,
+			width = 338;
+
+		$('#singleNode-carousel').touchCarousel({
+			itemsPerPage: 1,
+			//itemsPerMove: 1,
+			snapToItems: false,
+			pagingNav: false,
+			pagingNavControls: false,
+			autoplay: false, 
+			autoplayDelay: timeout,	
+			autoplayStopAtAction: true,
+			scrollbar: false,
+			scrollbarAutoHide: true,
+			scrollbarTheme: "dark",
+			transitionSpeed: speed,
+			directionNav: true,
+			directionNavAutoHide: false,		
+			loopItems: true,            // Loop items (don't disable arrows on last slide and allow autoplay to loop)
+			keyboardNav: true,
+			dragUsingMouse: true,
+			scrollToLast: true,         // Last item ends at start of carousel wrapper
+			itemFallbackWidth: width,
+			baseMouseFriction: 0.0012,  // Container friction on desktop (higher friction - slower speed)
+			baseTouchFriction: 0.0008,  // Container friction on mobile
+			lockAxis: true,             // Allow dragging only on one direction
+			useWebkit3d: true,
+			onAnimStart: null,
+			onAnimComplete: null,
+			onDragStart:null,
+			onDragRelease: null
+		});
+		}				
+	});
+
+	</script>
+	
 </asp:Content>

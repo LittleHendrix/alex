@@ -119,6 +119,10 @@ nav {
         @include noborder;
         &.selected {
             font-weight: bold;
+            &:after {
+                content: " \\";
+                font-weight: normal;
+            }
         }
     }
 }
@@ -168,7 +172,7 @@ a.perma-link {
 #content-carousel, #singleNode-carousel {
     .touchcarousel-item {
         width: 338px;
-        section, article {
+        article {
             width: 100%;
             height: 100%;
             background-color: $white;
@@ -733,6 +737,7 @@ span#re-align {
 @media only screen and (max-device-width: 359px) {
     #logo-wrapper {
         width: 100%;
+        float: none;
         text-align: center;
         padding-left: 0;
         margin: 0;
@@ -741,17 +746,26 @@ span#re-align {
         }
     }
     nav {
-        margin: 0;
+        margin: 9px 0 0 0;
         float: none;
         width: 100%;
         a {
             @include inlineb;
-            width: 33%;
+            width: 32%;
+            margin-right: 2%;
             font-size: 16px;
-            padding: 0 4px;
+            text-align: center;
+            padding: 14px 0;
+            margin: 0;
             @include noborder;
             &.selected {
                 font-weight: bold;
+                &:after {
+                    content: "";
+                }
+            }
+            &:nth-child(3n+3) {
+                margin-right: 0;
             }
         }
     }
@@ -762,8 +776,10 @@ span#re-align {
             margin-left: 40px;
         }
         .touchcarousel-item {
-            margin: 0 0 15px 0;
+            margin: 0 0 17px 0;
+            width: 100%;
             height: auto;
+            @include box-shadow(rgba($ink,.7) 0px 1px 7px -4px);
             img {
                 width: 100%;
                 height: auto;
@@ -771,9 +787,22 @@ span#re-align {
             &:last-child {
                 margin: 0;
             }
+            section, article {
+                padding-bottom: 58px;
+                .text-holder {
+                    height: auto;
+                    padding-bottom: 23px;
+                }
+            }
         }
         #article-slide {
             width: 100%;
+            article {
+                padding-bottom: 0;
+                .text-holder {
+                    height: auto;
+                }
+            }
         }
         .arrow-holder {
             width: 40px;
@@ -793,6 +822,7 @@ span#re-align {
         @include image-2x("/css/images/placeholder-logo-inverted-2x.png",32px,100px);   
         background-color: $ink;
         text-align: center;
+        display: none;
         #static_map {
             display: block !important;
             width: 100%;
@@ -821,5 +851,32 @@ span#re-align {
     #copyrights {
         text-align: center;
         padding: 25px 0;
+    }
+    .thumbs {
+        margin: 0;
+        @include myClearfix;
+        img {
+            display: block;
+            float: left;
+            width: 47%;
+            margin: 0 6% 6% 0;
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+@media only screen and (max-device-width: 359px) and (orientation:landscape) {
+    .thumbs {
+        img {
+            width: 32%;
+            margin: 0 2% 2% 0;
+            &:nth-child(even) {
+                margin-right: 2%;
+            }
+            &:nth-child(3n+3) {
+                margin-right: 0;
+            }
+        }
     }
 }

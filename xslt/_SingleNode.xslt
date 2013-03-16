@@ -31,7 +31,7 @@
 	</xsl:variable>	
 	
 	<li class="touchcarousel-item">
-		<section>
+		<article>
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
@@ -97,7 +97,7 @@
 				</xsl:call-template>
 			</div>
 			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link evt">Read more</a></div>
-		</section>
+		</article>
 	</li>
 
 </xsl:template>
@@ -122,7 +122,7 @@
 			<xsl:if test="tags[not(&empty;)] and contains(concat($thisTag,','),concat($tag,','))">
 				
 	<li class="touchcarousel-item">
-		<section>
+		<article>
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
@@ -204,7 +204,7 @@
 				</xsl:call-template>
 			</div>
 			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link post">Read more</a></div>
-		</section>
+		</article>
 	</li>
 				
 			</xsl:if>
@@ -213,7 +213,7 @@
 		<xsl:otherwise>
 			
 	<li class="touchcarousel-item">
-		<section>
+		<article>
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
@@ -287,7 +287,7 @@
 				</xsl:call-template>
 			</div>
 			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link post">Read more</a></div>
-		</section>
+		</article>
 	</li>
 		
 		</xsl:otherwise>
@@ -328,7 +328,7 @@
 			<xsl:if test="type[not(&empty;)] and contains($thisTypes,$type)">
 			
 	<li class="touchcarousel-item">
-		<section>
+		<article>
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
@@ -387,13 +387,13 @@
 				</xsl:call-template>
 			</div>
 			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link proj">Read more</a></div>
-		</section>
+		</article>
 	</li>
 			</xsl:if>
 		</xsl:when>
 		<xsl:otherwise>
 	<li class="touchcarousel-item">
-		<section>
+		<article>
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
@@ -452,7 +452,7 @@
 				</xsl:call-template>
 			</div>
 			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link proj">Read more</a></div>
-		</section>
+		</article>
 	</li>
 		</xsl:otherwise>
 	</xsl:choose>

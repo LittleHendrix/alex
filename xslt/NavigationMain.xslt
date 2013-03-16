@@ -16,6 +16,8 @@
 <xsl:param name="currentPage"/>
 	
 	<xsl:variable name="homeNode" select="$currentPage/ancestor-or-self::Homepage[@isDoc]" />
+	<xsl:variable name="workNode" select="$homeNode/Portfolio[not(&hidden;)]" />
+	<xsl:variable name="workTypes" select="$currentPage/ancestor-or-self::root//ProjectType[not(&hidden;)]" />
 		
 <xsl:template match="/">
 
@@ -31,8 +33,36 @@
 				</a>
 			</xsl:if>
 		</xsl:for-each>
+			<!--
+			<xsl:if test="$currentPage/ancestor-or-self::*[not(&hidden;)]/@id = $workNode/@id and count($workTypes) &gt; 0">
+				<div class="subnav">
+				<xsl:apply-templates select="$workTypes">
+					<xsl:with-param name="workNodeUrl"><xsl:value-of select="$workNode/@urlName" /></xsl:with-param>
+				</xsl:apply-templates>
+				</div>
+			</xsl:if>
+			-->	
 		</nav>
 
 </xsl:template>
-
+		
+<xsl:template match="ProjectType">
+	<xsl:param name="workNodeUrl" />
+	<xsl:variable name="cleanType" select="Exslt.ExsltStrings:lowercase(normalize-space(@nodeName))" />
+	<xsl:variable name="qryType" select="umbraco.library:RequestQueryString('type')" />
+	<a>
+		<xsl:attribute name="href">
+			<xsl:if test="string($workNodeUrl)!=''">
+				<xsl:text>/</xsl:text><xsl:value-of select="$workNodeUrl" />
+			</xsl:if>
+			<xsl:text>/?type=</xsl:text><xsl:value-of select="$cleanType" />
+		</xsl:attribute>
+		<xsl:if test="contains($cleanType,$qryType)">
+		<xsl:attribute name="class">selected</xsl:attribute>
+		</xsl:if>
+		<xsl:value-of select="@nodeName" />
+	</a>
+	
+</xsl:template>
+		
 </xsl:stylesheet>

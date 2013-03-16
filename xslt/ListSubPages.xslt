@@ -52,7 +52,7 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<li class="touchcarousel-item">
-						<section class="no-img">
+						<article class="no-img">
 							<header><h1><xsl:value-of select="$currentPage/pageHeading[not(&empty;)]|$currentPage/@nodeName" /></h1></header>
 				
 							<div class="img-holder">
@@ -66,7 +66,7 @@
 							<div class="text-holder">
 								<p>Sorry, nothing has been published in the <strong>"<xsl:value-of select="$currentPage/@nodeName" />"</strong> section yet. Please come back soon for updates.</p>
 							</div>
-						</section>
+						</article>
 					</li>
 				</xsl:otherwise>
 			</xsl:choose>
