@@ -31,9 +31,8 @@
 	<link rel="apple-touch-icon-precomposed" sizes="57x57" media="screen and (resolution: 163dpi)" href="/css/images/ios/touch/apple-touch-icon-57x57-precomposed.png"><!-- iPhone 3 -->
 	<link rel="shortcut icon" href="/favicon.ico" type="image/png" />
 	<umbraco:Macro Alias="CanonicalLink" runat="server" />
-	<umbraco:Macro Alias="RssLink" runat="server" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700" type="text/css">
-	<link rel="stylesheet" href="/css/screen.css?v=0.1" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/css/screen.css?v=0.0.1" type="text/css" media="screen, projection">
 	<script src="/scripts/libs/modernizr.2.6.2.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script>window.jQuery || document.write('<script src="/scripts/libs/jquery-1.9.1.min.js"><\/script>')</script>
@@ -43,6 +42,7 @@
 		<div id="logo-wrapper">
 			<umbraco:Macro Alias="SiteLogo" runat="server" />
 		</div>
+		<umbraco:Macro Alias="NavigationMain" runat="server"></umbraco:Macro>
 	</header>
 	<section id="page-content">
 		<asp:ContentPlaceHolder Id="BodyContent" runat="server">

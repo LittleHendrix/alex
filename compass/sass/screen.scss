@@ -59,10 +59,9 @@ $spriteImg: "";
 .no-flicker {
     @include transform(translate3d(0, 0, 0));
 }
-.clearfix {
-    @include myClearfix;
-}
-div, section, header, footer, article, aside, time {
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,time,div {
+    display: block;
     position: relative;
 }
 
@@ -89,8 +88,14 @@ a:active {
 a:link {
     //-webkit-tap-highlight-color: rgba($blood,.9);
 }
+header#site-header {
+    @include myClearfix;
+}
 #logo-wrapper {
-    padding: 20px 0 15px 80px;
+    padding: 20px 0 15px;
+    width: 231px;
+    float: left;
+    margin: 0 59px 0 80px;
     h1 {
         margin: 0;
     }
@@ -98,6 +103,24 @@ a:link {
 #logo {
     @include imgRep("/css/images/alexallan-logo.gif",231px,98px);
     @include image-2x("/css/images/alexallan-logo-x2.gif",231px,98px);
+}
+nav {
+    top: 45px;
+    float: left;
+    a {
+        display: table;
+        font-family: $headerFontFamily;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $ink;
+        padding: 0 4px;
+        margin-bottom: 10px;
+        @include noborder;
+        &.selected {
+            font-weight: bold;
+        }
+    }
 }
 #copyrights {
     padding: 15px 0 0 80px;
@@ -189,6 +212,7 @@ a.perma-link {
                 img {
                     @include valign;
                     @include opacity(.9);
+                    width: 100%;
                 }
             }
             .text-holder {
@@ -309,6 +333,13 @@ a.perma-link {
             border-top: 7px solid transparent;
             border-color: white(.8);
             background: transparent;
+        }
+        .thumbs {
+            img {
+                display: inline;
+                width: 30%;
+                margin: 1.5%;
+            }
         }
         time {
             top: 97px;
@@ -630,6 +661,7 @@ span#re-align {
             img {
                 @include valign;
                 @include opacity(.9);
+                width: 100%;
             }
         }
         .text-holder {
@@ -767,11 +799,6 @@ span#re-align {
         width: 100%;
         @include box-shadow(none);
         article {
-            .img-holder {
-                img {
-                    width: 100%;
-                }
-            }
             .text-holder {
                 height: auto;
             }

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<imageIndex>
+  <image>
+    <originalFileName>alex_allan_sculpture-7_straight_cropped_cropThumb.jpg</originalFileName>
+    <cachedImage>
+      <fileName>vgghfe5e.jpeg</fileName>
+      <dateCreated>Fri, 15 Mar 2013 23:52:20 GMT</dateCreated>
+      <dateLastAccessed>Fri, 15 Mar 2013 23:52:20 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>100</compression>
+      <rotate>0</rotate>
+      <flip>
+      </flip>
+      <colorMode>
+      </colorMode>
+      <crop>
+      </crop>
+      <width>140</width>
+      <height>140</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+</imageIndex>

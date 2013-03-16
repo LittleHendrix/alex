@@ -9,7 +9,7 @@
     <cachedImage>
       <fileName>hubsxhvt.png</fileName>
       <dateCreated>Sat, 23 Feb 2013 15:36:07 GMT</dateCreated>
-      <dateLastAccessed>Tue, 12 Mar 2013 23:47:57 GMT</dateLastAccessed>
+      <dateLastAccessed>Fri, 15 Mar 2013 23:16:14 GMT</dateLastAccessed>
       <imageFormat>png</imageFormat>
       <rotate>0</rotate>
       <flip />
@@ -17,6 +17,32 @@
       <crop />
       <width>304</width>
       <height>540</height>
+      <bgColor>#FFFFFF</bgColor>
+      <transparent>True</transparent>
+      <border>0</border>
+      <borderColor>#000000</borderColor>
+      <constrain>True</constrain>
+      <pad>False</pad>
+    </cachedImage>
+  </image>
+  <image>
+    <originalFileName>poster_portrait_9x16_cropThumb.jpg</originalFileName>
+    <size>8846</size>
+    <dateLastModified>Sat, 23 Feb 2013 14:21:06 GMT</dateLastModified>
+    <width>160</width>
+    <height>160</height>
+    <cachedImage>
+      <fileName>ukjoou3z.jpeg</fileName>
+      <dateCreated>Fri, 15 Mar 2013 23:20:55 GMT</dateCreated>
+      <dateLastAccessed>Fri, 15 Mar 2013 23:52:20 GMT</dateLastAccessed>
+      <imageFormat>jpeg</imageFormat>
+      <compression>100</compression>
+      <rotate>0</rotate>
+      <flip />
+      <colorMode />
+      <crop />
+      <width>140</width>
+      <height>140</height>
       <bgColor>#FFFFFF</bgColor>
       <transparent>True</transparent>
       <border>0</border>

@@ -26,13 +26,45 @@
 		
 <xsl:template match="/">
 	
+	<xsl:variable name="hasMediaFolder">
+		<xsl:choose>
+			<xsl:when test="$currentPage/pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+				<xsl:value-of select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="''" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>	
+	
 	<ul class="touchcarousel-container">
 	<li class="touchcarousel-item" id="article-slide">
-		<article class="no-img">
+		<article>
+			<xsl:if test="string($currentPage/pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
+				<xsl:attribute name="class">no-img</xsl:attribute>
+			</xsl:if>
 			<header>
 				<h1><xsl:value-of select="($currentPage/pageHeading[not(&empty;)]|$currentPage/@nodeName)[last()]" /></h1>
 			</header>
-			<div class="img-holder">&nbsp;</div>
+			<div class="img-holder">
+			<xsl:if test="$currentPage/pageMedia//mediaItem[1]/Image[not(&empty;)]">
+				<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Image">
+					<xsl:with-param name="imgGen">true</xsl:with-param>
+					<xsl:with-param name="width">432</xsl:with-param>
+					<xsl:with-param name="compress">100</xsl:with-param>
+					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+				</xsl:apply-templates>
+			</xsl:if>
+			<xsl:if test="string($hasMediaFolder)!=''">
+				<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+					<xsl:with-param name="getFirstItem">true</xsl:with-param>
+					<xsl:with-param name="imgGen">true</xsl:with-param>
+					<xsl:with-param name="width">432</xsl:with-param>
+					<xsl:with-param name="compress">100</xsl:with-param>
+					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+				</xsl:apply-templates>
+			</xsl:if>
+			</div>
 			<xsl:variable name="postDate">
 				<xsl:choose>
 					<xsl:when test="$currentPage/postDate[not(&empty;)]">
@@ -70,30 +102,32 @@
 						<p><xsl:value-of select="umbraco.library:ReplaceLineBreaks($currentPage/metaDescription)" disable-output-escaping="yes" /></p>
 					</xsl:otherwise>
 				</xsl:choose>
+				
+			
+				<div class="thumbs">
+				<xsl:apply-templates select="$currentPage/pageMedia//mediaItem/Image">
+					<xsl:with-param name="imgGen">true</xsl:with-param>
+					<xsl:with-param name="width">140</xsl:with-param>
+					<xsl:with-param name="compress">100</xsl:with-param>
+					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					<xsl:with-param name="getCrop">true</xsl:with-param>
+				</xsl:apply-templates>
+				
+				<xsl:if test="string($hasMediaFolder)!=''">
+					<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">140</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+						<xsl:with-param name="getCrop">true</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
+				</div>
+				
 			</div>
 		</article>
 	</li>
 
-	<xsl:if test="$currentPage/pageMedia//mediaItem[1]/Image[not(&empty;)]">	
-		<xsl:for-each select="$currentPage/pageMedia//mediaItem/Image[not(&empty;)]">
-			<li class="touchcarousel-item">
-			<xsl:apply-templates select=".">
-				<xsl:with-param name="imgGen">true</xsl:with-param>
-				<xsl:with-param name="height">540</xsl:with-param>
-				<xsl:with-param name="compress">100</xsl:with-param>
-			</xsl:apply-templates>
-			</li>
-		</xsl:for-each>
-	</xsl:if>
-		
-		<xsl:if test="$currentPage/pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
-			<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" mode="folder">
-				<xsl:with-param name="imgGen">true</xsl:with-param>
-				<xsl:with-param name="height">540</xsl:with-param>
-				<xsl:with-param name="compress">100</xsl:with-param>
-				<xsl:with-param name="isSlide">true</xsl:with-param>
-			</xsl:apply-templates>
-		</xsl:if>
 		
 	</ul>
 		

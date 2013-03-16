@@ -30,23 +30,22 @@
 		<ul class="touchcarousel-container">
 			<xsl:choose>
 				<xsl:when test="$nodeTypeAlias = 'Event'">
-					<xsl:apply-templates select="$currentPage/Event[not(&hidden;)]">						
+					<xsl:apply-templates select="$currentPage/Event[not(&hidden;)]"><!--					
 						<xsl:sort select="umbraco.library:FormatDateTime(eventEndDate[not(&empty;)],'yyyyMMddHmm')" data-type="number" order="descending" />				
 						<xsl:sort select="umbraco.library:FormatDateTime(eventStartDate[not(&empty;)],'yyyyMMddHmm')" data-type="number" order="descending" />
-						<xsl:sort select="umbraco.library:FormatDateTime(@createDate,'yyyyMMddHmm')" data-type="number" order="descending" />
+						<xsl:sort select="umbraco.library:FormatDateTime(@createDate,'yyyyMMddHmm')" data-type="number" order="descending" />-->
+						<xsl:sort select="concat(eventEndDate,eventStartDate,@createDate)" order="descending" />
 					</xsl:apply-templates>
 				</xsl:when>
 				<xsl:when test="$nodeTypeAlias = 'BlogPost'">
-					<xsl:apply-templates select="$currentPage/BlogPost[not(&hidden;)]">					
-						<xsl:sort select="umbraco.library:FormatDateTime(postDate[not(&empty;)],'yyyyMMddHmm')" data-type="number" order="descending" />
-						<xsl:sort select="umbraco.library:FormatDateTime(@createDate,'yyyyMMddHmm')" data-type="number" order="descending" />
+					<xsl:apply-templates select="$currentPage/BlogPost[not(&hidden;)]">
+						<xsl:sort select="concat(postDate,@createDate)" order="descending" />
 						<xsl:with-param name="tag"><xsl:value-of select="$tag" /></xsl:with-param>
 					</xsl:apply-templates>
 				</xsl:when>
 				<xsl:when test="$nodeTypeAlias = 'Project'">
-					<xsl:apply-templates select="$currentPage/Project[not(&hidden;)]">					
-						<xsl:sort select="umbraco.library:FormatDateTime(completionDate[not(&empty;)],'yyyyMMddHmm')" data-type="number" order="descending" />
-						<xsl:sort select="umbraco.library:FormatDateTime(@createDate,'yyyyMMddHmm')" data-type="number" order="descending" />
+					<xsl:apply-templates select="$currentPage/Project[not(&hidden;)]">
+						<xsl:sort select="concat(completionDate,@createDate)" order="descending" />
 					</xsl:apply-templates>
 				</xsl:when>
 				<xsl:otherwise>
@@ -89,7 +88,7 @@
 			autoplay: false, 
 			autoplayDelay: timeout,	
 			autoplayStopAtAction: true,
-			scrollbar: true,
+			scrollbar: false,
 			scrollbarAutoHide: true,
 			scrollbarTheme: "dark",
 			transitionSpeed: speed,
