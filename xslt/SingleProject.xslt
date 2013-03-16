@@ -45,16 +45,16 @@
 					<p><span>Date: </span><xsl:value-of select="$completeDate" /></p>
 				</xsl:if>
 			</time>
-			
-			<xsl:if test="$currentPage/type[not(&empty;)]">
+		
+			<div class="text-holder">
+				<xsl:if test="$currentPage/type[not(&empty;)]">
 				<div class="type">
 					<p><span>Type: </span>
-	  				<xsl:apply-templates select="$currentPage/type" mode="multipicker" />
+						<xsl:apply-templates select="$currentPage/type" mode="multipicker" />
 					</p>
 				</div>
-			</xsl:if>
-
-			<div class="text-holder">
+				</xsl:if>
+			
 				<xsl:choose>
 					<xsl:when test="$currentPage/bodyText[not(&empty;)]">
 						<xsl:apply-templates select="$currentPage/bodyText" mode="WYSIWYG" />
@@ -108,7 +108,7 @@
 			autoplay: false, 
 			autoplayDelay: timeout,	
 			autoplayStopAtAction: true,
-			scrollbar: true,
+			scrollbar: false,
 			scrollbarAutoHide: true,
 			scrollbarTheme: "dark",
 			transitionSpeed: speed,
@@ -140,6 +140,7 @@
 </xsl:template>
 <xsl:template match="ProjectType">
 	<xsl:param name="nodeIds" />
+	
 	<xsl:variable name="procedingNodeIds">
 		<xsl:for-each select="./preceding-sibling::ProjectType">
 			<xsl:value-of select="@id" />
@@ -154,7 +155,7 @@
 	<xsl:if test="contains($hasProcedingNodes,'true')">
 		<xsl:text>, </xsl:text>
 	</xsl:if>
-	<xsl:value-of select="@nodeName" />
+	<a href="/work/?type={Exslt.ExsltStrings:lowercase(normalize-space(@nodeName))}"><xsl:value-of select="@nodeName" /></a>
 </xsl:template>
 	
 <!-- :: Includes :: -->	

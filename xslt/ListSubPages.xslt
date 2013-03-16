@@ -21,6 +21,7 @@
 <xsl:variable name="itemWidth" select="number(338)" />
 <xsl:variable name="nodeTypeId" select="/macro/nodeType" />
 <xsl:variable name="tag" select="umbraco.library:RequestQueryString('tag')" />
+<xsl:variable name="type" select="umbraco.library:RequestQueryString('type')" />
 		
 <xsl:variable name="nodeTypeAlias" select="local-name($currentPage/*[@isDoc and @nodeType = $nodeTypeId])" />
 		
@@ -46,6 +47,7 @@
 				<xsl:when test="$nodeTypeAlias = 'Project'">
 					<xsl:apply-templates select="$currentPage/Project[not(&hidden;)]">
 						<xsl:sort select="concat(completionDate,@createDate)" order="descending" />
+						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
 					</xsl:apply-templates>
 				</xsl:when>
 				<xsl:otherwise>

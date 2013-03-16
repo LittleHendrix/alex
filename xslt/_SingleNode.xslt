@@ -185,6 +185,7 @@
 								<xsl:choose>
 									<xsl:when test="contains($cleanTag,$tag)">
 										<span class="cur"><xsl:value-of select="." /></span>
+										<xsl:if test="position() !=  last()"><xsl:text>, </xsl:text></xsl:if>
 									</xsl:when>
 									<xsl:otherwise>
 										<a href="?tag={$cleanTag}"><xsl:value-of select="." /></a>
@@ -267,8 +268,8 @@
 			
 			<div class="text-holder">
 				
-				<div class="tags">
-					<xsl:if test="tags[not(&empty;)]">
+				<xsl:if test="tags[not(&empty;)]">
+					<div class="tags">
 						<p><span>Tags: </span>
 							<xsl:for-each select="TagsLib:getTagsFromNode(@id)/tags/tag">
 								<xsl:variable name="cleanTag" select="Exslt.ExsltStrings:lowercase(.)" />
@@ -276,9 +277,8 @@
 								<xsl:if test="position() !=  last()"><xsl:text>, </xsl:text></xsl:if>
 							</xsl:for-each>
 						</p>
-					</xsl:if>
-					
-				</div>
+					</div>
+				</xsl:if>
 				
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
@@ -296,6 +296,7 @@
 </xsl:template>	
 		
 <xsl:template match="Project">
+	<xsl:param name="type" />
 	
 	<xsl:variable name="hasMediaFolder">
 		<xsl:choose>
@@ -308,6 +309,24 @@
 		</xsl:choose>
 	</xsl:variable>
 	
+	<xsl:choose>
+		<xsl:when test="string($type)!=''">
+			
+			<xsl:variable name="thisTypes">
+				<xsl:choose>
+				<xsl:when test="type[not(&empty;)]">
+				<xsl:for-each select="type//nodeId">
+					<xsl:value-of select="Exslt.ExsltStrings:lowercase(umbraco.library:GetXmlNodeById(.)/@nodeName)" />
+				</xsl:for-each>
+				</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="''" />
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>			
+			
+			<xsl:if test="type[not(&empty;)] and contains($thisTypes,$type)">
+			
 	<li class="touchcarousel-item">
 		<section>
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
@@ -350,6 +369,9 @@
 					<p><span>Date: </span><xsl:value-of select="$completeDate" /></p>
 				</xsl:if>
 			</time>
+			
+			<div class="text-holder">
+
 			<xsl:if test="type[not(&empty;)]">
 				<div class="type">
 					<p><span>Type: </span>
@@ -357,7 +379,7 @@
 					</p>
 				</div>
 			</xsl:if>
-			<div class="text-holder">
+				
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
 					<xsl:with-param name="WordCount" select="50" />
@@ -367,6 +389,74 @@
 			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link proj">Read more</a></div>
 		</section>
 	</li>
+			</xsl:if>
+		</xsl:when>
+		<xsl:otherwise>
+	<li class="touchcarousel-item">
+		<section>
+			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
+				<xsl:attribute name="class">no-img</xsl:attribute>
+			</xsl:if>
+			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
+
+			<div class="img-holder">
+				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Image">
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
+				<xsl:if test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+						<xsl:with-param name="getFirstItem">true</xsl:with-param>
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
+			</div>
+			
+			<xsl:variable name="completeDate">
+				<xsl:choose>
+					<xsl:when test="completionDate[not(&empty;)]">
+						<xsl:apply-templates select="completionDate" mode="monthYear" />
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:apply-templates select="@createDate" mode="monthYear" />
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+			<time datetime="{(completionDate[not(&empty;)]|@createDate)[last()]}">
+				<xsl:if test="string($completeDate)!=''">
+					<p><span>Date: </span><xsl:value-of select="$completeDate" /></p>
+				</xsl:if>
+			</time>
+			
+			<div class="text-holder">
+
+			<xsl:if test="type[not(&empty;)]">
+				<div class="type">
+					<p><span>Type: </span>
+						<xsl:apply-templates select="type" mode="multipicker" />
+					</p>
+				</div>
+			</xsl:if>
+				
+				<xsl:call-template name="firstWords">
+					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
+					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="Ellipsis" select="'...'" />
+				</xsl:call-template>
+			</div>
+			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link proj">Read more</a></div>
+		</section>
+	</li>
+		</xsl:otherwise>
+	</xsl:choose>
+	
 
 </xsl:template>
 
@@ -389,6 +479,9 @@
 </xsl:template>
 <xsl:template match="ProjectType">
 	<xsl:param name="nodeIds" />
+	
+	<xsl:variable name="curType" select="umbraco.library:RequestQueryString('type')" />
+	<xsl:variable name="cleanType" select="Exslt.ExsltStrings:lowercase(normalize-space(@nodeName))" />
 	<xsl:variable name="procedingNodeIds">
 		<xsl:for-each select="./preceding-sibling::ProjectType">
 			<xsl:value-of select="@id" />
@@ -403,7 +496,14 @@
 	<xsl:if test="contains($hasProcedingNodes,'true')">
 		<xsl:text>, </xsl:text>
 	</xsl:if>
-	<xsl:value-of select="@nodeName" />
+	<xsl:choose>
+		<xsl:when test="string($curType)!='' and contains($cleanType,$curType)">
+			<span class="cur"><xsl:value-of select="@nodeName" /></span>
+		</xsl:when>
+		<xsl:otherwise>
+			<a href="/work/?type={$cleanType}"><xsl:value-of select="@nodeName" /></a>
+		</xsl:otherwise>
+	</xsl:choose>
 </xsl:template>
 		
 <!-- :: Includes :: -->		
