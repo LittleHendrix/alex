@@ -122,7 +122,7 @@
 				<xsl:with-param name="getCrop">true</xsl:with-param>
 			</xsl:apply-templates>
 			
-			<xsl:if test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+			<xsl:if test="string($hasMediaFolder)!=''">
 				<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
 					<xsl:with-param name="imgGen">true</xsl:with-param>
 					<xsl:with-param name="width">140</xsl:with-param>

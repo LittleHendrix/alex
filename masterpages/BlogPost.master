@@ -1,7 +1,87 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/masterpages/Submaster.master" AutoEventWireup="true" %>
 
 <asp:Content ContentPlaceHolderId="SubContent" runat="server">
-	<div id="singleNode-carousel" class="touchcarousel black-and-white"> 
-		<umbraco:Macro Alias="SinglePost" runat="server"></umbraco:Macro>
+	<div id="singleNode-carousel" class="touchcarousel black-and-white">
+		<ul class="touchcarousel-container">
+			<umbraco:Macro Alias="SinglePost" runat="server"></umbraco:Macro>
+		</ul>
+		<div id="blog-comments" class='<umbraco:Macro Alias="UCommentShowHide" runat="server"></umbraco:Macro>'>
+			
+			<div class="comments-wrap">
+				<div class="comments-scroll">
+				<section class="comment-list-block">
+					<umbraco:Macro Alias="UCommentListComments" runat="server"></umbraco:Macro>
+				</section>
+				<section class="comment-form-block">
+					<h3>Leave a comment</h3>
+				<form runat="server">
+					<umbraco:Macro RegisterScripts="1" Alias="UCommentForm" runat="server"></umbraco:Macro>
+				</form>
+				</section>
+				</div>
+				<div class="close-bar"><span id="close">Close<span></div>
+				
+			</div><!--/comments-wrap-->
+		</div><!--/blog-comments-->
 	</div>
+	
+	<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
+	<script>jQuery.validate || document.write('<script src="/scripts/UComment/jquery.validate.min.js"><\/script>')</script>
+	<script src="/scripts/UComment/jquery.form.js"></script>
+	<script src="/scripts/UComment/jquery.metadata.js"></script>
+	<script>
+	$(document).ready(function(){
+		
+		var comments = $('#blog-comments'),
+			close = $('span#close',comments),
+			handle = $('a.comment-handle');
+		
+		close.on('click',function() {
+			comments.removeClass('shown');
+		});
+		handle.on('click',function(e) {
+			e.preventDefault();
+			comments.addClass('shown');
+		});
+		
+		var devideWidth = window.screen.width;
+		if (devideWidth > 359) {
+			var timeout = <umbraco:Item field="timeout" recursive="true" runat="server" />,
+			speed = <umbraco:Item field="transitionSpeed" recursive="true" runat="server" />,
+			width = 338;
+
+		$('#singleNode-carousel').touchCarousel({
+			itemsPerPage: 1,
+			//itemsPerMove: 1,
+			snapToItems: false,
+			pagingNav: false,
+			pagingNavControls: false,
+			autoplay: false, 
+			autoplayDelay: timeout,	
+			autoplayStopAtAction: true,
+			scrollbar: false,
+			scrollbarAutoHide: true,
+			scrollbarTheme: "dark",
+			transitionSpeed: speed,
+			directionNav: true,
+			directionNavAutoHide: false,		
+			loopItems: true,            // Loop items (don't disable arrows on last slide and allow autoplay to loop)
+			keyboardNav: true,
+			dragUsingMouse: true,
+			scrollToLast: true,         // Last item ends at start of carousel wrapper
+			itemFallbackWidth: width,
+			baseMouseFriction: 0.0012,  // Container friction on desktop (higher friction - slower speed)
+			baseTouchFriction: 0.0008,  // Container friction on mobile
+			lockAxis: true,             // Allow dragging only on one direction
+			useWebkit3d: true,
+			onAnimStart: null,
+			onAnimComplete: null,
+			onDragStart:null,
+			onDragRelease: null
+		});
+		}				
+	});
+
+	</script>
+	
 </asp:Content>

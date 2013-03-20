@@ -101,7 +101,7 @@
 						autoplay: autoPlay, 
 						autoplayDelay: timeout,	
 						autoplayStopAtAction: true,
-						scrollbar: true,
+						scrollbar: false,
 						scrollbarAutoHide: true,
 						scrollbarTheme: "dark",
 						transitionSpeed: speed,

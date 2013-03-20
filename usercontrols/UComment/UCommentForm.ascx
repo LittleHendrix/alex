@@ -1,64 +1,47 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UCommentForm.ascx.cs" Inherits="UComment.Usercontrols.AjaxCommentForm" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UCommentForm.ascx.cs" Inherits="UComment.Usercontrols.AjaxCommentForm" %>
 <%@ Import Namespace="UComment.Library" %>
 
 <div id="commentform" class="post-comment">
 
-<div id="gravatar" style="display: none; height: 80px; width:80px;"></div>
+	<div id="gravatar">&nbsp;</div>
 
-
-    <div class="form-label">
-    <label for="author" class="fieldLabel">
-       <%= XsltLibrary.Dictionary("#Name", "Your name")%>:
-    </label>
-    </div>
-    <div class="form-input">
-    <input type="text" id="author" name="name" class="input-text required" />
+    <div class="form-row">
+		<label for="author" class="fieldLabel required">
+		   <%= XsltLibrary.Dictionary("#Name", "Name")%>
+		</label>
+		<input type="text" id="author" name="name" class="input-text required" />
     </div>
 
-
-    <div class="form-label">
-    <label for="email" class="fieldLabel">
-        <%= XsltLibrary.Dictionary("#Email", "Email address")%>:
-    </label>
-    </div>
-    <div class="form-input">
-    <input type="text" id="email" name="email" class="input-text required email" />
-    </div>
-
-    <div class="form-label">
-    <label for="url" class="fieldLabel">
-        <%= XsltLibrary.Dictionary("#Website", "Website url")%>:
-    </label>
-    </div>
-    <div class="form-input">
-    <input type="text" id="url" name="website"  class="input-text url" />
+    <div class="form-row">
+		<label for="email" class="fieldLabel required">
+			<%= XsltLibrary.Dictionary("#Email", "Email")%>
+		</label>
+		<input type="text" id="email" name="email" class="input-text required email" />
     </div>
     
-    <div class="form-label">
-    <label for="comment" class="fieldLabel">
-       <%= XsltLibrary.Dictionary("#Comment", "Your message")%>:
-    </label>
-    </div>
-    <div class="form-input">
-    <textarea id="comment" cols="20" name="comment" rows="7" class="required"></textarea>
+    <div class="form-row">
+		<label for="comment" class="fieldLabel required">
+		   <%= XsltLibrary.Dictionary("#Comment", "Comment")%>
+		</label>
+		<textarea id="comment" cols="20" name="comment" rows="7" class="required"></textarea>
     </div>
 
-    <div class="form-submit">
-    <input type="submit" id="submitButton" class="submit" value="<%= XsltLibrary.Dictionary("#Submit","Post Comment") %>" />
+    <div class="form-row submit">
+    	<input type="submit" id="submitButton" class="submit" value="<%= XsltLibrary.Dictionary("#Submit","Post Comment") %>" />
     </div>
+
 </div>
 
 <div id="commentLoading" style="display: none">
-    <%= XsltLibrary.Dictionary("#CommentLoading", "Your comment is being submitted, please wait")%>
+    <p><%= XsltLibrary.Dictionary("#CommentLoading", "Posting your comments...")%></p>
 </div>
 
 <div id="commentPosted" style="display: none">
-    <%= XsltLibrary.Dictionary("#CommentPosted", "Your comment has been posted, thank you very much")%>
+    <p><%= XsltLibrary.Dictionary("#CommentPosted", "Your comment has been posted successfully!")%></p>
 </div>
 
 <script type="text/javascript">
     jQuery(document).ready(function(){
-          
            
           jQuery("#commentform #email").blur(function(){
                 var email = jQuery("#commentform #email").val();

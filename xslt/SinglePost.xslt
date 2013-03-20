@@ -26,13 +26,44 @@
 		
 <xsl:template match="/">
 	
-	<ul class="touchcarousel-container">
+	<xsl:variable name="hasMediaFolder">
+		<xsl:choose>
+			<xsl:when test="$currentPage/pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+				<xsl:value-of select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="''" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>	
+
 	<li class="touchcarousel-item" id="article-slide">
-		<article class="no-img">
+		<article>
+			<xsl:if test="string($currentPage/pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
+				<xsl:attribute name="class">no-img</xsl:attribute>
+			</xsl:if>
 			<header>
 				<h1><xsl:value-of select="($currentPage/pageHeading[not(&empty;)]|$currentPage/@nodeName)[last()]" /></h1>
 			</header>
-			<div class="img-holder">&nbsp;</div>
+			<div class="img-holder">
+			<xsl:if test="$currentPage/pageMedia//mediaItem[1]/Image[not(&empty;)]">
+				<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Image">
+					<xsl:with-param name="imgGen">true</xsl:with-param>
+					<xsl:with-param name="width">432</xsl:with-param>
+					<xsl:with-param name="compress">100</xsl:with-param>
+					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+				</xsl:apply-templates>
+			</xsl:if>
+			<xsl:if test="string($hasMediaFolder)!=''">
+				<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+					<xsl:with-param name="getFirstItem">true</xsl:with-param>
+					<xsl:with-param name="imgGen">true</xsl:with-param>
+					<xsl:with-param name="width">432</xsl:with-param>
+					<xsl:with-param name="compress">100</xsl:with-param>
+					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+				</xsl:apply-templates>
+			</xsl:if>
+			</div>
 			<xsl:variable name="postDate">
 				<xsl:choose>
 					<xsl:when test="$currentPage/postDate[not(&empty;)]">
@@ -47,9 +78,19 @@
 			<time datetime="{($currentPage/postDate[not(&empty;)]|$currentPage/@createDate)[last()]}">
 				<p><span>Post on: </span><xsl:value-of select="$postDate" /></p>
 			</time>
-			
-			
 
+			<div class="comments">
+				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode($currentPage/@id)//comment)" />
+				<xsl:choose>
+					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
+						<p><a href="?blog-comments=show" class="comment-handle">Leave a comment</a></p>
+					</xsl:when>
+					<xsl:otherwise>
+						<p><a href="?blog-comments=show" class="comment-handle"><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></a></p>
+					</xsl:otherwise>
+				</xsl:choose>
+			</div>
+			
 			<div class="text-holder">
 				<xsl:if test="$currentPage/tags[not(&empty;)]">
 					<div class="tags">
@@ -70,75 +111,32 @@
 						<p><xsl:value-of select="umbraco.library:ReplaceLineBreaks($currentPage/metaDescription)" disable-output-escaping="yes" /></p>
 					</xsl:otherwise>
 				</xsl:choose>
+				
+			
+				<div class="thumbs">
+				<xsl:apply-templates select="$currentPage/pageMedia//mediaItem/Image">
+					<xsl:with-param name="imgGen">true</xsl:with-param>
+					<xsl:with-param name="width">140</xsl:with-param>
+					<xsl:with-param name="compress">100</xsl:with-param>
+					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					<xsl:with-param name="getCrop">true</xsl:with-param>
+				</xsl:apply-templates>
+				
+				<xsl:if test="string($hasMediaFolder)!=''">
+					<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">140</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+						<xsl:with-param name="getCrop">true</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
+				</div>
+				
 			</div>
 		</article>
 	</li>
 
-	<xsl:if test="$currentPage/pageMedia//mediaItem[1]/Image[not(&empty;)]">	
-		<xsl:for-each select="$currentPage/pageMedia//mediaItem/Image[not(&empty;)]">
-			<li class="touchcarousel-item">
-			<xsl:apply-templates select=".">
-				<xsl:with-param name="imgGen">true</xsl:with-param>
-				<xsl:with-param name="height">540</xsl:with-param>
-				<xsl:with-param name="compress">100</xsl:with-param>
-			</xsl:apply-templates>
-			</li>
-		</xsl:for-each>
-	</xsl:if>
-		
-		<xsl:if test="$currentPage/pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
-			<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" mode="folder">
-				<xsl:with-param name="imgGen">true</xsl:with-param>
-				<xsl:with-param name="height">540</xsl:with-param>
-				<xsl:with-param name="compress">100</xsl:with-param>
-				<xsl:with-param name="isSlide">true</xsl:with-param>
-			</xsl:apply-templates>
-		</xsl:if>
-		
-	</ul>
-		
-	<script>
-	<![CDATA[
-	$(document).ready(function(){
-		var devideWidth = window.screen.width;
-		if (devideWidth > 359) {
-			var timeout = ]]><xsl:value-of select="$timeout" /><![CDATA[,
-			speed = ]]><xsl:value-of select="$speed" /><![CDATA[,
-			width = ]]><xsl:value-of select="$itemWidth" /><![CDATA[;
-
-		$('#singleNode-carousel').touchCarousel({
-			itemsPerPage: 1,
-			//itemsPerMove: 1,
-			snapToItems: false,
-			pagingNav: false,
-			pagingNavControls: false,
-			autoplay: false, 
-			autoplayDelay: timeout,	
-			autoplayStopAtAction: true,
-			scrollbar: true,
-			scrollbarAutoHide: true,
-			scrollbarTheme: "dark",
-			transitionSpeed: speed,
-			directionNav: true,
-			directionNavAutoHide: false,		
-			loopItems: true,            // Loop items (don't disable arrows on last slide and allow autoplay to loop)
-			keyboardNav: true,
-			dragUsingMouse: true,
-			scrollToLast: true,         // Last item ends at start of carousel wrapper
-			itemFallbackWidth: width,
-			baseMouseFriction: 0.0012,  // Container friction on desktop (higher friction - slower speed)
-			baseTouchFriction: 0.0008,  // Container friction on mobile
-			lockAxis: true,             // Allow dragging only on one direction
-			useWebkit3d: true,
-			onAnimStart: null,
-			onAnimComplete: null,
-			onDragStart:null,
-			onDragRelease: null
-		});
-		}				
-	});
-	]]>
-	</script>
 </xsl:template>
 		
 <!-- :: Helper Templates :: -->

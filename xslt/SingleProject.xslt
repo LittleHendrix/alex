@@ -45,16 +45,16 @@
 					<p><span>Date: </span><xsl:value-of select="$completeDate" /></p>
 				</xsl:if>
 			</time>
-			
-			<xsl:if test="$currentPage/type[not(&empty;)]">
+		
+			<div class="text-holder">
+				<xsl:if test="$currentPage/type[not(&empty;)]">
 				<div class="type">
 					<p><span>Type: </span>
-	  				<xsl:apply-templates select="$currentPage/type" mode="multipicker" />
+						<xsl:apply-templates select="$currentPage/type" mode="multipicker" />
 					</p>
 				</div>
-			</xsl:if>
-
-			<div class="text-holder">
+				</xsl:if>
+			
 				<xsl:choose>
 					<xsl:when test="$currentPage/bodyText[not(&empty;)]">
 						<xsl:apply-templates select="$currentPage/bodyText" mode="WYSIWYG" />
@@ -69,13 +69,13 @@
 
 	<xsl:if test="$currentPage/pageMedia//mediaItem[1]/Image[not(&empty;)]">	
 		<xsl:for-each select="$currentPage/pageMedia//mediaItem/Image[not(&empty;)]">
-			<li class="touchcarousel-item">
 			<xsl:apply-templates select=".">
 				<xsl:with-param name="imgGen">true</xsl:with-param>
 				<xsl:with-param name="height">540</xsl:with-param>
 				<xsl:with-param name="compress">100</xsl:with-param>
+				<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+				<xsl:with-param name="isSlide">true</xsl:with-param>
 			</xsl:apply-templates>
-			</li>
 		</xsl:for-each>
 	</xsl:if>
 		
@@ -84,6 +84,7 @@
 				<xsl:with-param name="imgGen">true</xsl:with-param>
 				<xsl:with-param name="height">540</xsl:with-param>
 				<xsl:with-param name="compress">100</xsl:with-param>
+				<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
 				<xsl:with-param name="isSlide">true</xsl:with-param>
 			</xsl:apply-templates>
 		</xsl:if>
@@ -108,7 +109,7 @@
 			autoplay: false, 
 			autoplayDelay: timeout,	
 			autoplayStopAtAction: true,
-			scrollbar: true,
+			scrollbar: false,
 			scrollbarAutoHide: true,
 			scrollbarTheme: "dark",
 			transitionSpeed: speed,
@@ -140,6 +141,7 @@
 </xsl:template>
 <xsl:template match="ProjectType">
 	<xsl:param name="nodeIds" />
+	
 	<xsl:variable name="procedingNodeIds">
 		<xsl:for-each select="./preceding-sibling::ProjectType">
 			<xsl:value-of select="@id" />
@@ -154,7 +156,7 @@
 	<xsl:if test="contains($hasProcedingNodes,'true')">
 		<xsl:text>, </xsl:text>
 	</xsl:if>
-	<xsl:value-of select="@nodeName" />
+	<a href="/work/?type={Exslt.ExsltStrings:lowercase(normalize-space(@nodeName))}"><xsl:value-of select="@nodeName" /></a>
 </xsl:template>
 	
 <!-- :: Includes :: -->	

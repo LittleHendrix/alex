@@ -21,6 +21,7 @@
 <xsl:variable name="itemWidth" select="number(338)" />
 <xsl:variable name="nodeTypeId" select="/macro/nodeType" />
 <xsl:variable name="tag" select="umbraco.library:RequestQueryString('tag')" />
+<xsl:variable name="type" select="umbraco.library:RequestQueryString('type')" />
 		
 <xsl:variable name="nodeTypeAlias" select="local-name($currentPage/*[@isDoc and @nodeType = $nodeTypeId])" />
 		
@@ -30,28 +31,28 @@
 		<ul class="touchcarousel-container">
 			<xsl:choose>
 				<xsl:when test="$nodeTypeAlias = 'Event'">
-					<xsl:apply-templates select="$currentPage/Event[not(&hidden;)]">						
+					<xsl:apply-templates select="$currentPage/Event[not(&hidden;)]"><!--					
 						<xsl:sort select="umbraco.library:FormatDateTime(eventEndDate[not(&empty;)],'yyyyMMddHmm')" data-type="number" order="descending" />				
 						<xsl:sort select="umbraco.library:FormatDateTime(eventStartDate[not(&empty;)],'yyyyMMddHmm')" data-type="number" order="descending" />
-						<xsl:sort select="umbraco.library:FormatDateTime(@createDate,'yyyyMMddHmm')" data-type="number" order="descending" />
+						<xsl:sort select="umbraco.library:FormatDateTime(@createDate,'yyyyMMddHmm')" data-type="number" order="descending" />-->
+						<xsl:sort select="concat(eventEndDate,eventStartDate,@createDate)" order="descending" />
 					</xsl:apply-templates>
 				</xsl:when>
 				<xsl:when test="$nodeTypeAlias = 'BlogPost'">
-					<xsl:apply-templates select="$currentPage/BlogPost[not(&hidden;)]">					
-						<xsl:sort select="umbraco.library:FormatDateTime(postDate[not(&empty;)],'yyyyMMddHmm')" data-type="number" order="descending" />
-						<xsl:sort select="umbraco.library:FormatDateTime(@createDate,'yyyyMMddHmm')" data-type="number" order="descending" />
+					<xsl:apply-templates select="$currentPage/BlogPost[not(&hidden;)]">
+						<xsl:sort select="concat(postDate,@createDate)" order="descending" />
 						<xsl:with-param name="tag"><xsl:value-of select="$tag" /></xsl:with-param>
 					</xsl:apply-templates>
 				</xsl:when>
 				<xsl:when test="$nodeTypeAlias = 'Project'">
-					<xsl:apply-templates select="$currentPage/Project[not(&hidden;)]">					
-						<xsl:sort select="umbraco.library:FormatDateTime(completionDate[not(&empty;)],'yyyyMMddHmm')" data-type="number" order="descending" />
-						<xsl:sort select="umbraco.library:FormatDateTime(@createDate,'yyyyMMddHmm')" data-type="number" order="descending" />
+					<xsl:apply-templates select="$currentPage/Project[not(&hidden;)]">
+						<xsl:sort select="concat(completionDate,@createDate)" order="descending" />
+						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
 					</xsl:apply-templates>
 				</xsl:when>
 				<xsl:otherwise>
 					<li class="touchcarousel-item">
-						<section class="no-img">
+						<article class="no-img">
 							<header><h1><xsl:value-of select="$currentPage/pageHeading[not(&empty;)]|$currentPage/@nodeName" /></h1></header>
 				
 							<div class="img-holder">
@@ -65,7 +66,7 @@
 							<div class="text-holder">
 								<p>Sorry, nothing has been published in the <strong>"<xsl:value-of select="$currentPage/@nodeName" />"</strong> section yet. Please come back soon for updates.</p>
 							</div>
-						</section>
+						</article>
 					</li>
 				</xsl:otherwise>
 			</xsl:choose>
@@ -89,7 +90,7 @@
 			autoplay: false, 
 			autoplayDelay: timeout,	
 			autoplayStopAtAction: true,
-			scrollbar: true,
+			scrollbar: false,
 			scrollbarAutoHide: true,
 			scrollbarTheme: "dark",
 			transitionSpeed: speed,

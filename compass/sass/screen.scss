@@ -59,10 +59,9 @@ $spriteImg: "";
 .no-flicker {
     @include transform(translate3d(0, 0, 0));
 }
-.clearfix {
-    @include myClearfix;
-}
-div, section, header, footer, article, aside, time {
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,time,div {
+    display: block;
     position: relative;
 }
 
@@ -89,8 +88,17 @@ a:active {
 a:link {
     //-webkit-tap-highlight-color: rgba($blood,.9);
 }
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+}
+header#site-header {
+    @include myClearfix;
+}
 #logo-wrapper {
-    padding: 20px 0 15px 80px;
+    padding: 20px 0 15px;
+    width: 231px;
+    float: left;
+    margin: 0 59px 0 80px;
     h1 {
         margin: 0;
     }
@@ -98,6 +106,28 @@ a:link {
 #logo {
     @include imgRep("/css/images/alexallan-logo.gif",231px,98px);
     @include image-2x("/css/images/alexallan-logo-x2.gif",231px,98px);
+}
+nav {
+    margin-top: 45px;
+    float: left;
+    a {
+        display: table;
+        font-family: $headerFontFamily;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $ink;
+        padding: 0 4px;
+        margin-bottom: 10px;
+        @include noborder;
+        &.selected {
+            font-weight: bold;
+            &:after {
+                content: " \\";
+                font-weight: normal;
+            }
+        }
+    }
 }
 #copyrights {
     padding: 15px 0 0 80px;
@@ -142,10 +172,21 @@ a.perma-link {
     background-color: rgba($ink,.05);
     overflow: hidden;
 }
+#homepage-carousel, #singleNode-carousel {
+    .touchcarousel-item {
+        background-color: lighten($ink,55%);
+        background-color: rgba($ink,.25);
+        background-image: url("/css/images/placeholder-logo.png");
+        @include background(url("/css/images/placeholder-logo.png"),radial-gradient(30% 20%, lighten($ink,65%) 0px, lighten($ink,55%) 540px));
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+}
 #content-carousel, #singleNode-carousel {
     .touchcarousel-item {
+        background: $white;
         width: 338px;
-        section, article {
+        article {
             width: 100%;
             height: 100%;
             background-color: $white;
@@ -189,6 +230,7 @@ a.perma-link {
                 img {
                     @include valign;
                     @include opacity(.9);
+                    width: 100%;
                 }
             }
             .text-holder {
@@ -198,9 +240,9 @@ a.perma-link {
                 height: 357px;
                 overflow-y: auto;
                 z-index: 5;
-                .tags {
+                .tags, .type {
                     font-family: $headerFontFamily;
-                    letter-spacing: 1px;
+                    letter-spacing: 2px;
                     padding: 0;
                     span {
                         font-weight: bold;
@@ -226,7 +268,7 @@ a.perma-link {
                     }
                 }
             }
-            time, .type, .comments {
+            time, .comments {
                 position: absolute;
                 left: 23px;
                 top: 128px;
@@ -259,7 +301,7 @@ a.perma-link {
                     }
                 }
             }
-            .type, .comments {
+            .comments {
                 top: 150px;                
             }
             &.no-img {
@@ -288,7 +330,6 @@ a.perma-link {
 #singleNode-carousel {
     .touchcarousel-item {
         width: auto;
-        //@include glass();
     }
     #article-slide {
         width: 432px;
@@ -310,11 +351,18 @@ a.perma-link {
             border-color: white(.8);
             background: transparent;
         }
+        .comments {
+            top: 119px;                
+        }
+        .thumbs {
+            img {
+                display: inline;
+                width: 30%;
+                margin: 1.5%;
+            }
+        }
         time {
             top: 97px;
-        }
-        .type {
-            top: 119px;
         }
     }
 }
@@ -337,12 +385,6 @@ a.perma-link {
     }
     .touchcarousel-item {
         margin-right: 15px;
-        background-color: lighten($ink,55%);
-        background-color: rgba($ink,.25);
-        background-image: url("/css/images/placeholder-logo.png");
-        @include background(url("/css/images/placeholder-logo.png"),radial-gradient(30% 20%, lighten($ink,65%) 0px, lighten($ink,55%) 540px));
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
         height: 540px;
         overflow: hidden;
         @include perspective(1000);
@@ -630,6 +672,7 @@ span#re-align {
             img {
                 @include valign;
                 @include opacity(.9);
+                width: 100%;
             }
         }
         .text-holder {
@@ -675,6 +718,190 @@ span#re-align {
     }
 }
 
+/******************************************************\
+ *
+ * UCOMMENTS
+ *
+\******************************************************/
+#blog-comments {
+    position: absolute;
+    top: 540px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    background-color: rgba($white,.8);
+    text-align: center;
+    z-index: 50;
+    @include transition(all .4s ease);
+    &.shown {
+        top: 0;
+        .comments-wrap {
+            @include box-shadow(rgba($ink,.7) 0px 0px 17px -2px);
+        }
+    }
+    .comments-wrap {
+        width: 748px;
+        height: 100%;
+        margin: 0 auto;
+        text-align: left;
+        background-color: $white;
+        .comments-scroll {
+            padding: 44px 23px 23px;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        div.close-bar {
+            width: 100%;
+            height: 44px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $blood;
+            text-align: center;
+            span#close {
+                display: block;
+                font-family: $headerFontFamily;
+                font-size: 23px;
+                font-weight: bold;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                padding: 10px 0;
+                margin: 0;
+                color: $white;
+                text-shadow: 0px 1px 3px rgba($ink,0.75);
+                background-color: lighten(desaturate($blood,20%),5%);
+                background-color: rgba($blood,.9);
+                cursor: pointer;
+                &:hover, &:focus {
+                    @include noborder;
+                    text-shadow: 0px 1px 7px lighten($blood,50%), 0px -1px 0px rgba($ink,0.75);
+                }
+            }
+        }
+    }
+    section.comment-list-block {
+        h3 {
+            margin: 23px 0 44px;
+        }
+    }
+    section.comment-form-block {
+        margin-top: 44px;
+    }
+    #commentform {
+        padding-left: 103px;
+        #gravatar {
+            @include imgRep("/css/images/placeholder-sml.png",80px,80px,50%,50%);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .error {
+            color: $blood;
+        }
+        .form-row {
+            margin-bottom: 7px;
+            @include myClearfix;
+        }
+        label {
+            display: block;
+            float: left;
+            width: 75px;
+            margin-right: 11px;
+            font-family: $headerFontFamily;
+            letter-spacing: 2px;
+            &.required {
+                &:after {
+                    content: " \*";
+                }
+            }
+            &.error {
+                display: none !important;
+            }
+        }
+        input.input-text, textarea {
+            margin: 0;
+            padding: 2px 7px;
+            border: 1px solid lighten($ink,60%);
+            border-color: rgba($ink,.2);
+            width: 225px;
+            font-family: $bodyFontFamily;
+            &.error {
+                border-color: $blood;
+            }
+        }
+        textarea {
+            overflow: auto;
+        }
+        input#submitButton {
+            position: relative;
+            padding: 2px 17px 3px;
+            @include border-radius(3px);
+            border: none;
+            border-bottom: 4px solid $ink;
+            font-family: $headerFontFamily;
+            letter-spacing: 3px;
+            color: $white;
+            background-color: $ink;
+            @include background(linear-gradient(lighten($ink,25%) lighten($ink,15%)));
+            @include box-shadow(rgba($black,.9) 0px 1px 7px -2px);
+            text-shadow: $ink 0 1px 1px;
+            margin: 7px 0 0 86px;
+            &:hover {
+                @include box-shadow(rgba($black,.9) 0px 1px 4px -1px);
+                @include background(linear-gradient(lighten($ink,15%) lighten($ink,25%)));
+            }
+            &:active {
+                @include noborder;
+                bottom: -4px;
+                @include box-shadow($white 0px 1px 0px, rgba($black,.3) 0px 1px 1px inset);
+                text-shadow: $ink 0px -1px 1px;
+            }
+        }
+    }
+    #commentLoading, #commentPosted {
+        margin: 23px 0;
+        padding: 0 0 0 30px;
+        p {
+            font-family: $headerFontFamily;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+    }
+    #commentLoading {
+        background: url(/css/images/loading.gif) no-repeat left center;
+    }
+    #commentPosted {
+        background: url(/css/images/tick.png) no-repeat left center;
+        &.error {
+            background-image: url(/css/images/exclamation.png);
+            color: $blood;
+        }
+    }
+    ol.commentlist {
+        margin: 0;
+        li {
+            margin: 0 0 17px 0;
+            @include myClearfix;
+            .comment-author {
+                width: 49px;
+                float: left;
+                p {  
+                    font-family: $headerFontFamily;
+                    letter-spacing: 2px;
+                }
+            }
+            .comment-body {
+                padding-left: 49px;
+            }
+            .comment-meta {
+                font-family: $headerFontFamily;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
 
 // Custom responsive tweaks
 @media only screen and (min-width: 768px) {
@@ -703,10 +930,37 @@ span#re-align {
 }
 @media only screen and (max-device-width: 359px) {
     #logo-wrapper {
+        width: 100%;
+        float: none;
         text-align: center;
         padding-left: 0;
+        margin: 0;
         #logo {
             margin: auto;
+        }
+    }
+    nav {
+        margin: 9px 0 0 0;
+        float: none;
+        width: 100%;
+        a {
+            @include inlineb;
+            width: 32%;
+            margin-right: 2%;
+            font-size: 16px;
+            text-align: center;
+            padding: 14px 0;
+            margin: 0;
+            @include noborder;
+            &.selected {
+                font-weight: bold;
+                &:after {
+                    content: "";
+                }
+            }
+            &:nth-child(3n+3) {
+                margin-right: 0;
+            }
         }
     }
     #homepage-carousel, #content-carousel, #singleNode-carousel {
@@ -716,8 +970,10 @@ span#re-align {
             margin-left: 40px;
         }
         .touchcarousel-item {
-            margin: 0 0 15px 0;
+            margin: 0 0 17px 0;
+            width: 100%;
             height: auto;
+            @include box-shadow(rgba($ink,.7) 0px 1px 7px -4px);
             img {
                 width: 100%;
                 height: auto;
@@ -725,9 +981,22 @@ span#re-align {
             &:last-child {
                 margin: 0;
             }
+            section, article {
+                padding-bottom: 58px;
+                .text-holder {
+                    height: auto;
+                    padding-bottom: 23px;
+                }
+            }
         }
         #article-slide {
             width: 100%;
+            article {
+                padding-bottom: 0;
+                .text-holder {
+                    height: auto;
+                }
+            }
         }
         .arrow-holder {
             width: 40px;
@@ -747,6 +1016,7 @@ span#re-align {
         @include image-2x("/css/images/placeholder-logo-inverted-2x.png",32px,100px);   
         background-color: $ink;
         text-align: center;
+        display: none;
         #static_map {
             display: block !important;
             width: 100%;
@@ -767,11 +1037,6 @@ span#re-align {
         width: 100%;
         @include box-shadow(none);
         article {
-            .img-holder {
-                img {
-                    width: 100%;
-                }
-            }
             .text-holder {
                 height: auto;
             }
@@ -780,5 +1045,32 @@ span#re-align {
     #copyrights {
         text-align: center;
         padding: 25px 0;
+    }
+    .thumbs {
+        margin: 0;
+        @include myClearfix;
+        img {
+            display: block;
+            float: left;
+            width: 47%;
+            margin: 0 6% 6% 0;
+            &:nth-child(even) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+@media only screen and (max-device-width: 359px) and (orientation:landscape) {
+    .thumbs {
+        img {
+            width: 32%;
+            margin: 0 2% 2% 0;
+            &:nth-child(even) {
+                margin-right: 2%;
+            }
+            &:nth-child(3n+3) {
+                margin-right: 0;
+            }
+        }
     }
 }
