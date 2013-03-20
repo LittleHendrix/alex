@@ -96,17 +96,24 @@
 				<img>
 					<xsl:attribute name="src">
 						<xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="$src" />
-						<xsl:if test="msxsl:node-set($width)[not(&empty;)]"><xsl:text>&amp;width=</xsl:text><xsl:value-of select="$width" /></xsl:if>
-						<xsl:if test="msxsl:node-set($height)[not(&empty;)]"><xsl:text>&amp;height=</xsl:text><xsl:value-of select="$height" /></xsl:if>
-						<xsl:if test="msxsl:node-set($altImg)[not(&empty;)]"><xsl:text>&amp;altImage=</xsl:text><xsl:value-of select="$altImg" /></xsl:if>
+						<xsl:if test="string($width)!=''"><xsl:text>&amp;width=</xsl:text><xsl:value-of select="$width" /></xsl:if>
+						<xsl:if test="string($height)!=''"><xsl:text>&amp;height=</xsl:text><xsl:value-of select="$height" /></xsl:if>
+						<xsl:if test="string($altImg)!=''"><xsl:text>&amp;altImage=</xsl:text><xsl:value-of select="$altImg" /></xsl:if>
 						<xsl:text>&amp;compression=</xsl:text><xsl:value-of select="$compress" />
 						<xsl:text>&amp;constrain=true</xsl:text>
 					</xsl:attribute>
 					<xsl:attribute name="alt"><xsl:value-of select="$alt" /></xsl:attribute>
-					<xsl:if test="string($allowUmbMeasure)=''">
-					<xsl:attribute name="width"><xsl:value-of select="msxsl:node-set($width)[not(&empty;)]|umbracoWidth" /></xsl:attribute>
-					<xsl:attribute name="height"><xsl:value-of select="msxsl:node-set($height)[not(&empty;)]|umbracoHeight" /></xsl:attribute>
-					</xsl:if>
+					<xsl:choose>
+						<xsl:when test="string($allowUmbMeasure)=''">
+							<xsl:attribute name="width"><xsl:value-of select="umbracoWidth" /></xsl:attribute>
+							<xsl:attribute name="height"><xsl:value-of select="umbracoHeight" /></xsl:attribute>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:variable name="newWidth" select="umbracoWidth div umbracoHeight * 540" />
+							<xsl:attribute name="width"><xsl:value-of select="$newWidth" /></xsl:attribute>
+							<xsl:attribute name="height"><xsl:value-of select="number(540)" /></xsl:attribute>
+						</xsl:otherwise>
+					</xsl:choose>
 				</img>
 				</li>
 			</xsl:when>
@@ -114,16 +121,15 @@
 				<img>
 					<xsl:attribute name="src">
 						<xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="$src" />
-						<xsl:if test="msxsl:node-set($width)[not(&empty;)]"><xsl:text>&amp;width=</xsl:text><xsl:value-of select="$width" /></xsl:if>
-						<xsl:if test="msxsl:node-set($height)[not(&empty;)]"><xsl:text>&amp;height=</xsl:text><xsl:value-of select="$height" /></xsl:if>
-						<xsl:if test="msxsl:node-set($altImg)[not(&empty;)]"><xsl:text>&amp;altImage=</xsl:text><xsl:value-of select="$altImg" /></xsl:if>
+						<xsl:if test="string($width)!=''"><xsl:text>&amp;width=</xsl:text><xsl:value-of select="$width" /></xsl:if>
+						<xsl:if test="string($height)!=''"><xsl:text>&amp;height=</xsl:text><xsl:value-of select="$height" /></xsl:if>
+						<xsl:if test="string($altImg)!=''"><xsl:text>&amp;altImage=</xsl:text><xsl:value-of select="$altImg" /></xsl:if>
 						<xsl:text>&amp;compression=</xsl:text><xsl:value-of select="$compress" />
 						<xsl:text>&amp;constrain=true</xsl:text>
 					</xsl:attribute>
-					<xsl:attribute name="alt"><xsl:value-of select="$alt" /></xsl:attribute>
 					<xsl:if test="string($allowUmbMeasure)=''">
-					<xsl:attribute name="width"><xsl:value-of select="msxsl:node-set($width)[not(&empty;)]|umbracoWidth" /></xsl:attribute>
-					<xsl:attribute name="height"><xsl:value-of select="msxsl:node-set($height)[not(&empty;)]|umbracoHeight" /></xsl:attribute>
+						<xsl:attribute name="width"><xsl:value-of select="(msxsl:node-set($width)[not(&empty;)]|umbracoWidth)[last()]" /></xsl:attribute>
+						<xsl:attribute name="height"><xsl:value-of select="(msxsl:node-set($height)[not(&empty;)]|umbracoHeight)[last()]" /></xsl:attribute>
 					</xsl:if>
 				</img>
 			</xsl:otherwise>
@@ -136,8 +142,8 @@
 					<img>
 						<xsl:attribute name="src"><xsl:value-of select="$src" /></xsl:attribute>
 						<xsl:attribute name="alt"><xsl:value-of select="$alt" /></xsl:attribute>
-						<xsl:attribute name="width"><xsl:value-of select="msxsl:node-set($width)[not(&empty;)]|umbracoWidth" /></xsl:attribute>
-						<xsl:attribute name="height"><xsl:value-of select="msxsl:node-set($height)[not(&empty;)]|umbracoHeight" /></xsl:attribute>
+						<xsl:attribute name="width"><xsl:value-of select="(msxsl:node-set($width)[not(&empty;)]|umbracoWidth)[last()]" /></xsl:attribute>
+						<xsl:attribute name="height"><xsl:value-of select="(msxsl:node-set($height)[not(&empty;)]|umbracoHeight)[last()]" /></xsl:attribute>
 					</img>
 				</li>
 			</xsl:when>
@@ -145,8 +151,8 @@
 				<img>
 					<xsl:attribute name="src"><xsl:value-of select="$src" /></xsl:attribute>
 					<xsl:attribute name="alt"><xsl:value-of select="$alt" /></xsl:attribute>
-					<xsl:attribute name="width"><xsl:value-of select="msxsl:node-set($width)[not(&empty;)]|umbracoWidth" /></xsl:attribute>
-					<xsl:attribute name="height"><xsl:value-of select="msxsl:node-set($height)[not(&empty;)]|umbracoHeight" /></xsl:attribute>
+					<xsl:attribute name="width"><xsl:value-of select="(msxsl:node-set($width)[not(&empty;)]|umbracoWidth)[last()]" /></xsl:attribute>
+					<xsl:attribute name="height"><xsl:value-of select="(msxsl:node-set($height)[not(&empty;)]|umbracoHeight)[last()]" /></xsl:attribute>
 				</img>
 			</xsl:otherwise>
 		  </xsl:choose>

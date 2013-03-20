@@ -78,15 +78,19 @@
 			<time datetime="{($currentPage/postDate[not(&empty;)]|$currentPage/@createDate)[last()]}">
 				<p><span>Post on: </span><xsl:value-of select="$postDate" /></p>
 			</time>
-			
+
 			<div class="comments">
 				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode($currentPage/@id)//comment)" />
-				
-				<xsl:if test="string($numOfComments) != '' and string($numOfComments) != 'NaN' and number($numOfComments) &gt; 0">
-					<p><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></p>
-				</xsl:if>					
+				<xsl:choose>
+					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
+						<p><a href="?blog-comments=show" class="comment-handle">Leave a comment</a></p>
+					</xsl:when>
+					<xsl:otherwise>
+						<p><a href="?blog-comments=show" class="comment-handle"><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></a></p>
+					</xsl:otherwise>
+				</xsl:choose>
 			</div>
-
+			
 			<div class="text-holder">
 				<xsl:if test="$currentPage/tags[not(&empty;)]">
 					<div class="tags">

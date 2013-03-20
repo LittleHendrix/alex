@@ -167,10 +167,10 @@
 				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode(@id)//comment)" />
 				<xsl:choose>
 					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
-						<p><a href="{&NiceUrl;(@id)}">Leave a comment</a></p>
+						<p><a href="{&NiceUrl;(@id)}?blog-comments=show">Leave a comment</a></p>
 					</xsl:when>
 					<xsl:otherwise>
-						<p><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></p>
+						<p><a href="{&NiceUrl;(@id)}?blog-comments=show"><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></a></p>
 					</xsl:otherwise>
 				</xsl:choose>
 			</div>
@@ -258,10 +258,10 @@
 				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode(@id)//comment)" />
 				<xsl:choose>
 					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
-						<p><a href="{&NiceUrl;(@id)}">Leave a comment</a></p>
+						<p><a href="{&NiceUrl;(@id)}?blog-comments=show">Leave a comment</a></p>
 					</xsl:when>
 					<xsl:otherwise>
-						<p><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></p>
+						<p><a href="{&NiceUrl;(@id)}?blog-comments=show"><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></a></p>
 					</xsl:otherwise>
 				</xsl:choose>
 			</div>

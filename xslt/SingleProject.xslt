@@ -69,13 +69,13 @@
 
 	<xsl:if test="$currentPage/pageMedia//mediaItem[1]/Image[not(&empty;)]">	
 		<xsl:for-each select="$currentPage/pageMedia//mediaItem/Image[not(&empty;)]">
-			<li class="touchcarousel-item">
 			<xsl:apply-templates select=".">
 				<xsl:with-param name="imgGen">true</xsl:with-param>
 				<xsl:with-param name="height">540</xsl:with-param>
 				<xsl:with-param name="compress">100</xsl:with-param>
+				<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+				<xsl:with-param name="isSlide">true</xsl:with-param>
 			</xsl:apply-templates>
-			</li>
 		</xsl:for-each>
 	</xsl:if>
 		
@@ -84,6 +84,7 @@
 				<xsl:with-param name="imgGen">true</xsl:with-param>
 				<xsl:with-param name="height">540</xsl:with-param>
 				<xsl:with-param name="compress">100</xsl:with-param>
+				<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
 				<xsl:with-param name="isSlide">true</xsl:with-param>
 			</xsl:apply-templates>
 		</xsl:if>

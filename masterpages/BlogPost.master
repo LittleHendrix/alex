@@ -5,6 +5,24 @@
 		<ul class="touchcarousel-container">
 			<umbraco:Macro Alias="SinglePost" runat="server"></umbraco:Macro>
 		</ul>
+		<div id="blog-comments" class='<umbraco:Macro Alias="UCommentShowHide" runat="server"></umbraco:Macro>'>
+			
+			<div class="comments-wrap">
+				<div class="comments-scroll">
+				<section class="comment-list-block">
+					<umbraco:Macro Alias="UCommentListComments" runat="server"></umbraco:Macro>
+				</section>
+				<section class="comment-form-block">
+					<h3>Leave a comment</h3>
+				<form runat="server">
+					<umbraco:Macro RegisterScripts="1" Alias="UCommentForm" runat="server"></umbraco:Macro>
+				</form>
+				</section>
+				</div>
+				<div class="close-bar"><span id="close">Close<span></div>
+				
+			</div><!--/comments-wrap-->
+		</div><!--/blog-comments-->
 	</div>
 	
 	<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
@@ -13,6 +31,19 @@
 	<script src="/scripts/UComment/jquery.metadata.js"></script>
 	<script>
 	$(document).ready(function(){
+		
+		var comments = $('#blog-comments'),
+			close = $('span#close',comments),
+			handle = $('a.comment-handle');
+		
+		close.on('click',function() {
+			comments.removeClass('shown');
+		});
+		handle.on('click',function(e) {
+			e.preventDefault();
+			comments.addClass('shown');
+		});
+		
 		var devideWidth = window.screen.width;
 		if (devideWidth > 359) {
 			var timeout = <umbraco:Item field="timeout" recursive="true" runat="server" />,
