@@ -92,7 +92,7 @@
 			<div class="text-holder">
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
-					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="WordCount" select="35" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
 			</div>
@@ -199,7 +199,7 @@
 				
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
-					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="WordCount" select="35" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
 			</div>
@@ -282,7 +282,7 @@
 				
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
-					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="WordCount" select="35" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
 			</div>
@@ -382,7 +382,7 @@
 				
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
-					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="WordCount" select="35" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
 			</div>
@@ -447,7 +447,7 @@
 				
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
-					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="WordCount" select="35" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
 			</div>

@@ -139,7 +139,7 @@ nav {
 a.mailto {
     font-weight: bold;
 }
-a.perma-link {
+a.perma-link, a.peek {
     @include imgRep("/css/images/perma-link.png",100%,44px,50%,0px);
     @include image-2x("/css/images/perma-link-2x.png",44px,88px);
     @include noborder;
@@ -172,19 +172,248 @@ a.perma-link {
     background-color: rgba($ink,.05);
     overflow: hidden;
 }
+
+/******************************************************\
+ *
+ * TOUCH CAROUSEL
+ *
+\******************************************************/
+
 #homepage-carousel, #singleNode-carousel {
     .touchcarousel-item {
+        @include imgRep("/css/images/placeholder-logo.png",auto,540px,50%,50%);
+        @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
         background-color: lighten($ink,55%);
-        background-color: rgba($ink,.25);
-        background-image: url("/css/images/placeholder-logo.png");
-        @include background(url("/css/images/placeholder-logo.png"),radial-gradient(30% 20%, lighten($ink,65%) 0px, lighten($ink,55%) 540px));
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
+        text-indent: 0;
+        &.video-item {
+            @include imgRep("/css/images/placeholder-logo-inverted.png",auto,540px,50%,50%);
+            @include image-2x("/css/images/placeholder-logo-inverted-2x.png",32px,100px);
+            background-color: $ink;
+            text-indent: 0;
+        }
     }
+}
+#homepage-carousel, #content-carousel, #singleNode-carousel {
+    width: 100%;
+    height: 540px;
+    overflow: hidden !important;
+    @include perspective(1000);
+    
+    .touchcarousel-wrapper {
+        overflow: visible;
+        margin-left: 80px;
+    }
+    .touchcarousel-item {
+        margin-right: 15px;
+        height: 540px;
+        overflow: hidden;
+        @include perspective(1000);
+        @include backface-visibility(hidden);
+        &.last {}
+        img {
+            @include valign;
+        }
+    }
+    .arrow-icon {
+        background-color: lighten($ink,10%);
+        background-color: rgba($ink,.7);
+        &.left {
+            left: 25px;
+        }
+        &.right {
+            right: 25px;
+        }
+    }
+    .arrow-holder {
+        width: 65px;
+        @include noborder;
+        &:hover .arrow-icon {
+            background-color: $ink;
+            background-color: rgba($ink,.9);
+        }
+        &:active {
+            background-color: transparent;
+            .arrow-icon {
+                background-color: lighten(desaturate($blood,20%),5%);
+                background-color: rgba($blood,.9);
+            }
+        }
+        &:focus {
+            outline: none;
+            background-color: transparent;
+            .arrow-icon {
+                background-color: lighten(desaturate($blood,20%),5%);
+                background-color: rgba($blood,.9);                
+            }
+        }
+        &.disabled {
+            .arrow-icon {
+                background-color: lighten($ink,60%);
+                background-color: rgba($ink,.2);
+            }
+            &:hover .arrow-icon, &:focus .arrow-icon {
+                background-color: lighten($ink,55%);
+                background-color: rgba($ink,.25);                
+            }
+        }
+        &:link {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+    }
+    .scrollbar-holder {
+        bottom: 6px;
+        .scrollbar {
+            &.dark {
+                background-color: lighten($ink, 30%);
+                background-color: rgba($ink,.7)
+            }
+        }
+    }
+}
+#homepage-carousel {
+    .touchcarousel-item {
+        &.has-overlay {
+            img, .mask, .mask h2, .mask p, .mask a.peek {
+                @include transform-style(preserve-3d);
+                @include backface-visibility(hidden);
+            }
+            img {
+                display: block;
+                position: relative;
+                @include transition(all 0.2s linear);
+            }
+            .mask {
+                position: absolute;
+                top: 0;
+                left: 0;
+                text-indent: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                @include opacity(0);
+                @include transition(all 0.4s ease-in-out);
+                background-color: $ink;
+                background-color: rgba($ink,.9);
+                h2, p {                
+                    position: relative;
+                    color: $white;
+                    text-align: center;
+                }
+                h2 {
+                    text-transform: uppercase;
+                    font-size: 23px;
+                    padding: 14px;
+                    margin: 37px 0 0 0;
+                    text-shadow: 0px 1px 3px rgba($ink,0.75);
+                    background-color: lighten(desaturate($blood,20%),5%);
+                    background-color: rgba($blood,.8);
+                    @include translateY(-100px);
+                    @include opacity(0);
+                    @include transition(all 0.2s ease-in-out);
+                    a {
+                        color: $white;
+                        text-shadow: 0px 1px 3px rgba($ink,0.75);
+                        @include noborder;
+                        &:hover, &:focus {
+                            @include noborder;
+                            text-shadow: 0px 1px 7px lighten($blood,50%), 0px -1px 0px rgba($ink,0.75);
+                        }
+                        &:active {
+                            background-color: transparent;
+                        }
+                    }
+                }
+                p {
+                    padding: 59px 23px 23px;
+                    @include translateY(25px);
+                    @include opacity(0);
+                    @include transition(all 0.2s ease);
+                }
+                a.peek {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 44px;
+                    @include noborder;
+                    @include opacity(0);
+                    @include scale(1.1);
+                    @include transition-property(opacity, transform);
+                    @include transition-duration(0.4s);
+                    @include transition-timing-function(ease-in-out);
+                    &:hover, &:focus {
+                        @include noborder;
+                    }
+                    &:active {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+.no-touch {
+    #homepage-carousel {
+        .touchcarousel-item {
+            &.has-overlay {
+                &:hover {
+                    img {
+                        @include scale(1.1);
+                    }
+                    .mask {
+                        @include opacity(1);
+                        h2, p {
+                            @include opacity(1);
+                            @include translateY(0px);
+                        }
+                        p {
+                            @include transition-delay(0.1s);
+                        }
+                        a.peek {
+                            @include opacity(1);
+                            @include scale(1);
+                            @include transition-delay(0.2s);
+                            &:hover {
+                                background-position: 50% -44px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.touch {
+    #homepage-carousel {
+        .touchcarousel-item {
+            &.has-overlay {
+                &.tapped {
+                    img {
+                        @include scale(1.1);
+                    }
+                    .mask {
+                        @include opacity(1);
+                        h2, p {
+                            @include opacity(1);
+                            @include translateY(0px);
+                        }
+                        p {
+                            @include transition-delay(0.1s);
+                        }
+                        a.peek {
+                            @include opacity(1);
+                            @include scale(1);
+                            @include transition-delay(0.2s);
+                            &:hover {
+                                background-position: 50% -44px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
 }
 #content-carousel, #singleNode-carousel {
     .touchcarousel-item {
-        background: $white;
         width: 338px;
         article {
             width: 100%;
@@ -218,15 +447,16 @@ a.perma-link {
                 }
             }
             .img-holder {
+                @include imgRep("/css/images/placeholder-logo.png",100%,190px,50%,50%);
+                @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
+                background-color: lighten($ink,55%);
+                text-indent: 0;
                 position: absolute;
                 left: 0;
                 top: 0;
-                width: 100%;
-                height: 190px;
                 text-align: center;
                 z-index: 1;
                 overflow: hidden;
-                background-color: $ink;
                 img {
                     @include valign;
                     @include opacity(.9);
@@ -302,16 +532,7 @@ a.perma-link {
                 }
             }
             .comments {
-                top: 150px;                
-            }
-            &.no-img {
-                h1 {
-                    @include box-shadow(lighten($ink,75%) 0px 1px 2px,rgba($ink,0.5) 0px -1px 11px -2px inset);
-                }
-                .img-holder {
-                    background-color: lighten($ink,45%);
-                    @include background(radial-gradient(35% 25%, lighten($ink,65%) 0px, lighten($ink,35%) 338px));
-                }
+                top: 150px;
             }
             .sec-link {
                 position: absolute;
@@ -320,8 +541,6 @@ a.perma-link {
                 width: 100%;
                 padding: 7px 0;
                 text-align: center;
-                background-color: $white;
-                background-color: rgba($white,0.6);
                 z-index: 10;
             }
         }
@@ -369,231 +588,6 @@ a.perma-link {
 
 /******************************************************\
  *
- * TOUCH CAROUSEL
- *
-\******************************************************/
-
-#homepage-carousel, #content-carousel, #singleNode-carousel {
-    width: 100%;
-    height: 540px;
-    overflow: hidden !important;
-    @include perspective(1000);
-    
-    .touchcarousel-wrapper {
-        overflow: visible;
-        margin-left: 80px;
-    }
-    .touchcarousel-item {
-        margin-right: 15px;
-        height: 540px;
-        overflow: hidden;
-        @include perspective(1000);
-        @include backface-visibility(hidden);
-        &.last {}
-        img {
-            @include valign;
-        }
-        &.has-overlay {
-            img, .mask, .mask h2, .mask p, .mask a.peek {
-                @include transform-style(preserve-3d);
-                @include backface-visibility(hidden);
-            }
-            img {
-                display: block;
-                position: relative;
-                @include transition(all 0.2s linear);
-            }
-            .mask {
-                position: absolute;
-                top: 0;
-                left: 0;
-                text-indent: 0;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                @include opacity(0);
-                @include transition(all 0.4s ease-in-out);
-                background-color: $ink;
-                background-color: rgba($ink,.9);
-                h2, p {                
-                    position: relative;
-                    color: $white;
-                    text-align: center;
-                }
-                h2 {
-                    text-transform: uppercase;
-                    font-size: 23px;
-                    padding: 14px;
-                    margin: 37px 0 0 0;
-                    text-shadow: 0px 1px 3px rgba($ink,0.75);
-                    background-color: lighten(desaturate($blood,20%),5%);
-                    background-color: rgba($blood,.8);
-                    @include translateY(-100px);
-                    @include opacity(0);
-                    @include transition(all 0.2s ease-in-out);
-                    a {
-                        color: $white;
-                        text-shadow: 0px 1px 3px rgba($ink,0.75);
-                        @include noborder;
-                        &:hover, &:focus {
-                            @include noborder;
-                            text-shadow: 0px 1px 7px lighten($blood,50%), 0px -1px 0px rgba($ink,0.75);
-                        }
-                        &:active {
-                            background-color: transparent;
-                        }
-                    }
-                }
-                p {
-                    padding: 59px 23px 23px;
-                    @include translateY(25px);
-                    @include opacity(0);
-                    @include transition(all 0.2s ease);
-                }
-                a.peek {
-                    @include imgRep("/css/images/peek-lrg.png",60px,32px,50%,0px);
-                    @include image-2x("/css/images/peek-lrg-2x.png",60px,64px);
-                    width: 100%;
-                    position: absolute;
-                    bottom: 44px;
-                    @include noborder;
-                    @include opacity(0);
-                    @include scale(1.1);
-                    @include transition-property(opacity, transform);
-                    @include transition-duration(0.4s);
-                    @include transition-timing-function(ease-in-out);
-                    &:hover, &:focus {
-                        @include noborder;
-                    }
-                    &:active {
-                        background-color: transparent;
-                    }
-                }
-            }
-        }
-    }
-    .arrow-icon {
-        background-color: lighten($ink,10%);
-        background-color: rgba($ink,.7);
-        &.left {
-            left: 25px;
-        }
-        &.right {
-            right: 25px;
-        }
-    }
-    .arrow-holder {
-        width: 65px;
-        @include noborder;
-        &:hover .arrow-icon {
-            background-color: $ink;
-            background-color: rgba($ink,.9);
-        }
-        &:active {
-            background-color: transparent;
-            .arrow-icon {
-                background-color: lighten(desaturate($blood,20%),5%);
-                background-color: rgba($blood,.9);
-            }
-        }
-        &:focus {
-            outline: none;
-            background-color: transparent;
-            .arrow-icon {
-                background-color: lighten(desaturate($blood,20%),5%);
-                background-color: rgba($blood,.9);                
-            }
-        }
-        &.disabled {
-            .arrow-icon {
-                background-color: lighten($ink,60%);
-                background-color: rgba($ink,.2);
-            }
-            &:hover .arrow-icon, &:focus .arrow-icon {
-                background-color: lighten($ink,55%);
-                background-color: rgba($ink,.25);                
-            }
-        }
-        &:link {
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-        }
-    }
-    .scrollbar-holder {
-        bottom: 6px;
-        .scrollbar {
-            &.dark {
-                background-color: lighten($ink, 30%);
-                background-color: rgba($ink,.7)
-            }
-        }
-    }
-}
-.no-touch {
-    #homepage-carousel {
-        .touchcarousel-item {
-            &.has-overlay {
-                &:hover {
-                    img {
-                        @include scale(1.1);
-                    }
-                    .mask {
-                        @include opacity(1);
-                        h2, p {
-                            @include opacity(1);
-                            @include translateY(0px);
-                        }
-                        p {
-                            @include transition-delay(0.1s);
-                        }
-                        a.peek {
-                            @include opacity(1);
-                            @include scale(1);
-                            @include transition-delay(0.2s);
-                            &:hover {
-                                background-position: 50% -32px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-.touch {
-    #homepage-carousel {
-        .touchcarousel-item {
-            &.has-overlay {
-                &.tapped {
-                    img {
-                        @include scale(1.1);
-                    }
-                    .mask {
-                        @include opacity(1);
-                        h2, p {
-                            @include opacity(1);
-                            @include translateY(0px);
-                        }
-                        p {
-                            @include transition-delay(0.1s);
-                        }
-                        a.peek {
-                            @include opacity(1);
-                            @include scale(1);
-                            @include transition-delay(0.2s);
-                            &:hover {
-                                background-position: 50% -32px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }    
-}
-
-
-/******************************************************\
- *
  * EVENTS
  *
 \******************************************************/
@@ -604,12 +598,7 @@ a.perma-link {
     border-bottom: 1px solid lighten($ink,65%);
     border-top-color: rgba($ink,.1);
     border-bottom-color: rgba(49,54,60,.1);
-    background-color: lighten($ink,55%);
-    background-color: rgba($ink,.25);
-    background-image: url("/css/images/placeholder-logo.png");
-    @include background(url("/css/images/placeholder-logo.png"),radial-gradient(30% 20%, lighten($ink,65%) 0px, lighten($ink,55%) 540px));
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
+    background: lighten($ink,55%) url("/css/images/placeholder-logo.png") no-repeat 50% 50%;
     #static_map {
         display: none;
         width: 0;
@@ -656,6 +645,10 @@ span#re-align {
             background-color: rgba($blood,.9);
         }
         .img-holder {
+            @include imgRep("/css/images/placeholder-logo.png",auto,540px,50%,50%);
+            @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
+            background-color: lighten($ink,55%);
+            text-indent: 0;
             position: absolute;
             left: 0;
             top: 0;
@@ -664,11 +657,6 @@ span#re-align {
             text-align: center;
             z-index: 1;
             overflow: hidden;
-            background-color: $ink;
-            &.no-img {
-                background-color: lighten($ink,45%);
-                @include background(radial-gradient(35% 25%, lighten($ink,65%) 0px, lighten($ink,35%) 338px));
-            }
             img {
                 @include valign;
                 @include opacity(.9);
@@ -704,15 +692,6 @@ span#re-align {
                 span {
                     font-weight: bold;
                 }
-            }
-        }
-        &.no-img {
-            h1 {
-                @include box-shadow(lighten($ink,75%) 0px 1px 2px,rgba($ink,0.5) 0px -1px 11px -2px inset);
-            }
-            .img-holder {
-                background-color: lighten($ink,45%);
-                @include background(radial-gradient(35% 25%, lighten($ink,65%) 0px, lighten($ink,35%) 338px));
             }
         }
     }
@@ -969,6 +948,9 @@ span#re-align {
         .touchcarousel-wrapper {
             margin-left: 40px;
         }
+        .touchcarousel-container {
+            @include myClearfix;
+        }
         .touchcarousel-item {
             margin: 0 0 17px 0;
             width: 100%;
@@ -1015,6 +997,7 @@ span#re-align {
         @include imgRep('/css/images/placeholder-logo-inverted.png',100%,320px,50%,50%);
         @include image-2x("/css/images/placeholder-logo-inverted-2x.png",32px,100px);   
         background-color: $ink;
+        text-indent: 0;
         text-align: center;
         display: none;
         #static_map {
@@ -1056,6 +1039,64 @@ span#re-align {
             margin: 0 6% 6% 0;
             &:nth-child(even) {
                 margin-right: 0;
+            }
+        }
+    }
+    #blog-comments {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 17px;
+        @include box-shadow(rgba($ink,.7) 0px 1px 7px -4px);
+        .comments-wrap {
+            width: 100%;
+            height: auto;
+            @include box-shadow(none);
+            div.close-bar {
+                display: none;
+            }
+            .comments-scroll {
+                padding: 23px;
+            }
+        }
+        section.comment-list-block h3 {
+            margin-top: 0;
+        }
+        #commentform {
+            padding: 0;
+            #gravatar {
+                @include imgRep("/css/images/placeholder-sml.png",80px,80px,50%,50%);
+                position: relative;
+                top: auto;
+                left: auto;
+                margin-bottom: 11px;
+            }
+            label {
+                float: none;
+                width: 75px;
+                margin: 0 0 11px 0;
+                &.error {
+                    display: block !important;
+                    width: 100%;
+                    padding-top: 7px;
+                }
+            }
+            input#submitButton {
+                margin: 7px 0 0 0;
+            }
+        }
+        ol.commentlist {
+            li {
+                .comment-author {
+                    width: 100%;
+                    float: none;
+                    p {
+                        margin-bottom: 7px;
+                    }
+                }
+                .comment-body {
+                    padding-left: 0;
+                }
             }
         }
     }

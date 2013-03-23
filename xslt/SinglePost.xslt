@@ -110,33 +110,36 @@
 					<xsl:otherwise>
 						<p><xsl:value-of select="umbraco.library:ReplaceLineBreaks($currentPage/metaDescription)" disable-output-escaping="yes" /></p>
 					</xsl:otherwise>
-				</xsl:choose>
-				
-			
-				<div class="thumbs">
-				<xsl:apply-templates select="$currentPage/pageMedia//mediaItem/Image">
-					<xsl:with-param name="imgGen">true</xsl:with-param>
-					<xsl:with-param name="width">140</xsl:with-param>
-					<xsl:with-param name="compress">100</xsl:with-param>
-					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
-					<xsl:with-param name="getCrop">true</xsl:with-param>
-				</xsl:apply-templates>
-				
-				<xsl:if test="string($hasMediaFolder)!=''">
-					<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" mode="folder">
-						<xsl:with-param name="imgGen">true</xsl:with-param>
-						<xsl:with-param name="width">140</xsl:with-param>
-						<xsl:with-param name="compress">100</xsl:with-param>
-						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
-						<xsl:with-param name="getCrop">true</xsl:with-param>
-					</xsl:apply-templates>
-				</xsl:if>
-				</div>
+				</xsl:choose>				
 				
 			</div>
 		</article>
 	</li>
 
+
+		<xsl:apply-templates select="$currentPage/pageMedia//mediaItem/Image">
+			<xsl:with-param name="imgGen">true</xsl:with-param>
+			<xsl:with-param name="height">540</xsl:with-param>
+			<xsl:with-param name="compress">100</xsl:with-param>
+			<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+			<xsl:with-param name="isSlide">true</xsl:with-param>
+		</xsl:apply-templates>
+	
+		<xsl:apply-templates select="$currentPage/pageMedia//mediaItem/Video">
+			<xsl:with-param name="isSlide">true</xsl:with-param>
+		</xsl:apply-templates>
+		
+		<xsl:if test="string($hasMediaFolder)!=''">
+			<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+				<xsl:with-param name="imgGen">true</xsl:with-param>
+				<xsl:with-param name="height">540</xsl:with-param>
+				<xsl:with-param name="compress">100</xsl:with-param>
+				<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+				<xsl:with-param name="isSlide">true</xsl:with-param>
+			</xsl:apply-templates>
+		</xsl:if>
+
+	
 </xsl:template>
 		
 <!-- :: Helper Templates :: -->
