@@ -24,6 +24,7 @@
 <xsl:template match="/">
 	
 	<ul class="touchcarousel-container">
+		<!--
 	<li class="touchcarousel-item" id="article-slide">
 		<article class="no-img">
 			<header>
@@ -40,7 +41,7 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			<time datetime="{($currentPage/completionDate[not(&empty;)]|$currentPage/@createDate)[last()]}">
+			<time class="meta" datetime="{($currentPage/completionDate[not(&empty;)]|$currentPage/@createDate)[last()]}">
 				<xsl:if test="string($completeDate)!=''">
 					<p><span>Date: </span><xsl:value-of select="$completeDate" /></p>
 				</xsl:if>
@@ -48,7 +49,7 @@
 		
 			<div class="text-holder">
 				<xsl:if test="$currentPage/type[not(&empty;)]">
-				<div class="type">
+				<div class="type meta">
 					<p><span>Type: </span>
 						<xsl:apply-templates select="$currentPage/type" mode="multipicker" />
 					</p>
@@ -66,7 +67,7 @@
 			</div>
 		</article>
 	</li>
-
+-->
 	<xsl:if test="$currentPage/pageMedia//mediaItem[1]/Image[not(&empty;)]">	
 		<xsl:for-each select="$currentPage/pageMedia//mediaItem/Image[not(&empty;)]">
 			<xsl:apply-templates select=".">

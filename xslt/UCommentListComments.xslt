@@ -28,7 +28,7 @@
         <xsl:for-each select="$comments">
 
           <li class="comment alt" id="comment-{@id}">
-            <div class="comment-author vcard">
+            <div class="comment-author vcard meta">
               <img class="photo avatar avatar-32 photo" width="32" height="32" src="{UCommentLibrary:getGravatar(./email, 40, '')}" alt="Gravatar of {./name}"/>
               <p class="fn n">
 				  <xsl:value-of select="./name" />
@@ -47,7 +47,7 @@
               </p>
             </div>
 			<div class="comment-body">
-				<div class="comment-meta">
+				<div class="comment-meta meta">
 					<p>Posted on <xsl:apply-templates select="@created" mode="longDate" /></p>
 				</div>
 				<p>

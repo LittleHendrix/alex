@@ -14,22 +14,19 @@
 
   <xsl:param name="currentPage"/>
 
-  <xsl:variable name="minLevel" select="1"/>
+  <xsl:variable name="minLevel" select="2"/>
 
   <xsl:template match="/">
 
     <xsl:if test="$currentPage/@level &gt; $minLevel">
-      <ul>
-        <xsl:for-each select="$currentPage/ancestor::* [@level &gt; $minLevel and string(umbracoNaviHide) != '1']">
-          <li>
-            <a href="{umbraco.library:NiceUrl(@id)}">
-              <xsl:value-of select="@nodeName"/>
+      <ul class="breadcrumb meta">
+        <li class="cur">
+			<span><xsl:value-of select="$currentPage/@nodeName"/></span>
+        </li>
+		<li>
+			<a href="{&NiceUrl;($currentPage/parent::*/@id)}">
+              Back
             </a>
-          </li>
-        </xsl:for-each>
-        <!-- print currentpage -->
-        <li>
-          <xsl:value-of select="$currentPage/@nodeName"/>
         </li>
       </ul>
     </xsl:if>

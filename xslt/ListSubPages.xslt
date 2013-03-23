@@ -59,7 +59,7 @@
 								<xsl:comment>&nbsp;</xsl:comment>
 							</div>
 							
-							<time datetime="{$currentPage/@createDate}">
+							<time class="meta" datetime="{$currentPage/@createDate}">
 								<p><span>Status: </span> 404... :-(</p>
 							</time>
 							

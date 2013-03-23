@@ -24,6 +24,8 @@
 
 <xsl:template match="Event">	
 	
+	<xsl:variable name="pastEvt" select="umbraco.library:RequestQueryString('pastEvent')" />
+	
 	<xsl:variable name="hasMediaFolder">
 		<xsl:choose>
 			<xsl:when test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
@@ -56,6 +58,9 @@
 		</xsl:choose>
 	</xsl:variable>
 	
+	<xsl:if test="string($pastEvt)='true'">
+		<xsl:text disable-output-escaping="yes"><![CDATA[<li class="touchcarousel-item" id="article-slide">]]></xsl:text>
+	</xsl:if>
 	<article>
 		<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 			<xsl:attribute name="class">no-img</xsl:attribute>
@@ -83,7 +88,7 @@
 			</xsl:if>
 			<xsl:comment>&nbsp;</xsl:comment>
 		</div>
-		<time datetime="{$startDate}">
+		<time class="meta" datetime="{$startDate}">
 			<xsl:choose>
 				<xsl:when test="oneDayEvent[text()='1'] or $startDate = $endDate">
 					<p><xsl:value-of select="$endDate" /></p>
@@ -95,6 +100,12 @@
 			</xsl:choose>
 		</time>
 		<div class="text-holder">
+			<xsl:if test="iCalLocation[not(&empty;)]">
+				<div class="location meta">
+					<p><span>Location: </span><xsl:value-of select="iCalLocation" /></p>
+				</div>
+			</xsl:if>
+			
 			<xsl:choose>
 				<xsl:when test="bodyText[not(&empty;)]">
 					<xsl:apply-templates select="bodyText" mode="WYSIWYG" />
@@ -104,7 +115,8 @@
 				</xsl:otherwise>
 			</xsl:choose>
 			
-			<p id="ical_export">
+			<xsl:if test="string($pastEvt)=''">
+			<p id="ical_export" class="meta">
 				<a>
 					<xsl:attribute name="href">
 						<xsl:value-of select="umbraco.library:NiceUrl($currentPage/@id)" /><xsl:text>?altTemplate=iCalExport</xsl:text>
@@ -112,7 +124,6 @@
 					Add to calendar (iCal)
 				</a>
 			</p>
-			
 			<div class="thumbs">
 			<xsl:apply-templates select="pageMedia//mediaItem/Image">
 				<xsl:with-param name="imgGen">true</xsl:with-param>
@@ -132,10 +143,30 @@
 				</xsl:apply-templates>
 			</xsl:if>
 			</div>
-			
+			</xsl:if>
 		</div>
 	</article>
-
+	<xsl:if test="string($pastEvt)='true'">
+		<xsl:text disable-output-escaping="yes"><![CDATA[</li>]]></xsl:text>
+		
+			<xsl:apply-templates select="pageMedia//mediaItem/Image">
+				<xsl:with-param name="imgGen">true</xsl:with-param>
+				<xsl:with-param name="height">540</xsl:with-param>
+				<xsl:with-param name="compress">100</xsl:with-param>
+				<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+				<xsl:with-param name="isSlide">true</xsl:with-param>				
+			</xsl:apply-templates>
+			
+			<xsl:if test="string($hasMediaFolder)!=''">
+				<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+					<xsl:with-param name="imgGen">true</xsl:with-param>
+					<xsl:with-param name="height">540</xsl:with-param>
+					<xsl:with-param name="compress">100</xsl:with-param>
+					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					<xsl:with-param name="isSlide">true</xsl:with-param>	
+				</xsl:apply-templates>
+			</xsl:if>
+	</xsl:if>
 </xsl:template>
 <!-- :: Helper Templates :: -->
 

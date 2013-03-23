@@ -172,6 +172,9 @@
     
     <xsl:variable name="posterImage">
       <xsl:choose>
+        <xsl:when test="string(youTubeVideoId)!=''">
+			<xsl:text>http://img.youtube.com/vi/</xsl:text><xsl:value-of select="youTubeVideoId" /><xsl:text>/0.jpg</xsl:text>
+        </xsl:when>
         <xsl:when test="string(posterImage)!=''">
           <xsl:value-of select="umbraco.library:GetMedia(posterImage, false)/umbracoFile" />
         </xsl:when>
@@ -215,7 +218,8 @@
 		</xsl:otherwise>
 	</xsl:choose>
 	  
-    <script><![CDATA[window.jwplayer || document.write('<script src="/scripts/jwplayer/jwplayer.js"><\/script>')]]></script>
+    <!--<script><![CDATA[window.jwplayer || document.write('<script src="/scripts/jwplayer/jwplayer.js"><\/script>')]]></script>
+-->
     <script>
     <![CDATA[
 	   jwplayer('player]]><xsl:value-of select="$uniqueId" /><![CDATA[').setup({
@@ -225,12 +229,12 @@
 		   controls: 'true',
 		   width: ']]><xsl:value-of select="$width" /><![CDATA[',
 		   height: ']]><xsl:value-of select="$height" /><![CDATA[',
-		   stretching: 'fill',
-		   autostart: 'false',
-		   fallback: 'true',
-		   mute: 'false',
-		   primary: 'html5',
-		   repeat: 'false'
+  		   stretching: 'fill',
+  		   autostart: 'false',
+  		   fallback: 'true',
+  		   mute: 'false',
+  		   primary: 'html5',
+  		   repeat: 'false'
 	   });
     ]]>
     </script>
