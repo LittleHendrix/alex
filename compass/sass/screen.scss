@@ -159,7 +159,7 @@ ul.breadcrumb {
     padding: 15px 80px 0;
     @include myClearfix;
     .copyrights, .social {
-        width: 50%;
+        width: 432px;
         float: left;
         p {
             margin: 0;
@@ -172,6 +172,10 @@ ul.breadcrumb {
                 padding-left: 17px;
             }
         }
+    }
+    .social {
+        width: auto;
+        margin-left: 23px;
     }
 }
 a.mailto {
@@ -698,7 +702,7 @@ span#re-align {
 .article-overlay, .map-overlay {
     position: absolute;
     top: 0;
-    left: 65px;
+    left: 80px;
     width: 338px;
     height: 100%;
     background-color: $white;
@@ -1127,6 +1131,7 @@ span#re-align {
         .copyrights, .social {
             width: 100%;
             float: none;
+            margin: 0;
             text-align: center;
             p {
                 display: block;

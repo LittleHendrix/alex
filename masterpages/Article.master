@@ -9,7 +9,7 @@
 				&nbsp;
 			</div>
 			<time class="meta" datetime='<umbraco:Item field="updateDate" runat="server" />'>
-				<p><umbraco:Item field="updateDate" runat="server" xslt="umbraco.library:FormatDateTime({0},'ddd, dd MMMM yyyy - H:mmtt')" /></p>
+				<p><umbraco:Macro dateField="[#updateDate]" dateFormat="" Alias="_DateTimeFormatHelper" runat="server"></umbraco:Macro></p>
 			</time>
 			<div class="text-holder">
 				<umbraco:Item field="bodyText" runat="server" />
