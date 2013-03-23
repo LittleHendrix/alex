@@ -21,9 +21,13 @@
 		
 <xsl:template match="/">
 
+	<xsl:variable name="pages" select="'Events Portfolio Blog'" />
+	
 		<nav>
-		<xsl:for-each select="$homeNode/*[not(&hidden;)]">
+			<ul>
+		<xsl:for-each select="$homeNode/*[not(&hidden;) and contains($pages,name())]">
 			<xsl:if test="@id[not(&empty;)]">
+				<li>
 				<a href="{&NiceUrl;(@id)}">
 					<xsl:if test="$currentPage/ancestor-or-self::*[not(&hidden;)]/@id = @id">
 						<!-- we're under the item - you can do your own styling here -->
@@ -31,9 +35,12 @@
 					</xsl:if>
 					<xsl:value-of select="@nodeName"/>
 				</a>
+				</li>
 			</xsl:if>
 		</xsl:for-each>
-			<!--
+			</ul>
+		</nav>
+	<!--
 			<xsl:if test="$currentPage/ancestor-or-self::*[not(&hidden;)]/@id = $workNode/@id and count($workTypes) &gt; 0">
 				<div class="subnav">
 				<xsl:apply-templates select="$workTypes">
@@ -41,9 +48,7 @@
 				</xsl:apply-templates>
 				</div>
 			</xsl:if>
-			-->	
-		</nav>
-
+-->
 </xsl:template>
 		
 <xsl:template match="ProjectType">

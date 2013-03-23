@@ -1,7 +1,7 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UCommentForm.ascx.cs" Inherits="UComment.Usercontrols.AjaxCommentForm" %>
 <%@ Import Namespace="UComment.Library" %>
 
-<div id="commentform" class="post-comment">
+<div id="commentform" class="post-comment meta">
 
 	<div id="gravatar">&nbsp;</div>
 
@@ -16,7 +16,7 @@
 		<label for="email" class="fieldLabel required">
 			<%= XsltLibrary.Dictionary("#Email", "Email")%>
 		</label>
-		<input type="text" id="email" name="email" class="input-text required email" />
+		<input type="email" id="email" name="email" class="input-text required email" />
     </div>
     
     <div class="form-row">
@@ -32,12 +32,12 @@
 
 </div>
 
-<div id="commentLoading" style="display: none">
-    <p><%= XsltLibrary.Dictionary("#CommentLoading", "Posting your comments...")%></p>
+<div id="commentLoading" class="meta" style="display: none">
+    <p><span><%= XsltLibrary.Dictionary("#CommentLoading", "Posting your comments...")%></span></p>
 </div>
 
-<div id="commentPosted" style="display: none">
-    <p><%= XsltLibrary.Dictionary("#CommentPosted", "Your comment has been posted successfully!")%></p>
+<div id="commentPosted" class="meta" style="display: none">
+    <p><span><%= XsltLibrary.Dictionary("#CommentPosted", "Your comment has been posted successfully!")%></span></p>
 </div>
 
 <script type="text/javascript">

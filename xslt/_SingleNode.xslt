@@ -35,27 +35,7 @@
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
-			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
-
-			<div class="img-holder">
-				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
-					<xsl:apply-templates select="pageMedia//mediaItem[1]/Image">
-						<xsl:with-param name="imgGen">true</xsl:with-param>
-						<xsl:with-param name="width">338</xsl:with-param>
-						<xsl:with-param name="compress">100</xsl:with-param>
-						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
-					</xsl:apply-templates>
-				</xsl:if>
-				<xsl:if test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
-					<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
-						<xsl:with-param name="getFirstItem">true</xsl:with-param>
-						<xsl:with-param name="imgGen">true</xsl:with-param>
-						<xsl:with-param name="width">338</xsl:with-param>
-						<xsl:with-param name="compress">100</xsl:with-param>
-						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
-					</xsl:apply-templates>
-				</xsl:if>
-			</div>
+			
 			<xsl:variable name="startDate">
 				<xsl:choose>
 					<xsl:when test="eventStartDate[not(&empty;)]">
@@ -77,7 +57,47 @@
 				</xsl:choose>
 			</xsl:variable>
 			
-			<time datetime="{(eventStartDate[not(&empty;)]|eventEndDate[not(&empty;)]|@createDate)[last()]}">
+			<xsl:variable name="pastEvt">
+				<xsl:choose>
+					<xsl:when test="eventEndDate[not(&empty;)]">
+						<xsl:value-of select="not(umbraco.library:DateGreaterThanOrEqualToday(eventEndDate))" />
+					</xsl:when>
+					<xsl:when test="eventStartDate[not(&empty;)]">
+						<xsl:value-of select="not(umbraco.library:DateGreaterThanOrEqualToday(eventStartDate))" />
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="not(umbraco.library:DateGreaterThanOrEqualToday(@createDate))" />
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+			
+			<header><h1><a>
+				<xsl:attribute name="href"><xsl:value-of select="&NiceUrl;(@id)" />
+				<xsl:if test="string($pastEvt)='true'"><xsl:text>?alttemplate=EventPast&amp;pastEvent=true</xsl:text></xsl:if>
+				</xsl:attribute>
+				<xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
+
+			<div class="img-holder">
+				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Image">
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
+				<xsl:if test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+						<xsl:with-param name="getFirstItem">true</xsl:with-param>
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
+			</div>
+			
+			<time class="meta" datetime="{(eventStartDate[not(&empty;)]|eventEndDate[not(&empty;)]|@createDate)[last()]}">
 				<xsl:choose>
 					<xsl:when test="oneDayEvent[text()='1'] or $startDate = $endDate">
 						<p><xsl:value-of select="$endDate" /></p>
@@ -90,13 +110,23 @@
 			</time>
 			
 			<div class="text-holder">
+				<xsl:if test="iCalLocation[not(&empty;)]">
+					<div class="location meta">
+						<p><span>Location: </span><xsl:value-of select="iCalLocation" /></p>
+					</div>
+				</xsl:if>
+				
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
-					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="WordCount" select="35" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
 			</div>
-			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link evt">Read more</a></div>
+			<div class="sec-link"><a class="perma-link evt">
+				<xsl:attribute name="href"><xsl:value-of select="&NiceUrl;(@id)" />
+				<xsl:if test="string($pastEvt)='true'"><xsl:text>?alttemplate=EventPast&amp;pastEvent=true</xsl:text></xsl:if>
+				</xsl:attribute>
+				Read more</a></div>
 		</article>
 	</li>
 
@@ -159,11 +189,11 @@
 				</xsl:choose>
 			</xsl:variable>
 			
-			<time datetime="{(postDate[not(&empty;)]|@createDate)[last()]}">
+			<time class="meta" datetime="{(postDate[not(&empty;)]|@createDate)[last()]}">
 				<p><span>Post on: </span><xsl:value-of select="$postDate" /></p>
 			</time>
 			
-			<div class="comments">
+			<div class="comments meta">
 				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode(@id)//comment)" />
 				<xsl:choose>
 					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
@@ -177,7 +207,7 @@
 			
 			<div class="text-holder">
 				
-				<div class="tags">
+				<div class="tags meta">
 					<xsl:if test="tags[not(&empty;)]">
 						<p><span>Tags: </span>
 							<xsl:for-each select="TagsLib:getTagsFromNode(@id)/tags/tag">
@@ -199,7 +229,7 @@
 				
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
-					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="WordCount" select="35" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
 			</div>
@@ -250,11 +280,11 @@
 				</xsl:choose>
 			</xsl:variable>
 			
-			<time datetime="{(postDate[not(&empty;)]|@createDate)[last()]}">
+			<time class="meta" datetime="{(postDate[not(&empty;)]|@createDate)[last()]}">
 				<p><span>Post on: </span><xsl:value-of select="$postDate" /></p>
 			</time>
 			
-			<div class="comments">
+			<div class="comments meta">
 				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode(@id)//comment)" />
 				<xsl:choose>
 					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
@@ -269,7 +299,7 @@
 			<div class="text-holder">
 				
 				<xsl:if test="tags[not(&empty;)]">
-					<div class="tags">
+					<div class="tags meta">
 						<p><span>Tags: </span>
 							<xsl:for-each select="TagsLib:getTagsFromNode(@id)/tags/tag">
 								<xsl:variable name="cleanTag" select="Exslt.ExsltStrings:lowercase(.)" />
@@ -282,7 +312,7 @@
 				
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
-					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="WordCount" select="35" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
 			</div>
@@ -327,18 +357,16 @@
 			
 			<xsl:if test="type[not(&empty;)] and contains($thisTypes,$type)">
 			
-	<li class="touchcarousel-item">
+	<li class="touchcarousel-item proj-item">
 		<article>
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
-			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
-
 			<div class="img-holder">
 				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
 					<xsl:apply-templates select="pageMedia//mediaItem[1]/Image">
 						<xsl:with-param name="imgGen">true</xsl:with-param>
-						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="height">540</xsl:with-param>
 						<xsl:with-param name="compress">100</xsl:with-param>
 						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
 					</xsl:apply-templates>
@@ -347,7 +375,7 @@
 					<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
 						<xsl:with-param name="getFirstItem">true</xsl:with-param>
 						<xsl:with-param name="imgGen">true</xsl:with-param>
-						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="height">540</xsl:with-param>
 						<xsl:with-param name="compress">100</xsl:with-param>
 						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
 					</xsl:apply-templates>
@@ -364,46 +392,48 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			<time datetime="{(completionDate[not(&empty;)]|@createDate)[last()]}">
-				<xsl:if test="string($completeDate)!=''">
-					<p><span>Date: </span><xsl:value-of select="$completeDate" /></p>
-				</xsl:if>
-			</time>
 			
 			<div class="text-holder">
 
+			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
+
+			<time class="meta" datetime="{(completionDate[not(&empty;)]|@createDate)[last()]}">
+				<xsl:if test="string($completeDate)!=''">
+					<p><xsl:value-of select="$completeDate" /></p>
+				</xsl:if>
+			</time>
 			<xsl:if test="type[not(&empty;)]">
-				<div class="type">
+				<div class="type meta">
 					<p><span>Type: </span>
 						<xsl:apply-templates select="type" mode="multipicker" />
 					</p>
 				</div>
 			</xsl:if>
-				
+				<!--
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
-					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="WordCount" select="35" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
-			</div>
+-->
+			</div><!--
 			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link proj">Read more</a></div>
+-->
 		</article>
 	</li>
 			</xsl:if>
 		</xsl:when>
 		<xsl:otherwise>
-	<li class="touchcarousel-item">
+	<li class="touchcarousel-item proj-item">
 		<article>
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
-			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
-
 			<div class="img-holder">
 				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
 					<xsl:apply-templates select="pageMedia//mediaItem[1]/Image">
 						<xsl:with-param name="imgGen">true</xsl:with-param>
-						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="height">540</xsl:with-param>
 						<xsl:with-param name="compress">100</xsl:with-param>
 						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
 					</xsl:apply-templates>
@@ -412,13 +442,12 @@
 					<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
 						<xsl:with-param name="getFirstItem">true</xsl:with-param>
 						<xsl:with-param name="imgGen">true</xsl:with-param>
-						<xsl:with-param name="width">338</xsl:with-param>
+						<xsl:with-param name="height">540</xsl:with-param>
 						<xsl:with-param name="compress">100</xsl:with-param>
 						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
 					</xsl:apply-templates>
 				</xsl:if>
 			</div>
-			
 			<xsl:variable name="completeDate">
 				<xsl:choose>
 					<xsl:when test="completionDate[not(&empty;)]">
@@ -429,29 +458,33 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
-			<time datetime="{(completionDate[not(&empty;)]|@createDate)[last()]}">
-				<xsl:if test="string($completeDate)!=''">
-					<p><span>Date: </span><xsl:value-of select="$completeDate" /></p>
-				</xsl:if>
-			</time>
 			
 			<div class="text-holder">
 
+			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
+
+			<time class="meta" datetime="{(completionDate[not(&empty;)]|@createDate)[last()]}">
+				<xsl:if test="string($completeDate)!=''">
+					<p><xsl:value-of select="$completeDate" /></p>
+				</xsl:if>
+			</time>
 			<xsl:if test="type[not(&empty;)]">
-				<div class="type">
+				<div class="type meta">
 					<p><span>Type: </span>
 						<xsl:apply-templates select="type" mode="multipicker" />
 					</p>
 				</div>
 			</xsl:if>
-				
+				<!--
 				<xsl:call-template name="firstWords">
 					<xsl:with-param name="TextData" select="bodyText[not(&empty;)]|metaDescription" />
-					<xsl:with-param name="WordCount" select="50" />
+					<xsl:with-param name="WordCount" select="35" />
 					<xsl:with-param name="Ellipsis" select="'...'" />
 				</xsl:call-template>
-			</div>
+				-->
+			</div><!--
 			<div class="sec-link"><a href="{&NiceUrl;(@id)}" class="perma-link proj">Read more</a></div>
+-->
 		</article>
 	</li>
 		</xsl:otherwise>

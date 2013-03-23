@@ -39,10 +39,8 @@
 	padding-left:5px;
 	border-bottom: solid 1px #CCCCCC;
 }
-.spamTrue
-{
-	background-color: #FFFFE0;
-}
+.spamTrue { background-color: #FFE8E8; }
+.spamFalse { background-color: #E8FFE8; }
 
 #bulkactions
 {
@@ -104,7 +102,8 @@
                     </div>
                     <strong><%# Eval("name") %></strong>
                     <br/>
-                    <a href='<%# Eval("website") %>' target='_blank'><%# Eval("website") %></a> | <a href='mailto:<%# Eval("email") %>'><%# Eval("email") %></a>
+                    <%--<a href='<%# Eval("website") %>' target='_blank'><%# Eval("website") %></a> |--%>
+										<a href='mailto:<%# Eval("email") %>'><%# Eval("email") %></a>
                 </p>
                 <p>
                  <%# Eval("comment").ToString().Replace("\n","<br/>") %>

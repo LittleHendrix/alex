@@ -75,11 +75,11 @@
 				</xsl:choose>
 			</xsl:variable>
 			
-			<time datetime="{($currentPage/postDate[not(&empty;)]|$currentPage/@createDate)[last()]}">
+			<time class="meta" datetime="{($currentPage/postDate[not(&empty;)]|$currentPage/@createDate)[last()]}">
 				<p><span>Post on: </span><xsl:value-of select="$postDate" /></p>
 			</time>
 
-			<div class="comments">
+			<div class="comments meta">
 				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode($currentPage/@id)//comment)" />
 				<xsl:choose>
 					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
@@ -93,7 +93,7 @@
 			
 			<div class="text-holder">
 				<xsl:if test="$currentPage/tags[not(&empty;)]">
-					<div class="tags">
+					<div class="tags meta">
 						<p><span>Tags: </span>
 							<xsl:for-each select="TagsLib:getTagsFromNode($currentPage/@id)/tags/tag">
 								<xsl:variable name="cleanTag" select="Exslt.ExsltStrings:lowercase(.)" />
@@ -110,33 +110,36 @@
 					<xsl:otherwise>
 						<p><xsl:value-of select="umbraco.library:ReplaceLineBreaks($currentPage/metaDescription)" disable-output-escaping="yes" /></p>
 					</xsl:otherwise>
-				</xsl:choose>
-				
-			
-				<div class="thumbs">
-				<xsl:apply-templates select="$currentPage/pageMedia//mediaItem/Image">
-					<xsl:with-param name="imgGen">true</xsl:with-param>
-					<xsl:with-param name="width">140</xsl:with-param>
-					<xsl:with-param name="compress">100</xsl:with-param>
-					<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
-					<xsl:with-param name="getCrop">true</xsl:with-param>
-				</xsl:apply-templates>
-				
-				<xsl:if test="string($hasMediaFolder)!=''">
-					<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" mode="folder">
-						<xsl:with-param name="imgGen">true</xsl:with-param>
-						<xsl:with-param name="width">140</xsl:with-param>
-						<xsl:with-param name="compress">100</xsl:with-param>
-						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
-						<xsl:with-param name="getCrop">true</xsl:with-param>
-					</xsl:apply-templates>
-				</xsl:if>
-				</div>
+				</xsl:choose>				
 				
 			</div>
 		</article>
 	</li>
 
+
+		<xsl:apply-templates select="$currentPage/pageMedia//mediaItem/Image">
+			<xsl:with-param name="imgGen">true</xsl:with-param>
+			<xsl:with-param name="height">540</xsl:with-param>
+			<xsl:with-param name="compress">100</xsl:with-param>
+			<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+			<xsl:with-param name="isSlide">true</xsl:with-param>
+		</xsl:apply-templates>
+	
+		<xsl:apply-templates select="$currentPage/pageMedia//mediaItem/Video">
+			<xsl:with-param name="isSlide">true</xsl:with-param>
+		</xsl:apply-templates>
+		
+		<xsl:if test="string($hasMediaFolder)!=''">
+			<xsl:apply-templates select="$currentPage/pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+				<xsl:with-param name="imgGen">true</xsl:with-param>
+				<xsl:with-param name="height">540</xsl:with-param>
+				<xsl:with-param name="compress">100</xsl:with-param>
+				<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+				<xsl:with-param name="isSlide">true</xsl:with-param>
+			</xsl:apply-templates>
+		</xsl:if>
+
+	
 </xsl:template>
 		
 <!-- :: Helper Templates :: -->

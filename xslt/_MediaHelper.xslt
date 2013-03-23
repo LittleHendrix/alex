@@ -165,12 +165,16 @@
   <!-- Accepting param from DAMP Picker -->
   <!-- if passing param from Media Picker, call "umbraco.library:GetMedia()" first --> 
   <xsl:template match="Video">
-    <xsl:param name="uniqueId" />
-    <xsl:param name="width" />
-    <xsl:param name="height" />
+    <xsl:param name="uniqueId" select="@id" />
+    <xsl:param name="width" select="number(640)" />
+    <xsl:param name="height" select="number(360)" />
+	<xsl:param name="isSlide" />
     
     <xsl:variable name="posterImage">
       <xsl:choose>
+        <xsl:when test="string(youTubeVideoId)!=''">
+			<xsl:text>http://img.youtube.com/vi/</xsl:text><xsl:value-of select="youTubeVideoId" /><xsl:text>/0.jpg</xsl:text>
+        </xsl:when>
         <xsl:when test="string(posterImage)!=''">
           <xsl:value-of select="umbraco.library:GetMedia(posterImage, false)/umbracoFile" />
         </xsl:when>
@@ -190,51 +194,47 @@
 		  	</xsl:otherwise>
 		</xsl:choose>
 	</xsl:variable>
+	
+	<xsl:variable name="topGap" select="(540 - $height) div 2 " />
 	  
-    <div id="player{$uniqueId}" class="video-loader">
-      <img>
-        <xsl:attribute name = "src"><xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="$posterImage" /><xsl:text>&amp;compression=80&amp;constrain=true</xsl:text></xsl:attribute>
-        <xsl:attribute name = "alt"><xsl:value-of select="@nodeName" /></xsl:attribute>     
-      </img>
-    </div>
+	<xsl:choose>
+		<xsl:when test="string($isSlide)!=''">
+			<li class="touchcarousel-item video-item" style="padding-top: {$topGap}px;">
+			<div id="player{$uniqueId}" class="video-loader">
+			  <img>
+				<xsl:attribute name = "src"><xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="$posterImage" /><xsl:text>&amp;compression=80&amp;constrain=true</xsl:text></xsl:attribute>
+				<xsl:attribute name = "alt"><xsl:value-of select="@nodeName" /></xsl:attribute>     
+			  </img>
+			</div>
+			</li>
+		</xsl:when>
+		<xsl:otherwise>
+			<div id="player{$uniqueId}" class="video-loader">
+			  <img>
+				<xsl:attribute name = "src"><xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="$posterImage" /><xsl:text>&amp;compression=80&amp;constrain=true</xsl:text></xsl:attribute>
+				<xsl:attribute name = "alt"><xsl:value-of select="@nodeName" /></xsl:attribute>     
+			  </img>
+			</div>
+		</xsl:otherwise>
+	</xsl:choose>
 	  
-	<xsl:variable name="vWidth">
-		<xsl:choose>
-			<xsl:when test="string($width)!=''">
-				<xsl:value-of select="$width" />
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:value-of select="number(560)" />
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:variable>
-	<xsl:variable name="vHeight">
-		<xsl:choose>
-			<xsl:when test="string($height)!=''">
-				<xsl:value-of select="$height" />
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:value-of select="number(315)" />
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:variable>
-	  
-    <script><![CDATA[window.jwplayer || document.write('<script src="/scripts/jwplayer/jwplayer.js"><\/script>')]]></script>
+    <!--<script><![CDATA[window.jwplayer || document.write('<script src="/scripts/jwplayer/jwplayer.js"><\/script>')]]></script>
+-->
     <script>
     <![CDATA[
 	   jwplayer('player]]><xsl:value-of select="$uniqueId" /><![CDATA[').setup({
 		   file: ']]><xsl:choose><xsl:when test="string(youTubeVideoId)!=''"><xsl:text>http://www.youtube.com/watch?v=</xsl:text><xsl:value-of select="$videoSrc" /></xsl:when><xsl:otherwise><xsl:value-of select="$videoSrc" /></xsl:otherwise></xsl:choose><![CDATA[']]><xsl:if test="string($posterImage)!=''"><![CDATA[, 
 		   image: ']]><xsl:value-of select="$posterImage" /><![CDATA[']]></xsl:if><![CDATA[,
-		   title: ']]><xsl:value-of select="@nodeName" /><![CDATA[',
+		   title: '',
 		   controls: 'true',
-		   width: ']]><xsl:value-of select="$vWidth" /><![CDATA[',
-		   height: ']]><xsl:value-of select="$vHeight" /><![CDATA[',
-		   stretching: 'fill',
-		   autostart: 'false',
-		   fallback: 'true',
-		   mute: 'false',
-		   primary: 'html5',
-		   repeat: 'false'
+		   width: ']]><xsl:value-of select="$width" /><![CDATA[',
+		   height: ']]><xsl:value-of select="$height" /><![CDATA[',
+  		   stretching: 'fill',
+  		   autostart: 'false',
+  		   fallback: 'true',
+  		   mute: 'false',
+  		   primary: 'html5',
+  		   repeat: 'false'
 	   });
     ]]>
     </script>

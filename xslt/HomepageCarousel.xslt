@@ -68,7 +68,33 @@
 										<p><xsl:value-of select="umbraco.library:ReplaceLineBreaks($media/slideContent)" disable-output-escaping="yes" /></p>
 									</xsl:if>
 									<xsl:if test="$media/slideLink//url[not(&empty;)]">
-										<a href="{$media/slideLink//url}" data-title="{$media/slideLink//link-title}" class="peek">
+										<xsl:variable name="linkType">
+											<xsl:choose>
+												<xsl:when test="$media/slideLink//node-id[not(&empty;)]">
+													<xsl:variable name="node" select="umbraco.library:GetXmlNodeById($media/slideLink//node-id)" />
+													<xsl:choose>
+														<xsl:when test="$node[not(error)]">
+															<xsl:variable name="nodeType" select="local-name($node)" />
+															<xsl:choose>
+																<xsl:when test="string($nodeType)='Project'">
+																	<xsl:value-of select="'proj'" />
+																</xsl:when>
+																<xsl:when test="string($nodeType)='Event'">
+																	<xsl:value-of select="'evt'" />
+																</xsl:when>
+															</xsl:choose>
+														</xsl:when>
+														<xsl:otherwise>
+															<xsl:value-of select="''" />
+														</xsl:otherwise>
+													</xsl:choose>
+												</xsl:when>
+												<xsl:otherwise>
+													<xsl:value-of select="''" />
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<a href="{$media/slideLink//url}" data-title="{$media/slideLink//link-title}" class="peek {$linkType}">
 											<xsl:if test="string($media/slideLink//new-window)!='False'"><xsl:attribute name="target">_blank</xsl:attribute></xsl:if>
 											View details
 										</a>
