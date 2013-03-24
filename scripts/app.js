@@ -15,6 +15,7 @@ $(document).ready(function(){
         // remove the iCal link on event page as it's not supported on iOS devices
         var iCalLnk = $('#ical_export');
         iCalLnk.remove();
+        
     }
     
 });

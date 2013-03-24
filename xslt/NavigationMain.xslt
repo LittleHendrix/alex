@@ -23,7 +23,7 @@
 
 	<xsl:variable name="pages" select="'Events Portfolio Blog'" />
 	
-		<nav>
+		<nav id="navMain">
 			<ul>
 		<xsl:for-each select="$homeNode/*[not(&hidden;) and contains($pages,name())]">
 			<xsl:if test="@id[not(&empty;)]">

@@ -569,7 +569,7 @@ a.perma-link, a.peek {
                 }
             }
             .img-holder {
-                @include imgRep("/css/images/placeholder-logo.png",338px,190px,50%,50%);
+                @include imgRep("/css/images/placeholder-logo.png",100%,190px,50%,50%);
                 @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
                 background-color: lighten($ink,55%);
                 text-indent: 0;
@@ -717,7 +717,6 @@ a.perma-link, a.peek {
         }
         */
         .img-holder {
-            width: 100%;
             height: 159px;
         }
         .text-holder {
@@ -1094,9 +1093,9 @@ span#re-align {
         margin: 0;
         float: none;
         width: 100%;
+        background-color: rgba($white,.95);
         position: fixed;
         top: 0;
-        background-color: rgba($white,.95);
         @include box-shadow(rgba($ink,.25) 0px 1px 11px -2px);
         z-index: 1000;
         ul {
@@ -1272,6 +1271,9 @@ span#re-align {
             p {
                 display: block;
                 margin-bottom: 17px;
+                &.footer-links {
+                    padding: 0;
+                }
             }
         }
     }
