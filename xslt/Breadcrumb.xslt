@@ -21,7 +21,7 @@
     <xsl:if test="$currentPage/@level &gt; $minLevel">
       <ul class="breadcrumb meta">
         <li class="cur">
-			<span><xsl:value-of select="$currentPage/@nodeName"/></span>
+			<span><xsl:value-of select="umbraco.library:TruncateString($currentPage/@nodeName,20,'...')"/></span>
         </li>
 		<li>
 			<a href="{&NiceUrl;($currentPage/parent::*/@id)}">
