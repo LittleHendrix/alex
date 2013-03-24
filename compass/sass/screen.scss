@@ -108,7 +108,7 @@ header#site-header {
     @include image-2x("/css/images/alexallan-logo-x2.gif",231px,98px);
 }
 nav {
-    margin-top: 43px;
+    margin: 43px 49px 0 0;
     float: left;
     @include myClearfix;
     ul {
@@ -138,9 +138,8 @@ nav {
     }
 }
 ul.breadcrumb {
-    margin: 43px 0 0 49px;
+    margin-top: 43px;
     padding-top: 54px;
-    float: left;
     li {
         @include inlineb;
         font-size: 16px;
@@ -155,11 +154,31 @@ ul.breadcrumb {
         }
     }
 }
+.list-toggler {
+    position: absolute;
+    right: 23px;
+    top: 96px;
+    width: 48px;
+    a.toggler {
+        @include imgRep("/css/images/toggler.png",20px,22px,0,0);
+        float: left;
+        &:hover, &:focus, &.active {
+            background-position: 0 -22px;
+        }
+        &.tile {
+            margin-left: 8px;
+            background-position: -20px 0;
+            &:hover, &:focus, &.active {
+                background-position: -20px -22px;
+            }
+        }
+    }
+}
 #site-footer {
     padding: 15px 80px 0;
     @include myClearfix;
     .copyrights, .social {
-        width: 50%;
+        width: 432px;
         float: left;
         p {
             margin: 0;
@@ -172,6 +191,10 @@ ul.breadcrumb {
                 padding-left: 17px;
             }
         }
+    }
+    .social {
+        width: auto;
+        margin-left: 23px;
     }
 }
 a.mailto {
@@ -225,7 +248,7 @@ a.perma-link, a.peek {
  *
 \******************************************************/
 
-#homepage-carousel, #singleNode-carousel {
+#homepage-carousel, #content-carousel, #singleNode-carousel {
     .touchcarousel-item {
         @include imgRep("/css/images/placeholder-logo.png",auto,540px,50%,50%);
         @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
@@ -461,6 +484,37 @@ a.perma-link, a.peek {
 #content-carousel, #singleNode-carousel {
     .touchcarousel-item {
         width: 338px;
+        &.tile {
+            background: none;
+            background-color: transparent;
+            width: 355px;
+            .tile-wrap {
+                @include imgRep("/css/images/placeholder-logo.png",170px,170px,50%,50%);
+                @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
+                background-color: lighten($ink,55%);
+                text-indent: 0;
+                width: 170px;
+                height: 170px;
+                margin-right: 15px;
+                margin-bottom: 15px;
+                float: left;
+                overflow: hidden;
+                &:nth-child(even) {
+                    margin-right: 0;
+                }
+                &:nth-child(3n+3) {
+                    margin-bottom: 0;
+                }
+            }
+            a {
+                padding: 0;
+                @include noborder;
+            }
+            img {
+                width: 100%;
+                height: 170px;
+            }
+        }
         article {
             width: 100%;
             height: 100%;
@@ -493,7 +547,7 @@ a.perma-link, a.peek {
                 }
             }
             .img-holder {
-                @include imgRep("/css/images/placeholder-logo.png",100%,190px,50%,50%);
+                @include imgRep("/css/images/placeholder-logo.png",338px,190px,50%,50%);
                 @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
                 background-color: lighten($ink,55%);
                 text-indent: 0;
@@ -582,9 +636,12 @@ a.perma-link, a.peek {
         &.proj-item {
             article {
                 padding: 0;
+                background-color: transparent;
                 .img-holder {
                     position: relative;
                     height: 100%;
+                    background: none;
+                    background-color: transparent;
                     img {
                         width: auto;
                         height: 100%;
@@ -638,6 +695,7 @@ a.perma-link, a.peek {
         }
         */
         .img-holder {
+            width: 100%;
             height: 159px;
         }
         .text-holder {
@@ -698,7 +756,7 @@ span#re-align {
 .article-overlay, .map-overlay {
     position: absolute;
     top: 0;
-    left: 65px;
+    left: 80px;
     width: 338px;
     height: 100%;
     background-color: $white;
@@ -810,6 +868,9 @@ span#re-align {
         top: 0;
         .comments-wrap {
             @include box-shadow(rgba($ink,.7) 0px 0px 17px -2px);
+            div.close-bar {
+                @include box-shadow(rgba($ink,.7) 0px 0px 17px -2px);
+            }
         }
     }
     .comments-wrap {
@@ -832,9 +893,9 @@ span#re-align {
             left: 0;
             text-align: center;
             background-color: $blood;
-            @include background(linear-gradient(lighten(desaturate($blood,10%),20%) $blood));
+            @include background(linear-gradient($white, lighten(desaturate($blood,10%),10%) 2%, $blood));
             border-top: 1px solid $blood;
-            @include box-shadow(rgba($ink,.7) 0px 0px 17px -2px);
+            @include box-shadow(none);
             span#close {
                 display: block;
                 font-size: 23px;
@@ -962,8 +1023,15 @@ span#re-align {
 }
 
 // Custom responsive tweaks
-@media only screen and (min-width: 768px) {
-    
+@media only screen and (max-width: 768px) {
+    #site-footer {
+        .copyrights {
+            width: 338px;
+        }
+        .social {
+            margin-left: 15px;
+        }
+    }
 }
 @media only screen and (max-device-width: 767px) {
     #homepage-carousel {
@@ -993,6 +1061,7 @@ span#re-align {
         width: 100%;
         float: none;
         text-align: center;
+        padding-top: 64px;
         padding-left: 0;
         margin: 0;
         #logo {
@@ -1000,9 +1069,14 @@ span#re-align {
         }
     }
     nav {
-        margin: 9px 0 0 0;
+        margin: 0;
         float: none;
         width: 100%;
+        position: fixed;
+        top: 0;
+        background-color: rgba($white,.95);
+        @include box-shadow(rgba($ink,.25) 0px 1px 11px -2px);
+        z-index: 1000;
         ul {
             @include myClearfix;
             li {
@@ -1022,9 +1096,26 @@ span#re-align {
             @include noborder;
             &.selected {
                 font-weight: bold;
+                background-color: $white;
                 &:after {
                     content: "*";
                 }
+            }
+        }
+    }
+    .list-toggler {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+        background-color: rgba($white,.95);
+        a.toggler {
+            @include inlineb;
+            float: none;
+            &.tile {
+                margin-left: 50%;
             }
         }
     }
@@ -1065,6 +1156,33 @@ span#re-align {
                             height: auto;
                         }
                     }
+                }
+            }
+            &.tile {
+                width: 100%;
+                margin: 0;
+                @include box-shadow(none);
+                .tile-wrap {
+                    width: 48%;
+                    height: 48%;
+                    margin-right: 4%;
+                    margin-bottom: 4%;
+                    float: left;
+                    overflow: hidden;
+                    &:nth-child(even) {
+                        margin-right: 0;
+                    }
+                    &:nth-child(3n+3) {
+                        margin-bottom: 4%;
+                    }
+                }
+                a {
+                    padding: 0;
+                    @include noborder;
+                }
+                img {
+                    width: 100%;
+                    height: auto;
                 }
             }
         }
@@ -1127,6 +1245,7 @@ span#re-align {
         .copyrights, .social {
             width: 100%;
             float: none;
+            margin: 0;
             text-align: center;
             p {
                 display: block;
@@ -1220,6 +1339,28 @@ span#re-align {
             }
             &:nth-child(3n+3) {
                 margin-right: 0;
+            }
+        }
+    }
+    #content-carousel {
+        .touchcarousel-item {
+            &.tile {
+                width: 100%;
+                margin: 0;
+                @include box-shadow(none);
+                .tile-wrap {
+                    width: 32%;
+                    height: 32%;
+                    margin-right: 2%;
+                    margin-bottom: 2%;
+                    &:nth-child(even) {
+                        margin-right: 2%;
+                    }
+                    &:nth-child(3n+3) {
+                        margin-right: 0;
+                        margin-bottom: 2%;
+                    }
+                }
             }
         }
     }

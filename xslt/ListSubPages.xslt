@@ -22,6 +22,7 @@
 <xsl:variable name="nodeTypeId" select="/macro/nodeType" />
 <xsl:variable name="tag" select="umbraco.library:RequestQueryString('tag')" />
 <xsl:variable name="type" select="umbraco.library:RequestQueryString('type')" />
+<xsl:variable name="tileList" select="umbraco.library:RequestQueryString('display')" />
 		
 <xsl:variable name="nodeTypeAlias" select="local-name($currentPage/*[@isDoc and @nodeType = $nodeTypeId])" />
 		
@@ -45,10 +46,21 @@
 					</xsl:apply-templates>
 				</xsl:when>
 				<xsl:when test="$nodeTypeAlias = 'Project'">
-					<xsl:apply-templates select="$currentPage/Project[not(&hidden;)]">
-						<xsl:sort select="concat(completionDate,@createDate)" order="descending" />
-						<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
-					</xsl:apply-templates>
+					<xsl:choose>
+						<xsl:when test="string($tileList)='tile'">
+							<xsl:apply-templates select="$currentPage/Project[not(&hidden;)]">
+								<xsl:sort select="concat(completionDate,@createDate)" order="descending" />
+								<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
+								<xsl:with-param name="display">tile</xsl:with-param>
+							</xsl:apply-templates>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:apply-templates select="$currentPage/Project[not(&hidden;)]">
+								<xsl:sort select="concat(completionDate,@createDate)" order="descending" />
+								<xsl:with-param name="type"><xsl:value-of select="$type" /></xsl:with-param>
+							</xsl:apply-templates>
+						</xsl:otherwise>
+					</xsl:choose>
 				</xsl:when>
 				<xsl:otherwise>
 					<li class="touchcarousel-item">

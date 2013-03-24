@@ -109,7 +109,7 @@
 							<xsl:attribute name="height"><xsl:value-of select="umbracoHeight" /></xsl:attribute>
 						</xsl:when>
 						<xsl:otherwise>
-							<xsl:variable name="newWidth" select="umbracoWidth div umbracoHeight * 540" />
+							<xsl:variable name="newWidth" select="floor(umbracoWidth div umbracoHeight * 540)" />
 							<xsl:attribute name="width"><xsl:value-of select="$newWidth" /></xsl:attribute>
 							<xsl:attribute name="height"><xsl:value-of select="number(540)" /></xsl:attribute>
 						</xsl:otherwise>

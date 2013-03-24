@@ -75,7 +75,7 @@
 				<xsl:attribute name="href"><xsl:value-of select="&NiceUrl;(@id)" />
 				<xsl:if test="string($pastEvt)='true'"><xsl:text>?alttemplate=EventPast&amp;pastEvent=true</xsl:text></xsl:if>
 				</xsl:attribute>
-				<xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
+				<xsl:value-of select="umbraco.library:TruncateString((pageHeading[not(&empty;)]|@nodeName)[last()],24,'...')" /></a></h1></header>
 
 			<div class="img-holder">
 				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
@@ -156,7 +156,7 @@
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
-			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
+			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="umbraco.library:TruncateString((pageHeading[not(&empty;)]|@nodeName)[last()],24,'...')" /></a></h1></header>
 
 			<div class="img-holder">
 				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
@@ -247,7 +247,7 @@
 			<xsl:if test="string(pageMedia//mediaItem[1]/Image)='' and string($hasMediaFolder)=''">
 				<xsl:attribute name="class">no-img</xsl:attribute>
 			</xsl:if>
-			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
+			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="umbraco.library:TruncateString((pageHeading[not(&empty;)]|@nodeName)[last()],24,'...')" /></a></h1></header>
 
 			<div class="img-holder">
 				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
@@ -327,6 +327,7 @@
 		
 <xsl:template match="Project">
 	<xsl:param name="type" />
+	<xsl:param name="display" />
 	
 	<xsl:variable name="hasMediaFolder">
 		<xsl:choose>
@@ -339,6 +340,46 @@
 		</xsl:choose>
 	</xsl:variable>
 	
+	<xsl:choose>
+		<xsl:when test="string($display)!=''">
+			<xsl:variable name="mod" select="number(6)" />
+			
+			<xsl:if test="position() = 1 or position() mod $mod = 1">
+			<xsl:text disable-output-escaping="yes"><![CDATA[<li class="touchcarousel-item tile">]]></xsl:text>
+			</xsl:if>
+			
+				<div class="tile-wrap">
+					<a href="{&NiceUrl;(@id)}" data-title="{@nodeName}">
+				<xsl:if test="pageMedia//mediaItem[1]/Image[not(&empty;)]">
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Image">
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">170</xsl:with-param>
+						<xsl:with-param name="height">170</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+						<xsl:with-param name="getCrop">false</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
+				<xsl:if test="pageMedia//mediaItem[1]/Folder/@id[not(&empty;)]">
+					<xsl:apply-templates select="pageMedia//mediaItem[1]/Folder/@id" mode="folder">
+						<xsl:with-param name="getFirstItem">true</xsl:with-param>
+						<xsl:with-param name="imgGen">true</xsl:with-param>
+						<xsl:with-param name="width">170</xsl:with-param>
+						<xsl:with-param name="height">170</xsl:with-param>
+						<xsl:with-param name="compress">100</xsl:with-param>
+						<xsl:with-param name="allowUmbMeasure">false</xsl:with-param>
+						<xsl:with-param name="getCrop">false</xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:if>
+					<xsl:comment>&nbsp;</xsl:comment>
+					</a>
+				</div>
+			<xsl:if test="position() = $mod or position() mod $mod = 0">
+			<xsl:text disable-output-escaping="yes"><![CDATA[</li>]]></xsl:text>
+			</xsl:if>
+		</xsl:when>
+		<xsl:otherwise><!-- list display -->
+			
 	<xsl:choose>
 		<xsl:when test="string($type)!=''">
 			
@@ -395,7 +436,7 @@
 			
 			<div class="text-holder">
 
-			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
+			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="umbraco.library:TruncateString((pageHeading[not(&empty;)]|@nodeName)[last()],24,'...')" /></a></h1></header>
 
 			<time class="meta" datetime="{(completionDate[not(&empty;)]|@createDate)[last()]}">
 				<xsl:if test="string($completeDate)!=''">
@@ -461,7 +502,7 @@
 			
 			<div class="text-holder">
 
-			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="pageHeading[not(&empty;)]|metaTitle[not(&empty;)]|@nodeName " /></a></h1></header>
+			<header><h1><a href="{&NiceUrl;(@id)}"><xsl:value-of select="umbraco.library:TruncateString((pageHeading[not(&empty;)]|@nodeName)[last()],24,'...')" /></a></h1></header>
 
 			<time class="meta" datetime="{(completionDate[not(&empty;)]|@createDate)[last()]}">
 				<xsl:if test="string($completeDate)!=''">
@@ -489,7 +530,9 @@
 	</li>
 		</xsl:otherwise>
 	</xsl:choose>
-	
+			
+		</xsl:otherwise>
+	</xsl:choose>
 
 </xsl:template>
 
