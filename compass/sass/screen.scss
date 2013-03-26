@@ -509,6 +509,28 @@ a.perma-link, a.peek {
             a {
                 padding: 0;
                 @include noborder;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: 7px solid $white;
+                    border-color: rgba($white,.9);
+                    @include opacity(0);
+                }
+                &:hover, &:focus, &:active {
+                    &:after {
+                        @include opacity(.75);
+                    }
+                }
+                &:active {
+                    &:after {
+                        border-color: lighten(desaturate($blood,20%),5%);
+                        border-color: rgba($blood,.9);
+                    }
+                }
             }
             img {
                 width: 100%;
@@ -547,7 +569,7 @@ a.perma-link, a.peek {
                 }
             }
             .img-holder {
-                @include imgRep("/css/images/placeholder-logo.png",338px,190px,50%,50%);
+                @include imgRep("/css/images/placeholder-logo.png",100%,190px,50%,50%);
                 @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
                 background-color: lighten($ink,55%);
                 text-indent: 0;
@@ -598,7 +620,7 @@ a.perma-link, a.peek {
                 top: 128px;
                 display: block;
                 z-index: 5;
-                p {
+                p, div.p {
                     @include inlineb;
                     color: $white;
                     text-shadow: 0px 1px 3px rgba($ink,0.9);
@@ -617,6 +639,9 @@ a.perma-link, a.peek {
                         &:active {
                             background-color: transparent;
                         }
+                    }
+                    .fb-comments-count {
+                        @include inlineb;
                     }
                 }
             }
@@ -695,7 +720,6 @@ a.perma-link, a.peek {
         }
         */
         .img-holder {
-            width: 100%;
             height: 159px;
         }
         .text-holder {
@@ -880,7 +904,7 @@ span#re-align {
         text-align: left;
         background-color: $white;
         .comments-scroll {
-            padding: 44px 23px 23px;
+            padding: 71px 23px 23px;
             height: 100%;
             overflow-y: auto;
             overflow-x: hidden;
@@ -1072,9 +1096,9 @@ span#re-align {
         margin: 0;
         float: none;
         width: 100%;
+        background-color: rgba($white,.95);
         position: fixed;
         top: 0;
-        background-color: rgba($white,.95);
         @include box-shadow(rgba($ink,.25) 0px 1px 11px -2px);
         z-index: 1000;
         ul {
@@ -1250,6 +1274,9 @@ span#re-align {
             p {
                 display: block;
                 margin-bottom: 17px;
+                &.footer-links {
+                    padding: 0;
+                }
             }
         }
     }
