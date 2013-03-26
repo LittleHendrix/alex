@@ -9,15 +9,9 @@
 			
 			<div class="comments-wrap">
 				<div class="comments-scroll">
-				<section class="comment-list-block">
-					<umbraco:Macro Alias="UCommentListComments" runat="server"></umbraco:Macro>
-				</section>
-				<section class="comment-form-block">
-					<h3>Leave a comment</h3>
-				<form runat="server">
-					<umbraco:Macro RegisterScripts="1" Alias="UCommentForm" runat="server"></umbraco:Macro>
-				</form>
-				</section>
+					
+					<div class="fb-comments" data-href='<umbraco:Item field="pageID" runat="server" xslt="concat('http://',umbraco.library:RequestServerVariables('HTTP_HOST'),umbraco.library:NiceUrl({0}))" />' data-width="702" data-num-posts="10"></div>
+					
 				</div>
 				<div class="close-bar meta"><span id="close">Close<span></div>
 				
@@ -25,10 +19,6 @@
 		</div><!--/blog-comments-->
 	</div>
 	
-	<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
-	<script>jQuery.validate || document.write('<script src="/scripts/UComment/jquery.validate.min.js"><\/script>')</script>
-	<script src="/scripts/UComment/jquery.form.js"></script>
-	<script src="/scripts/UComment/jquery.metadata.js"></script>
 	<script>
 	$(document).ready(function() {
 		
