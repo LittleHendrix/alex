@@ -194,6 +194,8 @@
 			</time>
 			
 			<div class="comments meta">
+				<div class="p"><a href="{&NiceUrl;(@id)}?blog-comments=show" class="comment-handle"><div class="fb-comments-count" data-href="{concat('http://',umbraco.library:RequestServerVariables('HTTP_HOST'),&NiceUrl;(@id))}">0</div> comments</a></div>
+				<!--
 				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode(@id)//comment)" />
 				<xsl:choose>
 					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
@@ -203,6 +205,7 @@
 						<p><a href="{&NiceUrl;(@id)}?blog-comments=show"><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></a></p>
 					</xsl:otherwise>
 				</xsl:choose>
+				-->
 			</div>
 			
 			<div class="text-holder">
@@ -285,6 +288,8 @@
 			</time>
 			
 			<div class="comments meta">
+				<div class="p"><a href="{&NiceUrl;(@id)}?blog-comments=show" class="comment-handle"><div class="fb-comments-count" data-href="{concat('http://',umbraco.library:RequestServerVariables('HTTP_HOST'),&NiceUrl;(@id))}">0</div> comments</a></div>
+				<!--
 				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode(@id)//comment)" />
 				<xsl:choose>
 					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
@@ -294,6 +299,7 @@
 						<p><a href="{&NiceUrl;(@id)}?blog-comments=show"><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></a></p>
 					</xsl:otherwise>
 				</xsl:choose>
+				-->
 			</div>
 			
 			<div class="text-holder">

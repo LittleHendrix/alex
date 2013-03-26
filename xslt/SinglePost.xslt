@@ -10,8 +10,9 @@
 	xmlns:msxsl="urn:schemas-microsoft-com:xslt"
 	xmlns:UCommentLibrary="urn:UCommentLibrary"
 	xmlns:TagsLib="urn:TagsLib"
+	xmlns:fb="http://www.facebook.com/2008/fbml"
 	xmlns:umbraco.library="urn:umbraco.library" xmlns:Exslt.ExsltCommon="urn:Exslt.ExsltCommon" xmlns:Exslt.ExsltDatesAndTimes="urn:Exslt.ExsltDatesAndTimes" xmlns:Exslt.ExsltMath="urn:Exslt.ExsltMath" xmlns:Exslt.ExsltRegularExpressions="urn:Exslt.ExsltRegularExpressions" xmlns:Exslt.ExsltStrings="urn:Exslt.ExsltStrings" xmlns:Exslt.ExsltSets="urn:Exslt.ExsltSets" xmlns:uTube.XSLT="urn:uTube.XSLT" xmlns:google.maps="urn:google.maps" 
-	exclude-result-prefixes="msxml umbraco.library UCommentLibrary TagsLib Exslt.ExsltCommon Exslt.ExsltDatesAndTimes Exslt.ExsltMath Exslt.ExsltRegularExpressions Exslt.ExsltStrings Exslt.ExsltSets uTube.XSLT google.maps ">
+	exclude-result-prefixes="msxml fb umbraco.library UCommentLibrary TagsLib Exslt.ExsltCommon Exslt.ExsltDatesAndTimes Exslt.ExsltMath Exslt.ExsltRegularExpressions Exslt.ExsltStrings Exslt.ExsltSets uTube.XSLT google.maps ">
 
 
 <xsl:output method="html" omit-xml-declaration="yes"/>
@@ -80,6 +81,8 @@
 			</time>
 
 			<div class="comments meta">
+				<div class="p"><a href="?blog-comments=show" class="comment-handle"><div class="fb-comments-count" data-href="{concat('http://',umbraco.library:RequestServerVariables('HTTP_HOST'),&NiceUrl;($currentPage/@id))}">0</div> comments</a></div>
+				<!--
 				<xsl:variable name="numOfComments" select="count(UCommentLibrary:GetCommentsForNode($currentPage/@id)//comment)" />
 				<xsl:choose>
 					<xsl:when test="string($numOfComments) = '' or string($numOfComments) = 'NaN' or number($numOfComments) &lt;= 0">
@@ -89,6 +92,7 @@
 						<p><a href="?blog-comments=show" class="comment-handle"><span><xsl:value-of select="$numOfComments" /></span> comment<xsl:if test="number($numOfComments) &gt; 1"><xsl:text>s</xsl:text></xsl:if></a></p>
 					</xsl:otherwise>
 				</xsl:choose>
+				-->
 			</div>
 			
 			<div class="text-holder">
