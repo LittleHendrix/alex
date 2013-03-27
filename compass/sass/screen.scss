@@ -254,11 +254,14 @@ a.perma-link, a.peek {
         @include image-2x("/css/images/placeholder-logo-2x.png",32px,100px);
         background-color: lighten($ink,55%);
         text-indent: 0;
-        &.video-item {
+        &.video-item, &.video-item .embedder {
             @include imgRep("/css/images/placeholder-logo-inverted.png",auto,540px,50%,50%);
             @include image-2x("/css/images/placeholder-logo-inverted-2x.png",32px,100px);
             background-color: $ink;
             text-indent: 0;
+            .embedder {
+                height: auto;
+            }
         }
     }
 }

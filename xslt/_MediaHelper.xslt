@@ -172,9 +172,6 @@
     
     <xsl:variable name="posterImage">
       <xsl:choose>
-        <xsl:when test="string(youTubeVideoId)!=''">
-			<xsl:text>http://img.youtube.com/vi/</xsl:text><xsl:value-of select="youTubeVideoId" /><xsl:text>/0.jpg</xsl:text>
-        </xsl:when>
         <xsl:when test="string(posterImage)!=''">
           <xsl:value-of select="umbraco.library:GetMedia(posterImage, false)/umbracoFile" />
         </xsl:when>
@@ -184,60 +181,87 @@
       </xsl:choose>
     </xsl:variable>
 	  
-	<xsl:variable name="videoSrc">
+	<xsl:variable name="videoSrc" select="umbracoFile" />
+	<xsl:variable name="newHeight">
 		<xsl:choose>
-			<xsl:when test="string(youTubeVideoId)!=''">
-				<xsl:value-of select="youTubeVideoId" />
+			<xsl:when test="thirdPartyEmbed[not(&empty;)] and embedHeight[not(&empty;)] and number(embedHeight) &lt; 540">
+				<xsl:value-of select="embedHeight" />
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:value-of select="umbracoFile" />
-		  	</xsl:otherwise>
+				<xsl:value-of select="$height" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+	<xsl:variable name="embedWidth">
+		<xsl:choose>
+			<xsl:when test="embedWidth[not(&empty;)] and number(embedWidth) &lt; 640">
+				<xsl:value-of select="embedWidth" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$width" />
+			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:variable>
 	
-	<xsl:variable name="topGap" select="(540 - $height) div 2 " />
+	<xsl:variable name="topGap" select="(540 - $newHeight) div 2 " />
 	  
 	<xsl:choose>
 		<xsl:when test="string($isSlide)!=''">
 			<li class="touchcarousel-item video-item" style="padding-top: {$topGap}px;">
-			<div id="player{$uniqueId}" class="video-loader">
-			  <img>
-				<xsl:attribute name = "src"><xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="$posterImage" /><xsl:text>&amp;compression=80&amp;constrain=true</xsl:text></xsl:attribute>
-				<xsl:attribute name = "alt"><xsl:value-of select="@nodeName" /></xsl:attribute>     
-			  </img>
-			</div>
+				<xsl:choose>
+					<xsl:when test="thirdPartyEmbed[not(&empty;)]">
+						<div class="embedder" style="width:{$embedWidth}px;">
+						<xsl:value-of select="thirdPartyEmbed" disable-output-escaping="yes" />
+						</div>
+					</xsl:when>
+					<xsl:otherwise>
+						<div id="player{$uniqueId}" class="video-loader" style="width:{$width}px;">
+						  <img>
+							<xsl:attribute name = "src"><xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="$posterImage" /><xsl:text>&amp;compression=80&amp;constrain=true</xsl:text></xsl:attribute>
+							<xsl:attribute name = "alt"><xsl:value-of select="@nodeName" /></xsl:attribute>     
+						  </img>
+						</div>
+					</xsl:otherwise>
+				</xsl:choose>
 			</li>
 		</xsl:when>
 		<xsl:otherwise>
-			<div id="player{$uniqueId}" class="video-loader">
-			  <img>
-				<xsl:attribute name = "src"><xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="$posterImage" /><xsl:text>&amp;compression=80&amp;constrain=true</xsl:text></xsl:attribute>
-				<xsl:attribute name = "alt"><xsl:value-of select="@nodeName" /></xsl:attribute>     
-			  </img>
-			</div>
+			<xsl:choose>
+				<xsl:when test="thirdPartyEmbed[not(&empty;)]">
+					<xsl:value-of select="normalize-space(thirdPartyEmbed)" />
+				</xsl:when>
+				<xsl:otherwise>
+					<div id="player{$uniqueId}" class="video-loader">
+						<img>
+							<xsl:attribute name = "src"><xsl:text>/ImageGen.ashx?image=</xsl:text><xsl:value-of select="$posterImage" /><xsl:text>&amp;compression=80&amp;constrain=true</xsl:text></xsl:attribute>
+							  <xsl:attribute name = "alt"><xsl:value-of select="@nodeName" /></xsl:attribute>     
+							</img>
+						</div>
+					</xsl:otherwise>
+			</xsl:choose>
 		</xsl:otherwise>
 	</xsl:choose>
 	  
-    <!--<script><![CDATA[window.jwplayer || document.write('<script src="/scripts/jwplayer/jwplayer.js"><\/script>')]]></script>
--->
-    <script>
-    <![CDATA[
-	   jwplayer('player]]><xsl:value-of select="$uniqueId" /><![CDATA[').setup({
-		   file: ']]><xsl:choose><xsl:when test="string(youTubeVideoId)!=''"><xsl:text>http://www.youtube.com/watch?v=</xsl:text><xsl:value-of select="$videoSrc" /></xsl:when><xsl:otherwise><xsl:value-of select="$videoSrc" /></xsl:otherwise></xsl:choose><![CDATA[']]><xsl:if test="string($posterImage)!=''"><![CDATA[, 
-		   image: ']]><xsl:value-of select="$posterImage" /><![CDATA[']]></xsl:if><![CDATA[,
-		   title: '',
-		   controls: 'true',
-		   width: ']]><xsl:value-of select="$width" /><![CDATA[',
-		   height: ']]><xsl:value-of select="$height" /><![CDATA[',
-  		   stretching: 'fill',
-  		   autostart: 'false',
-  		   fallback: 'true',
-  		   mute: 'false',
-  		   primary: 'html5',
-  		   repeat: 'false'
-	   });
-    ]]>
-    </script>
+	<xsl:if test="string(thirdPartyEmbed)=''"> 
+		<script>
+		<![CDATA[
+		   jwplayer('player]]><xsl:value-of select="$uniqueId" /><![CDATA[').setup({
+			   file: ']]><xsl:choose><xsl:when test="string(youTubeVideoId)!=''"><xsl:text>http://www.youtube.com/watch?v=</xsl:text><xsl:value-of select="$videoSrc" /></xsl:when><xsl:otherwise><xsl:value-of select="$videoSrc" /></xsl:otherwise></xsl:choose><![CDATA[']]><xsl:if test="string($posterImage)!=''"><![CDATA[, 
+			   image: ']]><xsl:value-of select="$posterImage" /><![CDATA[']]></xsl:if><![CDATA[,
+			   title: '',
+			   controls: 'true',
+			   width: ']]><xsl:value-of select="$width" /><![CDATA[',
+			   height: ']]><xsl:value-of select="$height" /><![CDATA[',
+			   stretching: 'fill',
+			   autostart: 'false',
+			   fallback: 'true',
+			   mute: 'false',
+			   primary: 'html5',
+			   repeat: 'false'
+		   });
+		]]>
+		</script>
+	</xsl:if>
   </xsl:template>
   
   <!-- PDF file, render link -->
