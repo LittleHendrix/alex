@@ -21,8 +21,8 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta http-equiv="cleartype" content="on">
-	<meta property="fb:admins" content='<umbraco:Item field="facebookUserId" recursive="true" runat="server" />'/>
-	<meta property="fb:app_id" content='<umbraco:Item field="facebookAppId" recursive="true" runat="server" />'/>
+	<meta property="fb:admins" content='<umbraco:Macro Alias="FbUserId" runat="server"></umbraco:Macro>'/>
+	<meta property="fb:app_id" content='<umbraco:Macro Alias="FbAppId" runat="server"></umbraco:Macro>'/>
 	<link rel="apple-touch-startup-image" sizes="320x460" media="screen and (resolution: 163dpi)" href="/css/images/ios/startup/startup.png"><!-- iPhone 3 -->
 	<link rel="apple-touch-startup-image" sizes="640x920" media="screen and (resolution: 326dpi)" href="/css/images/ios/startup/startup-retina.png"><!-- iPhone 4 -->
 	<link rel="apple-touch-startup-image" sizes="768x1004" media="screen and (resolution: 326dpi) and (orientation:portrait)" href="/css/images/ios/startup/startup-tablet-portrait.png"><!-- iPad 3 portrait -->
@@ -66,6 +66,6 @@
 	</section>
 	<script src="/scripts/plugins/plugins.js"></script>
 	<script src="/scripts/app.js"></script>
-	<umbraco:Item field="googleAnalytics" recursive="true" runat="server" />
+	<umbraco:Macro Alias="GoogleAnalytics" runat="server"></umbraco:Macro>
 </body>
 </asp:Content>
