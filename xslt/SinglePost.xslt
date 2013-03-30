@@ -107,6 +107,7 @@
 						</p>
 					</div>
 				</xsl:if>
+				
 				<xsl:choose>
 					<xsl:when test="$currentPage/bodyText[not(&empty;)]">
 						<xsl:apply-templates select="$currentPage/bodyText" mode="WYSIWYG" />

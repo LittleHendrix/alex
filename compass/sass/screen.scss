@@ -232,6 +232,11 @@ a.perma-link, a.peek {
         margin: 3px 2px;
     }
 }
+.social-plugins {
+    position: absolute;
+    top: 97px;
+    right: 372px;
+}
 #content-wrap {
     width: 100%;
     height: 570px;
@@ -726,8 +731,11 @@ a.perma-link, a.peek {
             height: 159px;
         }
         .text-holder {
-            margin-top: 82px;
+            position: absolute;
+            top: 152px;
+            width: 100%;
             height: 388px;
+            margin-top: 0;
             padding: 16px 23px 23px;
             border-top: 7px solid transparent;
             border-color: white(.8);
@@ -1146,6 +1154,12 @@ span#re-align {
             }
         }
     }
+    .social-plugins  {
+        position: relative;
+        top: auto;
+        right: auto;
+        padding: 23px;
+    }
     #homepage-carousel, #content-carousel, #singleNode-carousel {
         height: auto;
         padding: 15px 10px;
@@ -1218,7 +1232,11 @@ span#re-align {
             article {
                 padding-bottom: 0;
                 .text-holder {
+                    position: relative;
+                    top: auto;
+                    width: auto;
                     height: auto;
+                    margin-top: 82px;
                 }
             }
         }
