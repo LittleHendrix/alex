@@ -154,6 +154,11 @@ ul.breadcrumb {
         }
     }
 }
+.social-plugins {
+    position: absolute;
+    top: 20px;
+    right: 23px;
+}
 .list-toggler {
     position: absolute;
     right: 23px;
@@ -178,7 +183,7 @@ ul.breadcrumb {
     padding: 15px 80px 0;
     @include myClearfix;
     .copyrights, .social {
-        width: 432px;
+        width: 338px;
         float: left;
         p {
             margin: 0;
@@ -194,7 +199,7 @@ ul.breadcrumb {
     }
     .social {
         width: auto;
-        margin-left: 23px;
+        margin-left: 15px;
     }
 }
 a.mailto {
@@ -231,11 +236,6 @@ a.perma-link, a.peek {
     img {
         margin: 3px 2px;
     }
-}
-.social-plugins {
-    position: absolute;
-    top: 97px;
-    right: 372px;
 }
 #content-wrap {
     width: 100%;
@@ -1138,6 +1138,12 @@ span#re-align {
             }
         }
     }
+    .social-plugins {
+        position: relative;
+        top: auto;
+        right: auto;
+        padding: 23px;
+    }
     .list-toggler {
         position: relative;
         right: auto;
@@ -1153,12 +1159,6 @@ span#re-align {
                 margin-left: 50%;
             }
         }
-    }
-    .social-plugins  {
-        position: relative;
-        top: auto;
-        right: auto;
-        padding: 23px;
     }
     #homepage-carousel, #content-carousel, #singleNode-carousel {
         height: auto;

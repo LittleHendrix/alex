@@ -105,7 +105,9 @@
 					<p><span>Location: </span><xsl:value-of select="iCalLocation" /></p>
 				</div>
 			</xsl:if>
-			
+			<!--
+			<xsl:value-of select="umbraco.library:RenderMacroContent('&lt;?UMBRACO_MACRO macroAlias=&quot;FbLike&quot; &gt;&lt;/?UMBRACO_MACRO&gt;',$currentPage/@id)" disable-output-escaping="yes" />
+			-->			
 			<xsl:choose>
 				<xsl:when test="bodyText[not(&empty;)]">
 					<xsl:apply-templates select="bodyText" mode="WYSIWYG" />

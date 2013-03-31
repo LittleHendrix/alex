@@ -36,21 +36,14 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/png" />
 	<umbraco:Macro Alias="CanonicalLink" runat="server" />
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700" type="text/css">
-	<link rel="stylesheet" href="/css/screen.css?v=0.1.5" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="/css/screen.css?v=0.1.6" type="text/css" media="screen, projection">
 	<script src="/scripts/libs/modernizr.2.6.2.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="/scripts/libs/jquery-1.9.1.min.js"><\/script>')</script>
 	<script>window.jwplayer || document.write('<script src="/scripts/jwplayer/jwplayer.js"><\/script>')</script>
 </head>
 <body id='<umbraco:Item field="nodeTypeAlias" runat="server" />' ontouchstart="">
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=<umbraco:Macro Alias="FbAppId" runat="server"></umbraco:Macro>";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+	<umbraco:Macro Alias="FbInitialize" runat="server"></umbraco:Macro>
 	<section>
 	<header id="site-header">
 		<div id="logo-wrapper">
@@ -59,7 +52,10 @@
 		<umbraco:Macro Alias="NavigationMain" runat="server"></umbraco:Macro>
 		<umbraco:Macro Alias="Breadcrumb" runat="server"></umbraco:Macro>
 		<umbraco:Macro Alias="Toggler" runat="server"></umbraco:Macro>
+		<div class="social-plugins">
+		<umbraco:Macro Alias="TwitterBtn" runat="server"></umbraco:Macro>
 		<umbraco:Macro Alias="FbLike" runat="server"></umbraco:Macro>
+		</div>
 	</header>
 	<div id="page-content">
 		<asp:ContentPlaceHolder Id="BodyContent" runat="server">
@@ -70,7 +66,7 @@
 		<div class="copyrights">
 			<p>Alex Allan &copy; <umbraco:Macro dateField="" dateFormat="currentYear" Alias="_DateTimeFormatHelper" runat="server"></umbraco:Macro>. <a href='mailto:<umbraco:Item field="contactEmail" recursive="true" runat="server" />' data-title="Get in touch" class="mailto"><umbraco:Item field="contactEmail" recursive="true" runat="server" /></a></p>
 		</div>
-		<umbraco:Macro Alias="SocialLinks" runat="server"></umbraco:Macro>
+		<umbraco:Macro Alias="SocialLinks" runat="server"></umbraco:Macro>		
 	</footer>
 	</section>
 	<script src="/scripts/plugins/plugins.js"></script>

@@ -16,9 +16,18 @@
 <xsl:param name="currentPage"/>
 
 <xsl:template match="/">
-	
-	<div class="fb-like" style="vertical-align:top;" data-send="true" data-layout="button_count" data-width="288" data-show-faces="true" data-font="segoe ui">&nbsp;</div>
-	
+
+	<div id="fb-root"></div>
+	<script><![CDATA[
+		(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&amp;appId=]]><xsl:value-of select="umbraco.library:RenderMacroContent('&lt;?UMBRACO_MACRO macroAlias=&quot;FbAppId&quot; &gt;&lt;/?UMBRACO_MACRO&gt;',$currentPage/@id)" disable-output-escaping="yes" /><![CDATA[";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	]]></script>
+
 </xsl:template>
 
 </xsl:stylesheet>
