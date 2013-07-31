@@ -50,3 +50,148 @@ dragUsingMouse:!0,scrollToLast:!1,itemFallbackWidth:500,baseMouseFriction:0.0012
 (function(){if(navigator.userAgent.match(/OS 6(_\d)+/i)&&void 0===window.getTimeouts){var f={},q={},b=window.setTimeout,c=window.setInterval,a=window.clearTimeout,e=window.clearInterval,d=function(a,d,e,g){if(e){var l=function(){var a=(new Date).getTime();!1!==k[j].loop?(k[j].requestededFrame=webkitRequestAnimationFrame(l),k[j].loop=a<=m):(k[j].callback&&k[j].callback(),w?(m=(new Date).getTime()+d,k[j].loop=a<=m,k[j].requestedFrame=webkitRequestAnimationFrame(l)):delete k[j])},j;e=a.name||"rafTimer"+
 Math.floor(1E3*Math.random());var m=(new Date).getTime()+d,w=g||!1,k=w?q:f;j=e+""+m;k[j]={};k[j].loop=!0;k[j].callback=a;l();return j}return g?c(a,d):b(a,d)},g=function(b,d){if(b.indexOf&&-1<b.indexOf("rafTimer")){var c;c=d?q:f;c[b]?(c[b].callback=void 0,c[b].loop=!1,c=!0):c=!1;return c}return d?e(b):a(b)};window.getTimeouts=function(){return{timeouts:f,intervals:q}};window.setTimeout=function(a,b){return d(a,b,!0)};window.setInterval=function(a,b){return d(a,b,!0,!0)};window.clearTimeout=function(a){return g(a)};
 window.clearInterval=function(a){return g(a,!0)}}})();
+
+// Copyright 2012 Google Inc. All Rights Reserved.
+
+/**
+* @fileoverview A simple script to automatically track Facebook and Twitter
+* buttons using Google Analytics social tracking feature.
+* @author api.nickm@gmail.com (Nick Mihailovski)
+* @author api.petef@gmail.com (Pete Frisella)
+*/
+
+/**
+* Namespace.
+* @type {Object}.
+*/
+var _ga = _ga || {};
+
+/**
+* Ensure global _gaq Google Analytics queue has been initialized.
+* @type {Array}
+*/
+var _gaq = _gaq || [];
+
+/**
+* Tracks social interactions by iterating through each tracker object
+* of the page, and calling the _trackSocial method. This function
+* should be pushed onto the _gaq queue. For details on parameters see
+* http://code.google.com/apis/analytics/docs/gaJS/gaJSApiSocialTracking.html
+* @param {string} network The network on which the action occurs.
+* @param {string} socialAction The type of action that happens.
+* @param {string} opt_target Optional text value that indicates the
+*     subject of the action.
+* @param {string} opt_pagePath Optional page (by path, not full URL)
+*     from which the action occurred.
+* @return a function that iterates over each tracker object
+*    and calls the _trackSocial method.
+* @private
+*/
+_ga.getSocialActionTrackers_ = function(
+   network, socialAction, opt_target, opt_pagePath) {
+ return function() {
+   var trackers = _gat._getTrackers();
+   for (var i = 0, tracker; tracker = trackers[i]; i++) {
+     tracker._trackSocial(network, socialAction, opt_target, opt_pagePath);
+   }
+ };
+};
+
+/**
+* Tracks Facebook likes, unlikes and sends by suscribing to the Facebook
+* JSAPI event model. Note: This will not track facebook buttons using the
+* iframe method.
+* @param {string} opt_pagePath An optional URL to associate the social
+*     tracking with a particular page.
+*/
+_ga.trackFacebook = function(opt_pagePath) {
+ try {
+   if (FB && FB.Event && FB.Event.subscribe) {
+     FB.Event.subscribe('edge.create', function(opt_target) {
+       _gaq.push(_ga.getSocialActionTrackers_('facebook', 'like',
+            opt_target, opt_pagePath));
+     });
+     FB.Event.subscribe('edge.remove', function(opt_target) {
+       _gaq.push(_ga.getSocialActionTrackers_('facebook', 'unlike',
+            opt_target, opt_pagePath));
+     });
+     FB.Event.subscribe('message.send', function(opt_target) {
+       _gaq.push(_ga.getSocialActionTrackers_('facebook', 'send',
+            opt_target, opt_pagePath));
+     })
+    FB.Event.subscribe('comment.create', function(opt_target) {
+        _gaq.push(_ga.getSocialActionTrackers_('facebook', 'comment',
+            opt_target, opt_pagePath));
+    });
+    FB.Event.subscribe('comment.remove', function(opt_target) {
+        _gaq.push(_ga.getSocialActionTrackers_('facebook', 'uncomment',
+            opt_target, opt_pagePath));
+    });
+   }
+ } catch (e) {}
+};
+
+
+/**
+* Handles tracking for Twitter click and tweet Intent Events which occur
+* everytime a user Tweets using a Tweet Button, clicks a Tweet Button, or
+* clicks a Tweet Count. This method should be binded to Twitter click and
+* tweet events and used as a callback function.
+* Details here: http://dev.twitter.com/docs/intents/events
+* @param {object} intent_event An object representing the Twitter Intent Event
+*     passed from the Tweet Button.
+* @param {string} opt_pagePath An optional URL to associate the social
+*     tracking with a particular page.
+* @private
+*/
+_ga.trackTwitterHandler_ = function(intent_event, opt_pagePath) {
+ var opt_target; //Default value is undefined
+ if (intent_event && intent_event.type == 'tweet' ||
+         intent_event.type == 'click') {
+   if (intent_event.target.nodeName == 'IFRAME') {
+     opt_target = _ga.extractParamFromUri_(intent_event.target.src, 'url');
+   }
+   var socialAction = intent_event.type + ((intent_event.type == 'click') ?
+       '-' + intent_event.region : ''); //append the type of click to action
+   _gaq.push(_ga.getSocialActionTrackers_('twitter', socialAction, opt_target,
+       opt_pagePath));
+ }
+};
+
+/**
+* Binds Twitter Intent Events to a callback function that will handle
+* the social tracking for Google Analytics. This function should be called
+* once the Twitter widget.js file is loaded and ready.
+* @param {string} opt_pagePath An optional URL to associate the social
+*     tracking with a particular page.
+*/
+_ga.trackTwitter = function(opt_pagePath) {
+ intent_handler = function(intent_event) {
+   _ga.trackTwitterHandler_(intent_event, opt_pagePath);
+ };
+
+ //bind twitter Click and Tweet events to Twitter tracking handler
+ twttr.events.bind('click', intent_handler);
+ twttr.events.bind('tweet', intent_handler);
+};
+
+
+/**
+* Extracts a query parameter value from a URI.
+* @param {string} uri The URI from which to extract the parameter.
+* @param {string} paramName The name of the query paramater to extract.
+* @return {string} The un-encoded value of the query paramater. undefined
+*     if there is no URI parameter.
+* @private
+*/
+_ga.extractParamFromUri_ = function(uri, paramName) {
+ if (!uri) {
+   return;
+ }
+ var regex = new RegExp('[\\?&#]' + paramName + '=([^&#]*)');
+ var params = regex.exec(uri);
+ if (params != null) {
+   return unescape(params[1]);
+ }
+ return;
+};

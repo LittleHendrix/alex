@@ -15,7 +15,7 @@
 	
 	<!-- Allowed for this node? -->
 	<xsl:variable name="remoteAddress" select="umb:RequestServerVariables('REMOTE_ADDR')"/>
-	<xsl:variable name="xmldumpAllowed" select="boolean($currentPage/ancestor-or-self::*[contains(xmldumpAllowedIPs, $remoteAddress)] | $currentPage/ancestor-or-self::node[contains(data[@alias = 'xmldumpAllowedIPs'], $remoteAddress)])"/>
+	<xsl:variable name="xmldumpAllowed" select="boolean($currentPage/ancestor-or-self::*[contains(xmldumpAllowedIPs, $remoteAddress)] | $currentPage/ancestor-or-self::node[contains(data[@alias = 'xmldumpAllowedIPs'], $remoteAddress)] | $currentPage/ancestor-or-self::root/AdminSettings[contains(xmldumpAllowedIPs, $remoteAddress)])"/>
 	
 	<!-- Determine if using legacy or v4.5 XML Schema -->
 	<xsl:variable name="isLegacyXML" select="boolean(not($root/*[@isDoc][1]))"/>

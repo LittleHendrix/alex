@@ -4,6 +4,7 @@
 	<div id="singleNode-carousel" class="touchcarousel black-and-white">
 		<ul class="touchcarousel-container">
 			<umbraco:Macro Alias="SinglePost" runat="server"></umbraco:Macro>
+			
 		</ul>
 		<div id="blog-comments" class='<umbraco:Macro Alias="UCommentShowHide" runat="server"></umbraco:Macro>'>
 			
